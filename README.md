@@ -318,4 +318,279 @@ The following pictures feature the members of Batangas State University - Integr
 
 # 8. Mechanical Improvements
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throughout the development of our self-driving robot, we have considered various mechanical and technical aspects that will improve its functionality and accuracy in terms of movements, navigation, and such. Each component and configuration was carefully tested, altered, or replaced to improve the robot’s performance in tasks such as movement, turning, wall avoidance, and parking. These iterative improvements allowed us to enhance the robot’s reliability across both the Open Challenge and Obstacle Challenge rounds. Below are the major mechanical changes that we have implemented to reach the robot’s full potential. 
+
+## 8.1. Testing of Perfect Size for Parking
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the most critical tasks in the Obstacle Challenge is the requirement for the robot to be able to perform parallel parking. The parking space has fixed dimensions depending on the size of the robot, and the robot must travel or park, without touching the surrounding boundary walls, avoiding contact that may cause the parking walls to move or fall. To address this, we conducted multiple trials using varying robot lengths and widths. Since the rule book prohibits on-the-spot changes or adjustments such as adding length to the robot, we have assessed different designs that are engineered to follow this rule, progressively adjusting the body to a size that would allow smooth entry into the parking lot without compromising balance or movement. Indicated below is the final and perfect size of robot that we have concluded with after numerous alterations. 
+
+<img src = "">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During the design process, we decided to increase the length of our robot to gain an advantage in the parking task in the Obstacle Challenge. According to the rules, the size of the parking space is calculated by multiplying the length of the robot by 1.5. This means that the longer the robot, the larger the parking space becomes. By extending the length, we were able to create a wider parking area, which made it easier for the robot to perform the parking maneuver. This strategic adjustment improved our parking consistency and reduced the risk of penalties or bumping onto the parking walls.
+
+## 8.2. Alter Differential Gear to Normal Driving
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the early stages of development, we experimented with a differential gear to allow for smoother turns and flexibility in wheel movement. However, this setup led to reduced torque and difficulty in controlling speed during sharp turns. To improve stability and consistency, we switched to a normal driving system, which offered better synchronization between the wheels and allowed the robot to move with more consistency, especially on straight paths and when executing turns. This change produced a way for the robot to improve its stability, have better grip during turns, and perform smoother acceleration and deceleration. 
+
+<img src = "">
+
+## 8.3. Integrate Gears Around the Robot
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At the beginning of the development process, we did not fully consider the possibility of the robot making contact with the inner walls, which could disrupt its performance during the Open Challenge round. As we conducted more test runs, we observed that the robot occasionally collided with the inner wall due to various reasons such as inconsistency with the movements, narrow spacing, and alignment issues. To improve safety and control, we decided to integrate additional gears around the robot. These gears were strategically placed to support smoother movements alongside the walls, allowing the robot to adjust its path gently without losing balance or stopping. This modification ensured that the robot could continue its run properly, even with unexpected contacts, by maintaining a consistent distance from the walls and reducing the risk of direct contact of the robot.
+
+<img src = "">
+
+## 8.4. Alter the Gears’ Size from Big to Medium 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apart from the challenges mentioned above, we also noticed during our development process that using big gears increased the risk of the robot touching the parking walls, especially during every approach to the parking area. Since the gears extended beyond the main body, they could cause the robot to make unintended contact. To fix this, we replaced the big gears with medium-sized ones, which made the robot more compact and safer to park. This adjustment helped the robot to manage its space consumption properly and fit better within the parking area, as well as reduced the chance of the team getting a penalty. 
+
+<img src = "">
+
+## 8.5. Alter the Gears’ Size from Big to Medium 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the previous design for the self-driving robot in the Future Engineers category, the SPIKE™ Prime Hub was positioned at the rear part of the robot. However, for our current design, this placement with uneven weight distribution caused noticeable instability during movement, particularly when making sharp turns. With the design making the rear part heavier, it also made the robot more prone to tilting and less responsive to directional changes, which could impact its performance in both the Open and Obstacle Challenge rounds. To address this issue, we relocated the hub to the center of the robot, allowing for a more balanced distribution of weight across all wheels. This central placement significantly improved the robot’s overall stability, turning accuracy, and movement consistency. Additionally, we wanted the hub to be both enclosed and easily accessible for charging, programming, connecting, and troubleshooting. By positioning it in the center, we ensured that the hub was safely integrated into the robot’s frame while still allowing quick and convenient access when necessary.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Moreover, as more components such as the camera, distance sensor, and supporting mechanisms were mounted toward the front part of the robot, the rear side became relatively lighter. This imbalance in weight distribution led to unwanted slipping, reduced traction, and inconsistent turning, especially during sharp maneuvers or high-speed movements. The lack of rear weight also made it more difficult for the robot to maintain stability while aligning for tasks like parking and walling. To resolve this issue, we added two EV3 Steel Balls to the rear section of the robot. These additional weights helped balance the overall mass, resulting in improved stability, smoother turning, and better grip on the surface. With the improved weight distribution, the robot was able to move more consistently and perform critical maneuvers with greater control and accuracy.
+
+<img src = "">
+
+## 8.6. Testing of Perfect Wheels for Steering
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our team has encountered an issue with the inconsistency of the robot when it comes to maneuvering and performing the tasks, especially in the Obstacle Challenge. And one of the key aspects we have focused on is the front wheels or the wheels that we used for the self-driving robot’s steering system. During several practices and testing, we have noticed issues, including frequent slipping, unstable traction, and inconsistent turning behavior especially during sharp changes and transitions in direction. Thus, we tried to evaluate the performance of different wheels that are accessible for our utilization and analyzed which movement was the best, with less slipping, improved traction, and prevented drifts. We evaluated the following wheels based on their size, turning radius, and capability in steering. 
+
+<img src = "">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After extensive testing and experimentation with various wheel types, we found that the EV3 Small Wheel (the third wheel shown in the image) and the Technic™ White Wheel (the second wheel shown in the image) delivered the best performance. These two options had the ideal size and height to complement the parallel steering mechanism of our self-driving robot. On the other hand, both smaller and larger wheels created balance issues — either lowering or raising the front part of the robot too much — which led to slipping, drifting, and overall, inconsistent movement.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initially, we used the EV3 Small Wheels for steering during the early stages of our preparation. However, as testing progressed, we transitioned to the Technic™ White Wheels, which provided better alignment, grip, and movement stability. The reasoning behind this change is further rationalized in the preceding subsection, 7.7: Use Different Wheels for Steering. This modification played a key role in refining the robot’s handling and improving its reliability across both the Open and Obstacle Challenges.
+
+## 8.7. Use Different Wheels for Steering
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During several practices and testings to make the movement consistent, our team decided to change the small wheels in front of the self-driving robot for more improved steering. Previously, we utilized the EV3 Small Wheel with thick tires and a diameter of 43.2 mm, but this setup led to several issues, including frequent slipping, unstable traction, and inconsistent turning behavior especially during sharp changes and transitions in direction. To fix this, we looked at a number of different wheel types and chose the Technic™ White Wheels, which have thinner tires and a diameter of 43 mm. These wheels are almost the same size as the old ones, but they slide less. This change significantly improved our robot’s steering movement, turning radius, and control. We also observed that the new wheels improved the robot’s speed in maneuvering the field, performed smoother cornering, and more consistent traversal both in the Open and Obstacle Challenge. 
+
+<img src = "">
+
+## 8.8. Replace Color Sensor with Distance Sensor
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As part of our mechanical improvements, we decided to replace the Color Sensor mounted on the bottom part of the robot with a second Distance Sensor, specifically to improve the parking ability of our self-driving robot in the Obstacle Challenge. This newly added Technic™ Distance Sensor was positioned at the rear part of the robot, enabling it to measure the distance between the robot and the back wall whenever executing a parallel parking maneuver. 
+
+<img src = "">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This sensor allows the robot to measure the exact distance between its rear and the parking wall, helping it to properly move within the designated space. This ensures that the robot maintains a safe distance from the walls, avoiding any unintended contact or bumping that could result in penalties or incorrect parking. With this solution, our robot now uses two Technic™ Distance Sensors — one at the front, which is intended for obstacle and wall detection, and one at the rear part for safer and more accurate parking alignment.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However, this change meant that we had to rethink our strategy for the Open Challenge. Our team’s original plan relied on the Technic™ Color Sensor to detect orange and blue lines at the corners of the field, which helped determine the robot’s driving direction. Since the Technic™ Color Sensor was removed, we modified our approach to instead use the Technic™ Distance Sensor at the front. Moreover, the updated logic involves checking the distance on both sides of the robot. If the distance on the left side is smaller, it indicates the robot is closer to the left wall and should follow a clockwise direction. If the right side has a smaller distance, the robot is programmed to perform its movement counterclockwise. This adjustment allowed us to maintain its ability to know what direction it should drive in the Open Challenge despite the absence of the Technic™ Color Sensor, while also improving the robot’s ability to perform parallel parking in the Obstacle Challenge.
+
+## 8.9. Replace Wheels for Driving
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the initial mechanical design of the self-driving robot, we utilized the Technic™ Wheel 88 x 14.34 since it is the only largest wheel that is accessible for us. However, after noticing how these wheels caused multiple issues, particularly its inconsistency in traction, we realized the necessity to utilize different wheels that will provide increased grip, less slips, and improved contact with the ground. After thoughtful evaluation, we selected the LEGO Wheel 75 mm x 17 mm with Motorcycle Tire 94.2 mm x 20 mm, which features a rubberized tire with patterns for better grip and traction. The size of these wheels were slightly different than the old ones, but offered less contact with the ground, decreasing the slips and drifts in its movement. After this modification, the self-driving robot’s movement was significantly better than the previous performance, smoothly moving in straight and turning paths. We also observed that the new wheels enhanced the speed of the robot in maneuvering the field, and performed more consistent cornering and traversal both in the Open and Obstacle Challenge.
+
+<img src = "">
+
+# 9. Construction Guide
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section outlines a detailed instruction and guide on how we constructed and programmed our self-driving robot. This includes a specific set of steps to follow and a video presentation of how the robot is assembled. Above all, our team wishes that this will serve as an inspiration for everyone because the essence of engineering is not only about innovating and creating solutions, but rather sharing insights and ideas that will drive the future forward. Thus, Section 10: Recommendations and Future Work may help you think outside the box and create an advancement from what we have developed. 
+
+## 9.1. Guide for Constructing the Robot
+
+**_Step 1. Prepare the necessary kits and components._** The checklist below may serve as your guide for preparing the materials. *To check the price of each, you may refer to the Bills of Materials detailed at Section 10: Appendices.*
+
+<img src = "">
+
+**_Step 2. Start Building the Robot._** *A specific and detailed list of parts and step-by-step instructions of constructing it can be found by scanning the QR code below.*
+
+<img src = "">
+
+**_Step 3. Ensure that electrical connections are properly wired and connected._** *You may use these pictorial diagrams as reference for connecting the OpenMV Cam H7 Plus and the Spike™ Prime Sensors to the Technic™ Large Hub.*
+
+<img src = "">
+
+You may access the assembly video of our self-driving robot by scanning the QR code provided below. 
+
+<img src = "">
+
+You may access the assembly video of our self-driving robot by scanning the QR code provided below. 
+
+## 9.2. Guide for Constructing the Robot
+
+### 9.2.1. Programming the OpenMV Cam H7 Plus
+
+**_Step 1. Install OpenMV IDE._** *Begin by installing the OpenMV IDE, the official development environment for the OpenMV Cam H7 Plus. This will be used for writing, uploading, and testing vision-based programs directly on the camera.*
+
+**_Step 2. Prepare the Required Libraries._** *Ensure that any external libraries needed for the communication of the hub and camera are added to your environment. The libraries include __*
+
+**_Step 3. Connect the Camera to the Computer._** *Use a standard USB cable to connect the OpenMV camera. The LED indicators on the camera will blink green and flash white when successfully connected. In the IDE, click the “Connect” button (or press Ctrl+E) to connect.*
+
+**_Step 4. Load and Edit the Program._** *Before starting, it is recommended to read how we worked on the OpenMV Cam in Section 4: Obstacle Challenge Strategy to understand how its features and code work. The OpenMV IDE comes with a default sample program that you can edit. The team also provided a program named ___ , which shows how the camera detects obstacles during the challenge. Test the program live using the Run button or Ctrl+R.*
+
+**_Step 5. Upload the Program to the Camera._** *Once the program performs as expected, go to Tools > Save open script to OpenMV Cam as main.py. This ensures the script runs automatically each time the camera is powered on during competition.*
+
+### 9.2.2. Programming the SPIKE™ Prime Large Hub
+
+**_Step 1. Prepare the Programming Environment._** *Open the Pybricks Code Editor (available at https://code.pybricks.com), which is used to write and compile programs for the SPIKE™ Prime Hub.*
+
+**_Step 2. Install Pybricks Firmware on  SPIKE™ Prime Large Hub._** *Before programming the hub, install the Pybricks firmware using the instructions provided on the official Pybricks website. You may open the link below to access the complete instruction. This firmware allows for MicroPython programming directly on the SPIKE™ Large Hub. You may open this link for the complete instruction. https://pybricks.com/learn/getting-started/install-pybricks/*
+
+**_Step 3. Learn the Basics._** *To get started, it is recommended to read the Pybricks Documentation ( available at https://docs.pybricks.com/en/stable/). You can also follow the guide Creating and running Pybricks programs from the Pybricks website to understand how to control motors and sensors using MicroPython.*
+
+**_Step 4. Use our Team’s Code for Reference._** *The team has provided sample programs under the folder __, which can serve as a reference for obstacle handling, walling, and parking logic.*
+
+**_Step 5. Connect the Hub via Bluetooth._** *Turn on your SPIKE™ Hub and open the Pybricks Editor. Click the Bluetooth icon at the top-right, select the correct hub from the list, and then click Pair to connect.*
+
+<img src = "">
+
+**_Step 6. Run and Upload the Program._** *To run your script on the hub, click the “Run this program” button or press F5. To stop the program, click “Stop everything” or press F6. Pybricks automatically saves the program to the hub once it is run, so there's no need for a separate upload step.*
+
+## 9.3. Final Reminders and Optimization Tips
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before finalizing your robot for testing or competition, it is important to carry out a few final checks and apply optimization strategies to ensure a reliable performance. These reminders are based on our experience and are intended to help you improve consistency and reduce avoidable errors:
+
+- **Double-Check All Connections**  
+  - Ensure that all motors and sensors are connected to the correct ports as defined in the program. Loose or incorrect wiring may result in failure during operation.
+
+- **Secure Structural Components**  
+  - Inspect the robot for any unstable or misaligned LEGO® parts and 3D printed parts. Reinforce weak joints, especially around the steering and drive systems, to maintain structural integrity throughout the run.
+
+- **Clean the Wheels Regularly**  
+  - Dirt and debris on the wheels can affect traction and movement accuracy. Clean the tires whenever necessary to maintain reliable surface contact.
+
+- **Review Sensor Alignment**  
+  - Confirm that distance and color sensors, as well as the camera, are positioned and angled correctly. A small misalignment can result in incorrect readings and responses.
+
+- **Test Before Final Run**  
+  - Perform a short test run on the actual field or a close replica. This helps identify last-minute issues in movement, detection, or turning behavior.
+
+- **Fine-Tune Code Parameters**  
+  - Adjust speed values, turning angles, and detection thresholds based on field conditions. Even small changes can significantly improve accuracy and performance.
+
+- **Monitor Battery Levels**  
+  - Ensure both the SPIKE™ Prime Hub and the camera are fully charged before every session. Low battery levels can reduce motor power and sensor performance.
+
+- **Stay Adaptable**  
+  - Be prepared to adjust strategies or mechanics when necessary. Field conditions may vary, and flexibility is key to maintaining performance under pressure.
+
+# 10. Recommendations and Future Work
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A robot may be able to perform and execute its tasks successfully; however, there is always room for improvement. To enhance a robot’s performance, functionality, and reliability, it is important to first identify the limitations that restrict its full potential. Some of the limitations involve constraints in mobility and sense management, few environmental challenges that were discussed in Section 5: Problems Encountered, or time restrictions during development.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In our case, while the robot demonstrated excellent performance in both the Open and Obstacle Challenge rounds, we identified specific areas where performance could be further optimized. These include improving sensor accuracy, refining the strategies, enhancing component selection, and reducing response time under changing field conditions. This section will discuss the recommendations and future work that will not only benefit the current version but also set a stronger foundation for future self-driving robot development.
+
+## 10.1. Recommendations for Mobility Management
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To further improve the movement and control of the self-driving robot, our team recommends several enhancements to the mobility management system. These recommendations are based on our design experiences, testing feedback, and identified areas for improvement during the preparation process.
+
+- **Incorporating a Differential Gear**  
+  - One key recommendation is to incorporate a differential gear in the driving mechanism, as our team had explored in our initial design. This is significant because, for example, in a right turn, the left wheel must travel a greater distance along the circular path than the right wheel in the same amount of time, since it is farther from the turn's center. In short, it allows the left and right wheels to rotate at different speeds, which is especially beneficial when the robot is turning. Additionally, it performs well in maintaining traction, stability, and reducing wheel slips during sharp or tight turns. Although we removed the differential gear in later versions due to various concerns, a properly tuned, tested, and incorporated differential mechanism could enhance the robot’s  turning precision, when combined also with effective programming and mobility control. 
+
+- **Exploring Different Steering Geometry**  
+  - It is also significant to evaluate other steering geometry, specifically the Ackermann steering mechanism. Due to its complexity, as well as time constraints, we have utilized Parallel steering into our robot since this is more manageable and controllable within the time that we have for preparation. Consequently, the Ackermann steering mechanism, though it is not easy to implement, allows for better control when performing critical and sharp turning. 
+
+- **Exploring Different Driving Mechanism**  
+  - Both all-wheel drive (AWD) and rear-wheel drive (RWD) have their own strengths and weaknesses, and the best choice depends on the driver’s priorities and the conditions in which the vehicle will be driven. In our case, we selected the RWD since it is easier to build and manage. On the other hand, the all-wheel drive (AWD) transmission's potential to increase the robot's speed, acceleration, and stability should be evaluated. This is because it lessens the possibility of wheels losing grip at fast acceleration by distributing power throughout all four wheels. Nevertheless, it should be remembered that AWD systems usually weigh more than RWD, which may decrease the robot’s maximum speed. 
+
+- **Improving the Selection of Wheels**  
+  - Lastly, one of the limitations we have assessed is the concern that we have encountered with our wheels, for instance is its inconsistency. Due to lack of accessibility, our team has limited options to choose from; thus, restricting our ability to evaluate more wheels that will perform better than what we have. We recommend exploring more on various wheels with appropriate dimensions and tires for excellent traction and stability in driving and steering. Wheel grip plays a significant role in how the robot accelerates, turns, and stops. Using wheels with rubberized surfaces or custom 3D-printed patterns could improve traction and reduce slipping, especially on uneven or dusty field surfaces.
+
+## 10.2. Recommendations for Power and Sense Management
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Responsible for the robot’s execution of tasks, the power and sense management is one of the key aspects that allows it to function. Thus, recommending several enhancements to the power and sense management would further improve its overall performance. The listed recommendations here are based on testing feedback, connection restrictions, and identified areas of improvement during the planning and preparation process. 
+
+- **Consider Upgrading to More Advanced Microcontrollers**
+  - The current Technic™ Large Hub supports only up to six combined motors and sensors, which limits the number of components that can be simultaneously controlled. For more complex applications, we recommend exploring microcontrollers such as the Arduino Uno, Raspberry Pi, or similar components. These systems offer more I/O ports, greater processing flexibility, and support for a wider range of electrical modules and connections. With additional ports, others can attach extra motors to improve drive performance or include more sensors to improve environmental awareness and decision-making. 
+
+- **Explore Cameras with Greater Capacity**
+  - In our case, we have utilized the OpenMv Cam H7 Plus, since we have considered conditions, such as accessibility, ease of use, compactness, power consumption, and cost effectiveness. While the existing camera setup has served its purpose, upgrading to more advanced vision systems, such as Raspberry Pi Camera and Pixii Camera could provide higher resolution images and faster image processing speed. These modules or components are better suited for real-time object detection and tasks that require having a vision system, such as obstacle detection in the Open and Obstacle Challenge.  
+
+- **Utilize More Advanced and Responsive Sensors**
+  - To improve the robot’s sensing reliability, especially in tasks like parking or detecting walls, we recommend switching to sensors with high-precision of detection, capable of delivering accurate readings with minimal delay. In our experience, the sensors we have tried and utilized, such as the Technic™ Color Sensor and Technic™ Distance Sensor, sometimes failed to provide consistent data, which affected the robot’s ability to detect the obstacles or signs that it needs to detect, hindering it from performing its tasks reliably. Using advanced ultrasonic or LiDAR-based sensors with faster refresh rates and better range accuracy would enhance the robot’s sensing capabilities without significantly increasing power consumption.
+
+## 10.3. Recommendations for Strategies
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In addition to mechanical and electrical improvements, enhancing the strategies used in programming and task execution, plays a critical role in improving the robot’s overall performance. Based on testings that we have done, we recommend the following approaches to further optimize the development of strategies for better performance. 
+
+- **Implement Continuous Detection**
+  - To improve performance efficiency and reduce unnecessary delays, we recommend implementing continuous detection during the Obstacle Challenge round. This strategy allows the robot to actively scan and read its surroundings, real time, while moving, rather than stopping to scan or respond only when reaching specific points. By continuously detecting the traffic signs, the robot can make faster decisions, avoid interruptions, and respond immediately to changing field conditions. This helps minimize unneeded actions such as stopping or walling, which allows for smoother navigation and better time management throughout the run. 
+
+- **Utilize Color Sensor in Open Challenge**
+  - Instead of using Technic™ Distance Sensor for identifying the robot’s drive direction, it is also recommended to consider using a Technic™ Color Sensor, as we have previously implemented in the earlier versions. The color sensor has the ability to detect the colored lines in the field, allowing it to determine its driving direction: if the color sensor detects an orange line, then the driving direction is clockwise, otherwise, if it is a blue line, the robot will move in a counterclockwise direction. Additionally, it is best to position the color sensor at the front-bottom part of the robot for faster and more reliable detection, minimizing the delay in responding and determining the direction that it should take. 
+
+# 11. Appendices
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section contains supplementary materials that support the content presented in this documentation. Included in the appendices are diagrams, tables, timeline, and additional visual documentation that provide deeper insight into the design and development of the self-driving robot. These materials serve as references for illustrating the progress made throughout the project. 
+
+## 11.1. Robot Photos
+
+<img src = "">
+
+## 11.2. Pictorial Wiring Diagram
+
+<img src = "">
+
+## 11.3. Bills of Materials
+
+<img src = "">
+
+## 11.4. Timeline
+
+<img src = "">
+
+# 12. Robot Design History
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From the initial concepts to the final build, the design of our self-driving robot evolved through multiple stages as we identified weaknesses, tested improvements, and made changes as a response to performance feedback during runs. This section documents the evolution of our design, discussing the key changes and the reasons behind them. It showcases how our team continuously applied engineering principles, adapted to mistakes, and made essential decisions to improve the robot’s structure, mobility, and overall functionality.
+
+<img src = "">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The first version of our robot primarily focused on the conceptualization and testing of the mechanical design. One of the earliest features implemented was the parallel front-wheel steering mechanism, where we used an EV3 Small Wheel with a thicker tire to increase surface contact and enhance grip. This setup aimed to improve steering control and movement stability. In line with real-world cars design, we also incorporated a Rear-Wheel Drive (RWD) system to deliver consistent forward propulsion and better handling.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Technic™ Color Sensor was integrated into the front-bottom part of the robot, making it ready to be programmed for the Open Challenge, specifically for detecting the orange and blue directional lines. Additionally, we experimented with a differential gear placed at the rear axle where the driving wheels are connected. This allowed the left and right wheels to rotate at different speeds during turns, which we believed would help maintain traction and balance while cornering. This initial version laid the groundwork for our mechanical structure and served as a platform for evaluating essential components that will improve the robot’s mobility system.
+
+<img src = "">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As our team had planned, Version 2 introduced a significant upgrade with the inclusion of a rotating mechanism designed to hold both the distance sensor and the vision camera. This mechanism allowed the sensors to scan a wider range of the robot’s surroundings, enhancing its ability to detect walls, obstacles, and traffic signs more effectively. The camera was securely mounted using a case we designed ourselves, which is made from LEGO® Technic™ parts, ensuring both stability and accessibility for wiring and maintenance.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While integrating these new features, Version 2 retained key elements from Version 1, such as the parallel front-wheel steering, rear-wheel drive (RWD) system, the Technic™ Color Sensor, and the differential gear setup. These systems worked together to support smooth and precise movements across the field. Additionally, this version incorporated structural improvements to increase balance and accommodate the added weight from the camera and rotating motor. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consequently, Version 2 became our first complete prototype that fully met the requirements of both the Open Challenge and Obstacle Challenge in the Future Engineers category. It established the foundation for the design we aimed to achieve.
+
+<img src = "">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For Version 3, we implemented several sudden yet necessary changes as a result of observational errors, identified weaknesses, and opportunities for improvement that would help the self-driving robot operate at its full potential. As shown in the provided images, one of the key enhancements was the integration of additional gears around the robot. These gears were strategically placed to promote smoother and more stable movement, especially when driving alongside the walls. This modification allowed the robot to gently adjust its path without losing balance or halting unexpectedly when placed in a position with a high risk of making contact with the boundary walls. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another major change was the removal of the differential gear from the rear drive system. While initially intended to improve turning stability, the differential gear was found to reduce control and torque during sharp turns. After eliminating it, we have found that the robot performed more synchronized wheel movement and improved consistency during turns. Overall, Version 3 focused on increasing the robot’s reliability and responsiveness, especially in narrow or tasks that involve obstacles. 
+
+<img src = "">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Version 4.1, we introduced a series of mechanical upgrades to enhance the robot’s stability, movement precision, and performance. One of the first changes was replacing the previous EV3 Small Wheels for steering with Technic™ White Wheels, which is highlighted in the first picture given above. This provided better surface grip and smoother turning, especially during sharp directional changes. Additionally, the large gears extended beyond the body of the robot sometimes led to contact with the parking walls. From the second image, we replaced them with medium-sized gears, making the robot more compact and easier to align within the parking area to address this issue. This change improved space management and reduced the risk of receiving penalties. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consequently, in Version 4.2, we replaced the OpenMV Cam H7 case made in LEGO® Technic™ parts with  3D-printed case, offering both security, accessibility, and   In addition, To support the weight distribution, particularly with more components mounted toward the front, we added a gyro steel ball beneath the rear of the robot. This allowed for more stable movement and prevented tilting during various movements.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Altogether, these refinements in Version 4 addressed several problems, which in return, brought the robot closer to its ideal form — reliable, consistent, and responsive — preparing it for a good performance in both the Open and Obstacle Challenges.
+
+<img src = "">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The changes we made in Version 5 were based on several issues we observed after our robot began performing inconsistently, particularly with walling, turning, and obstacle detection. In the first image provided, the custom 3D-printed camera case is shown, along with the additional beams placed beneath the Technic™ Distance Sensor. We redesigned the camera case because the previous version was poorly sized, which made it difficult for the camera to fit securely. In this version, the case was carefully measured to hold the OpenMV Cam H7 Plus properly, while also keeping the wires neatly in place. The design remained compact and lightweight to avoid affecting the robot’s balance. The added beams were meant to provide better support for the rotating motor mechanism that holds both the camera and the distance sensor.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The second image shows the EV3 Steel Ball, which we added to the rear of the robot to improve weight distribution. This small adjustment helped enhance the robot’s stability and movement, especially when turning or making sharp maneuvers. As a result, the robot's rear traction became more consistent and precise.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the third image, we extended the front gears slightly forward. Previously, the distance sensor was placed ahead of the front gears, which made it hit the wall before the gears could provide protection. This often caused inaccurate walling movements and disrupted the robot’s path. By repositioning the gears, the robot is now better protected from direct contact, allowing the sensor to function more effectively and improving the overall walling performance.
+
+<img src = "">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Technic™ Color Sensor that is placed in the previous versions plays a key role in the self-driving robot’s ability to recognize colors and respond based on the corresponding movement that it should perform. It was utilized to primarily detect colored lines, such as the orange and blue colored markers, which are essential for the robot to be able to determine its driving direction: if the color sensor detected an orange line, then the driving direction is clockwise, otherwise, if it is a blue line, the robot will move in a counterclockwise direction. However, with limited connection for integrating components in the hub, we are faced with two options: first, keeping the Color Sensor mounted at the bottom part for efficient and accurate checking of colored lines in the Open Challenge and second, replacing the Technic™ Color Sensor with another Technic™ Distance Sensor that will be placed at the rear part, facing the path behind the robot to keep track of the proximity of the walls that is beyond the robot’s front vision. After a thoughtful comparison of the two components and their purpose, we decided to integrate a second Technic™ Distance Sensor at the back as shown in Version 6. Our reason is that it has more purpose than the Color Sensor, since it can be programmed for both determining the driving direction in the Open Challenge and performing a safe alignment for parallel parking in the Obstacle Challenge. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, as highlighted in Version 6, we placed a steel ball at the front part of the robot to add more weight to the front section. We made this adjustment to improve the robot’s overall weight balance and distribution, especially after previous modifications from the former versions had made the rear side heavier. By redistributing or adding some weight to the front, the robot achieved better stability and traction, particularly during sharp turns and sudden stops.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lastly, Version 6 introduced the use of different driving wheels for the rear-wheel drive (RWD) mechanism, specifically the LEGO® Wheel with Motorcycle Tire.  This modification was made to improve the robot’s driving performance, both in straight and turning paths in the Open and Obstacle Challenge. The updated wheels provided better speed, traction, and handling, which contributed to more reliable and consistent movements, further achieving the progress that we need for a greater overall performance.  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
