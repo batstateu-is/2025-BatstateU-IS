@@ -100,7 +100,7 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 |----------------------------| --- |
 | ![Airvin](img-url)         | Airvin is stepping into his first journey at Philippine Robot Olympiad this year. At 15 years old, this incoming Grade 10 student has shown a remarkable interest in robotics and programming. His enthusiasm for solving problems and thinking critically allow him to develop and troubleshoot codes effectively, bringing the robot’s function to life. |
 
-| <center> **Cshenizylle Nicole M. Ligayada** </center> | <center>About</center>|
+| <center> **Cshenizylle Nicole M. Ligayada** </center> |  |
 |------------------------------------| --- |
 | ![Cshenizylle](img-url) | Cshenizylle is a 16-year-old incoming Grade 11 student at Batangas State University - The National Engineering University - Integrated School who is also participating in the Philippine Robot Olympiad for the first time. With a strong interest in research and writing, she takes on the role of documenting the team’s engineering journey. She looks forward to gaining new experiences and growing alongside her teammates. |
 
