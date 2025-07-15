@@ -123,11 +123,9 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 | <center> Main Components </center>      |
 | --------------------------------------- |
-| <img src="./docu-photos/Table 2.0.png"> |
-| --------------------------------------- |
-| <img src="./docu-photos/Table 2.1.png"> |
-| --------------------------------------- |
-| <img src="./docu-photos/Table 2.2.png"> |
+| <center> <img src="./docu-photos/Table 2.0.png">  </center> |
+| <center> <img src="./docu-photos/Table 2.1.png">  </center> |
+| <center> <img src="./docu-photos/Table 2.2.png">  </center> |
 <br>
 
 ---
