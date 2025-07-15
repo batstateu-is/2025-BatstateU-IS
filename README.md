@@ -1,20 +1,86 @@
 ***
+
 # Batangas State University - Integrated School
-[![](https://img.shields.io/badge/FE-Rulebook-2e52af)](https://wro-association.org/wp-content/uploads/WRO-2024-Future-Engineers-Self-Driving-Cars-General-Rules.pdf)
+[![](https://img.shields.io/badge/FE-Rulebook-2e52af)](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf)
 [![](https://img.shields.io/badge/YouTube-OPEN_CHALLENGE-df3e3e?logo=youtube)]()
 [![](https://img.shields.io/badge/YouTube-OBSTACLE_CHALLENGE-df3e3e?logo=youtube)]()
 
-<!--  -->
-*intro text, blah blah blah*
+---
+
+## 🧭 Abstract
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+This repository contains the comprehensive development of a **self-driving robot** engineered by the 
+**Batangas State University - Integrated School** team for the [**2025 Philippine Robot Olympiad**](https://felta.ph/pro/), 
+under the **Future Engineers category**. Designed for **_autonomous navigation_**, 
+**_obstacle avoidance_**, and **_traffic sign detection_**, the robot integrates **LEGO® SPIKE™ Prime**
+electronics with a vision system powered by the [**OpenMV Cam H7 Plus**](https://openmv.io/products/openmv-cam-h7-plus). 
+Custom 3D-printed components were used to improve mechanical structure, secure sensors, and optimize internal space. Through iterative testing, the team enhanced performance with better wheels, steering geometry, and balanced weight. This project showcases practical engineering, strategic design, and reliable performance under dynamic conditions.
 ***
+
 <!-- Table of Contents -->
-## Table of Contents
+<details>
+<summary><strong><h2 style="display: inline-block">📑 Table of Contents (click to expand)</h2></strong></summary>
 
-* [Introduction](#introduction)
-* [Team Profile](#team-profile)
+- [Introduction](#introduction)  
+- [Team Profile](#team-profile)  
+- [Robot Specifications](#robot-specifications)  
+- [1. Mobility Management](#1-mobility-management)  
+  - [1.1. Motor Selection](#11-motor-selection)  
+  - [1.2. Steering and Driving Mechanism](#12-steering-and-driving-mechanism)  
+  - [1.3. Mechanical Design](#13-mechanical-design)  
+- [2. Power and Sense Management](#2-power-and-sense-management)  
+  - [2.1. Power Management](#21-power-management)  
+    - [2.1.1. Technic™ Prime Large Hub](#211-technic-prime-large-hub)  
+    - [2.1.2. Technic™ Large Hub Rechargeable Battery](#212-technic-large-hub-rechargeable-battery)  
+  - [2.2. Sense Management](#22-sense-management)  
+    - [2.2.1. Technic™ Distance Sensor](#221-technic-distance-sensor)  
+    - [2.2.2. Gyro Sensor](#222-gyro-sensor)  
+    - [2.2.3. OpenMV Cam H7 Plus](#223-openmv-cam-h7-plus)  
+- [3. Open Challenge Strategy](#3-open-challenge-strategy)  
+  - [3.1. Determining Drive Direction](#31-determining-drive-direction)  
+  - [3.2. Wall Detection and Avoidance](#32-wall-detection-and-avoidance)  
+- [4. Obstacle Challenge Strategy](#4-obstacle-challenge-strategy)  
+  - [4.1. Traffic Sign Detection](#41-traffic-sign-detection)  
+  - [4.2. Parallel Parking Strategy](#42-parallel-parking-strategy)  
+  - [4.3. Machine Learning Strategy](#43-machine-learning-strategy)  
+- [5. Problems Encountered](#5-problems-encountered)  
+  - [5.1. Continuous Detection to Single-Instance Detection](#51-continuous-detection-to-single-instance-detection)  
+  - [5.2. Frequent Disconnection of Camera Wiring](#52-frequent-disconnection-of-camera-wiring)  
+  - [5.3. Uneven and Unclean Field](#53-uneven-and-unclean-field)  
+  - [5.4. Constant Necessity of Cleaning the Wheels](#54-constant-necessity-of-cleaning-the-wheels)  
+- [6. 3D Printing Management](#6-3d-printing-management)  
+  - [6.1. 3D Modeling](#61-3d-modeling)  
+  - [6.2. Material Selection](#62-material-selection)  
+  - [6.3. 3D Printing Settings](#63-3d-printing-settings)  
+  - [6.4. Printing](#64-printing)  
+- [7. Engineering Factor](#7-engineering-factor)  
+  - [7.1. 3D-Printed Camera Case](#71-3d-printed-camera-case)  
+  - [7.2. Rotating Camera and Distance Sensor](#72-rotating-camera-and-distance-sensor)  
+  - [7.3. Side Free Wheels](#73-side-free-wheels)  
+- [8. Mechanical Improvements](#8-mechanical-improvements)  
+  - [8.1. Testing of Perfect Size for Parking](#81-testing-of-perfect-size-for-parking)  
+  - [8.2. Alter Differential Gear to Normal Driving](#82-alter-differential-gear-to-normal-driving)  
+  - [8.3. Integrate Gears Around the Robot](#83-integrate-gears-around-the-robot)  
+  - [8.4. Alter the Gears’ Size from Big to Medium](#84-alter-the-gears-size-from-big-to-medium)  
+  - [8.5. Reposition the SPIKE™ Hub and Balance Rear Weight](#85-reposition-the-spike-hub-and-balance-rear-weight)  
+  - [8.6. Testing of Perfect Wheels for Steering](#86-testing-of-perfect-wheels-for-steering)  
+  - [8.7. Use Different Wheels for Steering](#87-use-different-wheels-for-steering)  
+  - [8.8. Replace Color Sensor with Distance Sensor](#88-replace-color-sensor-with-distance-sensor)  
+  - [8.9. Replace Wheels for Driving](#89-replace-wheels-for-driving)  
+- [9. Construction Guide](#9-construction-guide)  
+  - [9.1. Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
+  - [9.2. Guide for Programming the Robot](#92-guide-for-programming-the-robot)  
+    - [9.2.1. Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
+    - [9.2.2. Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)  
+  - [9.3. Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
+- [10. Recommendations and Future Work](#10-recommendations-and-future-work)  
+  - [10.1. Recommendations for Mobility Management](#101-recommendations-for-mobility-management)
+
+</details>
 
 ***
-## Introduction
+## 📖 Introduction
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Engineering is the heart of innovation that gives life to initiatives. It bridges science, technology, and creativity to provide solutions for real-world problems. In the field of robotics, engineering allows everyone to think and design beyond the current possibilities, highlighting that a future with numerous solutions can be made. Thus, through this, we were able to challenge ourselves to integrate various engineering concepts in autonomous navigation. As a team of student innovators and future engineers, we embraced this opportunity to create a self-driving robot that exemplifies the spirit of modern engineering. 
 
@@ -24,30 +90,25 @@
 
 ***
 
-## Team Profile
+## 👥 Team Profile
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Batangas State University - Integrated School is a group of passionate and curious young engineers driven by a shared goal: to innovate through robotics. Each member believes that learning through doing, as well as failing, has shaped us into better innovators, thinkers, and collaborators. Together, we have combined our skills and passion for robotics, engineering, and programming to create our own innovation of a self-driving robot for the Future Engineers category. 
+| **John Angelo M. Bautista** | |
+| --------------------------- | ------ |
+| ![Angelo](img-url)          | Angelo is an incoming Grade 12 student at Batangas State University - The National Engineering University - Integrated School and is currently 17 years old. This year marks his third time participating in the Philippine Robot Olympiad (PRO) and his second time in the Future Engineers category. Drawing from his previous experiences, he ensures that the robot is built with consideration to its efficiency and functionality, making him a key pillar of the team. |
 
-### **John Angelo M. Bautista**
+| **Airvin James L. Medina** |  |
+|----------------------------| --- |
+| ![Airvin](img-url)         | Airvin is stepping into his first journey at Philippine Robot Olympiad this year. At 15 years old, this incoming Grade 10 student has shown a remarkable interest in robotics and programming. His enthusiasm for solving problems and thinking critically allow him to develop and troubleshoot codes effectively, bringing the robot’s function to life. |
 
-<center><img url></center>
+| <center> **Cshenizylle Nicole M. Ligayada** </center> | <center>About</center>|
+|------------------------------------| --- |
+| ![Cshenizylle](img-url) | Cshenizylle is a 16-year-old incoming Grade 11 student at Batangas State University - The National Engineering University - Integrated School who is also participating in the Philippine Robot Olympiad for the first time. With a strong interest in research and writing, she takes on the role of documenting the team’s engineering journey. She looks forward to gaining new experiences and growing alongside her teammates. |
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Angelo is an incoming Grade 12 student at Batangas State University - The National Engineering University - Integrated School and is currently 17 years old. This year marks his third time participating in the Philippine Robot Olympiad (PRO) and his second time in the Future Engineers category. Drawing from his previous experiences, he ensures that the robot is built with consideration to its efficiency and functionality, making him a key pillar of the team.
-
-### **Airvin James L. Medina
-
-<center><img url></center>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Airvin is stepping into his first journey at Philippine Robot Olympiad this year. At 15 years old, this incoming Grade 10 student at Batangas State University - The National Engineering University - Integrated School has shown a remarkable interest in robotics and programming. His enthusiasm for solving problems and thinking critically allow him to develop and troubleshoot codes effectively, bringing the robot’s function to life.
-
-### **Cshenizylle Nicole M. Ligayada
-
-<center><img url></center>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cshenizylle is a 16-year-old incoming Grade 11 student at Batangas State University - The National Engineering University - Integrated School who is also participating in the Philippine Robot Olympiad for the first time. With a strong interest in research and writing, she takes on the role of documenting the team’s engineering journey. As she enters this new environment, she looks forward to gaining new experiences and growing alongside her teammates. 
-
-The following pictures feature the members of Batangas State University - Integrated School (BatStateU-IS) participating in the Future Engineers category along with their robot. 
+> The following pictures feature the members of Batangas State University - Integrated School (BatStateU-IS) participating in the Future Engineers category along with their robot. 
 
 <img src = "">
+
+---
 
 ## Robot Specifications
 
@@ -62,12 +123,14 @@ The following pictures feature the members of Batangas State University - Integr
 
 <img src = "">
 
+---
+
 # 1. Mobility Management
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section will highlight the important aspects of the hardware system that constitutes the mobility and movement specifications of the self-driving robot that we have developed. This includes the reasons behind the selection of the drive system, steering mechanism, wheels, motor, and their respective placements, which all play a vital role in ensuring our robot moves smoothly, accurately, and reliably throughout the challenges. 
 
 
-### 1.1. Motor Selection
+## 1.1. Motor Selection
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the most important things that we have considered to enhance the maneuverability of the self-driving robot is to properly select motors that meet the requirements needed for the Open Challenge and Obstacle Challenge. Within the LEGO® Education SPIKE™ Prime Set, we had two primary motor options to choose from: the Medium Angular Motor and the Large Angular Motor. To determine the most suitable motor, we evaluated key specifications such as speed (RPM), torque (rotational force), connectivity, and the intended application in our design. 
 
@@ -79,7 +142,7 @@ The following pictures feature the members of Batangas State University - Integr
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overall, it provides higher torque which is essential for maintaining a consistent speed while carrying the weight of the hub, sensors, camera, and LEGO and 3D-printed components. This motor also offers smoother acceleration and deceleration, and more responsive driving system, helping the robot to maintain its stability when turning. Thus, we have utilized three Technic™ Large Angular Motor in our self-driving robot, with the first one being connected to the steering wheel, second for the drive system, and the third motor for the rotating camera and distance sensor. 
 
-### 1.2. Steering and Driving Mechanism
+## 1.2. Steering and Driving Mechanism
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After carefully evaluating several options, our team decided to use a rear-wheel drive (RWD) system combined with a parallel steering mechanism. This combination closely resembles the movement of a real car, which can provide consistent and reliable results. 
 
@@ -91,7 +154,7 @@ The following pictures feature the members of Batangas State University - Integr
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By combining RWD and parallel steering, we achieved a movement system that was both stable and precise. The rear wheels provided consistent driving force, while the front wheels helped for smooth turning without affecting the robot's balance. This setup made it easier for our robot to navigate around tight corners and spaces, maintain alignment, and avoid obstacles effectively.
 
-### 1.3. Mechanical Design
+## 1.3. Mechanical Design
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The structure of our self-driving robot is made mostly out of LEGO® Technic™ elements, with a combination of 3D-printed materials. Drawing from last year’s experience — where the robot is constructed using only LEGO® Technic™ materials — we have learned that it is essential to integrate engineering factors, with creativity and originality in mind. Therefore, for this year’s competition, our team has developed various 3D-printed components that made our self-driving robot unique and innovative. For instance, from a camera case made out of LEGO, we have designed a 3D-printed case that incorporated a slide-lock mechanism, which offers something new, but still efficient, functional, and reliable for our team’s robot. Further explanation about this case is discussed at Chapter 5: Engineering Factor, 5.1. 3D-Printed Camera Case. 
 
@@ -416,7 +479,11 @@ You may access the assembly video of our self-driving robot by scanning the QR c
 
 **_Step 1. Install OpenMV IDE._** *Begin by installing the OpenMV IDE, the official development environment for the OpenMV Cam H7 Plus. This will be used for writing, uploading, and testing vision-based programs directly on the camera.*
 
+
 **_Step 2. Prepare the Required Libraries._** *Ensure that any external libraries needed for the communication of the hub and camera are added to your environment. The libraries include __*
+
+> [!TIP]
+> lorem
 
 **_Step 3. Connect the Camera to the Computer._** *Use a standard USB cable to connect the OpenMV camera. The LED indicators on the camera will blink green and flash white when successfully connected. In the IDE, click the “Connect” button (or press Ctrl+E) to connect.*
 
