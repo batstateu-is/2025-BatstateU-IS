@@ -121,13 +121,14 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the team’s selection of materials and electronic components is intended to create a strong yet lightweight robot platform, designed to deliver reliable and consistent performance. The list of the main components and its corresponding description presented in the table below emphasize these critical design choices and technical details that enhance the robot’s overall functionality.
 
-| Main Components |
-| --- |
-| <img src="./docu_photos/Table 2.0.png"> |
-| --- |
-| <img src="./docu_photos/Table 2.1.png"> |
-| --- |
-| <img src="./docu_photos/Table 2.2.png"> |
+| <center> Main Components </center>      |
+| --------------------------------------- |
+| <img src="./docu-photos/Table 2.0.png"> |
+| --------------------------------------- |
+| <img src="./docu-photos/Table 2.1.png"> |
+| --------------------------------------- |
+| <img src="./docu-photos/Table 2.2.png"> |
+<br>
 
 ---
 
