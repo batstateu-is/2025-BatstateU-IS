@@ -381,7 +381,7 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once arrived on a certain position away from the wall, the robot executes a scanning sequence — rotating the sensor motor to the left, recording the measured distance, then repeating the process to the right. These two values are compared to determine which direction offers more open space. If the left side has more distance, meaning it's farther to a wall, the robot infers that this side is clearer and sets its course counterclockwise. Conversely, if the right distance is greater or larger, the robot will move clockwise.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As explained in Section 2.2.1: Technic™ Distance Sensor under the Sense Management section, this distance sensor setup expands the robot’s field of view and enables it to assess space on both sides before beginning full movement. This strategy allows the robot to adapt to varying starting positions and ensures accurate detection into its navigation sequence.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As explained in [Section 2.2.1](#221-technic-distance-sensor): Technic™ Distance Sensor under the Sense Management section, this distance sensor setup expands the robot’s field of view and enables it to assess space on both sides before beginning full movement. This strategy allows the robot to adapt to varying starting positions and ensures accurate detection into its navigation sequence.
 
 ### 3.2. Wall Detection and Avoidance
 
@@ -681,29 +681,31 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 ## 9. Construction Guide
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section outlines a detailed instruction and guide on how we constructed and programmed our self-driving robot. This includes a specific set of steps to follow and a video presentation of how the robot is assembled. Above all, our team wishes that this will serve as an inspiration for everyone because the essence of engineering is not only about innovating and creating solutions, but rather sharing insights and ideas that will drive the future forward. Thus, Section 10: Recommendations and Future Work may help you think outside the box and create an advancement from what we have developed. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section outlines a detailed instruction and guide on how we constructed and programmed our self-driving robot. This includes a specific set of steps to follow and a video presentation of how the robot is assembled. Above all, our team wishes that this will serve as an inspiration for everyone because the essence of engineering is not only about innovating and creating solutions, but rather sharing insights and ideas that will drive the future forward. Thus, [Section 10: Recommendations and Future Work](#10-recommendations-and-future-work) may help you think outside the box and create an advancement from what we have developed. 
 
 ### 9.1. Guide for Constructing the Robot
 
-**_Step 1. Prepare the necessary kits and components._** The checklist below may serve as your guide for preparing the materials. *To check the price of each, you may refer to the Bills of Materials detailed at Section 10: Appendices.*
+### **_Step 1. Prepare the necessary kits and components._**
+The checklist below may serve as your guide for preparing the materials. *To check the price of each, you may refer to the Bills of Materials detailed at [Section 11: Appendices.](#11-appendices)*
 
 
 **Table 4. Checklist of Materials**
 
-| CHECKLIST OF MATERIALS |  |  |  |  |  |
-| ----- | ----- | ----- | ----- | :---: | :---- |
-| <center> **Material** </center> |  |  |  | <center> **Quantity** </center> | 
-| LEGO® Education SPIKE™ Prime Set |  |  |  | 1 pc |
-| LEGO® Education SPIKE™ Prime Expansion Set |  |  |  | 1 pc |
-| LEGO® Education SPIKE™ Essential Set |  |  |  | 1 pc |  |
-| LEGO® MINDSTORMS® Education EV3 Core Set |  |  |  | 1 pc |
-| LEGO® MINDSTORMS® Education EV3 Expansion Set |  |  |  | 1 pc |
-| LEGO® Wheel 75 x 17mm with Motorcycle Tire 94.2 x 20 |  |  |  | 2 pcs |
-| OpenMV Cam H7 Plus |  |  |  | 1 pc |
-| PLA Filament |  |  |  | 1 pc |
-| 3D Printer |  |  |  | 1 pc |
+| CHECKLIST OF MATERIALS |  |
+| ----- | :---- |
+|  **Material** | <center> **Quantity** </center> | 
+| LEGO® Education SPIKE™ Prime Set | <center> 1 pc |
+| LEGO® Education SPIKE™ Prime Expansion Set | <center>  1 pc |
+| LEGO® Education SPIKE™ Essential Set | <center>   1 pc |
+| LEGO® MINDSTORMS® Education EV3 Core Set  | <center>  1 pc |
+| LEGO® MINDSTORMS® Education EV3 Expansion Set  | <center>  1 pc |
+| LEGO® Wheel 75 x 17mm with Motorcycle Tire 94.2 x 20  | <center>  2 pcs |
+| OpenMV Cam H7 Plus  | <center>  1 pc |
+| PLA Filament  | <center>  1 pc |
+| 3D Printer  | <center>  1 pc |
 
-**_Step 2. Start Building the Robot._** *A specific and detailed list of parts and step-by-step instructions of constructing it can be found by scanning the QR code below.*
+### **_Step 2. Start Building the Robot._** 
+A specific and detailed list of parts and step-by-step instructions of constructing it can be found by scanning the ***QR code*** below.
 
 <center>
 
@@ -713,49 +715,70 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 </center>
 
-**_Step 3. Ensure that electrical connections are properly wired and connected._** *You may use these pictorial diagrams as reference for connecting the OpenMV Cam H7 Plus and the Spike™ Prime Sensors to the Technic™ Large Hub.*
+### **_Step 3. Ensure that electrical connections are properly wired and connected._** 
+You may use these pictorial diagrams as reference for connecting the OpenMV Cam H7 Plus and the Spike™ Prime Sensors to the Technic™ Large Hub.
 
-<img src = "">
+---
 
-You may access the assembly video of our self-driving robot by scanning the QR code provided below. 
+## 9.2. Guide for Constructing the Robot
 
-<img src = "">
+### 9.2.1. Programming the [OpenMV Cam H7 Plus](https://openmv.io/products/openmv-cam-h7-plus)
 
-You may access the assembly video of our self-driving robot by scanning the QR code provided below. 
-
-### 9.2. Guide for Constructing the Robot
-
-### 9.2.1. Programming the OpenMV Cam H7 Plus
-
-**_Step 1. Install OpenMV IDE._** *Begin by installing the OpenMV IDE, the official development environment for the OpenMV Cam H7 Plus. This will be used for writing, uploading, and testing vision-based programs directly on the camera.*
+### **_Step 1. Install OpenMV IDE._** 
+Begin by installing the [OpenMV IDE](https://openmv.io/pages/download), the official development environment for the OpenMV Cam H7 Plus. This will be used for writing, uploading, and testing vision-based programs directly on the camera.
 
 
-**_Step 2. Prepare the Required Libraries._** *Ensure that any external libraries needed for the communication of the hub and camera are added to your environment. The libraries include __*
+### **_Step 2. Prepare the Required Libraries._**
+Ensure that any external libraries needed for the communication of the hub and camera are added to your environment. The libraries include:
 
-> [!TIP]
-> lorem
+* [antonvh/PUPRemote](https://github.com/antonvh/PUPRemote)
 
-**_Step 3. Connect the Camera to the Computer._** *Use a standard USB cable to connect the OpenMV camera. The LED indicators on the camera will blink green and flash white when successfully connected. In the IDE, click the “Connect” button (or press Ctrl+E) to connect.*
+Copy `lpf2.py` and `pupremote.py` from the `src` folder into the camera
 
-**_Step 4. Load and Edit the Program._** *Before starting, it is recommended to read how we worked on the OpenMV Cam in Section 4: Obstacle Challenge Strategy to understand how its features and code work. The OpenMV IDE comes with a default sample program that you can edit. The team also provided a program named ___ , which shows how the camera detects obstacles during the challenge. Test the program live using the Run button or Ctrl+R.*
+### **_Step 3. Connect the Camera to the Computer._** 
+Use a *USB A to USB Micro* cable to connect the OpenMV camera. The LED indicators on the camera will blink green and flash white when successfully connected. In the IDE, click the “Connect” button (or press `Ctrl+E`) to connect.
 
-**_Step 5. Upload the Program to the Camera._** *Once the program performs as expected, go to Tools > Save open script to OpenMV Cam as main.py. This ensures the script runs automatically each time the camera is powered on during competition.*
+> [!NOTE]
+> The *USB A to USB Micro* cable ***must*** have **data transfer** capabilities or it will not work.
+
+### **_Step 4. Load and Edit the Program._** 
+Before starting, it is recommended to read how we worked on the OpenMV Cam in [Section 4: Obstacle Challenge Strategy](#4-obstacle-challenge-strategy) to understand how its features and code work. The OpenMV IDE comes with a default sample program that you can edit. The team also provided a program `main.py` found in `src/camera` , which shows how the camera detects obstacles during the challenge. Test the program live using the `Run` button or `Ctrl+R`.
+
+### **_Step 5. Upload the Program to the Camera._** 
+Once the program performs as expected, go to `Tools > Save` open script to OpenMV Cam as `main.py`. This ensures the script runs automatically each time the camera is powered on during competition.
+
+---
 
 ### 9.2.2. Programming the SPIKE™ Prime Large Hub
 
-**_Step 1. Prepare the Programming Environment._** *Open the Pybricks Code Editor (available at https://code.pybricks.com), which is used to write and compile programs for the SPIKE™ Prime Hub.*
+### **_Step 1. Install Pybricks Firmware on  SPIKE™ Prime Large Hub._**
+Before programming the hub, install the Pybricks firmware using the instructions provided on the official Pybricks website. You may open the link below to access the complete instruction. This firmware allows for MicroPython programming directly on the SPIKE™ Large Hub. You may open this link for the complete instruction. https://pybricks.com/learn/getting-started/install-pybricks/
 
-**_Step 2. Install Pybricks Firmware on  SPIKE™ Prime Large Hub._** *Before programming the hub, install the Pybricks firmware using the instructions provided on the official Pybricks website. You may open the link below to access the complete instruction. This firmware allows for MicroPython programming directly on the SPIKE™ Large Hub. You may open this link for the complete instruction. https://pybricks.com/learn/getting-started/install-pybricks/*
+> [!IMPORTANT]  
+> When installing the Pybricks firmware onto your SPIKE™ Prime Hub, It is important to keep in mind that after this process is done, you will not be able to use the original SPIKE™ App to be able to run code on that hub while Pybricks is installed!
+>
+> If you wish to revert your SPIKE™ Large Hub back to the original firmware, Just navigate to the online [Pybricks IDE](https://code.pybricks.com) and click the gear icon, next press the option labeled `Restore official LEGO® Firmware` then just follow the instructions from there.
 
-**_Step 3. Learn the Basics._** *To get started, it is recommended to read the Pybricks Documentation ( available at https://docs.pybricks.com/en/stable/). You can also follow the guide Creating and running Pybricks programs from the Pybricks website to understand how to control motors and sensors using MicroPython.*
+### **_Step 2. Prepare the Programming Environment._** 
+Open the [Pybricks Code Editor](https://code.pybricks.com), which is used to write and compile programs for the Pybricks firmware the we have installed on the SPIKE™ Prime Hub.
 
-**_Step 4. Use our Team’s Code for Reference._** *The team has provided sample programs under the folder __, which can serve as a reference for obstacle handling, walling, and parking logic.*
 
-**_Step 5. Connect the Hub via Bluetooth._** *Turn on your SPIKE™ Hub and open the Pybricks Editor. Click the Bluetooth icon at the top-right, select the correct hub from the list, and then click Pair to connect.*
+
+### **_Step 3. Learn the Basics._**
+To get started, it is recommended to read the [Pybricks Documentation](https://docs.pybricks.com/en/stable/). You can also follow the guide Creating and running Pybricks programs from the Pybricks website to understand how to control motors and sensors using MicroPython.*
+
+### **_Step 4. Use our Team’s Code for Reference._**
+The team has provided sample programs under the folder __, which can serve as a reference for obstacle handling, walling, and parking logic.
+
+### **_Step 5. Connect the Hub via Bluetooth._**
+Turn on your SPIKE™ Hub and open the Pybricks Editor. Click the Bluetooth icon at the top-right, select the correct hub from the list, and then click Pair to connect.*
 
 <img src = "">
 
-**_Step 6. Run and Upload the Program._** *To run your script on the hub, click the “Run this program” button or press F5. To stop the program, click “Stop everything” or press F6. Pybricks automatically saves the program to the hub once it is run, so there's no need for a separate upload step.*
+### **_Step 6. Run and Upload the Program._** 
+To run your script on the hub, click the “Run this program” button or press F5. To stop the program, click “Stop everything” or press F6. Pybricks automatically saves the program to the hub once it is run, so there's no need for a separate upload step.
+
+---
 
 ### 9.3. Final Reminders and Optimization Tips
 
@@ -789,7 +812,7 @@ You may access the assembly video of our self-driving robot by scanning the QR c
 
 ## 10. Recommendations and Future Work
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A robot may be able to perform and execute its tasks successfully; however, there is always room for improvement. To enhance a robot’s performance, functionality, and reliability, it is important to first identify the limitations that restrict its full potential. Some of the limitations involve constraints in mobility and sense management, few environmental challenges that were discussed in Section 5: Problems Encountered, or time restrictions during development.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A robot may be able to perform and execute its tasks successfully; however, there is always room for improvement. To enhance a robot’s performance, functionality, and reliability, it is important to first identify the limitations that restrict its full potential. Some of the limitations involve constraints in mobility and sense management, few environmental challenges that were discussed in [Section 5: Problems Encountered](#5-problems-encountered), or time restrictions during development.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In our case, while the robot demonstrated excellent performance in both the Open and Obstacle Challenge rounds, we identified specific areas where performance could be further optimized. These include improving sensor accuracy, refining the strategies, enhancing component selection, and reducing response time under changing field conditions. This section will discuss the recommendations and future work that will not only benefit the current version but also set a stronger foundation for future self-driving robot development.
 
@@ -848,7 +871,7 @@ You may access the assembly video of our self-driving robot by scanning the QR c
 
 ### 11.3. Bills of Materials
 
-| BILLS OF MATERIALS |  |  |
+| BILLS OF MATERIALS | | |
 | ----- | ----- | ----- |
 | **Material**  | **Quantity** | **Price** | 
 | LEGO® Education SPIKE™ Prime Set | 1 pc | Php. 65,000.00 | 
