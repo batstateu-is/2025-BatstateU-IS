@@ -298,7 +298,7 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 | ![Figure 8](./docu-photos/image74.png) |
 |:---------------------:|
-| Figure 8 <br> SPIKE™ Prime Hub Rechargeable Battery
+| Figure 8. <br> SPIKE™ Prime Hub Rechargeable Battery
 
 </center>
 
@@ -314,7 +314,7 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 | ![Figure 9](./docu-photos/image12.png) |
 |:---------------------:|
-| Figure 9 <br> Robot’s Sensors and Vision System <br> Isometric and Rear View
+| Figure 9. <br> Robot’s Sensors and Vision System <br> Isometric and Rear View
 
 
 </center>
