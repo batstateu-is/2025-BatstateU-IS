@@ -1,13 +1,19 @@
 ***
 
 # ![Batangas State University - Integrated School](./docu-photos/banner.png)
+
+<center>
+
 [![](https://img.shields.io/badge/FE-Rulebook-2e52af)](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf)
 [![](https://img.shields.io/badge/YouTube-OPEN_CHALLENGE-df3e3e?logo=youtube)]()
 [![](https://img.shields.io/badge/YouTube-OBSTACLE_CHALLENGE-df3e3e?logo=youtube)]()
 
+</center>
+
 ---
 
-[]
+> [!NOTE]
+> The team highly recommends the readers of this repository to use light default mode when viewing this engineering documentation.
 
 ## 🧭 Abstract
 
@@ -720,7 +726,19 @@ You may use these pictorial diagrams as reference for connecting the ***OpenMV C
 
 ---
 
-## 9.2. Guide for Constructing the Robot
+## 9.2. Guide for Programming the Robot
+## 🛠️ Software and Tools Used
+
+| Tool / Program                              | Purpose                                          |
+|---------------------------------------------|--------------------------------------------------|
+| [Pybricks](https://pybricks.com/)           | Custom MicroPython firmware for SPIKE™ Prime     |
+| [Pybricks App](https://code.pybricks.com/)           | Used to program and upload code to the Hub wirelessly via browser  |
+| [OpenMV IDE](https://openmv.io/pages/download) | Programming and debugging OpenMV Cam             |
+| [Blender](https://www.blender.org/)         | 3D modeling of mechanical components             |
+| [FlashPrint](https://www.flashforge.com/download-center) | Slicing and exporting 3D print models           |
+| [Git](https://git-scm.com/) / [GitHub](https://github.com/) | Version control and collaboration              |
+| [Markdown](https://www.markdownguide.org/)  | Formatting this documentation |
+
 
 ### 9.2.1. Programming the [OpenMV Cam H7 Plus](https://openmv.io/products/openmv-cam-h7-plus)
 
@@ -762,13 +780,15 @@ Before programming the hub, install the Pybricks firmware using the instructions
 ### **_Step 2. Prepare the Programming Environment._** 
 Open the [Pybricks Code Editor](https://code.pybricks.com), which is used to write and compile programs for the Pybricks firmware the we have installed on the SPIKE™ Prime Hub.
 
-
-
 ### **_Step 3. Learn the Basics._**
 To get started, it is recommended to read the [Pybricks Documentation](https://docs.pybricks.com/en/stable/). You can also follow the guide Creating and running Pybricks programs from the Pybricks website to understand how to control motors and sensors using MicroPython.*
 
 ### **_Step 4. Use our Team’s Code for Reference._**
-The team has provided sample programs under the folder `src/hub`, which can serve as a reference for obstacle handling, walling, and parking logic.
+The team has provided sample programs under the folder `src/hub`, which can serve as a reference for obstacle handling, walling, and parking logic. 
+
+We also used the library [PUPRemote](https://github.com/antonvh/PUPRemote) by antonvh for the hub to be able to recieve the data from the camera.
+
+To use it with our code, create new files named `lpf2.py` and `pupremote.py` and copy the contents of the same files from the `src` folder, or alternatively, download said files and just import them in the IDE.
 
 ### **_Step 5. Connect the Hub via Bluetooth._**
 Turn on your SPIKE™ Hub and open the Pybricks Editor. Click the Bluetooth icon at the top-right, select the correct hub from the list, and then click Pair to connect.*
