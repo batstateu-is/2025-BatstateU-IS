@@ -1,11 +1,13 @@
 ***
 
-# Batangas State University - Integrated School
+# ![Batangas State University - Integrated School](./docu-photos/banner.png)
 [![](https://img.shields.io/badge/FE-Rulebook-2e52af)](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf)
 [![](https://img.shields.io/badge/YouTube-OPEN_CHALLENGE-df3e3e?logo=youtube)]()
 [![](https://img.shields.io/badge/YouTube-OBSTACLE_CHALLENGE-df3e3e?logo=youtube)]()
 
 ---
+
+[]
 
 ## 🧭 Abstract
 
@@ -705,13 +707,11 @@ The checklist below may serve as your guide for preparing the materials. *To che
 | 3D Printer  | <center>  1 pc |
 
 ### **_Step 2. Start Building the Robot._** 
-A specific and detailed list of parts and step-by-step instructions of constructing it can be found by scanning the ***QR code*** below.
+A specific and detailed list of parts and step-by-step instructions of constructing it can be found by scanning the ***QR code*** below or by clicking this [link](https://drive.google.com/file/d/1no6-Ziz5b2zDsR3MFzkWGNEyoSrwSkGQ/view).
 
 <center>
 
-| ![Figure .](./docu-photos/image39.png) |
-|:---------------------:|
-| Scan Me! |
+![Figure .](./docu-photos/image39.png)
 
 </center>
 
@@ -773,7 +773,7 @@ The team has provided sample programs under the folder `src/hub`, which can serv
 ### **_Step 5. Connect the Hub via Bluetooth._**
 Turn on your SPIKE™ Hub and open the Pybricks Editor. Click the Bluetooth icon at the top-right, select the correct hub from the list, and then click Pair to connect.*
 
-<img src = "">
+![Pybricks Bluetooth](./docu-photos/pyble.png)
 
 ### **_Step 6. Run and Upload the Program._** 
 To run your script on the hub, click the “Run this program” button or press `F5`. To stop the program, click “Stop everything” or press `F6`. Pybricks automatically saves the program to the hub once it is run, so there's no need for a separate upload step.
