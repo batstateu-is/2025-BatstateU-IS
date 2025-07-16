@@ -92,6 +92,9 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 ## 👥 Team Profile
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Batangas State University - Integrated School is a group of passionate and curious young engineers driven by a shared goal: to innovate through robotics. Each member believes that learning through doing, as well as failing, has shaped us into better innovators, thinkers, and collaborators. Together, we have combined our skills and passion for robotics, engineering, and programming to create our own innovation of a self-driving robot for the Future Engineers category. 
+
+<center>
+
 | **John Angelo M. Bautista** | |
 | --------------------------- | ------ |
 | ![Angelo](img-url)          | Angelo is an incoming Grade 12 student at Batangas State University - The National Engineering University - Integrated School and is currently 17 years old. This year marks his third time participating in the Philippine Robot Olympiad (PRO) and his second time in the Future Engineers category. Drawing from his previous experiences, he ensures that the robot is built with consideration to its efficiency and functionality, making him a key pillar of the team. |
@@ -104,9 +107,11 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 |------------------------------------| --- |
 | ![Cshenizylle](img-url) | Cshenizylle is a 16-year-old incoming Grade 11 student at Batangas State University - The National Engineering University - Integrated School who is also participating in the Philippine Robot Olympiad for the first time. With a strong interest in research and writing, she takes on the role of documenting the team’s engineering journey. She looks forward to gaining new experiences and growing alongside her teammates. |
 
+</center>
+
 > The following pictures feature the members of Batangas State University - Integrated School (BatStateU-IS) participating in the Future Engineers category along with their robot. 
 
-<img src = "">
+![img](img_url)
 
 ---
 
@@ -116,17 +121,28 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following specifications provide a detailed overview of the key physical and mechanical characteristics of our team’s self-driving robot. We designed this while giving importance to precision, agility, and durability, so the features of the robot have been carefully optimized to balance speed and stability during runs. 
 
-<img src = "">
-<img src = "">
+![img](img_url)
+![img](img_url)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the team’s selection of materials and electronic components is intended to create a strong yet lightweight robot platform, designed to deliver reliable and consistent performance. The list of the main components and its corresponding description presented in the table below emphasize these critical design choices and technical details that enhance the robot’s overall functionality.
 
-| <center> Main Components </center>      |
-| --------------------------------------- |
-| <center> <img src="./docu-photos/Table 2.0.png">  </center> |
-| <center> <img src="./docu-photos/Table 2.1.png">  </center> |
-| <center> <img src="./docu-photos/Table 2.2.png">  </center> |
-<br>
+<center>
+
+**Table 2\. Main Components**
+
+| <center> Components </center> | <center>Quantity</center> | <center>Description</center> |
+| :---: | :---: | ----- |
+| ![alt](./docu-photos/image53.png) | 1 | The **Technic™ Large Hub** was chosen as the main controller because it can connect to multiple sensors and motors. Its support for Python-based programming made it easier to create accurate and flexible control systems for navigation and obstacle avoidance. |
+| ![alt](./docu-photos/image66.png) | 2 | The **Technic™ Distance Sensors** were used to measure how far the robot is from nearby walls. It helped the robot avoid collisions by detecting obstacles in front and behind the path of the robot and triggering turning or straight movements based on the distance detected. |
+| ![alt](./docu-photos/image86.png)  | 3 | The **Technic™ Large Angular Motor** is used to turn the steering wheel and drive the robot. Additionally, it controls the rotation of the distance sensor and camera, enabling the robot to scan its environment from different angles for obstacle detection and navigation. |
+| ![alt](./docu-photos/image16.png)  | 2 | The **LEGO Wheel 75 mm x 17mm with Motorcycle Tire 94.2 mm x 20 mm** is connected to one of the Large Angular Motors, providing stability for the robot. This setup ensures smooth and controlled movement as the motor powers the wheel to drive the robot forward and backward. |
+| ![alt](./docu-photos/image81.png) | 2 | The **Technic™ White Wheel 43 mm  x 14 mm** is used as the steering wheel for the robot. It is connected to the Large Angular Motor, allowing the robot to make precise and smooth turns for better control during movement. |
+| ![alt](./docu-photos/image11.png) | Multiple pieces were used | **LEGO® Technic™ Elements** such as beams, axles, gears, and multiple connectors were utilized to construct the body of the robot. Their precision, modularity, and durability makes them ideal for creating mechanically reliable structures while allowing easy integration with sensors and other electronic components.  |
+| ![alt](./docu-photos/image50.png)| 1 | The **OpenMV Cam H7 Plus** was used as the robot’s vision system to detect traffic signs and understand its surroundings. It processed images in real time and sent data to the main controller, helping the robot decide when to turn or react to visual cues during the Obstacle Challenge. |
+| ![alt](./docu-photos/image44.png) | 4 | **Jumper wires** were used to connect the OpenMV Cam H7 to the main controller, the SPIKE™ Prime Hub. They ensured that the data processed by the camera was transmitted to the Python-based program running on the hub.  |
+| ![alt](./docu-photos/image24.png) | 1 | **PLA 3D Printing Filament** was utilized to create the 3D-printed components of the robot such as the case for the OpenMV Cam H7 Plus. White filaments are said to produce designs with great strength. PLA filament is also popular in 3D printing because of its ease of use, biodegradability, and versatility.  |
+
+</center>
 
 ---
 
@@ -139,9 +155,25 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the most important things that we have considered to enhance the maneuverability of the self-driving robot is to properly select motors that meet the requirements needed for the Open Challenge and Obstacle Challenge. Within the LEGO® Education SPIKE™ Prime Set, we had two primary motor options to choose from: the Medium Angular Motor and the Large Angular Motor. To determine the most suitable motor, we evaluated key specifications such as speed (RPM), torque (rotational force), connectivity, and the intended application in our design. 
 
-<img src = "">
+<center>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Table 3 shows the difference between the large motor and medium motor in terms of different specifications, with all performance data being based on a 7.2V power supply. The Technic™ Medium Motor, while more small and lightweight, offers faster rotation speeds but lower torque. This makes it ideal for lightweight mechanisms, low-profile design with limited space or tasks requiring quick response but low-resistance motion. In addition to wheels, it is ideal for driving attachments like arms, lifts, or actuators on robots. However, for driving the entire robot, where it must carry multiple components, handle tight turns, and maintain stability over long distances, more torque and control are required. This makes the Large Motor more appropriate for its strength and ability to handle resistance. 
+**Table 3\. Comparison of Motors**
+
+| Specifications  7.2V power supply | Technic™ Large  Angular Motor | Technic™ Medium  Angular Motor |
+| ----- | ----- | ----- |
+| Voltage Range | Min: 5V and Max: 9V | Min: 5V and Max: 9V |
+| Speed<sup>1</sup> (RPM) | 135 RPM to 175 RPM | 135 RPM to 185 RPM |
+| Torque<sup>2</sup> (Ncm) | 8 Ncm to 25 Ncm | 3.5 Ncm to 18 Ncm  |
+| Connectivity | Attachments on either side | Attachments to the front only |
+| Applications | High-power, high-torque applications | Lower-load, fast-response applications |
+
+<sup>1</sup> ***RPM*** = rotations per minute  
+<sup>2</sup> ***Ncm*** = newton centimeter&nbsp;&nbsp;&nbsp;
+
+</center>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Table 3 shows the difference between the large motor and medium motor in terms of different specifications, with all performance data being based on a ***7.2V power supply***. The Technic™ Medium Motor, while more small and lightweight, offers faster rotation speeds but lower torque. This makes it ideal for lightweight mechanisms, low-profile design with limited space or tasks requiring quick response but low-resistance motion. In addition to wheels, it is ideal for driving attachments like arms, lifts, or actuators on robots. However, for driving the entire robot, where it must carry multiple components, handle tight turns, and maintain stability over long distances, more torque and control are required. This makes the Large Motor more appropriate for its strength and ability to handle resistance. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After comparing both options, we decided to integrate the Technic™ Large Angular Motor for our robot’s driving and steering system. This features a built-in advanced Rotation Sensor that can report speed, angle changes, and absolute position within a range of -180° to +180°. It can also sense direct user input or manual rotation which allows responsive input during calibration or testing. While powered by a 7.2V system, the motor can achieve a torque of 25 Ncm at stall, and performs most efficiently at 8 Ncm with 135 RPM. Its speed with no load reaches up to 175 RPM. Its sensor offers a resolution of 360 counts per revolution, an accuracy that is less than or equal to ±3 degrees, and a fast update rate of 100 Hz for real-time feedback. In terms of design, the motor has a Technic build geometry and includes a 250 mm LEGO® Power Functions 2.0 (LPF2) cable and dual crosshole outputs, making it easy to integrate securely into complex builds. 
 
@@ -151,7 +183,17 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After carefully evaluating several options, our team decided to use a rear-wheel drive (RWD) system combined with a parallel steering mechanism. This combination closely resembles the movement of a real car, which can provide consistent and reliable results. 
 
-<img src = "">
+<center>
+
+| ![Figure 1](./docu-photos/robotSteeringIso.png) | ![Figure 2](./docu-photos/robotSteeringBottom.png) |
+|:---------------------:|:---------------------:|
+| Figure 1.1 Robot's Steering Mechanism <br> Isometric View | Figure 1.2 Robot's Steering Mechanism <br> Bottom View |
+
+| ![Figure 3](./docu-photos/robotDrivingIso.png) | ![Figure 4](./docu-photos/robotDrivingRear.png) |
+|:---------------------:|:---------------------:|
+| Figure 2.1 Robot's Driving Mechanism <br> Isometric View | Figure 2.2 Robot's Driving Mechanism <br> Rear View |
+
+</center>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the robot’s steering mechanism, one Technic™ Large Angular Motor is integrated at the front of the self-driving robot to steer the front wheels, where they turn in the same direction at the same angle. This method is referred to as parallel steering and is similar to how steering works in real cars. We chose this steering geometry over other options such as Differential Steering, where one wheel moves faster than the other in order to turn; Ackermann, in which the inner wheel turns at a greater angle than the outer wheel, as well as the counterpart of Ackermann, Anti-Ackermann. It offers simplicity compared to other options that are more complex to build and control. Furthermore, both the Open and Obstacle Challenge requires maneuverability; thus, the smaller turning radius offered by parallel steering is advantageous especially for tight spaces like parking. This steering geometry also solves our problem with an uneven and irregular field as it improves the stability and handling of movement and turns of the self-driving robot. 
 
