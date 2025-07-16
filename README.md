@@ -716,7 +716,7 @@ A specific and detailed list of parts and step-by-step instructions of construct
 </center>
 
 ### **_Step 3. Ensure that electrical connections are properly wired and connected._** 
-You may use these pictorial diagrams as reference for connecting the OpenMV Cam H7 Plus and the Spike™ Prime Sensors to the Technic™ Large Hub.
+You may use these pictorial diagrams as reference for connecting the ***OpenMV Cam H7 Plus*** and the ***Spike™ Prime Sensors*** to the ***Technic™ Large Hub.***
 
 ---
 
@@ -768,7 +768,7 @@ Open the [Pybricks Code Editor](https://code.pybricks.com), which is used to wri
 To get started, it is recommended to read the [Pybricks Documentation](https://docs.pybricks.com/en/stable/). You can also follow the guide Creating and running Pybricks programs from the Pybricks website to understand how to control motors and sensors using MicroPython.*
 
 ### **_Step 4. Use our Team’s Code for Reference._**
-The team has provided sample programs under the folder __, which can serve as a reference for obstacle handling, walling, and parking logic.
+The team has provided sample programs under the folder `src/hub`, which can serve as a reference for obstacle handling, walling, and parking logic.
 
 ### **_Step 5. Connect the Hub via Bluetooth._**
 Turn on your SPIKE™ Hub and open the Pybricks Editor. Click the Bluetooth icon at the top-right, select the correct hub from the list, and then click Pair to connect.*
@@ -776,7 +776,10 @@ Turn on your SPIKE™ Hub and open the Pybricks Editor. Click the Bluetooth icon
 <img src = "">
 
 ### **_Step 6. Run and Upload the Program._** 
-To run your script on the hub, click the “Run this program” button or press F5. To stop the program, click “Stop everything” or press F6. Pybricks automatically saves the program to the hub once it is run, so there's no need for a separate upload step.
+To run your script on the hub, click the “Run this program” button or press `F5`. To stop the program, click “Stop everything” or press `F6`. Pybricks automatically saves the program to the hub once it is run, so there's no need for a separate upload step.
+
+> [!Note]
+> We recommend to ***regularly backup*** your code in the event that your code dissappears or if you wish to revert your code to a previous version
 
 ---
 
