@@ -531,9 +531,9 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 <center>
 
-| ![Figure .](./docu-photos/image41-1.png) | ![Figure .](./docu-photos/image41.png) |
+| ![Figure .](./docu-photos/can-front.png) | ![Figure .](./docu-photos/cam-side.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure . <br> First Trial </center> | <center> Figure . <br> Second Trial </center> |
+| <center> Figure . <br> Robot's Rotating Mechanism <br> Front View </center> | <center> Figure . <br> Robot's Rotating Mechanism <br> Side View </center> |
 
 </center>
 
@@ -543,6 +543,14 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This design allows the robot to self-correct its path by using the gears as passive alignment guides. When slight contact with a wall occurs, the gears help redirect the robot without causing it to tilt, stop, or lose speed. This is especially valuable in narrow spaces or during tight turns, where precise positioning is essential. Additionally, by minimizing the risk of direct collision between the robot’s core components and the wall, the system becomes more robust and consistent—even when facing unexpected environmental shifts or alignment errors. This solution significantly contributes to the robot’s overall reliability and control during both Open and Obstacle Challenge rounds.
 
+<center>
+
+| ![Figure .](./docu-photos/image15.png) |
+|:---------------------:|
+| Figure . <br> Robot's Side Free Wheels <br> Front View|
+
+</center>
+
 ## 8. Mechanical Improvements
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throughout the development of our self-driving robot, we have considered various mechanical and technical aspects that will improve its functionality and accuracy in terms of movements, navigation, and such. Each component and configuration was carefully tested, altered, or replaced to improve the robot’s performance in tasks such as movement, turning, wall avoidance, and parking. These iterative improvements allowed us to enhance the robot’s reliability across both the Open Challenge and Obstacle Challenge rounds. Below are the major mechanical changes that we have implemented to reach the robot’s full potential. 
@@ -551,7 +559,7 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the most critical tasks in the Obstacle Challenge is the requirement for the robot to be able to perform parallel parking. The parking space has fixed dimensions depending on the size of the robot, and the robot must travel or park, without touching the surrounding boundary walls, avoiding contact that may cause the parking walls to move or fall. To address this, we conducted multiple trials using varying robot lengths and widths. Since the rule book prohibits on-the-spot changes or adjustments such as adding length to the robot, we have assessed different designs that are engineered to follow this rule, progressively adjusting the body to a size that would allow smooth entry into the parking lot without compromising balance or movement. Indicated below is the final and perfect size of robot that we have concluded with after numerous alterations. 
 
-<img src = "">
+<!-- <img src = ""> -->
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During the design process, we decided to increase the length of our robot to gain an advantage in the parking task in the Obstacle Challenge. According to the rules, the size of the parking space is calculated by multiplying the length of the robot by 1.5. This means that the longer the robot, the larger the parking space becomes. By extending the length, we were able to create a wider parking area, which made it easier for the robot to perform the parking maneuver. This strategic adjustment improved our parking consistency and reduced the risk of penalties or bumping onto the parking walls.
 
@@ -559,33 +567,57 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the early stages of development, we experimented with a differential gear to allow for smoother turns and flexibility in wheel movement. However, this setup led to reduced torque and difficulty in controlling speed during sharp turns. To improve stability and consistency, we switched to a normal driving system, which offered better synchronization between the wheels and allowed the robot to move with more consistency, especially on straight paths and when executing turns. This change produced a way for the robot to improve its stability, have better grip during turns, and perform smoother acceleration and deceleration. 
 
-<img src = "">
+<center>
+
+| ![Figure .](./docu-photos/image88.png) |
+|:---------------------:|
+| Figure . <br> Change Driving System |
+
+</center>
 
 ### 8.3. Integrate Gears Around the Robot
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At the beginning of the development process, we did not fully consider the possibility of the robot making contact with the inner walls, which could disrupt its performance during the Open Challenge round. As we conducted more test runs, we observed that the robot occasionally collided with the inner wall due to various reasons such as inconsistency with the movements, narrow spacing, and alignment issues. To improve safety and control, we decided to integrate additional gears around the robot. These gears were strategically placed to support smoother movements alongside the walls, allowing the robot to adjust its path gently without losing balance or stopping. This modification ensured that the robot could continue its run properly, even with unexpected contacts, by maintaining a consistent distance from the walls and reducing the risk of direct contact of the robot.
 
-<img src = "">
+<center>
+
+| ![Figure .](./docu-photos/image1.png) |
+|:---------------------:|
+| Figure . <br> Integrate Gears |
+
+</center>
 
 ### 8.4. Alter the Gears’ Size from Big to Medium 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apart from the challenges mentioned above, we also noticed during our development process that using big gears increased the risk of the robot touching the parking walls, especially during every approach to the parking area. Since the gears extended beyond the main body, they could cause the robot to make unintended contact. To fix this, we replaced the big gears with medium-sized ones, which made the robot more compact and safer to park. This adjustment helped the robot to manage its space consumption properly and fit better within the parking area, as well as reduced the chance of the team getting a penalty. 
 
-<img src = "">
+<center>
 
-### 8.5. Alter the Gears’ Size from Big to Medium 
+| ![Figure .](./docu-photos/image87.png) |
+|:---------------------:|
+| Figure . <br> Change Size of Gears |
+
+</center>
+
+### 8.5. Balance Weight Distribution of the Robot 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the previous design for the self-driving robot in the Future Engineers category, the SPIKE™ Prime Hub was positioned at the rear part of the robot. However, for our current design, this placement with uneven weight distribution caused noticeable instability during movement, particularly when making sharp turns. With the design making the rear part heavier, it also made the robot more prone to tilting and less responsive to directional changes, which could impact its performance in both the Open and Obstacle Challenge rounds. To address this issue, we relocated the hub to the center of the robot, allowing for a more balanced distribution of weight across all wheels. This central placement significantly improved the robot’s overall stability, turning accuracy, and movement consistency. Additionally, we wanted the hub to be both enclosed and easily accessible for charging, programming, connecting, and troubleshooting. By positioning it in the center, we ensured that the hub was safely integrated into the robot’s frame while still allowing quick and convenient access when necessary.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Moreover, as more components such as the camera, distance sensor, and supporting mechanisms were mounted toward the front part of the robot, the rear side became relatively lighter. This imbalance in weight distribution led to unwanted slipping, reduced traction, and inconsistent turning, especially during sharp maneuvers or high-speed movements. The lack of rear weight also made it more difficult for the robot to maintain stability while aligning for tasks like parking and walling. To resolve this issue, we added two EV3 Steel Balls to the rear section of the robot. These additional weights helped balance the overall mass, resulting in improved stability, smoother turning, and better grip on the surface. With the improved weight distribution, the robot was able to move more consistently and perform critical maneuvers with greater control and accuracy.
 
-<img src = "">
+
 
 ### 8.6. Testing of Perfect Wheels for Steering
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our team has encountered an issue with the inconsistency of the robot when it comes to maneuvering and performing the tasks, especially in the Obstacle Challenge. And one of the key aspects we have focused on is the front wheels or the wheels that we used for the self-driving robot’s steering system. During several practices and testing, we have noticed issues, including frequent slipping, unstable traction, and inconsistent turning behavior especially during sharp changes and transitions in direction. Thus, we tried to evaluate the performance of different wheels that are accessible for our utilization and analyzed which movement was the best, with less slipping, improved traction, and prevented drifts. We evaluated the following wheels based on their size, turning radius, and capability in steering. 
 
-<img src = "">
+<center>
+
+| ![Figure .](./docu-photos/image73.png) |
+|:---------------------:|
+| Figure . <br> Selection of Steering Wheels |
+
+</center>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After extensive testing and experimentation with various wheel types, we found that the EV3 Small Wheel (the third wheel shown in the image) and the Technic™ White Wheel (the second wheel shown in the image) delivered the best performance. These two options had the ideal size and height to complement the parallel steering mechanism of our self-driving robot. On the other hand, both smaller and larger wheels created balance issues — either lowering or raising the front part of the robot too much — which led to slipping, drifting, and overall, inconsistent movement.
 
@@ -595,13 +627,25 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During several practices and testings to make the movement consistent, our team decided to change the small wheels in front of the self-driving robot for more improved steering. Previously, we utilized the EV3 Small Wheel with thick tires and a diameter of 43.2 mm, but this setup led to several issues, including frequent slipping, unstable traction, and inconsistent turning behavior especially during sharp changes and transitions in direction. To fix this, we looked at a number of different wheel types and chose the Technic™ White Wheels, which have thinner tires and a diameter of 43 mm. These wheels are almost the same size as the old ones, but they slide less. This change significantly improved our robot’s steering movement, turning radius, and control. We also observed that the new wheels improved the robot’s speed in maneuvering the field, performed smoother cornering, and more consistent traversal both in the Open and Obstacle Challenge. 
 
-<img src = "">
+<center>
+
+| ![Figure .](./docu-photos/image56.png) |
+|:---------------------:|
+| Figure . <br> Change Steering Wheels |
+
+</center>
 
 ### 8.8. Replace Color Sensor with Distance Sensor
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As part of our mechanical improvements, we decided to replace the Color Sensor mounted on the bottom part of the robot with a second Distance Sensor, specifically to improve the parking ability of our self-driving robot in the Obstacle Challenge. This newly added Technic™ Distance Sensor was positioned at the rear part of the robot, enabling it to measure the distance between the robot and the back wall whenever executing a parallel parking maneuver. 
 
-<img src = "">
+<center>
+
+| ![Figure .](./docu-photos/image43.png) |
+|:---------------------:|
+| Figure . <br> Replace Color Sensor |
+
+</center>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This sensor allows the robot to measure the exact distance between its rear and the parking wall, helping it to properly move within the designated space. This ensures that the robot maintains a safe distance from the walls, avoiding any unintended contact or bumping that could result in penalties or incorrect parking. With this solution, our robot now uses two Technic™ Distance Sensors — one at the front, which is intended for obstacle and wall detection, and one at the rear part for safer and more accurate parking alignment.
 
@@ -611,7 +655,13 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the initial mechanical design of the self-driving robot, we utilized the Technic™ Wheel 88 x 14.34 since it is the only largest wheel that is accessible for us. However, after noticing how these wheels caused multiple issues, particularly its inconsistency in traction, we realized the necessity to utilize different wheels that will provide increased grip, less slips, and improved contact with the ground. After thoughtful evaluation, we selected the LEGO Wheel 75 mm x 17 mm with Motorcycle Tire 94.2 mm x 20 mm, which features a rubberized tire with patterns for better grip and traction. The size of these wheels were slightly different than the old ones, but offered less contact with the ground, decreasing the slips and drifts in its movement. After this modification, the self-driving robot’s movement was significantly better than the previous performance, smoothly moving in straight and turning paths. We also observed that the new wheels enhanced the speed of the robot in maneuvering the field, and performed more consistent cornering and traversal both in the Open and Obstacle Challenge.
 
-<img src = "">
+<center>
+
+| ![Figure .](./docu-photos/image30.png) |
+|:---------------------:|
+| Figure . <br> Replace Driving Wheels |
+
+</center>
 
 ## 9. Construction Guide
 
@@ -621,11 +671,31 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 **_Step 1. Prepare the necessary kits and components._** The checklist below may serve as your guide for preparing the materials. *To check the price of each, you may refer to the Bills of Materials detailed at Section 10: Appendices.*
 
-<img src = "">
+
+**Table 4. Checklist of Materials**
+
+| CHECKLIST OF MATERIALS |  |  |  |  |  |
+| ----- | ----- | ----- | ----- | :---: | :---- |
+| <center> **Material** </center> |  |  |  | <center> **Quantity** </center> |  |
+| LEGO® Education SPIKE™ Prime Set |  |  |  | 1 pc |  |
+| LEGO® Education SPIKE™ Prime Expansion Set |  |  |  | 1 pc |  |
+| LEGO® Education SPIKE™ Essential Set |  |  |  | 1 pc |  |
+| LEGO® MINDSTORMS® Education EV3 Core Set |  |  |  | 1 pc |  |
+| LEGO® MINDSTORMS® Education EV3 Expansion Set |  |  |  | 1 pc |  |
+| LEGO® Wheel 75 x 17mm with Motorcycle Tire 94.2 x 20 |  |  |  | 2 pcs |  |
+| OpenMV Cam H7 Plus |  |  |  | 1 pc |  |
+| PLA Filament |  |  |  | 1 pc |  |
+| 3D Printer |  |  |  | 1 pc |  |
 
 **_Step 2. Start Building the Robot._** *A specific and detailed list of parts and step-by-step instructions of constructing it can be found by scanning the QR code below.*
 
-<img src = "">
+<center>
+
+| ![Figure .](./docu-photos/image39.png) |
+|:---------------------:|
+| Scan Me! |
+
+</center>
 
 **_Step 3. Ensure that electrical connections are properly wired and connected._** *You may use these pictorial diagrams as reference for connecting the OpenMV Cam H7 Plus and the Spike™ Prime Sensors to the Technic™ Large Hub.*
 
