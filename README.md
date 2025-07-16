@@ -240,15 +240,19 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 | ![Figure 4](./docu-photos/rWheels.png) |
 |:---------------------:|
-| Figure 4.1 <br> Robot's Wheels <br> Left Side View 
+| Figure 4. <br> Robot's Wheels <br> Left Side View 
 
 </center>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To balance the weight distribution of the robot throughout its body, the Technic™ Large Hub was placed between the drive and steer system. This central placement evenly distributed the weight across all wheels, and significantly improved the robot’s overall stability, turning accuracy, and movement consistency.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In addition, while our team were testing runs, we noticed how the rear part of the robot was lighter than other sections, causing unstable turns and movements. Thus, we have integrated an EV3 Steel Ball to increase the weight on the rear side of the robot. This balanced weight distribution enhanced the wheel’s traction and consistency, and prevented  tilting, making it more responsive to directional changes.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In addition, during test runs, we noticed that adding a distance sensor to the rear caused an imbalance, making the front lighter and resulting in unstable movement. To solve this, we added an EV3 steel ball at the front to counterbalance the rear weight. This improved the robot’s overall stability, traction, and responsiveness during turns and directional changes.
 
-<img src = "">
+| ![Figure 5](./docu-photos/weight.png) |
+|:---------------------:|
+| Figure 5. <br> Robot's Weight Distribution <br>
+
+</center>
 
 ---
 
@@ -264,7 +268,7 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 | ![Figure 6](./docu-photos/image59.png) |
 |:---------------------:|
-| Figure 4.1 <br> Robot's Wheels <br> Left Side View 
+| Figure 6. <br> SPIKE™ Prime Hub <br> Specification 
 
 </center>
 
@@ -276,7 +280,7 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 | ![Figure 7](./docu-photos/image45.png) |
 |:---------------------:|
-| Figure 7 <br> Robot’s Technic™ Large Hub
+| Figure 7. <br> Robot’s Technic™ Large Hub
 
 </center>
 
