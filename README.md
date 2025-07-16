@@ -120,6 +120,8 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our team, the Batangas State University - Integrated School, introduces a self-driving robot that is developed for the Philippine Robot Olympiad 2025, under the Future Engineers category. This robot represents our vision of combining creativity and technical skill to design a robot capable of autonomous navigation, obstacle handling, and real-time decision-making. Through teamwork, perseverance, and continuous improvement that has shaped its development, we have ensured that this is carefully engineered to meet the demands of the competition. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following specifications provide a detailed overview of the key physical and mechanical characteristics of our team’s self-driving robot. We designed this while giving importance to precision, agility, and durability, so the features of the robot have been carefully optimized to balance speed and stability during runs. 
+
+<center>
   
 | Specification | Details |
 | ----- | ----- |
@@ -132,6 +134,8 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 | Drive System | Rear-Wheel Drive (RWD) |
 | Steering Geometry | Parallel Steering |
 | Material | LEGO® Technic™ and PLA Filament |
+
+</center>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the team’s selection of materials and electronic components is intended to create a strong yet lightweight robot platform, designed to deliver reliable and consistent performance. The list of the main components and its corresponding description presented in the table below emphasize these critical design choices and technical details that enhance the robot’s overall functionality.
 
@@ -178,6 +182,8 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 <sup>1</sup> ***RPM*** = rotations per minute  
 <sup>2</sup> ***Ncm*** = newton centimeter&nbsp;&nbsp;&nbsp;
+
+---
 
 </center>
 
