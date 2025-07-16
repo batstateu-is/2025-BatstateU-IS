@@ -240,6 +240,8 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 <img src = "">
 
+---
+
 ## 2. Power and Sense Management
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The performance of our self-driving robot relies heavily on the integration of electrical components and the development of programs. Mainly developed with Python programming language, the robot was structured to carry out specific tasks for both the Open Challenge and Obstacle Challenge of the Future Engineers category. This section will discuss the elements that power and control the robot, including the power source, sensors, and its vision system. Each component that constitutes the robot was carefully selected and evaluated based on their specifications that meets the demand for ensuring real-time responsiveness, accuracy, and reliability during autonomous navigation and handling of obstacles. 
@@ -347,6 +349,8 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 </center>
 
+---
+
 ## 3. Open Challenge Strategy 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Open Challenge Round of the Future Engineers category requires the self-driving robot to autonomously travel and complete three full laps around the game field with random placements of the inside track walls while ensuring that the robot will not make any contact with the outer boundary wall. The goals that we have established for our robot to accomplish in this round is to be able to accurately determine its driving direction at the beginning, maintain a stable motion and control across the entire loop, consistently avoid collisions with both the inner and outer walls, and successfully complete three full laps by making the turns, movement, and counter precise. Thus, we have considered various techniques and movement strategies for determining driving direction, wall detection and avoidance, and lap counting. 
@@ -390,6 +394,8 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ensure consistency and accuracy, the sensor resets to its original position; it faces forward after each detection cycle. The scanning movement is also synchronized with the robot’s movement speed, so that sensor rotation does not delay navigation or cause imbalance. This wall detection system is one of the key innovations that makes our robot's Open Challenge performance more reliable and intelligent, especially under randomized field conditions.
 
+---
+
 ## 4. Obstacle Challenge Strategy
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After completing the Open Challenge, our team moved on to accomplishing the Obstacle Challenge, one of the main tasks in the Future Engineers category. In this round, the robot must autonomously complete three laps around the game field while avoiding randomly placed obstacles. Consequently, the placement of the obstacles will be determined before the commencement of the challenge. These obstacles include traffic signs colored red or green, which the robot must detect and respond to correctly. When a green traffic sign is detected, the robot is required to pass on the left side, while a red traffic sign indicates that it must pass on the right. In addition to obstacle avoidance, the robot must also begin the lap by moving out of the parking space and perform parallel parking at the end of the third lap. Additionally, the size of the parking space is based on the length of the robot and must be entered precisely without touching the boundary walls. This round tests the robot’s ability to recognize colors, make  real-time decisions according to what was detected, and move accurately under changing conditions. The following aspects described below are the essential techniques and movement strategies that we have considered for this challenge. 
@@ -399,6 +405,8 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 ### 4.1. Traffic Sign Detection	
 ### 4.2. Parallel Parking Strategy
 ### 4.3. Machine Learning Strategy
+
+---
 
 ## 5. Problems Encountered
 
@@ -429,6 +437,8 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 ### 5.4. Constant Necessity of Cleaning the Wheels
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During the whole process, our team observed how the performance of the robot varied significantly on how clean and how dirty the wheels are. When the wheels accumulated dirt, the robot became more prone to drifting, especially during sharp or narrow turns. However, when the wheels were too clean, they caused slipping due to reduced friction which led to less reliable movement and poorer traction. We considered this as an issue since it is difficult to maintain the robot’s state where it performs well. Additionally, with continuous runs, the wheels naturally picked up dust and debris from the surface of the field, gradually affecting the robot’s ground contact and stability. This made it harder to maintain smooth and consistent movement throughout each test. As a result, we had to frequently check and clean the wheels to reduce the impact of this issue and ensure the robot could perform accurately and reliably.
+
+---
 
 ## 6. 3D Printing Management
 
@@ -494,6 +504,8 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 </center>
 
+---
+
 ## 7. Engineering Factor
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Behind every successful robot is a series of problems, decisions, creative solutions, and innovative engineering. As a team of student innovators, we didn’t just focus on making the robot work—we focused on making it work smarter. Every engineering factor described in this section represents a solution that makes our robot more efficient, consistent, reliable, and adaptable, just as great engineering should. 
@@ -550,6 +562,8 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 | Figure . <br> Robot's Side Free Wheels <br> Front View|
 
 </center>
+
+---
 
 ## 8. Mechanical Improvements
 
@@ -663,6 +677,8 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 </center>
 
+---
+
 ## 9. Construction Guide
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section outlines a detailed instruction and guide on how we constructed and programmed our self-driving robot. This includes a specific set of steps to follow and a video presentation of how the robot is assembled. Above all, our team wishes that this will serve as an inspiration for everyone because the essence of engineering is not only about innovating and creating solutions, but rather sharing insights and ideas that will drive the future forward. Thus, Section 10: Recommendations and Future Work may help you think outside the box and create an advancement from what we have developed. 
@@ -676,16 +692,16 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 | CHECKLIST OF MATERIALS |  |  |  |  |  |
 | ----- | ----- | ----- | ----- | :---: | :---- |
-| <center> **Material** </center> |  |  |  | <center> **Quantity** </center> |  |
-| LEGO® Education SPIKE™ Prime Set |  |  |  | 1 pc |  |
-| LEGO® Education SPIKE™ Prime Expansion Set |  |  |  | 1 pc |  |
+| <center> **Material** </center> |  |  |  | <center> **Quantity** </center> | 
+| LEGO® Education SPIKE™ Prime Set |  |  |  | 1 pc |
+| LEGO® Education SPIKE™ Prime Expansion Set |  |  |  | 1 pc |
 | LEGO® Education SPIKE™ Essential Set |  |  |  | 1 pc |  |
-| LEGO® MINDSTORMS® Education EV3 Core Set |  |  |  | 1 pc |  |
-| LEGO® MINDSTORMS® Education EV3 Expansion Set |  |  |  | 1 pc |  |
-| LEGO® Wheel 75 x 17mm with Motorcycle Tire 94.2 x 20 |  |  |  | 2 pcs |  |
-| OpenMV Cam H7 Plus |  |  |  | 1 pc |  |
-| PLA Filament |  |  |  | 1 pc |  |
-| 3D Printer |  |  |  | 1 pc |  |
+| LEGO® MINDSTORMS® Education EV3 Core Set |  |  |  | 1 pc |
+| LEGO® MINDSTORMS® Education EV3 Expansion Set |  |  |  | 1 pc |
+| LEGO® Wheel 75 x 17mm with Motorcycle Tire 94.2 x 20 |  |  |  | 2 pcs |
+| OpenMV Cam H7 Plus |  |  |  | 1 pc |
+| PLA Filament |  |  |  | 1 pc |
+| 3D Printer |  |  |  | 1 pc |
 
 **_Step 2. Start Building the Robot._** *A specific and detailed list of parts and step-by-step instructions of constructing it can be found by scanning the QR code below.*
 
@@ -769,6 +785,8 @@ You may access the assembly video of our self-driving robot by scanning the QR c
 - **Stay Adaptable**  
   - Be prepared to adjust strategies or mechanics when necessary. Field conditions may vary, and flexibility is key to maintaining performance under pressure.
 
+---
+
 ## 10. Recommendations and Future Work
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A robot may be able to perform and execute its tasks successfully; however, there is always room for improvement. To enhance a robot’s performance, functionality, and reliability, it is important to first identify the limitations that restrict its full potential. Some of the limitations involve constraints in mobility and sense management, few environmental challenges that were discussed in Section 5: Problems Encountered, or time restrictions during development.
@@ -814,6 +832,8 @@ You may access the assembly video of our self-driving robot by scanning the QR c
 - **Utilize Color Sensor in Open Challenge**
   - Instead of using Technic™ Distance Sensor for identifying the robot’s drive direction, it is also recommended to consider using a Technic™ Color Sensor, as we have previously implemented in the earlier versions. The color sensor has the ability to detect the colored lines in the field, allowing it to determine its driving direction: if the color sensor detects an orange line, then the driving direction is clockwise, otherwise, if it is a blue line, the robot will move in a counterclockwise direction. Additionally, it is best to position the color sensor at the front-bottom part of the robot for faster and more reliable detection, minimizing the delay in responding and determining the direction that it should take. 
 
+---
+
 ## 11. Appendices
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section contains supplementary materials that support the content presented in this documentation. Included in the appendices are diagrams, tables, timeline, and additional visual documentation that provide deeper insight into the design and development of the self-driving robot. These materials serve as references for illustrating the progress made throughout the project. 
@@ -828,11 +848,24 @@ You may access the assembly video of our self-driving robot by scanning the QR c
 
 ### 11.3. Bills of Materials
 
-<img src = "">
+| BILLS OF MATERIALS |  |  |
+| ----- | ----- | ----- |
+| **Material**  | **Quantity** | **Price** | 
+| LEGO® Education SPIKE™ Prime Set | 1 pc | Php. 65,000.00 | 
+| LEGO® Education SPIKE™ Prime Expansion Set | 1 pc | Php. 25,000.00 | 
+| LEGO® Education SPIKE™ Essential Set | 1 pc | Php. 30,175.46 | 
+| LEGO® MINDSTORMS® Education EV3 Core Set | 1 pc | Php. 50,000.00 | 
+| LEGO® MINDSTORMS® Education EV3 Expansion Set | 1 pc | Php. 25,000.00 | 
+| LEGO® Wheel 75 x 17mm with Motorcycle Tire 94.2 x 20 | 2 pcs | Php. 500.00 | 
+| OpenMV Cam H7 Pluss | 1 pc | Php. 6,784.15 | 
+| PLA Filament | 1 pc | Php. 750.00 | 
+| FlashForge 3D Printer Adventurer 4 | 1 pc | Php. 65,000.00 | 
+| **Total Amount** |   | Php. 268,209.61 | 
+
 
 ### 11.4. Timeline
 
-<img src = "">
+
 
 ## 12. Robot Design History
 
