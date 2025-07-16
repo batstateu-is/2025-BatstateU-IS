@@ -573,6 +573,18 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 </center>
 
+### 7.4. Rear-Mounted Spoiler
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the most unique engineering features in our robot is the rear-mounted spoiler. At first glance, it might look like just a visual add-on, but it actually serves a strategic purpose. Instead of using it for aerodynamics like in real cars, we designed the spoiler to increase the robot’s length. Doing this gave us a larger parking space to work with. This helped improve the robot’s alignment, positioning, and overall success rate during the parking task. We originally planned to 3D print the spoiler for a cleaner finish and a better fit with the existing chassis. However, due to limitations in time and available material, we decided to construct it manually using Technic™ parts instead. This alternative approach still met the design requirement, adding the necessary length, without compromising the robot’s balance or movement. 
+
+<center>
+
+| ![Figure .](./docu-photos/spoiler.png) |
+|:---------------------:|
+| Figure . <br> Robot's Spoiler <br> Isometric View|
+
+</center>
+
 ---
 
 ## 8. Mechanical Improvements
