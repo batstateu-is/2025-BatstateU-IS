@@ -752,6 +752,12 @@ A specific and detailed list of parts and step-by-step instructions of construct
 ### **_Step 3. Ensure that electrical connections are properly wired and connected._** 
 You may use these pictorial diagrams as reference for connecting the ***OpenMV Cam H7 Plus*** and the ***Spike™ Prime Sensors*** to the ***Technic™ Large Hub.***
 
+<center>
+
+| ![Figure ](./docu-photos/connection.png) |
+|:---------------------:|
+| Figure . <br> Connection Pictorial Diagram
+
 ---
 
 ## 9.2. Guide for Programming the Robot
@@ -822,6 +828,8 @@ To use it with our code, create new files named `lpf2.py` and `pupremote.py` and
 Turn on your SPIKE™ Hub and open the Pybricks Editor. Click the Bluetooth icon at the top-right, select the correct hub from the list, and then click Pair to connect.*
 
 ![Pybricks Bluetooth](./docu-photos/pyble.png)
+|:---------------------:|
+| Figure . <br> Bluetooth Connection
 
 ### **_Step 6. Run and Upload the Program._** 
 To run your script on the hub, click the “Run this program” button or press `F5`. To stop the program, click “Stop everything” or press `F6`. Pybricks automatically saves the program to the hub once it is run, so there's no need for a separate upload step.
