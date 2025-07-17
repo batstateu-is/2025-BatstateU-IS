@@ -103,11 +103,11 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 <center>
 
-| **John Angelo M. Bautista** | |
+| <center> **John Angelo M. Bautista** | |
 | --------------------------- | ------ |
 | ![Angelo](./docu-photos/soloPictures/gelo.png)          | Angelo is an incoming Grade 12 student at Batangas State University - The National Engineering University - Integrated School and is currently 17 years old. This year marks his third time participating in the Philippine Robot Olympiad (PRO) and his second time in the Future Engineers category. Drawing from his previous experiences, he ensures that the robot is built with consideration to its efficiency and functionality, making him a key pillar of the team. |
 
-| **Airvin James L. Medina** |  |
+| <center> **Airvin James L. Medina** |  |
 |----------------------------| --- |
 | ![Airvin](./docu-photos/soloPictures/airvin.png)         | Airvin is stepping into his first journey at Philippine Robot Olympiad this year. At 15 years old, this incoming Grade 10 student has shown a remarkable interest in robotics and programming. His enthusiasm for solving problems and thinking critically allow him to develop and troubleshoot codes effectively, bringing the robot’s function to life. |
 
@@ -119,7 +119,7 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 > The following pictures feature the members of Batangas State University - Integrated School (BatStateU-IS) participating in the Future Engineers category along with their robot. 
 
-| ![Formal Picture](./docu-photos/formal.png) | ![Figure 2](./) |
+| ![Formal Picture](./docu-photos/formal.png) | ![Funny Picture](./docu-photos/Funny_Final.png) |
 |:---------------------:|:---------------------:|
 | Formal Picture | Funny Picture |
 
