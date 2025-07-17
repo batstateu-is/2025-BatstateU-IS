@@ -32,15 +32,14 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 📑 Table of Contents (click to expand)
 </summary>
 
-
-- [Introduction](#introduction)  
-- [Team Profile](#team-profile)  
-- [Robot Specifications](#robot-specifications)  
-- [1. Mobility Management](#1-mobility-management)  
+- [📖 Introduction](#introduction)  
+- [👥 Team Profile](#team-profile)  
+- [🤖 Robot Specifications](#robot-specifications)  
+- [1. ⚙️ Mobility Management](#1-mobility-management)  
   - [1.1. Motor Selection](#11-motor-selection)  
   - [1.2. Steering and Driving Mechanism](#12-steering-and-driving-mechanism)  
   - [1.3. Mechanical Design](#13-mechanical-design)  
-- [2. Power and Sense Management](#2-power-and-sense-management)  
+- [2. 🔋 Power and Sense Management](#2-power-and-sense-management)  
   - [2.1. Power Management](#21-power-management)  
     - [2.1.1. Technic™ Prime Large Hub](#211-technic-prime-large-hub)  
     - [2.1.2. Technic™ Large Hub Rechargeable Battery](#212-technic-large-hub-rechargeable-battery)  
@@ -48,30 +47,30 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
     - [2.2.1. Technic™ Distance Sensor](#221-technic-distance-sensor)  
     - [2.2.2. Gyro Sensor](#222-gyro-sensor)  
     - [2.2.3. OpenMV Cam H7 Plus](#223-openmv-cam-h7-plus)  
-- [3. Open Challenge Strategy](#3-open-challenge-strategy)  
+- [3. 🚀 Open Challenge Strategy](#3-open-challenge-strategy)  
   - [3.1. Determining Drive Direction](#31-determining-drive-direction)  
   - [3.2. Wall Detection and Avoidance](#32-wall-detection-and-avoidance)  
-- [4. Obstacle Challenge Strategy](#4-obstacle-challenge-strategy)  
+- [4. 🚧 Obstacle Challenge Strategy](#4-obstacle-challenge-strategy)  
   - [4.1. Traffic Sign Detection](#41-traffic-sign-detection)  
   - [4.2. Traffic Sign Avoidance Strategy](#42-traffic-sign-avoidance-strategy)  
   - [4.3. Perpendicular Parking Strategy](#43-perpendicular-parking-strategy)
   - [4.4. Semi-Machine Learning Strategy](#44-semi-machine-learning-strategy)
-- [5. Problems Encountered](#5-problems-encountered)  
+- [5. 🐞 Problems Encountered](#5-problems-encountered)  
   - [5.1. Continuous Detection to Single-Instance Detection](#51-continuous-detection-to-single-instance-detection)  
   - [5.2. Frequent Disconnection of Camera Wiring](#52-frequent-disconnection-of-camera-wiring)  
   - [5.3. Uneven and Unclean Field](#53-uneven-and-unclean-field)  
   - [5.4. Constant Necessity of Cleaning the Wheels](#54-constant-necessity-of-cleaning-the-wheels)  
-- [6. 3D Printing Management](#6-3d-printing-management)  
+- [6. 🖨️ 3D Printing Management](#6-3d-printing-management)  
   - [6.1. 3D Modeling](#61-3d-modeling)  
   - [6.2. Material Selection](#62-material-selection)  
   - [6.3. 3D Printing Settings](#63-3d-printing-settings)  
   - [6.4. Printing](#64-printing)  
-- [7. Engineering Factor](#7-engineering-factor)  
+- [7. 📐 Engineering Factor](#7-engineering-factor)  
   - [7.1. 3D-Printed Camera Case](#71-3d-printed-camera-case)  
   - [7.2. Rotating Camera and Distance Sensor](#72-rotating-camera-and-distance-sensor)  
   - [7.3. Side Free Wheels](#73-side-free-wheels)
   - [7.4. Rear-Mounted Spoiler](#74-rear-mounted-spoiler)  
-- [8. Mechanical Improvements](#8-mechanical-improvements)  
+- [8. 🔧 Mechanical Improvements](#8-mechanical-improvements)  
   - [8.1. Testing of Perfect Size for Parking](#81-testing-of-perfect-size-for-parking)  
   - [8.2. Alter Differential Gear to Normal Driving](#82-alter-differential-gear-to-normal-driving)  
   - [8.3. Integrate Gears Around the Robot](#83-integrate-gears-around-the-robot)  
@@ -81,23 +80,23 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
   - [8.7. Use Different Wheels for Steering](#87-use-different-wheels-for-steering)  
   - [8.8. Replace Color Sensor with Distance Sensor](#88-replace-color-sensor-with-distance-sensor)  
   - [8.9. Replace Wheels for Driving](#89-replace-wheels-for-driving)  
-- [9. Construction Guide](#9-construction-guide)  
+- [9. 🛠️  Construction Guide](#9-construction-guide)  
   - [9.1. Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
   - [9.2. Guide for Programming the Robot](#92-guide-for-programming-the-robot)  
     - [9.2.1. Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
     - [9.2.2. Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)  
   - [9.3. Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
-- [10. Recommendations and Future Work](#10-recommendations-and-future-work)  
+- [10. 💡 Recommendations and Future Work](#10-recommendations-and-future-work)  
   - [10.1. Recommendations for Mobility Management](#101-recommendations-for-mobility-management)
   - [10.2. Recommendations for Power and Sense Management](#102-recommendations-for-power-and-sense-management)
   - [10.3. Recommendations for Strategies](#103-recommendations-for-strategies)
-- [11. Appendices](#11-appendices)
+- [11. 📎 Appendices](#11-appendices)
   - [11.1. Robot Actual Photos](#111-robot-actual-photos)
   - [11.2. Robot 3D Model](#112-robot-3D-Model)
   - [11.3. Pictorial Wiring Diagram](#113-pictorial-wiring-diagram)
   - [11.4. Bills of Materials](#114-bills-of-materials)
   - [11.5. Timeline](#115-timeline)
-- [12. Robot Design History](#12-robot-design-history)
+- [12. 📜 Robot Design History](#12-robot-design-history)
 
 </details>
 
@@ -145,7 +144,7 @@ John Angelo M. Bautista, 17 (Right)
 
 ---
 
-## Robot Specifications
+## 🤖 Robot Specifications
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our team, the Batangas State University - Integrated School, introduces a self-driving robot that is developed for the Philippine Robot Olympiad 2025, under the Future Engineers category. This robot represents our vision of combining creativity and technical skill to design a robot capable of autonomous navigation, obstacle handling, and real-time decision-making. Through teamwork, perseverance, and continuous improvement that has shaped its development, we have ensured that this is carefully engineered to meet the demands of the competition. 
 
@@ -193,7 +192,7 @@ John Angelo M. Bautista, 17 (Right)
 
 ---
 
-## 1. Mobility Management
+## ⚙️ 1. Mobility Management
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section will highlight the important aspects of the hardware system that constitutes the mobility and movement specifications of the self-driving robot that we have developed. This includes the reasons behind the selection of the drive system, steering mechanism, wheels, motor, and their respective placements, which all play a vital role in ensuring our robot moves smoothly, accurately, and reliably throughout the challenges. 
 
@@ -280,7 +279,7 @@ John Angelo M. Bautista, 17 (Right)
 
 ---
 
-## 2. Power and Sense Management
+## 2. 🔋 Power and Sense Management
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The performance of our self-driving robot relies heavily on the integration of electrical components and the development of programs. Mainly developed with Python programming language, the robot was structured to carry out specific tasks for both the Open Challenge and Obstacle Challenge of the Future Engineers category. This section will discuss the elements that power and control the robot, including the power source, sensors, and its vision system. Each component that constitutes the robot was carefully selected and evaluated based on their specifications that meets the demand for ensuring real-time responsiveness, accuracy, and reliability during autonomous navigation and handling of obstacles. 
 
@@ -389,7 +388,7 @@ John Angelo M. Bautista, 17 (Right)
 
 ---
 
-## 3. Open Challenge Strategy 
+## 3. 🚀 Open Challenge Strategy 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Open Challenge Round of the Future Engineers category requires the self-driving robot to autonomously travel and complete three full laps around the game field with random placements of the inside track walls while ensuring that the robot will not make any contact with the outer boundary wall. The goals that we have established for our robot to accomplish in this round is to be able to accurately determine its driving direction at the beginning, maintain a stable motion and control across the entire loop, consistently avoid collisions with both the inner and outer walls, and successfully complete three full laps by making the turns, movement, and counter precise. Thus, we have considered various techniques and movement strategies for determining driving direction, wall detection and avoidance, and lap counting. 
 
@@ -476,7 +475,7 @@ while abs(senseMotor.angle()) > 5:
 
 ---
 
-## 4. Obstacle Challenge Strategy
+## 4. 🚧 Obstacle Challenge Strategy
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After completing the Open Challenge, our team moved on to accomplishing the Obstacle Challenge, one of the main tasks in the Future Engineers category. In this round, the robot must autonomously complete three laps around the game field while avoiding randomly placed obstacles. Consequently, the placement of the obstacles will be determined before the commencement of the challenge. These obstacles include traffic signs colored red or green, which the robot must detect and respond to correctly. When a green traffic sign is detected, the robot is required to pass on the left side, while a red traffic sign indicates that it must pass on the right. In addition to obstacle avoidance, the robot must also begin the lap by moving out of the parking space and perform parallel parking at the end of the third lap. Additionally, the size of the parking space is based on the length of the robot and must be entered precisely without touching the boundary walls. This round tests the robot’s ability to recognize colors, make  real-time decisions according to what was detected, and move accurately under changing conditions. The following aspects described below are the essential techniques and movement strategies that we have considered for this challenge. 
 
@@ -673,7 +672,7 @@ def runRecord(currentLap):
 
 ---
 
-## 5. Problems Encountered
+## 5. 🐞 Problems Encountered
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The process of developing and improving our robot would not be complete without encountering difficulties that tested both its mechanical and technical capabilities. However, these challenges became a valuable learning experience that pushed us to improve our strategies. This section will describe the most significant issues we faced and how we addressed them to improve the robot’s performance and reliability during the Open and Obstacle Challenge.
 
@@ -705,7 +704,7 @@ def runRecord(currentLap):
 
 ---
 
-## 6. 3D Printing Management
+## 6. 🖨️ 3D Printing Management
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dedicated not only in improving the aesthetics of the self-driving robot, but also in enhancing its innovative principles, we have integrated multiple 3D-printed components that our team designed ourselves. Every part was thoughtfully engineered based on the specific requirements that we want to achieve for the improvement of our robot. This section will discuss and enumerate the process we underwent for designing and developing 3D-printed components that promotes the robot’s engineering factor. 
 
@@ -771,7 +770,7 @@ def runRecord(currentLap):
 
 ---
 
-## 7. Engineering Factor
+## 7. 📐 Engineering Factor
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Behind every successful robot is a series of problems, decisions, creative solutions, and innovative engineering. As a team of student innovators, we didn’t just focus on making the robot work—we focused on making it work smarter. Every engineering factor described in this section represents a solution that makes our robot more efficient, consistent, reliable, and adaptable, just as great engineering should. 
 
@@ -842,7 +841,7 @@ def runRecord(currentLap):
 
 ---
 
-## 8. Mechanical Improvements
+## 8. 🔧 Mechanical Improvements
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throughout the development of our self-driving robot, we have considered various mechanical and technical aspects that will improve its functionality and accuracy in terms of movements, navigation, and such. Each component and configuration was carefully tested, altered, or replaced to improve the robot’s performance in tasks such as movement, turning, wall avoidance, and parking. These iterative improvements allowed us to enhance the robot’s reliability across both the Open Challenge and Obstacle Challenge rounds. Below are the major mechanical changes that we have implemented to reach the robot’s full potential. 
 
@@ -956,7 +955,7 @@ def runRecord(currentLap):
 
 ---
 
-## 9. Construction Guide
+## 9. 🛠️ Construction Guide
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section outlines a detailed instruction and guide on how we constructed and programmed our self-driving robot. This includes a specific set of steps to follow and a video presentation of how the robot is assembled. Above all, our team wishes that this will serve as an inspiration for everyone because the essence of engineering is not only about innovating and creating solutions, but rather sharing insights and ideas that will drive the future forward. Thus, [Section 10: Recommendations and Future Work](#10-recommendations-and-future-work) may help you think outside the box and create an advancement from what we have developed. 
 
@@ -1002,7 +1001,8 @@ You may use these pictorial diagrams as reference for connecting the ***OpenMV C
 ---
 
 ## 9.2. Guide for Programming the Robot
-## 🛠️ Software and Tools Used
+
+## 💻 Software and Tools Used
 
 | Tool / Program                              | Purpose                                          |
 |---------------------------------------------|--------------------------------------------------|
@@ -1110,7 +1110,7 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ---
 
-## 10. Recommendations and Future Work
+## 10. 💡 Recommendations and Future Work
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A robot may be able to perform and execute its tasks successfully; however, there is always room for improvement. To enhance a robot’s performance, functionality, and reliability, it is important to first identify the limitations that restrict its full potential. Some of the limitations involve constraints in mobility and sense management, few environmental challenges that were discussed in [Section 5: Problems Encountered](#5-problems-encountered), or time restrictions during development.
 
@@ -1157,7 +1157,7 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ---
 
-## 11. Appendices
+## 11. 📎 Appendices
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section contains supplementary materials that support the content presented in this documentation. Included in the appendices are diagrams, tables, timeline, and additional visual documentation that provide deeper insight into the design and development of the self-driving robot. These materials serve as references for illustrating the progress made throughout the project. 
 
@@ -1237,7 +1237,7 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ---
 
-## 12. Robot Design History
+## 12. 📜 Robot Design History
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From the initial concepts to the final build, the design of our self-driving robot evolved through multiple stages as we identified weaknesses, tested improvements, and made changes as a response to performance feedback during runs. This section documents the evolution of our design, discussing the key changes and the reasons behind them. It showcases how our team continuously applied engineering principles, adapted to mistakes, and made essential decisions to improve the robot’s structure, mobility, and overall functionality.
 
