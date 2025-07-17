@@ -85,6 +85,15 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
   - [9.3. Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
 - [10. Recommendations and Future Work](#10-recommendations-and-future-work)  
   - [10.1. Recommendations for Mobility Management](#101-recommendations-for-mobility-management)
+  - [10.2. Recommendations for Power and Sense Management](#102-recommendations-for-power-and-sense-management)
+  - [10.3. Recommendations for Strategies](#103-recommendations-for-strategies)
+- [11. Appendices](#11-appendices)
+  - [11.1. Robot Actual Photos](#111-robot-actual-photos)
+  - [11.2. Robot 3D Model](#112-robot-3D-Model)
+  - [11.3. Pictorial Wiring Diagram](#113-pictorial-wiring-diagram)
+  - [11.4. Bills of Materials](#114-bills-of-materials)
+  - [11.5. Timeline](#115-timeline)
+- [12. Robot Design History](#12-robot-design-history)
 
 </details>
 
