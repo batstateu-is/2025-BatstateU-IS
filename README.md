@@ -117,7 +117,13 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 </center>
 
-> The following pictures feature the members of Batangas State University - Integrated School (BatStateU-IS) participating in the Future Engineers category along with their robot. 
+> The following pictures feature the members of Batangas State University - Integrated School (BatStateU-IS) participating in the Future Engineers category along with their robot.
+
+Airvin James L. Medina, 15 (Left)
+
+Cshenizylle Nicole M. Ligayada, 16 (Center)
+
+John Angelo M. Bautista, 17 (Right)
 
 | ![Formal Picture](./docu-photos/formal.png) | ![Funny Picture](./docu-photos/Funny_Final.png) |
 |:---------------------:|:---------------------:|
@@ -135,15 +141,19 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
   
 | <center>Specification</center> | <center> Details </center> |
 | ----- | ----- |
-| Dimensions |  |
-| Weight |  |
-| Maximum Speed |   |
-| Maximum Steering Angle |  |
-| Steering Torque |  |
-| Operating Voltage |  |
+| Dimensions | 300 mm (L) x 150 mm (W) x 193 mm (H)  |
+| Weight | 913.79 g |
+| Maximum Speed | 837.6 mm/s |
+| Maximum Steering Angle | + 45° and -49° |
+| Steering Torque | 100 Ncm |
+| Operating Voltage | 8.3V – 7.6V |
 | Drive System | Rear-Wheel Drive (RWD) |
 | Steering Geometry | Parallel Steering |
 | Material | LEGO® Technic™ and PLA Filament |
+
+</center>
+
+ ![Specification](./docu-photos/specification.png)
 
 </center>
 
