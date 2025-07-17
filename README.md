@@ -418,12 +418,12 @@ chosen direction to signal the upcoming turn. This can also assist with determin
 ```python
 ## Pseudocode for determining direction
 
-def determineDir(self):
-    self.lookDir(90)
-    distRight = self.distSensor.distance()
+def determineDir():
+    lookDir(90)
+    distRight = distSensor.distance()
 
-    self.lookDir(-90)
-    distLeft = self.distSensor.distance()
+    lookDir(-90)
+    distLeft = distSensor.distance()
 
     if distLeft > distRight:
         direction = -1  # Counterclockwise
@@ -441,18 +441,18 @@ def determineDir(self):
 
 ```python
 # Pseudocode for Wall Detection and Avoidance
-while self.distance() > targetProximity:
+while distanceFromWall() > targetProximity:
   # Calculate deviation from target heading
     error = targetHeading - currentHeading
     
     # Use PID with error to increase its reliability
-    self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+    errorSum, prevError, correction = pid(KP, KI, KD, error, errorSum, prevError)
 
     # Apply Correction to center the Robot
-    self.move(MAXSPEED, correction)
+    move(MAXSPEED, correction)
 
 targetHeading += 90 * direction
-self.turn(targetHeading)
+turn(targetHeading)
 ```
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ensure that the robot can properly avoid collisions with both the randomly placed inner wall and the outer boundary walls of the game field, we implemented a dynamic wall detection strategy using a Technic™ Distance Sensor mounted on a Technic™ Large Angular Motor. We thought that giving it the ability to rotate sideways is a better technique for detection instead of keeping the sensor fixed, thus the robot’s field of view is increased, allowing it to detect walls in multiple directions without requiring the robot to physically change its orientation. Moreover, this design allows the robot to scan its surroundings at key decision points such as straight paths or before a turn, and determine the relative position of nearby walls. It allows the robot to compensate for the limitations of a fixed-sensor design, especially when the robot is driving alongside long stretches of wall or in unpredictable inner wall placements. 
@@ -461,12 +461,12 @@ self.turn(targetHeading)
 
 ```python
 # Make the sensor face forward again
-sannisLivisa.lookDir(0, asyncBool=False, speed=200)
+lookDir(0, speed=200)
 
 # Keep moving forward while the sensor returns to center
-while abs(sannisLivisa.senseMotor.angle()) > 5:
+while abs(senseMotor.angle()) > 5:
     correction = calculateHeadingCorrection()
-    sannisLivisa.move(MAXSPEED, correction)
+    move(MAXSPEED, correction)
 ```
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ensure consistency and accuracy, the sensor resets to its original position; it faces forward after each detection cycle. The scanning movement is also synchronized with the robot’s movement speed, so that sensor rotation does not delay navigation or cause imbalance. This wall detection system is one of the key innovations that makes our robot's Open Challenge performance more reliable and intelligent, especially under randomized field conditions.
@@ -529,6 +529,32 @@ redThreshold = const((0, 35, 0, 127, 1, 127))
 |:---------------------:|:---------------------:|
 | Green Threshold | Red Threshold |
 
+After processing the image and finding the group of pixels or blobs of the image that meets the **certain thresholds** for ***Green*** or ***Red***, the data (the poistion and size) of these blobs is then transferred onto the Hub.
+
+First the `PUPRemoteSensor` class is created and the channel in which the data will be transfered onto the hub:
+
+```py
+from pupremote import PUPRemoteSensor
+
+camera = PUPRemoteSensor(power=True)
+camera.add_channel('blob', to_hub_fmt='hhhhhhhh')  # channel name and format
+```
+
+The first arguement of the `add_channel` method is the name of the channel, and the second the format of the data. In this case we are sending 6 short integers which is represented by `h`. To learn more, see [Format Characters](https://docs.python.org/3/library/struct.html#format-characters)
+
+Then, in every loop cycle, the camera detects color blobs and sends the processed data to the hub:
+
+```py
+camera.update_channel('blob', greenCx, greenCy, greenPixels, redCx, redCy, redPixels)
+camera.process()
+```
+
+The data sent can then be read from the Hub using this code:
+```py
+data = camSensor.call("blob")
+```
+Which reads from the channel that we created earlier.
+
 ### 4.2. Traffic Sign Avoidance Strategy
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The entire program for the robot is designed around single-instance detection of obstacles, rather than the commonly used continuous detection method for this category. This means that the robot captures data from the camera only at specific intervals, instead of constantly monitoring its surroundings. The team chose this approach because it simplifies debugging during the official competition.
@@ -572,20 +598,20 @@ _You may refer to the accompanying illustration for a clearer understanding; the
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The robot’s semi-machine learning approach follows a record-and-replay strategy, similar to basic imitation learning. It "learns" from the first lap by recording inputs such as the colors of the pillars and associating them with predefined actions or routes. This information is then reused in subsequent laps to navigate the course without needing to scan again.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the first lap, the robot focuses on data collection. It scans the environment using a camera, detects the colors of the traffic sign, and stores them in memory along with the corresponding lap segment, for example, lap 0.25: ["Red", "Green"]. During this phase, the robot essentially gathers input-output pairs: the detected traffic sign colors (inputs) determine the chosen path or movement (outputs). These mappings such as "red = right" or "green = left" are stored in memory for future reference.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the first lap, the robot focuses on data collection. It scans the environment using a camera, detects the colors of the traffic sign, and stores them in memory along with the corresponding lap segment, for example, lap `0.25`: `["Red", "Green"]`. During this phase, the robot essentially gathers input-output pairs: the detected traffic sign colors (inputs) determine the chosen path or movement (outputs). These mappings such as `"red = right"` or `"green = left"` are stored in memory for future reference.
 
 ```py
 # Recording Pseudocode
-def record(self):
-    pillarColor = detectFirstPillar(self)
+def record():
+    pillarColor = detectFirstPillar()
     currentLapRecord = []
 
     # turn based on first pillar
     if pillarColor == "Green":
-        goToGreenSide(self)
+        goToGreenSide()
         prevTurn = "LEFT"
     else:
-        goToRedSide(self)
+        goToRedSide()
         prevTurn = "RIGHT"
 
     currentLapRecord.append(pillarColor)
@@ -608,20 +634,20 @@ def record(self):
         else:
             redEnding()
 
-    self.finalDrive()
+    finalDrive()
     # save lap data
-    self.recordLap(currentLap, currentLapRecord)
+    recordLap(currentLap, currentLapRecord)
 ```
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the second and third laps, the robot no longer performs scans. Instead, it relies on the stored data and executes the corresponding pre-programmed movement routines. It calls a function named runRecord(), which loads the recorded memory of the previously detected pillar colors and directs the robot to follow the appropriate path. The logic is straightforward: if the stored data is "Red", the robot uses the right-side obstacle path; if it's "Green", it uses the left-side obstacle path; and if both "Red" and "Green" are stored for the same lap, it follows a more advanced route designed to navigate around both obstacles.
 
 ```py
-def runRecord(self, currentLap):
+def runRecord(currentLap):
     # align at wall
     doWallTurn()
 
     lapID = getLapID()
-    currentObstacles = self.remember(lapID)
+    currentObstacles = remember(lapID)
 
     isParkingLap = lapID == PARKINGLAP
 
@@ -639,7 +665,7 @@ def runRecord(self, currentLap):
         doRedGreenPath(isParkingLap)
 
     # finish by driving to wall
-    self.finalDrive()
+    finalDrive()
 ```
 
 ---
