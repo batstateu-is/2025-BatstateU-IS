@@ -5,7 +5,6 @@
 <center>
 
 [![FE RuleBook](https://img.shields.io/badge/FE-RULEBOOK-%230059B3.svg?style=for-the-badge&logo=read-the-docs&logoColor=white)](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf)
-[![YouTube](https://img.shields.io/badge/BSU-FE2025-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/03gVkXfrZpo)
 [![YouTube](https://img.shields.io/badge/Open-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/sFFOtyM4Csk)
 [![YouTube](https://img.shields.io/badge/Obstacle-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/ECOkZw3vB8I)
 
@@ -25,6 +24,13 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 **_obstacle avoidance_**, and **_traffic sign detection_**, the robot integrates **LEGO® SPIKE™ Prime**
 electronics with a vision system powered by the [**OpenMV Cam H7 Plus**](https://openmv.io/products/openmv-cam-h7-plus). 
 Custom 3D-printed components were used to improve mechanical structure, secure sensors, and optimize internal space. Through iterative testing, the team enhanced performance with better wheels, steering geometry, and balanced weight. This project showcases practical engineering, strategic design, and reliable performance under dynamic conditions.
+
+You may view the full performance of our robot through the link provided below. Watching the complete run will offer a clear understanding of how our mechanical design, sensor integration, and code execution come together in real-time to accomplish each task.
+
+The video showcases the inspiring journey of the Future Engineers team as they prepare for the upcoming 2025 Philippine Robotics Olympiad. It highlights the team members, the self-driving robot they built, and provides an in-depth look into its design, functionality, and programming. Featured segments include the Open Challenge and Obstacle Challenge, where the team's strategies and technical innovations are put to the test.
+
+[![YouTube](https://img.shields.io/badge/BSU_Integrated_School-Future_Engineers-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/03gVkXfrZpo)
+
 ***
 
 <!-- Table of Contents -->
