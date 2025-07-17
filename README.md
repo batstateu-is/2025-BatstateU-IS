@@ -920,7 +920,7 @@ To run your script on the hub, click the “Run this program” button or press 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section contains supplementary materials that support the content presented in this documentation. Included in the appendices are diagrams, tables, timeline, and additional visual documentation that provide deeper insight into the design and development of the self-driving robot. These materials serve as references for illustrating the progress made throughout the project. 
 
-### 11.1. Robot Photos
+### 11.1. Robot Actual Photos
 
 | ![Front](./docu-photos/front.png) | ![Figure .](./docu-photos/rear.png) |
 |:---------------------:| :---------------------:|
@@ -934,11 +934,43 @@ To run your script on the hub, click the “Run this program” button or press 
 |:---------------------:| :---------------------:|
 | <center> Top View </center> | <center> Bottom View </center>| 
 
-### 11.2. Pictorial Wiring Diagram
+---
 
-<img src = "">
+### 11.2. Robot 3D Model
 
-### 11.3. Bills of Materials
+| ![Front](./docu-photos/3dfront.png) | ![Figure .](./docu-photos/3drear.png) |
+|:---------------------:| :---------------------:|
+| <center> Front View </center> | <center> Rear View </center>|  
+
+| ![Left](./docu-photos/3dleft.png) | ![Right](./docu-photos/3dright.png) |
+|:---------------------:| :---------------------:|
+| <center> Left View </center> | <center> Right View </center>| 
+
+| ![Top](./docu-photos/3dtop.png) | ![Bottom](./docu-photos/3dbottom.png) |
+|:---------------------:| :---------------------:|
+| <center> Top View </center> | <center> Bottom View </center>| 
+
+---
+
+### 11.3. Pictorial Wiring Diagram
+
+<center>
+
+| ![Figure ](./docu-photos/Cam.png) |
+|:---------------------:|
+| Figure . <br> Camera Connection Wiring Diagram
+
+<center>
+
+| ![Figure ](./docu-photos/spikehub.png) |
+|:---------------------:|
+| Figure . <br> SPIKE™ Prime Hub Wiring Diagram
+
+</center>
+
+---
+
+### 11.4. Bills of Materials
 
 | BILLS OF MATERIALS | | |
 | ----- | ----- | ----- |
@@ -956,7 +988,7 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ---
 
-### 11.4. Timeline
+### 11.5. Timeline
 
 ![Timeline May](./docu-photos/timlineStart.png)
 ![Timeline June](./docu-photos/timlineJune.png)
