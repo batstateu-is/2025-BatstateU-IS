@@ -922,7 +922,17 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ### 11.1. Robot Photos
 
-<img src = "">
+| ![Front](./docu-photos/front.png) | ![Figure .](./docu-photos/rear.png) |
+|:---------------------:| :---------------------:|
+| <center> Front View </center> | <center> Rear View </center>|  
+
+| ![Left](./docu-photos/left.png) | ![Right](./docu-photos/right.png) |
+|:---------------------:| :---------------------:|
+| <center> Left View </center> | <center> Right View </center>| 
+
+| ![Top](./docu-photos/top.png) | ![Bottom](./docu-photos/bottom.png) |
+|:---------------------:| :---------------------:|
+| <center> Top View </center> | <center> Bottom View </center>| 
 
 ### 11.2. Pictorial Wiring Diagram
 
