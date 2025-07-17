@@ -405,6 +405,21 @@ chosen direction to signal the upcoming turn. This can also assist with determin
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At the start of the Open Challenge, the self-driving robot must decide which direction it should take around the field, which is either clockwise or counterclockwise. This decision that the robot will make depends on its position and surroundings at the beginning of the run. This step is one of the most crucial tasks, as it sets the course of the robot. Therefore, our team made sure to select the most appropriate strategy and components to ensure that the detection of direction will be accurate and consistent. This involved integrating the necessary sensors and programming logic that would allow the robot to make the correct decision. 
 
 ```python
+## Pseudocode for determining direction
+
+def determineDir(self):
+    self.lookDir(90)
+    distRight = self.distSensor.distance()
+
+    self.lookDir(-90)
+    distLeft = self.distSensor.distance()
+
+    if distLeft > distRight:
+        direction = -1  # Counterclockwise
+    else:
+        direction = 1   # Clockwise
+        
+    return direction
 
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once arrived on a certain position away from the wall, the robot executes a scanning sequence — rotating the sensor motor to the left, recording the measured distance, then repeating the process to the right. These two values are compared to determine which direction offers more open space. If the left side has more distance, meaning it's farther to a wall, the robot infers that this side is clearer and sets its course counterclockwise. Conversely, if the right distance is greater or larger, the robot will move clockwise.
@@ -413,12 +428,35 @@ chosen direction to signal the upcoming turn. This can also assist with determin
 
 ### 3.2. Wall Detection and Avoidance
 
-<img src = "">
+```python
+# Pseudocode for Wall Detection and Avoidance
+while self.distance() > targetProximity:
+  # Calculate deviation from target heading
+    error = targetHeading - currentHeading
+    
+    # Use PID with error to increase its reliability
+    self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+
+    # Apply Correction to center the Robot
+    self.move(MAXSPEED, correction)
+
+targetHeading += 90 * direction
+self.turn(targetHeading)
+```
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ensure that the robot can properly avoid collisions with both the randomly placed inner wall and the outer boundary walls of the game field, we implemented a dynamic wall detection strategy using a Technic™ Distance Sensor mounted on a Technic™ Large Angular Motor. We thought that giving it the ability to rotate sideways is a better technique for detection instead of keeping the sensor fixed, thus the robot’s field of view is increased, allowing it to detect walls in multiple directions without requiring the robot to physically change its orientation. Moreover, this design allows the robot to scan its surroundings at key decision points such as straight paths or before a turn, and determine the relative position of nearby walls. It allows the robot to compensate for the limitations of a fixed-sensor design, especially when the robot is driving alongside long stretches of wall or in unpredictable inner wall placements. 
 
-<img src = "">
-<img src = "">
+![Distance Sensor](./docu-photos/distSensorFront.png)
+
+```python
+# Make the sensor face forward again
+sannisLivisa.lookDir(0, asyncBool=False, speed=200)
+
+# Keep moving forward while the sensor returns to center
+while abs(sannisLivisa.senseMotor.angle()) > 5:
+    correction = calculateHeadingCorrection()
+    sannisLivisa.move(MAXSPEED, correction)
+```
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ensure consistency and accuracy, the sensor resets to its original position; it faces forward after each detection cycle. The scanning movement is also synchronized with the robot’s movement speed, so that sensor rotation does not delay navigation or cause imbalance. This wall detection system is one of the key innovations that makes our robot's Open Challenge performance more reliable and intelligent, especially under randomized field conditions.
 
@@ -428,12 +466,52 @@ chosen direction to signal the upcoming turn. This can also assist with determin
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After completing the Open Challenge, our team moved on to accomplishing the Obstacle Challenge, one of the main tasks in the Future Engineers category. In this round, the robot must autonomously complete three laps around the game field while avoiding randomly placed obstacles. Consequently, the placement of the obstacles will be determined before the commencement of the challenge. These obstacles include traffic signs colored red or green, which the robot must detect and respond to correctly. When a green traffic sign is detected, the robot is required to pass on the left side, while a red traffic sign indicates that it must pass on the right. In addition to obstacle avoidance, the robot must also begin the lap by moving out of the parking space and perform parallel parking at the end of the third lap. Additionally, the size of the parking space is based on the length of the robot and must be entered precisely without touching the boundary walls. This round tests the robot’s ability to recognize colors, make  real-time decisions according to what was detected, and move accurately under changing conditions. The following aspects described below are the essential techniques and movement strategies that we have considered for this challenge. 
 
-<img src = "">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Based on the strategy we have implemented in the Obstacle Challenge which is outlined in the flowchart below, our robot begins by initializing its sensors. After that, the robot rotates its distance sensor to the left to measure the distance and stores the value in a variable called left. It then does the same to the right and stores that value in right. Consequently, the robot compares the two distances; if the left side has more space, it sets the direction clockwise; if the right side has more, it sets the direction counterclockwise. And this is significantly similar to how we begin and determine the drive direction in the Open Challenge. 
+
+| ![Figure 14.1](./docu-photos/ObstacleFlowcharts/Obstacle-Direction.jpg) |
+|:---------------------:|
+| Figure 14.1 <br> Obstacle Challenge Flowchart <br> Start |
+
+| ![Figure 14.2](./docu-photos/ObstacleFlowcharts/Obstacle-ExitParking.jpg) |
+|:---------------------:|
+| Figure 14.2 <br> Obstacle Challenge Flowchart <br> From Start |
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After deciding the direction, the robot proceeds to exit the parking area by turning 90 degrees based on the chosen direction and reverses until it stalls against the wall. Once in position, the robot begins scanning the lap to detect obstacles and stores them based on the direction of movement. Then, it identifies the first obstacle it needs to avoid and uses this to decide the proper avoidance function or decision as it leaves the parking area. Depending on whether the obstacle is red or green, it runs a specific function to safely pass it. 
+
+| ![Figure 14.3](./docu-photos/ObstacleFlowcharts/obstacle-recording.jpg) |
+|:---------------------:|
+| Figure 14.3 <br> Obstacle Challenge Flowchart <br> From Exit Parking |
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once it’s out of the parking lap, the robot enters the recording phase, where it scans and avoids obstacles section by section. It rotates the sensor motor to face the straight section, records the color of the first obstacle, avoids it accordingly, then continues to detect and respond to the next one. After passing each obstacle, it updates the recorded information and continues this loop up to three times. 
+Finally, when the recording phase ends, the robot uses the stored movement patterns to replay its actions. It now proceeds to perform the laps based on pre-recorded data instead of re-scanning. 
+
+| ![Figure 14.4](./docu-photos/ObstacleFlowcharts/Obstacle-recorded.jpg) |
+|:---------------------:|
+| Figure 14.4 <br> Obstacle Challenge Flowchart <br> From Recording |
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finally, when the recording phase ends, the robot uses the stored movement patterns to replay its actions. It now proceeds to perform the laps based on pre-recorded data instead of re-scanning. 
 
 ### 4.1. Traffic Sign Detection	
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The OpenMV Cam H7 Plus serves as the self-driving robot’s vision to be able to detect and classify traffic signs, represented by Green and Red colored obstacles that are randomly placed around the field. We implemented in our strategy that the obstacle detection process occurs primarily during the first lap, which is treated as a learning and recording phase. During this lap, the robot pauses at key positions or checkpoints and rotates the camera to identify obstacles that are placed along its path. If a green pillar is detected, the robot is programmed to avoid it by turning left; if a red pillar is detected, it turns right. If no color or obstacle is detected, due to occlusion or lighting issues, a default response (typically treating the obstacle as red) is triggered to ensure the robot still avoids a potential collision.
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To detect traffic signs accurately, the OpenMV Cam H7 Plus is programmed to use the LAB color space instead of the standard RGB. LAB is more effective for color-based object detection under varying lighting conditions because it separates the lightness (L) from the color channels (A and B). This allows for more stable detection of red and green objects even if the lighting changes during the run.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The camera scans the environment by capturing real-time image frames and applying color blob detection using predefined LAB thresholds for green and red pillars. We determined these thresholds through trial and error, using the OpenMV IDE’s built-in color thresholding tool. Adjusting these values while observing the live feed helps us fine-tune detection until the desired color is consistently recognized without false positives. For example, a snippet of the LAB threshold values used by our team looks like this:
+
+```py
+# === Color Thresholds (LAB) ===
+greenThreshold = (0, 60, -128, -15, -128, 127)
+redThreshold = const((0, 35, 0, 127, 1, 127))
+
+# Format: (L Min, L Max, A Min, A Max, B Min, B Max)
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When the camera detects a blob (a region in the image that matches the threshold), it returns the blob’s position and size. The robot then uses this information to classify the obstacle as green or red, and respond accordingly (e.g., turn left for green, right for red).
+
+<!-- Camera's View -->
 
 ### 4.2. Parallel Parking Strategy
+
 ### 4.3. Machine Learning Strategy
 
 ---
