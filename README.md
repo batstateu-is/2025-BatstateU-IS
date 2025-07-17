@@ -5,8 +5,9 @@
 <center>
 
 [![FE RuleBook](https://img.shields.io/badge/FE-RULEBOOK-%230059B3.svg?style=for-the-badge&logo=read-the-docs&logoColor=white)](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf)
-[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)]()
-[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)]()
+[![YouTube](https://img.shields.io/badge/BSU-FE2025-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/03gVkXfrZpo)
+[![YouTube](https://img.shields.io/badge/Open-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/sFFOtyM4Csk)
+[![YouTube](https://img.shields.io/badge/Obstacle-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/ECOkZw3vB8I)
 
 </center>
 
