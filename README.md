@@ -713,9 +713,9 @@ def runRecord(currentLap):
 
 <center>
 
-| ![Figure .](./docu-photos/image84.png) |
+| ![Figure 15.](./docu-photos/image84.png) |
 |:---------------------:|
-| Figure . <br> 3D Modelling in Blender
+| Figure 15. <br> 3D Modelling in Blender
 
 </center>
 
@@ -735,9 +735,9 @@ def runRecord(currentLap):
 
 <center>
 
-| ![Figure .](./docu-photos/image54.png) |
+| ![Figure 16.](./docu-photos/image54.png) |
 |:---------------------:|
-| Figure . <br> Print Settings Z |
+| Figure 16. <br> Print Settings Z |
 
 </center>
 
@@ -751,18 +751,18 @@ def runRecord(currentLap):
 
 <center>
 
-| ![Figure .](./docu-photos/image37.png) |
+| ![Figure 17.](./docu-photos/image37.png) |
 |:---------------------:|
-| Figure . <br> FlashForge Adventurer 4 |
+| Figure 17. <br> FlashForge Adventurer 4 |
 </center>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Adventurer 4’s built-in camera and touchscreen interface allowed us to monitor progress in real time, making it easy to pause or stop a print if an error was detected. Its removable build plate also simplified part removal, reducing the risk of damaging delicate components. The use of the FlashForge Adventurer 4 played a key role in bringing our 3D designs to life and maintaining the overall quality of the robot’s construction.
 
 <center>
 
-| ![Figure .](./docu-photos/image10.jpg) | ![Figure .](./docu-photos/image52.jpg) |
+| ![Figure 18.1](./docu-photos/image10.jpg) | ![Figure 18.2](./docu-photos/image52.jpg) |
 |:---------------------:| :---------------------:|
-| <center> Figure . <br> 3D Printing </center> | <center> Figure . <br> 3D Printing </center>|  
+| <center> Figure 18.1 <br> 3D Printing </center> | <center> Figure 18.2 <br> 3D Printing </center>|  
 
 </center>
 
@@ -780,9 +780,9 @@ def runRecord(currentLap):
 
 <center>
 
-| ![Figure .](./docu-photos/image41-1.png) | ![Figure .](./docu-photos/image41.png) |
+| ![Figure 19.](./docu-photos/image41-1.png) | ![Figure 19.](./docu-photos/image41.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure . <br> First Trial </center> | <center> Figure . <br> Second Trial </center> |
+| <center> Figure 19. <br> First Trial </center> | <center> Figure 19. <br> Second Trial </center> |
 
 </center>
 
@@ -791,9 +791,9 @@ def runRecord(currentLap):
 
 <center>
 
-| ![Figure .](./docu-photos/image27.png) |
+| ![Figure 20.](./docu-photos/image27.png) |
 |:---------------------:|
-| Figure . <br> Third Trial |
+| Figure 20. <br> Third Trial |
 
 </center>
 
