@@ -529,7 +529,7 @@ redThreshold = const((0, 35, 0, 127, 1, 127))
 |:---------------------:|:---------------------:|
 | Green Threshold | Red Threshold |
 
-After processing the image and finding the group of pixels or blobs of the image that meets the **certain thresholds** for ***Green*** or ***Red***, the data (the poistion and size) of these blobs is then transferred onto the Hub.
+After processing the image and finding the group of pixels or blobs of the image that meets the **certain thresholds** for ***Green*** or ***Red***, the data (the position and size) of these blobs is then transferred onto the Hub.
 
 First the `PUPRemoteSensor` class is created and the channel in which the data will be transfered onto the hub:
 
@@ -537,7 +537,7 @@ First the `PUPRemoteSensor` class is created and the channel in which the data w
 from pupremote import PUPRemoteSensor
 
 camera = PUPRemoteSensor(power=True)
-camera.add_channel('blob', to_hub_fmt='hhhhhhhh')  # channel name and format
+camera.add_channel('blob', to_hub_fmt='hhhhhh')  # channel name and format
 ```
 
 The first arguement of the `add_channel` method is the name of the channel, and the second the format of the data. In this case we are sending 6 short integers which is represented by `h`. To learn more, see [Format Characters](https://docs.python.org/3/library/struct.html#format-characters)
