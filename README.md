@@ -28,7 +28,10 @@ Custom 3D-printed components were used to improve mechanical structure, secure s
 
 <!-- Table of Contents -->
 <details>
-<summary><strong><h2 style="display: inline-block">📑 Table of Contents (click to expand)</h2></strong></summary>
+<summary>
+📑 Table of Contents (click to expand)
+</summary>
+
 
 - [Introduction](#introduction)  
 - [Team Profile](#team-profile)  
