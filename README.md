@@ -7,6 +7,7 @@
 [![FE RuleBook](https://img.shields.io/badge/FE-RULEBOOK-%230059B3.svg?style=for-the-badge&logo=read-the-docs&logoColor=white)](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf)
 [![YouTube](https://img.shields.io/badge/Open-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/sFFOtyM4Csk)
 [![YouTube](https://img.shields.io/badge/Obstacle-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/ECOkZw3vB8I)
+[![YouTube](https://img.shields.io/badge/BSU_Integrated_School-Future_Engineers-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/03gVkXfrZpo)
 
 </center>
 
@@ -29,7 +30,8 @@ You may view the full performance of our robot through the link provided below. 
 
 The video showcases the inspiring journey of the Future Engineers team as they prepare for the upcoming 2025 Philippine Robotics Olympiad. It highlights the team members, the self-driving robot they built, and provides an in-depth look into its design, functionality, and programming. Featured segments include the Open Challenge and Obstacle Challenge, where the team's strategies and technical innovations are put to the test.
 
-[![YouTube](https://img.shields.io/badge/BSU_Integrated_School-Future_Engineers-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/03gVkXfrZpo)
+> [!IMPORTANT]
+> ***[BSU-IS Philippine Robotics Olympiad - 2025 Future Engineers](https://youtu.be/03gVkXfrZpo)***
 
 ***
 
@@ -125,21 +127,21 @@ The video showcases the inspiring journey of the Future Engineers team as they p
 
 | <center> **John Angelo M. Bautista** | |
 | --------------------------- | ------ |
-| ![Angelo](./docu-photos/soloPictures/gelo.png)          | Angelo is an incoming Grade 12 student at Batangas State University - The National Engineering University - Integrated School and is currently 17 years old. This year marks his third time participating in the Philippine Robot Olympiad (PRO) and his second time in the Future Engineers category. Drawing from his previous experiences, he ensures that the robot is built with consideration to its efficiency and functionality, making him a key pillar of the team. |
+| ![Angelo](./t-photos/soloPictures/gelo.png)          | Angelo is an incoming Grade 12 student at Batangas State University - The National Engineering University - Integrated School and is currently 17 years old. This year marks his third time participating in the Philippine Robot Olympiad (PRO) and his second time in the Future Engineers category. Drawing from his previous experiences, he ensures that the robot is built with consideration to its efficiency and functionality, making him a key pillar of the team. |
 
 | <center> **Airvin James L. Medina** |  |
 |----------------------------| --- |
-| ![Airvin](./docu-photos/soloPictures/airvin.png)         | Airvin is stepping into his first journey at Philippine Robot Olympiad this year. At 15 years old, this incoming Grade 10 student has shown a remarkable interest in robotics and programming. His enthusiasm for solving problems and thinking critically allow him to develop and troubleshoot codes effectively, bringing the robot’s function to life. |
+| ![Airvin](./t-photos/soloPictures/airvin.png)         | Airvin is stepping into his first journey at Philippine Robot Olympiad this year. At 15 years old, this incoming Grade 10 student has shown a remarkable interest in robotics and programming. His enthusiasm for solving problems and thinking critically allow him to develop and troubleshoot codes effectively, bringing the robot’s function to life. |
 
 | <center> **Cshenizylle Nicole M. Ligayada** </center> |  |
 |------------------------------------| --- |
-| ![Cshenizylle](./docu-photos/soloPictures/cshen.png) | Cshenizylle is a 16-year-old incoming Grade 11 student at Batangas State University - The National Engineering University - Integrated School who is also participating in the Philippine Robot Olympiad for the first time. With a strong interest in research and writing, she takes on the role of documenting the team’s engineering journey. She looks forward to gaining new experiences and growing alongside her teammates. |
+| ![Cshenizylle](./t-photos/soloPictures/cshen.png) | Cshenizylle is a 16-year-old incoming Grade 11 student at Batangas State University - The National Engineering University - Integrated School who is also participating in the Philippine Robot Olympiad for the first time. With a strong interest in research and writing, she takes on the role of documenting the team’s engineering journey. She looks forward to gaining new experiences and growing alongside her teammates. |
 
 </center>
 
 > The following pictures feature the members of Batangas State University - Integrated School (BatStateU-IS) participating in the Future Engineers category along with their robot.
 
-| ![Formal Picture](./docu-photos/formal.png) | ![Funny Picture](./docu-photos/Funny_Final.png) |
+| ![Formal Picture](./t-photos/formal.png) | ![Funny Picture](./t-photos/Funny_Final.png) |
 |:---------------------:|:---------------------:|
 | Formal Picture | Funny Picture |
 
@@ -998,7 +1000,7 @@ A specific and detailed list of parts and step-by-step instructions of construct
 ### **_Step 3. Ensure that electrical connections are properly wired and connected._** 
 You may use these pictorial diagrams as reference for connecting the ***OpenMV Cam H7 Plus*** and the ***Spike™ Prime Sensors*** to the ***Technic™ Large Hub.***
 
-<center>
+</center>
 
 | ![Figure ](./docu-photos/connection.png) |
 |:---------------------:|
