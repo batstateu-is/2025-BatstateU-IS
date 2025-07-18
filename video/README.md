@@ -1,5 +1,6 @@
 Video
 ====
 
-This directory must contain the video.md file with a URL to YouTube (should be either public or accessible by link) showing the vehicle driving autonomously.
-That part of the video where driving demonstration exists must be at least 30 seconds in length.
+You may view and access the overall performance of our self-driving robot by clicking the link provided below. Watching the full performance will give you a clear understanding of how our mechanical design, sensor integration, and programming all work together in real-time to complete each task. 
+
+
