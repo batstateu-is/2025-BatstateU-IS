@@ -1,16 +1,26 @@
-# Open & Obstacle Challenge Source Code
+# 📁 `src/` Directory -  Open & Obstacle Challenge Source Code
 
 This directory contains the source code for both the **Open Challenge** and **Obstacle Challenge**. All files needed to run the robot programs are included and organized for clarity.
 
-- The subdirectory `camera/` contains the scripts used by the **OpenMV Cam H7 Plus**, which processes visual data like blob detection and transmits information to the hub.
-- The subdirectory `hub/` includes the code running on the **SPIKE™ Prime Hub**, responsible for driving logic, navigation, obstacle detection, and decision-making based on input from the camera and sensors.
+### 📁 `camera/` – OpenMV Cam Scripts
 
-The files:
+Contains scripts used by the **OpenMV Cam H7 Plus**, which handles visual processing tasks like color blob detection and transmits processed data to the hub via Bluetooth.
 
-- `hub/pupremote_hub.py`  
-- `camera/lpf2.py`  
-- `camera/pupremote.py`  
+### 📁 `hub/` – SPIKE™ Prime Hub Code
 
-are by [antonvh](https://github.com/antonvh) and come from the repository [PUPRemote](https://github.com/antonvh/PUPRemote). They handle the communication between the camera and hub using the LEGO® Wireless Protocol and are essential for seamless integration of vision data.
+Contains the programs that run on the **LEGO SPIKE™ Prime Hub**, managing:
+- Driving and navigation
+- Obstacle detection and avoidance
+- Decision-making based on sensor and camera inputs
+
+### 📄 External Files from PUPRemote
+
+The following files are adapted from [antonvh](https://github.com/antonvh)’s project [PUPRemote](https://github.com/antonvh/PUPRemote):
+
+- `📄 hub/pupremote_hub.py`  
+- `📄 camera/lpf2.py`  
+- `📄 camera/pupremote.py`  
+
+These files handle **LEGO® Wireless Protocol** communication between the camera and the hub. They are essential for relaying vision data in real time.
 
 > 📁 Each script has been customized or wrapped to fit the specific needs of this project, especially for real-time response, efficiency, and compatibility across both Open and Obstacle Challenges.
