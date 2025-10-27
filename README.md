@@ -192,11 +192,11 @@ The video showcases the inspiring journey of the Future Engineers team as they p
 | ![alt](./docu-photos/image86.png)  | 3 | The **Technic™ Large Angular Motor** is used to turn the steering wheel and drive the robot. Additionally, it controls the rotation of the distance sensor and camera, enabling the robot to scan its environment from different angles for obstacle detection and navigation. |
 | ![alt](./docu-photos/image16.png)  | 2 | The **LEGO Wheel 75 mm x 17mm with Motorcycle Tire 94.2 mm x 20 mm** is connected to one of the Large Angular Motors, providing stability for the robot. This setup ensures smooth and controlled movement as the motor powers the wheel to drive the robot forward and backward. |
 | ![alt](./docu-photos/image81.png) | 2 | The **Technic™ White Wheel 43 mm  x 14 mm** is used as the steering wheel for the robot. It is connected to the Large Angular Motor, allowing the robot to make precise and smooth turns for better control during movement. |
-| ![alt](./docu-photos/image11.png) | Multiple pieces were used | **LEGO® Technic™ Elements** such as beams, axles, gears, and multiple connectors were utilized to construct the body of the robot. Their precision, modularity, and durability makes them ideal for creating mechanically reliable structures while allowing easy integration with sensors and other electronic components.  |
-| ![alt](./docu-photos/esp32.png)| 1 | The **LMS-ESP32** was integrated to support the communication between the Arduino Ultrasonic sensors and the main controller, Technic™ Large Hub, providing enahanced connectivity and compatibility, as well as ensuring that the data received by the sensors are properly transferred for timely decision-making and precise movements. |
+| ![alt](./docu-photos/image11.png) | Multiple pieces were used | **LEGO® Technic™ Elements** such as beams, axles, gears, and multiple connectors were utilized to construct the steering and driving mechanism of the robot. Their precision, modularity, and durability makes them ideal for creating mechanically reliable structures while allowing easy integration with other electronic components.  |
+| ![alt](./docu-photos/esp32.png)| 1 | The **LMS-ESP32** was integrated to support the communication between the Arduino Ultrasonic sensors and the main controller, SPIKE™ Prime Hub, providing enahanced connectivity and compatibility, as well as ensuring that the data received by the sensors are properly transferred for timely decision-making and precise movements. |
 | ![alt](./docu-photos/image50.png)| 1 | The **OpenMV Cam H7 Plus** was used as the robot’s vision system to detect traffic signs and understand its surroundings. It processed images in real time and sent data to the main controller, helping the robot decide when to turn or react to visual cues during the Obstacle Challenge. |
-| ![alt](./docu-photos/image44.png) | 4 | **Jumper wires** were used to connect the OpenMV Cam H7 to the main controller, the SPIKE™ Prime Hub. They ensured that the data processed by the camera was transmitted to the Python-based program running on the hub.  |
-| ![alt](./docu-photos/image24.png) | 1 | **PLA 3D Printing Filament** was utilized to create the 3D-printed components of the robot such as the case for the OpenMV Cam H7 Plus. White filaments are said to produce designs with great strength. PLA filament is also popular in 3D printing because of its ease of use, biodegradability, and versatility.  |
+| ![alt](./docu-photos/jumper.png) | 4 | **Jumper wires** were used to connect the OpenMV Cam H7 to the main controller, the SPIKE™ Prime Hub. They ensured that the data processed by the camera was transmitted to the Python-based program running on the hub.  |
+| ![alt](./docu-photos/image24.png) | Multiple were used | **PLA 3D Printing Filament** was utilized to create the 3D-printed components of the robot, sepcifically the chassis, and the cases for the OpenMV Cam H7 Plus, HC-SR04 Ultasonic Distance Sensors, and LMS-ESP32. White filaments are said to produce designs with great strength. PLA filament is also popular in 3D printing because of its ease of use, biodegradability, and versatility.  |
 
 </center>
 
@@ -261,13 +261,15 @@ The video showcases the inspiring journey of the Future Engineers team as they p
 
 ### 1.3. Mechanical Design
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The structure of our self-driving robot is made mostly out of LEGO® Technic™ elements, with a combination of 3D-printed materials. Drawing from last year’s experience — where the robot is constructed using only LEGO® Technic™ materials — we have learned that it is essential to integrate engineering factors, with creativity and originality in mind. Therefore, for this year’s competition, our team has developed various 3D-printed components that made our self-driving robot unique and innovative. For instance, from a camera case made out of LEGO, we have designed a 3D-printed case that incorporated a slide-lock mechanism, which offers something new, but still efficient, functional, and reliable for our team’s robot. Further explanation about this case is discussed at Chapter 5: Engineering Factor, 5.1. 3D-Printed Camera Case. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The structure of our self-driving robot is made mostly out of PLA Filament that were 3D-printed based on the teams own preference, with a combination of LEGO® Technic™ elements. The mechanical design, as shown resembles the well-known and traditional vehicle used by commuters in the Philippines on a daily basis, which is the Jeepney. Aside from being just a vehicle, it's also the country's identity, serving a huge part in preserving the essential traditions and culture of the Philippines. The reason behind using this as our inspiration lies in our triumph in the national stage, which brought to us the opportunity to represent the Philippines in the global stage. Additionally, this vehicle also holds an immense value to our heart as it plays a big part in our journey; the vehicle that drove us back and forth from our home to our training grounds. 
+
+Consequetly, drawing from last year’s experience — where the robot is constructed using only LEGO® Technic™ materials — we have learned that it is essential to integrate engineering factors, with creativity and originality in mind. Therefore, for this year’s competition, our team has developed various 3D-printed components aside from the chassis that made our self-driving robot unique and innovative. For instance, from a camera and sensor case made out of LEGO, we have designed a 3D-printed case that incorporated slide-lock mechanism, which offers something new, but still efficient, functional, and reliable for our team’s robot. Further explanation about these are discussed at Chapter 5: Engineering Factor. 
 
 | ![Figure 3.1](./docu-photos/rChassisLeft.png) | ![Figure 3.2](./docu-photos/rChassisRight.png) |
 |:---------------------:|:---------------------:|
 | Figure 3.1 <br> Robot Chassis <br> Left Side View | Figure 3.2 <br> Robot Chassis with Electrical Components <br> Left Side View |
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the length of the robot is built to be longer, given that while the length of the robot increases, the larger the space will be intended for the parking area. We have utilized two different materials for the robot: the LEGO Wheel 75 mm x 17mm with Motorcycle Tire 94.2 mm x 20 mm and Technic™ White Wheels with a diameter of 43 mm, which handles the driving and steering mechanism, respectively. The large wheels were used for the rear-wheel drive system since a larger wheel possesses a larger circumference, and thus, having the ability to travel longer distances per rotation. It also increases the maximum speed limit a robot can travel per unit of time. Consequently, smaller wheels were utilized for the steering mechanism since they have a smaller turning radius, which makes it easier for the robot to handle tight turns in navigating obstacles, corners, and small spaces. Moreover, larger wheels cannot be used at the front part of the robot as these can block the view of the distance sensor, disabling the sensor to detect objects properly and accurately. The Technic™ White Wheels also offer more precision and finer control, preventing slips that makes the robot’s movement smooth and quick. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the length of the robot is built to be longer, given that while the length of the robot increases, the larger the space will be intended for the parking area. We have utilized two different materials for the robot's wheels: the LEGO Wheel 75 mm x 17mm with Motorcycle Tire 94.2 mm x 20 mm and Technic™ White Wheels with a diameter of 43 mm, which handles the driving and steering mechanism, respectively. The large wheels were used for the rear-wheel drive system since a larger wheel possesses a larger circumference, and thus, having the ability to travel longer distances per rotation. It also increases the maximum speed limit a robot can travel per unit of time. Consequently, smaller wheels were utilized for the steering mechanism since they have a smaller turning radius, which makes it easier for the robot to handle tight turns in navigating obstacles, corners, and small spaces. Moreover, larger wheels cannot be used at the front part of the robot as these can block the view of the distance sensor, disabling the sensor to detect objects properly and accurately. The Technic™ White Wheels also offer more precision and finer control, preventing slips that makes the robot’s movement smooth and quick. 
 
 <center>
 
@@ -277,7 +279,7 @@ The video showcases the inspiring journey of the Future Engineers team as they p
 
 </center>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To balance the weight distribution of the robot throughout its body, the Technic™ Large Hub was placed between the drive and steer system. This central placement evenly distributed the weight across all wheels, and significantly improved the robot’s overall stability, turning accuracy, and movement consistency.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To balance the weight distribution of the robot throughout its body and for easier management and maintenance, the Technic™ Large Hub and LMS-ESP32 was placed between the drive and steer system. This central placement evenly distributed the weight across all wheels, and significantly improved the robot’s overall stability, turning accuracy, and movement consistency.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In addition, during test runs, we noticed that adding a distance sensor to the rear caused an imbalance, making the front lighter and resulting in unstable movement. To solve this, we added an EV3 steel ball at the front to counterbalance the rear weight. This improved the robot’s overall stability, traction, and responsiveness during turns and directional changes.
 
@@ -299,9 +301,9 @@ The video showcases the inspiring journey of the Future Engineers team as they p
 
 <center>
 
-| ![Figure 6](./docu-photos/image59.png) |
-|:---------------------:|
-| Figure 6. <br> SPIKE™ Prime Hub <br> Specification 
+| ![Figure 6.1](./docu-photos/image59.png) | ![Figure 6.2]() |
+|:---------------------:|:---------------------:|
+| Figure 6.1 <br> SPIKE™ Prime Hub <br> Specification | Figure 6.2 <br> SPIKE™ Prime Hub <br> Measurements |
 
 </center>
 
@@ -360,9 +362,9 @@ The video showcases the inspiring journey of the Future Engineers team as they p
 
 <center>
 
-| ![Figure 10](./docu-photos/image78.png) |
-|:---------------------:|
-| Figure 10 <br> Robot’s Technic™ Distance Sensor
+| ![Figure 10.1](./docu-photos/image78.png) | ![Figure 10.2]() |
+|:---------------------:|:---------------------:|
+| Figure 10.1 <br> Robot’s Technic™ Distance Sensor | Figure 10.2 <br> Measurements |
 
 </center>
 
