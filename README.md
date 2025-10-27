@@ -303,7 +303,7 @@ Consequetly, drawing from last year’s experience — where the robot is constr
 
 | ![Figure 6.1](./docu-photos/image59.png) | ![Figure 6.2]() |
 |:---------------------:|:---------------------:|
-| Figure 6.1 <br> SPIKE™ Prime Hub <br> Specification | Figure 6.2 <br> SPIKE™ Prime Hub <br> Measurements |
+| Figure 6.1 <br> SPIKE™ Prime Hub <br> Specification | Figure 6.2 <br> SPIKE™ Prime Hub <br> Dimensions |
 
 </center>
 
@@ -362,9 +362,9 @@ Consequetly, drawing from last year’s experience — where the robot is constr
 
 <center>
 
-| ![Figure 10.1](./docu-photos/image78.png) | ![Figure 10.2]() |
+| ![Figure 10.1](./docu-photos/image78.png) | ![Figure 10.2](./docu-photos/dcplate.png) |
 |:---------------------:|:---------------------:|
-| Figure 10.1 <br> Robot’s Technic™ Distance Sensor | Figure 10.2 <br> Measurements |
+| Figure 10.1 <br> Robot’s Technic™ Distance Sensor | Figure 10.2 <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
 
 </center>
 
