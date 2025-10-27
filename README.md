@@ -1,6 +1,6 @@
 ***
 
-# ![Batangas State University - Integrated School](./docu-photos/banner.png)
+# ![J.E.E.P. (BatStateU-IS)](./docu-photos/banner.png)
 
 <center>
 
@@ -20,11 +20,11 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 This repository contains the comprehensive development of a **self-driving robot** engineered by the 
-**Batangas State University - Integrated School** team for the [**2025 Philippine Robot Olympiad**](https://felta.ph/pro/), 
+**Batangas State University - Integrated School** team for the [**2025 World Robot Olympiad**](https://wro-association.org/competition/2025-season/), 
 under the **Future Engineers category**. Designed for **_autonomous navigation_**, 
-**_obstacle avoidance_**, and **_traffic sign detection_**, the robot integrates **LEGO® SPIKE™ Prime**
+**_obstacle avoidance_**, and **_traffic sign detection_**, the robot integrates **LEGO® SPIKE™ Prime** and **Arduino**
 electronics with a vision system powered by the [**OpenMV Cam H7 Plus**](https://openmv.io/products/openmv-cam-h7-plus). 
-Custom 3D-printed components were used to improve mechanical structure, secure sensors, and optimize internal space. Through iterative testing, the team enhanced performance with better wheels, steering geometry, and balanced weight. This project showcases practical engineering, strategic design, and reliable performance under dynamic conditions.
+Custom 3D-printed components were used to develop the chassis, serving as the main body of the self-driving robot, which better improved its mechanical structure, secured sensors, and optimized its internal space. Through iterative testing, the team enhanced its performance with innovated mechanism and steering geometry. Overall, this project showcases practical engineering, strategic design, and reliable performance under dynamic conditions.
 
 You may view the full performance of our robot through the link provided below. Watching the complete run will offer a clear understanding of how our mechanical design, sensor integration, and code execution come together in real-time to accomplish each task.
 
