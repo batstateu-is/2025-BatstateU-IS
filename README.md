@@ -127,15 +127,15 @@ The video showcases the inspiring journey of the Future Engineers team as they p
 
 | <center> **John Angelo M. Bautista** | |
 | --------------------------- | ------ |
-| ![Angelo](./t-photos/soloPictures/gelo.png)          | Angelo is a Grade 12 student at Batangas State University - The National Engineering University - Integrated School and is currently 18 years old. This year marks his third time participating in the World Robot Olympiad (WRO) and his second time in the Future Engineers category. Drawing from his previous experiences, he ensures that the robot is built with consideration to its efficiency and functionality, making him a key pillar of the team. |
+| ![Angelo](./t-photos/soloPictures/updangelo.png)          | Angelo is a Grade 12 student at Batangas State University - The National Engineering University - Integrated School and is currently 18 years old. This year marks his third time participating in the World Robot Olympiad (WRO) and his second time in the Future Engineers category. Drawing from his previous experiences, he ensures that the robot is built with consideration to its efficiency and functionality, making him a key pillar of the team. |
 
 | <center> **Airvin James L. Medina** |  |
 |----------------------------| --- |
-| ![Airvin](./t-photos/soloPictures/airvin.png)         | Airvin is stepping into his first journey at World Robot Olympiad this year. At 15 years old, this Grade 10 student has shown a remarkable interest in robotics and programming. His enthusiasm for solving problems and thinking critically allow him to develop and troubleshoot codes effectively, bringing the robot’s function to life. |
+| ![Airvin](./t-photos/soloPictures/updairvin.png)         | Airvin is stepping into his first journey at World Robot Olympiad this year. At 15 years old, this Grade 10 student has shown a remarkable interest in robotics and programming. His enthusiasm for solving problems and thinking critically allow him to develop and troubleshoot codes effectively, bringing the robot’s function to life. |
 
 | <center> **Cshenizylle Nicole M. Ligayada** </center> |  |
 |------------------------------------| --- |
-| ![Cshenizylle](./t-photos/soloPictures/cshen.png) | Cshenizylle is a 16-year-old Grade 11 student at Batangas State University - The National Engineering University - Integrated School who is also participating in the World Robot Olympiad for the first time. With a strong interest in research and writing, she takes on the role of documenting the team’s engineering journey. She looks forward to gaining new experiences and growing alongside her teammates. |
+| ![Cshenizylle](./t-photos/soloPictures/updcshen.png) | Cshenizylle is a 16-year-old Grade 11 student at Batangas State University - The National Engineering University - Integrated School who is also participating in the World Robot Olympiad for the first time. With a strong interest in research and writing, she takes on the role of documenting the team’s engineering journey. She looks forward to gaining new experiences and growing alongside her teammates. |
 
 </center>
 
