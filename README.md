@@ -362,7 +362,7 @@ Consequetly, drawing from last year’s experience — where the robot is constr
 
 <center>
 
-| ![Figure 10.1](./docu-photos/image78.png) | ![Figure 10.2](./docu-photos/dcplate.png) |
+| <img src="./docu-photos/image78.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/dcplate.png" alt="Figure 10.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 10.1 <br> Robot’s Technic™ Distance Sensor | Figure 10.2 <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
 
@@ -392,9 +392,9 @@ Consequetly, drawing from last year’s experience — where the robot is constr
 
 <center>
 
-| ![Figure 12](./docu-photos/image23.png) |
-|:---------------------:|
-| Figure 12 <br> Robot’s OpenMV Cam H7 Plus
+| <img src="./docu-photos/image23.png" alt="Figure 12.1" width="1080" height="566"> | <img src="./docu-photos/dcplate.png" alt="Figure 12.2" width="1080" height="566"> |
+|:---------------------:|:---------------------:|
+| Figure 12.1 <br> Robot’s OpenMV Cam H7 Plus | Figure 12.2 <br> Robot’s OpenMV Cam H7 Plus <br> Dimensions |
 
 </center>
 
