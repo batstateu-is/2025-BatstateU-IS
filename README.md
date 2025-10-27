@@ -22,16 +22,14 @@
 This repository contains the comprehensive development of a **self-driving robot** engineered by the 
 **Batangas State University - Integrated School** team for the [**2025 World Robot Olympiad**](https://wro-association.org/competition/2025-season/), 
 under the **Future Engineers category**. Designed for **_autonomous navigation_**, 
-**_obstacle avoidance_**, and **_traffic sign detection_**, the robot integrates **LEGO® SPIKE™ Prime** and **Arduino**
-electronics with a vision system powered by the [**OpenMV Cam H7 Plus**](https://openmv.io/products/openmv-cam-h7-plus). 
-Custom 3D-printed components were used to develop the chassis, serving as the main body of the self-driving robot, which better improved its mechanical structure, secured sensors, and optimized its internal space. Through iterative testing, the team enhanced its performance with innovated mechanism and steering geometry. Overall, this project showcases practical engineering, strategic design, and reliable performance under dynamic conditions.
+**_obstacle avoidance_**, and **_traffic sign detection_**, the robot integrates [**LMS-ESP32**](https://www.antonsmindstorms.com/product/wifi-python-esp32-board-for-mindstorms/?srsltid=AfmBOopfdoKXv4-t9PTAc_VNohW6cx7w24SMns8QDY4nlufSxlDntJdL) as its microcontroller, allowing the **LEGO® SPIKE™ Prime** and **Arduino** electronics to communicate with one another. In addition, the robot ensures high precision detection with a vision system powered by the [**OpenMV Cam H7 Plus**](https://openmv.io/products/openmv-cam-h7-plus). Custom 3D-printed components were used to develop the chassis, serving as the main body of the self-driving robot, which better improved its mechanical structure, secured sensors, and optimized its internal space. Through iterative testing, the team enhanced its performance with innovated mechanism and steering geometry. Overall, this project showcases practical engineering, strategic design, and reliable performance under dynamic conditions.
 
 You may view the full performance of our robot through the link provided below. Watching the complete run will offer a clear understanding of how our mechanical design, sensor integration, and code execution come together in real-time to accomplish each task.
 
-The video showcases the inspiring journey of the Future Engineers team as they prepare for the upcoming 2025 Philippine Robotics Olympiad. It highlights the team members, the self-driving robot they built, and provides an in-depth look into its design, functionality, and programming. Featured segments include the Open Challenge and Obstacle Challenge, where the team's strategies and technical innovations are put to the test.
+The video showcases the inspiring journey of the Future Engineers team as they prepare for the upcoming 2025 World Robot Olympiad. It highlights the team members, the self-driving robot they built, and provides an in-depth look into its design, functionality, and programming. Featured segments include the Open Challenge and Obstacle Challenge, where the team's strategies and technical innovations are put to the test.
 
 > [!IMPORTANT]
-> ***[BSU-IS Philippine Robotics Olympiad - 2025 Future Engineers](https://youtu.be/03gVkXfrZpo)***
+> ***[BSU-IS World Robot Olympiad - 2025 Future Engineers](https://youtu.be/03gVkXfrZpo)***
 
 ***
 
@@ -114,7 +112,7 @@ The video showcases the inspiring journey of the Future Engineers team as they p
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Engineering is the heart of innovation that gives life to initiatives. It bridges science, technology, and creativity to provide solutions for real-world problems. In the field of robotics, engineering allows everyone to think and design beyond the current possibilities, highlighting that a future with numerous solutions can be made. Thus, through this, we were able to challenge ourselves to integrate various engineering concepts in autonomous navigation. As a team of student innovators and future engineers, we embraced this opportunity to create a self-driving robot that exemplifies the spirit of modern engineering. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This engineering documentation provides a comprehensive record of the BatStateU Spartan Team’s design process, program construction,  problem-solving strategies, and technical decisions throughout the development of our self-driving robot. This provides insight into our robot’s architecture, programming approach, and the challenges we encountered and overcame along the way. Intended for the Future Engineers Category in the 24th Philippine Robot Olympiad, this documentation reflects the dedication and initiative of our team to produce an innovation that goes beyond the boundaries of autonomous technology. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This engineering documentation provides a comprehensive record of J.E.E.P. BatStateU-IS’s design process, program construction,  problem-solving strategies, and technical decisions throughout the development of our self-driving robot. This provides insight into our robot’s architecture, programming approach, strategies we came up with, and the challenges we encountered and overcame along the way. Intended for the Future Engineers Category in the 25th World Robot Olympiad, this documentation reflects the dedication and initiative of our team to produce an innovation that goes beyond the boundaries of autonomous technology. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We have featured key aspects involved in the development of our robot such as the Robot Specifications which provides information about the architecture of the robot, and selection of sensors, motors, and mechanical components with consideration to different aspects like speed, power, and specifications; Mobility Management that focuses on the specific movements that the robot can do; Power and Sense Management that is responsible for the description of the programming language and libraries utilized, algorithm explanations, and program logic flow; Challenge Strategies which features code snippets with explanations of its purpose, and the strategies we came up for the Open Challenge, Obstacle Challenge, traffic sign avoidance, and parking; and performance testings which includes setup conditions, observed issues, and video demonstrations. In addition, the engineering innovations integrated into the robot and a guide for its construction were added. To further support the technical information, the team added visual documentation that features actual and 3D model images of the robot. With these, the team aimed and continuously aims to demonstrate engineering discipline rooted in teamwork, determination, rigorous testing, and excellence with a purpose of being able to think of and design an innovative and modern solution as future engineers. 
 
@@ -123,23 +121,25 @@ The video showcases the inspiring journey of the Future Engineers team as they p
 ## 👥 Team Profile
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Batangas State University - Integrated School is a group of passionate and curious young engineers driven by a shared goal: to innovate through robotics. Each member believes that learning through doing, as well as failing, has shaped us into better innovators, thinkers, and collaborators. Together, we have combined our skills and passion for robotics, engineering, and programming to create our own innovation of a self-driving robot for the Future Engineers category. 
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team came up with the name J.E.E.P. (BatStateU-IS), which stands for Junior Engineers Exploring Possibilities, as it symbolizes our journey during the preparation for one of the most prestigious robotics competitions, World Robot Olympiad International Finals 2025. It is inspired by the Filipino term “biyahe” as well as the traditional Filipino vehicle, Jeepney, which emphasizes the members’ path as we innovate and forge onward, excelling in engineering. Throughout, we held on to the belief that every route and stopover lets us grow and learn.
+
 <center>
 
 | <center> **John Angelo M. Bautista** | |
 | --------------------------- | ------ |
-| ![Angelo](./t-photos/soloPictures/gelo.png)          | Angelo is an incoming Grade 12 student at Batangas State University - The National Engineering University - Integrated School and is currently 17 years old. This year marks his third time participating in the Philippine Robot Olympiad (PRO) and his second time in the Future Engineers category. Drawing from his previous experiences, he ensures that the robot is built with consideration to its efficiency and functionality, making him a key pillar of the team. |
+| ![Angelo](./t-photos/soloPictures/gelo.png)          | Angelo is a Grade 12 student at Batangas State University - The National Engineering University - Integrated School and is currently 18 years old. This year marks his third time participating in the World Robot Olympiad (WRO) and his second time in the Future Engineers category. Drawing from his previous experiences, he ensures that the robot is built with consideration to its efficiency and functionality, making him a key pillar of the team. |
 
 | <center> **Airvin James L. Medina** |  |
 |----------------------------| --- |
-| ![Airvin](./t-photos/soloPictures/airvin.png)         | Airvin is stepping into his first journey at Philippine Robot Olympiad this year. At 15 years old, this incoming Grade 10 student has shown a remarkable interest in robotics and programming. His enthusiasm for solving problems and thinking critically allow him to develop and troubleshoot codes effectively, bringing the robot’s function to life. |
+| ![Airvin](./t-photos/soloPictures/airvin.png)         | Airvin is stepping into his first journey at World Robot Olympiad this year. At 15 years old, this Grade 10 student has shown a remarkable interest in robotics and programming. His enthusiasm for solving problems and thinking critically allow him to develop and troubleshoot codes effectively, bringing the robot’s function to life. |
 
 | <center> **Cshenizylle Nicole M. Ligayada** </center> |  |
 |------------------------------------| --- |
-| ![Cshenizylle](./t-photos/soloPictures/cshen.png) | Cshenizylle is a 16-year-old incoming Grade 11 student at Batangas State University - The National Engineering University - Integrated School who is also participating in the Philippine Robot Olympiad for the first time. With a strong interest in research and writing, she takes on the role of documenting the team’s engineering journey. She looks forward to gaining new experiences and growing alongside her teammates. |
+| ![Cshenizylle](./t-photos/soloPictures/cshen.png) | Cshenizylle is a 16-year-old Grade 11 student at Batangas State University - The National Engineering University - Integrated School who is also participating in the World Robot Olympiad for the first time. With a strong interest in research and writing, she takes on the role of documenting the team’s engineering journey. She looks forward to gaining new experiences and growing alongside her teammates. |
 
 </center>
 
-> The following pictures feature the members of Batangas State University - Integrated School (BatStateU-IS) participating in the Future Engineers category along with their robot.
+> The following pictures feature the members of J.E.E.P. (BatStateU-IS) participating in the Future Engineers category along with their robot.
 
 | ![Formal Picture](./t-photos/formal.png) | ![Funny Picture](./t-photos/Funny_Final.png) |
 |:---------------------:|:---------------------:|
@@ -148,13 +148,13 @@ The video showcases the inspiring journey of the Future Engineers team as they p
 **Team Members (Left to Right):**  
 - **Airvin James L. Medina**, 15  
 - **Cshenizylle Nicole M. Ligayada**, 16  
-- **John Angelo M. Bautista**, 17
+- **John Angelo M. Bautista**, 18
 
 ---
 
 ## 🤖 Robot Specifications
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our team, the Batangas State University - Integrated School, introduces a self-driving robot that is developed for the Philippine Robot Olympiad 2025, under the Future Engineers category. This robot represents our vision of combining creativity and technical skill to design a robot capable of autonomous navigation, obstacle handling, and real-time decision-making. Through teamwork, perseverance, and continuous improvement that has shaped its development, we have ensured that this is carefully engineered to meet the demands of the competition. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our team, J.E.E.P., introduces a self-driving robot that is developed for the 2025 World Robot Olympiad International Finals, under the Future Engineers category. This robot represents our vision of combining creativity and technical skill to design a robot capable of autonomous navigation and real-time decision-making. Through teamwork, perseverance, and continuous improvement that has shaped its development, we have ensured that this is carefully engineered to meet the demands of the competition. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following specifications provide a detailed overview of the key physical and mechanical characteristics of our team’s self-driving robot. We designed this while giving importance to precision, agility, and durability, so the features of the robot have been carefully optimized to balance speed and stability during runs. 
 
@@ -178,7 +178,7 @@ The video showcases the inspiring journey of the Future Engineers team as they p
 
 </center>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the team’s selection of materials and electronic components is intended to create a strong yet lightweight robot platform, designed to deliver reliable and consistent performance. The list of the main components and its corresponding description presented in the table below emphasize these critical design choices and technical details that enhance the robot’s overall functionality.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the team’s selection of materials and electronic components is intended to create a rigid yet lightweight robot platform, designed to deliver both reliable and consistent performance. The list of the main components and its corresponding description presented in the table below emphasize these critical design choices and technical details that enhance the robot’s overall functionality.
 
 <center>
 
