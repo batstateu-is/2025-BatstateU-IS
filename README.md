@@ -1,6 +1,6 @@
 ***
 
-# ![J.E.E.P. (BatStateU-IS)](./docu-photos/upbanner.png)
+# ![J.E.E.P. (BatStateU-IS)](./docu-photos/updbanner.png)
 
 <center>
 
