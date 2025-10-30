@@ -393,7 +393,7 @@ Consequetly, drawing from last year’s experience — where the robot is constr
 
 <center>
 
-| <img src="./docu-photos/image23.png" alt="Figure 12.1" width="1080" height="566"> | <img src="./docu-photos/dcplate.png" alt="Figure 12.2" width="1080" height="566"> |
+| <img src="./docu-photos/image23.png" alt="Figure 12.1" width="1080" height="566"> | <img src="./docu-photos/mvplate.png" alt="Figure 12.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 12.1 <br> Robot’s OpenMV Cam H7 Plus | Figure 12.2 <br> Robot’s OpenMV Cam H7 Plus <br> Dimensions |
 
