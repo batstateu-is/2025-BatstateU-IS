@@ -187,17 +187,17 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 | <center> Components </center> | <center>Quantity</center> | <center>Description</center> |
 | :---: | :---: | ----- |
 | ![alt](./docu-photos/image53.png) | 1 | The **Technic™ Large Hub** was chosen as the main controller because it can connect to multiple sensors and motors. Its support for Python-based programming made it easier to create accurate and flexible control systems for navigation and obstacle avoidance. |
-| ![alt](./docu-photos/ups.png) | 1 | The **UPS - 18650 for Raspberry Pi** serves as the power supply for the LMS-ESP32 as it is easy to install, and supports over-charge, over-discahrge, over-current, short-circuit protection, and external power plug-in detection, providing a compatible connection with other electrical components. |
+| ![alt](./docu-photos/ups.png) | 1 | The **Raspberry pi UPS-18650-Lite** provides a stable 5 V regulated power supply for the LMS-ESP32, ensuring continuous operation during power fluctuations. It includes built-in protections against over-charge, over-discharge, over-current, and short circuits, making it a reliable and safe power source for the system. |
 | ![alt](./docu-photos/image66.png) | 1 | The **Technic™ Distance Sensors** were used to measure how far the robot is from nearby walls. It helped the robot avoid collisions by detecting obstacles in front and behind the path of the robot and triggering turning or straight movements based on the distance detected. |
 | ![alt](./docu-photos/hc-sr04.png)| 3 | The **HC-SR04 Ultrasonic Distance Sensors** were added around the robot to allow for navigation in handling wall obstacles around the game field in the Open Challenge round. Meanwhile, it was used to provide vision for the robot to efficiently perform parallel parking without collisions with the parking walls in the Obstacle Challenge round. |
 | ![alt](./docu-photos/image86.png)  | 3 | The **Technic™ Large Angular Motor** is used to turn the steering wheel and drive the robot. Additionally, it controls the rotation of the distance sensor and camera, enabling the robot to scan its environment from different angles for obstacle detection and navigation. |
 | ![alt](./docu-photos/image16.png)  | 2 | The **LEGO Wheel 75 mm x 17mm with Motorcycle Tire 94.2 mm x 20 mm** is connected to one of the Large Angular Motors, providing stability for the robot. This setup ensures smooth and controlled movement as the motor powers the wheel to drive the robot forward and backward. |
 | ![alt](./docu-photos/image81.png) | 2 | The **Technic™ White Wheel 43 mm  x 14 mm** is used as the steering wheel for the robot. It is connected to the Large Angular Motor, allowing the robot to make precise and smooth turns for better control during movement. |
 | ![alt](./docu-photos/image11.png) | Multiple pieces were used | **LEGO® Technic™ Elements** such as beams, axles, gears, and multiple connectors were utilized to construct the steering and driving mechanism of the robot. Their precision, modularity, and durability makes them ideal for creating mechanically reliable structures while allowing easy integration with other electronic components.  |
-| ![alt](./docu-photos/esp32.png)| 1 | The **LMS-ESP32** was integrated to support the communication between the Arduino Ultrasonic sensors and the main controller, SPIKE™ Prime Hub, providing enahanced connectivity and compatibility, as well as ensuring that the data received by the sensors are properly transferred for timely decision-making and precise movements. |
+| ![alt](./docu-photos/esp32.png)| 1 | The **LMS-ESP32** serves as an interface module between the Arduino ultrasonic sensors and the SPIKE™ Prime Hub, managing serial communication and data transfer. It ensures synchronized, low-latency transmission of distance readings to the main controller for accurate obstacle detection and responsive movement control. |
 | ![alt](./docu-photos/image50.png)| 1 | The **OpenMV Cam H7 Plus** was used as the robot’s vision system to detect traffic signs and understand its surroundings. It processed images in real time and sent data to the main controller, helping the robot decide when to turn or react to visual cues during the Obstacle Challenge. |
 | ![alt](./docu-photos/jumper.png) | 4 | **Jumper wires** were used to connect the OpenMV Cam H7 to the main controller, the SPIKE™ Prime Hub. They ensured that the data processed by the camera was transmitted to the Python-based program running on the hub.  |
-| ![alt](./docu-photos/image24.png) | Multiple were used | **PLA 3D Printing Filament** was utilized to create the 3D-printed components of the robot, sepcifically the chassis, and the cases for the OpenMV Cam H7 Plus, HC-SR04 Ultasonic Distance Sensors, and LMS-ESP32. White filaments are said to produce designs with great strength. PLA filament is also popular in 3D printing because of its ease of use, biodegradability, and versatility.  |
+| ![alt](./docu-photos/image24.png) | Multiple were used | **PLA 3D Printing Filament** was utilized to create the 3D-printed components of the robot, sepcifically the chassis, and the cases for the OpenMV Cam H7 Plus, HC-SR04 Ultasonic Distance Sensors, UPS-18650 Power Module, and LMS-ESP32. White filaments are said to produce designs with great strength. PLA filament is also popular in 3D printing because of its ease of use, biodegradability, and versatility.  |
 
 </center>
 
@@ -231,8 +231,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 </center>
 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Table 3 shows the difference between the large motor and medium motor in terms of different specifications, with all performance data being based on a ***7.2V power supply***. The Technic™ Medium Motor, while more small and lightweight, offers faster rotation speeds but lower torque. This makes it ideal for lightweight mechanisms, low-profile design with limited space or tasks requiring quick response but low-resistance motion. In addition to wheels, it is ideal for driving attachments like arms, lifts, or actuators on robots. However, for driving the entire robot, where it must carry multiple components, handle tight turns, and maintain stability over long distances, more torque and control are required. This makes the Large Motor more appropriate for its strength and ability to handle resistance. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Table 3 shows the difference between the large motor and medium motor in terms of different specifications, with all performance data being based on a <b>7.2V power supply</b>. The Technic™ Medium Motor, while more small and lightweight, offers faster rotation speeds but lower torque. This makes it ideal for lightweight mechanisms, low-profile design with limited space or tasks requiring quick response but low-resistance motion. In addition to wheels, it is ideal for driving attachments like arms, lifts, or actuators on robots. However, for driving the entire robot, where it must carry multiple components, handle tight turns, and maintain stability over long distances, more torque and control are required. This makes the Large Motor more appropriate for its strength and ability to handle resistance. 
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After comparing both options, we decided to integrate the Technic™ Large Angular Motor for our robot’s driving and steering system. This features a built-in advanced Rotation Sensor that can report speed, angle changes, and absolute position within a range of -180° to +180°. It can also sense direct user input or manual rotation which allows responsive input during calibration or testing. While powered by a 7.2V system, the motor can achieve a torque of 25 Ncm at stall, and performs most efficiently at 8 Ncm with 135 RPM. Its speed with no load reaches up to 175 RPM. Its sensor offers a resolution of 360 counts per revolution, an accuracy that is less than or equal to ±3 degrees, and a fast update rate of 100 Hz for real-time feedback. In terms of design, the motor has a Technic build geometry and includes a 250 mm LEGO® Power Functions 2.0 (LPF2) cable and dual crosshole outputs, making it easy to integrate securely into complex builds.</p>
 
@@ -264,9 +263,11 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The structure of our self-driving robot is made mostly out of PLA Filament that were 3D-printed based on the teams own preference, with a combination of LEGO® Technic™ elements. The mechanical design, as shown resembles the well-known and traditional vehicle used by commuters in the Philippines on a daily basis, which is the Jeepney. Aside from being just a vehicle, it's also the country's identity, serving a huge part in preserving the essential traditions and culture of the Philippines. The reason behind using this as our inspiration lies in our triumph in the national stage, which brought to us the opportunity to represent the Philippines in the global stage. Additionally, this vehicle also holds an immense value to our heart as it plays a big part in our journey; the vehicle that drove us back and forth from our home to our training grounds.</p> 
 
-<p align="justify">Consequetly, drawing from last year’s experience — where the robot is constructed using only LEGO® Technic™ materials — we have learned that it is essential to integrate engineering factors, with creativity and originality in mind. Therefore, for this year’s competition, our team has developed various 3D-printed components aside from the chassis that made our self-driving robot unique and innovative. For instance, from a camera and sensor case made out of LEGO, we have designed a 3D-printed case that incorporated slide-lock mechanism, which offers something new, but still efficient, functional, and reliable for our team’s robot. Further explanation about these are discussed at Chapter 5: Engineering Factor.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Building on our previous year’s experience, where the robot was constructed solely from LEGO® Technic™ parts, we recognized the importance of integrating engineering principles with creativity and innovation. For the international stage of the competition, we enhanced our design by incorporating custom 3D-printed components that extend beyond the chassis, resulting in a more functional and distinctive build. For example, instead of using LEGO-based camera and sensor enclosures, we designed and printed custom cases that allows secure yet removable mounting of these modules, which offers something new, but still efficient, functional, and reliable for our team’s robot.</p>
 
-| ![Figure 3.1](./docu-photos/rChassisLeft.png) | ![Figure 3.2](./docu-photos/rChassisRight.png) |
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;These design choices highlight the team’s growing proficiency in applying mechanical design concepts and engineering problem-solving to create practical yet original solutions. Further discussions and technical details about the 3D-printed components and their engineering factors are provided in <b>Chapter 5: Engineering Factor.</b></p>
+
+| ![Figure 3.1](./docu-photos/.png) | ![Figure 3.2](./docu-photos/.png) |
 |:---------------------:|:---------------------:|
 | Figure 3.1 <br> Robot Chassis <br> Left Side View | Figure 3.2 <br> Robot Chassis with Electrical Components <br> Left Side View |
 
@@ -332,13 +333,25 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 8](./docu-photos/image74.png) |
-|:---------------------:|
-| Figure 8. <br> SPIKE™ Prime Hub Rechargeable Battery
+| <img src="./docu-photos/image74.png" alt="Figure 8.1." width="1080" height="566"> | <img src="./docu-photos/LMSplate.png" alt="Figure 8.2." width="1080" height="566"> |
+|:---------------------:|:---------------------:|
+| Figure 8.1. <br> SPIKE™ Prime Hub Rechargeable Battery | Figure 8.2. <br> SPIKE™ Prime Hub Rechargeable Battery <br> Dimensions |
 
 </center>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The battery is built for durability, with a minimum lifespan of over 500 charge cycles. After 500 full charge/discharge cycles, it is expected to retain at least 30% of its original capacity, making it reliable for long-term use. This rechargeable battery supports the robot’s need for consistent and portable power, which is essential for the several autonomous tasks that the robot is programmed to do during both the Open and Obstacle Challenge rounds. Its high energy capacity, ease of use, and compatibility with the SPIKE™ system make it a critical component of our robot's electronics and system.</p>
+
+### 2.1.3. Raspberry pi UPS-18650-Lite
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Raspberry pi UPS-18650 HAT functions as a regulated power source for the robot’s auxiliary electronic systems, specifically supplying a stable 5 V DC output to the LMS-ESP32 microcontroller. Designed for use with a single 18650 lithium-ion cell, the module integrates a built-in charging circuit, automatic power switching between external and battery input, and multiple protection mechanisms including over-charge, over-discharge, over-current, and short-circuit protection. It also incorporates an onboard RTC (Real-Time Clock), ensuring uninterrupted timekeeping even when external power is disconnected. These features make it a reliable and safe power unit within the robot’s power management subsystem, which maintains consistent operation for all the processes that relies in the microcontroller. </p>
+
+| <img src="./docu-photos/hat.png" alt="Figure 12.1" width="1080" height="566"> | <img src="./docu-photos/LMSplate.png" alt="Figure 12.2" width="1080" height="566"> |
+|:---------------------:|:---------------------:|
+| Figure 12.1 <br> Robot’s OpenMV Cam H7 Plus | Figure 12.2 <br> Robot’s OpenMV Cam H7 Plus <br> Dimensions |
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As shown in the attached visual aid, the UPS-18650-Lite module’s compact design and labeled pin configuration show its dimensions and connection points, aiding accurate integration into the robot’s power circuit. The module connects to the LMS-ESP32 through a USB connector, providing a stable 5V regulated output directly to the ESP32’s power input port. Consequently, this connection ensures proper voltage delivery and simplifies wiring by eliminating the need for external converters. The ESP32 communicates with the SPIKE™ Prime Hub via a serial interface, where transistors and resistors are used for voltage level shifting and signal conditioning to maintain safe and reliable communication between the two controllers of the robot.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In accordance with the Future Engineers Rulebook, which specifies that the robot must utilize only one main power button for activation, the system was designed so that the SPIKE™ Prime Hub’s power button simultaneously powers the UPS-18650 module and the LMS-ESP32. This combined power management approach ensures a synchronized startup and shutdown across all electronic subsystems, preventing inconsistent power status or data transmission errors. Discussed at Section 7. Engineering Factor is the wiring diagram, detailing how the UPS-18650, LMS-ESP32, and SPIKE™ Prime Hub are interconnected, showing the power delivery path and serial communication interface integrated into the robot’s electrical architecture.</p>
 
 ### 2.2. Sense Management
 
@@ -366,7 +379,6 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 | Figure 10.1 <br> Robot’s Technic™ Distance Sensor | Figure 10.2 <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
 
 </center>
-
 
 ### 2.2.2. Gyro Sensor 
 
@@ -684,31 +696,27 @@ def runRecord(currentLap):
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The process of developing and improving our robot would not be complete without encountering difficulties that tested both its mechanical and technical capabilities. However, these challenges became a valuable learning experience that pushed us to improve our strategies. This section will describe the most significant issues we faced and how we addressed them to improve the robot’s performance and reliability during the Open and Obstacle Challenge.</p>
 
-### 5.1. Continuous Detection to Single-Instance Detection
+### 5.1. Improper Printing
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throughout the fabrication process, our team encountered several challenges while 3D printing the custom parts for our robot. One of the most common issues we faced was inaccurate measurements that led to misaligned or ill-fitting components. Some parts, such as sensor mounts and connector holes, were slightly off by a few millimeters, causing difficulties during assembly. These errors often resulted from minor mistakes in scaling or from the printer’s tolerance differences, which we only noticed after testing the actual fit.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We also experienced failed and stopped prints, especially during longer print jobs. In some cases, prints detached from the build plate or the filament jammed mid-process, wasting both our materials, which can be a little expensive, as well as our time. These interruptions required us to recheck the printer’s settings and occasionally restart from scratch.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another recurring problem was the wrong alignment of holes and connectors. A few designs had holes that did not perfectly match the sizes of LEGO Technic connectors, which forced us to manually adjust the parts using a file or reprint them after correcting the CAD model. In other instances, improper dimensions led to overly tight or loose fits—some mounts couldn’t hold sensors securely, while others had excessive gaps that affected the stability of the integration.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Despite these setbacks, the challenges taught us the importance of careful calibration and iterative design. Each failed print became an opportunity to refine our process and improve the accuracy of our models before printing again. These experiences strengthened our team’s problem-solving skills and patience, making the successful prints even more rewarding.</p>
+
+### 5.1. Faulty Power Source
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During testing, our team also encountered recurring problems with the power source, particularly with the UPS-18650 power module and its connected battery. At times, the module would suddenly fail to supply stable power, causing the ESP32 and sensors to shut down unexpectedly. In several instances, the 18650 battery itself became partially drained or “dead”, even after charging, leading to inconsistent startup behavior and communication loss between the ESP32 and the SPIKE™ Prime Hub.</p>
     
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It is clear from previous experience with the Future Engineers' Obstacle Challenge that continuous detection, in terms of execution, performs far better than single-instance detection. As a result, our team agreed on using continuous detection for reading traffic signs as our initial plant. In this strategy, the robot would constantly scan its environment while traveling around the field and responding to its readings. However, while we were trying to develop how the self-driving robot will perform this strategy, we have realized that it is not convenient to use. This method caused several issues such as delayed responses, overlapping detections, especially when the traffic signs are conflicting in the robot’s field of view. These problems led to wrong movements and inconsistent performance in obstacle avoidance. We also thought that it would be challenging to modify and troubleshoot the continuous detection program during the actual competition. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To address this, we decided to shift our strategy into single-instance detection. With this method, the robot is programmed to recognize and react to a traffic sign only at specific intervals and at a designated spot. This made the program easier to manage and debug and the robot can detect the traffic signs more accurately by moving and stopping at specified points. It prevented conflicting inputs and allowed the robot to make a clear, one-time decision before moving forward. 
-
-### 5.2. Frequent Disconnection of Camera Wiring
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the most important components that powers our self-driving robot to function in the Obstacle Challenge is the OpenMV Cam HV Plus. Without this, it would be difficult to navigate around the field, making it more prone for mistakes in avoiding the randomly-placed obstacles. However, our team encountered numerous times where the connection of the camera was disrupted due to loose connection of wires. As a result, the self-driving robot was not able to complete three full laps and suddenly stopped its movement. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From our previous design, we utilized electrical tape to connect the jumper wires attached in the pins of the OpenMV Cam H7 Plus to the wire connected in the SPIKE™ Prime Hub. However, this tape — over time — lost its adhesive, which resulted in disconnection and disruption of the camera from sensing and reading the obstacles,  affecting the overall performance of the robot in this challenge. To solve this issue, we decided to alter the connection and replace the electrical tape with a heat shrink tubing, which is a type of plastic tubing that shrinks when heated. It offers efficient electrical insulation and protection for electrical wires, cables, and other components. Additionally, the tubing comes in a range of diameters and colors to suit different purposes and is usually composed of materials like fluoropolymers, polyvinyl chloride (PVC), or polyolefin. The process of shrinking occurs when heat is applied to the tubing; thus, we have used a blower for easy accessibility and safety.  As the diameter of the tubing decreases, it firmly takes on the shape of the wire it is covering. This offers a strong defence against physical harm such as bending and breaking of wires, chemicals, moisture, and dust, firmly connecting the wires together and decreases the risk of disconnection. This material also creates a protective barrier around wires, preventing short circuits and electrical hazards. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Moreover, we also realized that the pins of the OpenMV Cam H7 Plus were having contact with one another, further disrupting it from functioning. Thus, we wrapped electrical tape around the jumper wires connected to the pins to prevent them from touching, as well as to secure the connection. This additional insulation helped to minimize the risk of short circuits caused by unintended pin contact, which could otherwise lead to sudden malfunctions or even permanent damage to the camera module.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After reinforcing the connections with electrical tape and heat shrink tubing, we conducted multiple test runs to ensure that the camera functions reliably. We observed a significant improvement in the robot’s ability to maintain a continuous feed from the camera, allowing it to detect and avoid obstacles more effectively. The robot was now able to complete full laps without unexpected stops, proving that the modifications we made were effective.
-
 ### 5.3. Uneven and Unclean Field
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As previously mentioned, the Obstacle and Open Challenge requires extreme focus in improving the robot’s precision in movement, obstacle detection, and turning. However, one of the problems we encountered during testing was the uneven, unclean, and unstable surface of the game field.  Certain areas, especially near the corners, had noticeable bumps, accumulated dust, gaps, or slight inclines that affected the robot’s movement. These surface irregularities caused unexpected tilting, loss of balance, and occasional slipping, particularly when the robot was executing tight turns or moving in a straight path. 
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As previously mentioned, the Obstacle and Open Challenge requires extreme focus in improving the robot’s precision in movement, obstacle detection, and turning. However, one of the problems we encountered during testing was the uneven, unclean, and unstable surface of the game field.  Certain areas, especially near the corners, had noticeable bumps, accumulated dust, gaps, or slight inclines that affected the robot’s movement. These surface irregularities caused unexpected tilting, loss of balance, and occasional slipping, particularly when the robot was executing tight turns or moving in a straight path.</p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This issue made it difficult for the robot to follow a consistent path and it occasionally interfered with the camera’s sensing and reading accuracy. To solve this issue, we performed several troubleshooting and adjustments in the values of our program and we also made structural modifications to improve the robot’s stability and ground contact, such as choosing the best wheels for both the steering and driving mechanism of the robot. These changes helped reduce the impact of the uneven field and allowed the robot to maintain smoother, more stable movement during its run.
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This issue made it difficult for the robot to follow a consistent path and it occasionally interfered with the camera’s sensing and reading accuracy. To solve this issue, we performed several troubleshooting and adjustments in the values of our program and we also made structural modifications to improve the robot’s stability and ground contact, such as choosing the best wheels for both the steering and driving mechanism of the robot. These changes helped reduce the impact of the uneven field and allowed the robot to maintain smoother, more stable movement during its run.</p>
 
 ### 5.4. Constant Necessity of Cleaning the Wheels
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During the whole process, our team observed how the performance of the robot varied significantly on how clean and how dirty the wheels are. When the wheels accumulated dirt, the robot became more prone to drifting, especially during sharp or narrow turns. However, when the wheels were too clean, they caused slipping due to reduced friction which led to less reliable movement and poorer traction. We considered this as an issue since it is difficult to maintain the robot’s state where it performs well. Additionally, with continuous runs, the wheels naturally picked up dust and debris from the surface of the field, gradually affecting the robot’s ground contact and stability. This made it harder to maintain smooth and consistent movement throughout each test. As a result, we had to frequently check and clean the wheels to reduce the impact of this issue and ensure the robot could perform accurately and reliably.
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During the whole process, our team observed how the performance of the robot varied significantly on how clean and how dirty the wheels are. When the wheels accumulated dirt, the robot became more prone to drifting, especially during sharp or narrow turns. However, when the wheels were too clean, they caused slipping due to reduced friction which led to less reliable movement and poorer traction. We considered this as an issue since it is difficult to maintain the robot’s state where it performs well. Additionally, with continuous runs, the wheels naturally picked up dust and debris from the surface of the field, gradually affecting the robot’s ground contact and stability. This made it harder to maintain smooth and consistent movement throughout each test. As a result, we had to frequently check and clean the wheels to reduce the impact of this issue and ensure the robot could perform accurately and reliably.</p>
 
 ---
 
@@ -782,7 +790,7 @@ def runRecord(currentLap):
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Behind every successful robot is a series of problems, decisions, creative solutions, and innovative engineering. As a team of student innovators, we didn’t just focus on making the robot work—we focused on making it work smarter. Every engineering factor described in this section represents a solution that makes our robot more efficient, consistent, reliable, and adaptable, just as great engineering should.</p>
 
-### 7.1. 3D-Printed Camera Case 
+### 7.1. 3D-Printed OpenMV Cam H7 Plus Case 
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the key engineering features we developed was a 3D-printed case for the OpenMV Cam H7, which serves as one of the robot’s vision. We created this case to hold the camera securely while also making it easy to access and remove when necessary. Instead of using a fixed mount that would waste time for disassembling, we designed a slide-lock mechanism. This lets us attach or remove the camera quickly, which is very helpful during testing, troubleshooting, or rewiring. The slide-lock also protects the camera from movement or shaking during runs, keeping it stable throughout each challenge.</p>
 
@@ -808,6 +816,22 @@ def runRecord(currentLap):
 </center>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We created all designs using Blender, a 3D modeling software. Once the design was complete, we sliced the file using FlashPrint, and then printed the case using a FlashForge Adventurer 4 3D printer. Using 3D printing allowed us to customize the case that fits the camera perfectly. This step-by-step design process helped us build a camera case that was functional, durable, and easy to maintain.</p>
+
+### 7.2. 3D-Printed LMS-ESP 32 Case
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 3D-printed LMS-ESP32 case was designed as a key engineering improvement that enhances the functionality and reliability of the robot’s electronic system. During early testing, the team observed that the ESP32 board was prone to movement and potential disconnections when mounted openly on the chassis. To address this, a custom enclosure was modeled in Blender and fabricated using PLA filament, which provided a secure structure that both protects and organizes the component within the robot.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The case was dimensioned precisely to fit the LMS-ESP32 board and its USB connection to the UPS-18650 power module, while maintaining adequate space for signal and power cables. The model features ventilation slots strategically positioned to allow passive heat dissipation, ensuring the board remains within safe operating temperatures during extended use. Additionally, the printed case integrates mounting points that align perfectly with the LEGO® Technic™ frame, allowing it to attach seamlessly without the need for adhesives or permanent fasteners.</p>
+
+<center>
+
+| ![Figure 19.](./docu-photos/.png) | ![Figure 19.](./docu-photos/espcaseplate.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 19. <br> First Trial </center> | <center> Figure 19. <br> Second Trial </center> |
+
+</center>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Several iterations were printed to achieve proper alignment of holes and connectors, as initial prototypes showed minor mismatches between the ESP32’s pin layout and the robot’s structural frame. Adjustments to thickness and hole diameter were made after each test print, improving both the mechanical strength and ease of access for maintenance. The final version of the case achieved a balance between rigidity and light weight.
 
 ### 7.2. Rotating Camera and Distance Sensor
 
@@ -854,112 +878,6 @@ def runRecord(currentLap):
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throughout the development of our self-driving robot, we have considered various mechanical and technical aspects that will improve its functionality and accuracy in terms of movements, navigation, and such. Each component and configuration was carefully tested, altered, or replaced to improve the robot’s performance in tasks such as movement, turning, wall avoidance, and parking. These iterative improvements allowed us to enhance the robot’s reliability across both the Open Challenge and Obstacle Challenge rounds. Below are the major mechanical changes that we have implemented to reach the robot’s full potential.</p> 
 
 ### 8.1. Testing of Perfect Size for Parking
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the most critical tasks in the Obstacle Challenge is the requirement for the robot to be able to perform parallel parking. The parking space has fixed dimensions depending on the size of the robot, and the robot must travel or park, without touching the surrounding boundary walls, avoiding contact that may cause the parking walls to move or fall. To address this, we conducted multiple trials using varying robot lengths and widths. Since the rule book prohibits on-the-spot changes or adjustments such as adding length to the robot, we have assessed different designs that are engineered to follow this rule, progressively adjusting the body to a size that would allow smooth entry into the parking lot without compromising balance or movement. Indicated below is the final and perfect size of robot that we have concluded with after numerous alterations. 
-
-<!-- <img src = ""> -->
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During the design process, we decided to increase the length of our robot to gain an advantage in the parking task in the Obstacle Challenge. According to the rules, the size of the parking space is calculated by multiplying the length of the robot by 1.5. This means that the longer the robot, the larger the parking space becomes. By extending the length, we were able to create a wider parking area, which made it easier for the robot to perform the parking maneuver. This strategic adjustment improved our parking consistency and reduced the risk of penalties or bumping onto the parking walls.
-
-### 8.2. Alter Differential Gear to Normal Driving
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the early stages of development, we experimented with a differential gear to allow for smoother turns and flexibility in wheel movement. However, this setup led to reduced torque and difficulty in controlling speed during sharp turns. To improve stability and consistency, we switched to a normal driving system, which offered better synchronization between the wheels and allowed the robot to move with more consistency, especially on straight paths and when executing turns. This change produced a way for the robot to improve its stability, have better grip during turns, and perform smoother acceleration and deceleration. 
-
-<center>
-
-| ![Figure .](./docu-photos/image88.png) |
-|:---------------------:|
-| Figure . <br> Change Driving System |
-
-</center>
-
-### 8.3. Integrate Gears Around the Robot
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At the beginning of the development process, we did not fully consider the possibility of the robot making contact with the inner walls, which could disrupt its performance during the Open Challenge round. As we conducted more test runs, we observed that the robot occasionally collided with the inner wall due to various reasons such as inconsistency with the movements, narrow spacing, and alignment issues. To improve safety and control, we decided to integrate additional gears around the robot. These gears were strategically placed to support smoother movements alongside the walls, allowing the robot to adjust its path gently without losing balance or stopping. This modification ensured that the robot could continue its run properly, even with unexpected contacts, by maintaining a consistent distance from the walls and reducing the risk of direct contact of the robot.
-
-<center>
-
-| ![Figure .](./docu-photos/image1.png) |
-|:---------------------:|
-| Figure . <br> Integrate Gears |
-
-</center>
-
-### 8.4. Alter the Gears’ Size from Big to Medium 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apart from the challenges mentioned above, we also noticed during our development process that using big gears increased the risk of the robot touching the parking walls, especially during every approach to the parking area. Since the gears extended beyond the main body, they could cause the robot to make unintended contact. To fix this, we replaced the big gears with medium-sized ones, which made the robot more compact and safer to park. This adjustment helped the robot to manage its space consumption properly and fit better within the parking area, as well as reduced the chance of the team getting a penalty. 
-
-<center>
-
-| ![Figure .](./docu-photos/image87.png) |
-|:---------------------:|
-| Figure . <br> Change Size of Gears |
-
-</center>
-
-### 8.5. Balance Weight Distribution of the Robot 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the previous design for the self-driving robot in the Future Engineers category, the SPIKE™ Prime Hub was positioned at the rear part of the robot. However, for our current design, this placement with uneven weight distribution caused noticeable instability during movement, particularly when making sharp turns. With the design making the rear part heavier, it also made the robot more prone to tilting and less responsive to directional changes, which could impact its performance in both the Open and Obstacle Challenge rounds. To address this issue, we relocated the hub to the center of the robot, allowing for a more balanced distribution of weight across all wheels. This central placement significantly improved the robot’s overall stability, turning accuracy, and movement consistency. Additionally, we wanted the hub to be both enclosed and easily accessible for charging, programming, connecting, and troubleshooting. By positioning it in the center, we ensured that the hub was safely integrated into the robot’s frame while still allowing quick and convenient access when necessary.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Moreover, as more components such as the camera, distance sensor, and supporting mechanisms were mounted toward the front part of the robot, the rear side became relatively lighter. This imbalance in weight distribution led to unwanted slipping, reduced traction, and inconsistent turning, especially during sharp maneuvers or high-speed movements. The lack of rear weight also made it more difficult for the robot to maintain stability while aligning for tasks like parking and walling. To resolve this issue, we added two EV3 Steel Balls to the rear section of the robot. These additional weights helped balance the overall mass, resulting in improved stability, smoother turning, and better grip on the surface. With the improved weight distribution, the robot was able to move more consistently and perform critical maneuvers with greater control and accuracy.
-
-
-
-### 8.6. Testing of Perfect Wheels for Steering
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our team has encountered an issue with the inconsistency of the robot when it comes to maneuvering and performing the tasks, especially in the Obstacle Challenge. And one of the key aspects we have focused on is the front wheels or the wheels that we used for the self-driving robot’s steering system. During several practices and testing, we have noticed issues, including frequent slipping, unstable traction, and inconsistent turning behavior especially during sharp changes and transitions in direction. Thus, we tried to evaluate the performance of different wheels that are accessible for our utilization and analyzed which movement was the best, with less slipping, improved traction, and prevented drifts. We evaluated the following wheels based on their size, turning radius, and capability in steering. 
-
-<center>
-
-| ![Figure .](./docu-photos/image73.png) |
-|:---------------------:|
-| Figure . <br> Selection of Steering Wheels |
-
-</center>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After extensive testing and experimentation with various wheel types, we found that the EV3 Small Wheel (the third wheel shown in the image) and the Technic™ White Wheel (the second wheel shown in the image) delivered the best performance. These two options had the ideal size and height to complement the parallel steering mechanism of our self-driving robot. On the other hand, both smaller and larger wheels created balance issues — either lowering or raising the front part of the robot too much — which led to slipping, drifting, and overall, inconsistent movement.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initially, we used the EV3 Small Wheels for steering during the early stages of our preparation. However, as testing progressed, we transitioned to the Technic™ White Wheels, which provided better alignment, grip, and movement stability. The reasoning behind this change is further rationalized in the preceding subsection, 7.7: Use Different Wheels for Steering. This modification played a key role in refining the robot’s handling and improving its reliability across both the Open and Obstacle Challenges.
-
-### 8.7. Use Different Wheels for Steering
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During several practices and testings to make the movement consistent, our team decided to change the small wheels in front of the self-driving robot for more improved steering. Previously, we utilized the EV3 Small Wheel with thick tires and a diameter of 43.2 mm, but this setup led to several issues, including frequent slipping, unstable traction, and inconsistent turning behavior especially during sharp changes and transitions in direction. To fix this, we looked at a number of different wheel types and chose the Technic™ White Wheels, which have thinner tires and a diameter of 43 mm. These wheels are almost the same size as the old ones, but they slide less. This change significantly improved our robot’s steering movement, turning radius, and control. We also observed that the new wheels improved the robot’s speed in maneuvering the field, performed smoother cornering, and more consistent traversal both in the Open and Obstacle Challenge. 
-
-<center>
-
-| ![Figure .](./docu-photos/image56.png) |
-|:---------------------:|
-| Figure . <br> Change Steering Wheels |
-
-</center>
-
-### 8.8. Replace Color Sensor with Distance Sensor
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As part of our mechanical improvements, we decided to replace the Color Sensor mounted on the bottom part of the robot with a second Distance Sensor, specifically to improve the parking ability of our self-driving robot in the Obstacle Challenge. This newly added Technic™ Distance Sensor was positioned at the rear part of the robot, enabling it to measure the distance between the robot and the back wall whenever executing a parallel parking maneuver. 
-
-<center>
-
-| ![Figure .](./docu-photos/image43.png) |
-|:---------------------:|
-| Figure . <br> Replace Color Sensor |
-
-</center>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This sensor allows the robot to measure the exact distance between its rear and the parking wall, helping it to properly move within the designated space. This ensures that the robot maintains a safe distance from the walls, avoiding any unintended contact or bumping that could result in penalties or incorrect parking. With this solution, our robot now uses two Technic™ Distance Sensors — one at the front, which is intended for obstacle and wall detection, and one at the rear part for safer and more accurate parking alignment.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However, this change meant that we had to rethink our strategy for the Open Challenge. Our team’s original plan relied on the Technic™ Color Sensor to detect orange and blue lines at the corners of the field, which helped determine the robot’s driving direction. Since the Technic™ Color Sensor was removed, we modified our approach to instead use the Technic™ Distance Sensor at the front. Moreover, the updated logic involves checking the distance on both sides of the robot. If the distance on the left side is smaller, it indicates the robot is closer to the left wall and should follow a clockwise direction. If the right side has a smaller distance, the robot is programmed to perform its movement counterclockwise. This adjustment allowed us to maintain its ability to know what direction it should drive in the Open Challenge despite the absence of the Technic™ Color Sensor, while also improving the robot’s ability to perform parallel parking in the Obstacle Challenge.
-
-### 8.9. Replace Wheels for Driving
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the initial mechanical design of the self-driving robot, we utilized the Technic™ Wheel 88 x 14.34 since it is the only largest wheel that is accessible for us. However, after noticing how these wheels caused multiple issues, particularly its inconsistency in traction, we realized the necessity to utilize different wheels that will provide increased grip, less slips, and improved contact with the ground. After thoughtful evaluation, we selected the LEGO Wheel 75 mm x 17 mm with Motorcycle Tire 94.2 mm x 20 mm, which features a rubberized tire with patterns for better grip and traction. The size of these wheels were slightly different than the old ones, but offered less contact with the ground, decreasing the slips and drifts in its movement. After this modification, the self-driving robot’s movement was significantly better than the previous performance, smoothly moving in straight and turning paths. We also observed that the new wheels enhanced the speed of the robot in maneuvering the field, and performed more consistent cornering and traversal both in the Open and Obstacle Challenge.
-
-<center>
-
-| ![Figure .](./docu-photos/image30.png) |
-|:---------------------:|
-| Figure . <br> Replace Driving Wheels |
-
-</center>
 
 ---
 
