@@ -374,7 +374,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| <img src="./docu-photos/image78.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/plate.png" alt="Figure 10.2" width="1080" height="566"> |
+| <img src="./docu-photos/.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/plate.png" alt="Figure 10.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 10.1 <br> Robot’s Technic™ Distance Sensor | Figure 10.2 <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
 
@@ -386,7 +386,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| <img src="./docu-photos/hclayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/hcplate1.png" alt="Figure 10.2" width="1080" height="566"> |
+| <img src="./docu-photos/hclayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/hcplate2.png" alt="Figure 10.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 10.1 <br> HC-SR04 Ultrasonic Sensor | Figure 10.2 <br> HC-SR04 Ultrasonic Sensor <br> Dimensions |
 
@@ -418,7 +418,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 11](./docu-photos/image29.png) |
+| ![Figure 11](./docu-photos/.png) |
 |:---------------------:|
 | Figure 11 <br> Robot’s Gyro Sensor
 
@@ -436,7 +436,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| <img src="./docu-photos/image23.png" alt="Figure 12.1" width="1080" height="566"> | <img src="./docu-photos/mvplate.png" alt="Figure 12.2" width="1080" height="566"> |
+| <img src="./docu-photos/.png" alt="Figure 12.1" width="1080" height="566"> | <img src="./docu-photos/mvplate2.png" alt="Figure 12.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 12.1 <br> Robot’s OpenMV Cam H7 Plus | Figure 12.2 <br> Robot’s OpenMV Cam H7 Plus <br> Dimensions |
 
