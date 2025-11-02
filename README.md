@@ -380,7 +380,34 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 </center>
 
-### 2.2.2. Gyro Sensor 
+### 2.2.2. HC-SR04 Ultrasonic Sensor
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Three HC-SR04 Ultasonic Sensors are attached around the robot, particularly with one at the rear part, one at the left and right side of the robot, which will ensure that the obstacles the the robot will be needing to navigate can properly be sensed by the self-driving robot. With regards to the technicalities of the sensor, the HC-SR04 Ultrasonic Sensor, in terms of its hardware, contains two ultasonic tansducer that works together, with one acting as a transmitter, changing electrical signals into 40 kHz ultasonic sound pulses, and with the other functioning as a receiver, which receives and listens for this pulses after they bounce back from an object.  
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After the returning sound waves are detected from an object, it creates an output signal, and the distance of this signal to the sensor detects and measures the length of of how far the object is. Through measuring this signal length, the Arduino can calculate the exact distance to the object. And its capacity measures objects between 2 cm and 400 cm away with an accuracy of about 3 millimeters. </p>
+
+**Table 4\. HC-SR04 Technical Specifications**
+
+| Specifications  7.2V power supply | Technic™ Large  Angular Motor | Technic™ Medium  Angular Motor |
+| ----- | ----- | ----- |
+| Voltage Range | Min: 5V and Max: 9V | Min: 5V and Max: 9V |
+| Speed<sup>1</sup> (RPM) | 135 RPM to 175 RPM | 135 RPM to 185 RPM |
+| Torque<sup>2</sup> (Ncm) | 8 Ncm to 25 Ncm | 3.5 Ncm to 18 Ncm  |
+| Connectivity | Attachments on either side | Attachments to the front only |
+| Applications | High-power, high-torque applications | Lower-load, fast-response applications |
+
+<sup>1</sup> ***RPM*** = rotations per minute  
+<sup>2</sup> ***Ncm*** = newton centimeter&nbsp;&nbsp;&nbsp;
+
+<center>
+
+| <img src="./docu-photos/image78.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/dcplate.png" alt="Figure 10.2" width="1080" height="566"> |
+|:---------------------:|:---------------------:|
+| Figure 10.1 <br> Robot’s Technic™ Distance Sensor | Figure 10.2 <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
+
+</center>
+
+### 2.2.3. Gyro Sensor 
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In addition to external sensors, the SPIKE™ Prime Hub includes built-in motion sensors: a three-axis gyroscope and a three-axis accelerometer. These internal sensors play a crucial role in helping our self-driving robot detect its orientation, motion, and rotation during its operation. The accelerometer measures the direction of gravity along three axes — X, Y, and Z — allowing the hub to determine which side is facing up or down. This helps the robot identify its current orientation, such as whether it is upright, tilted, or falling. It also enables the detection of gestures such as taps, free fall, and shaking.</p>
 
@@ -394,7 +421,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The gyro sensor measures the robot’s angular rotation across the three axes. It tracks changes in pitch (forward or backward tilt), roll (side-to-side tilt), and yaw (rotational direction). Furthermore, it can also provide both the rate of rotation in degrees per second and the total angle turned in degrees. This makes it possible for the robot to perform accurate turns, such as 90° or 180° rotations, and maintain straight paths when necessary. Together, the built-in gyroscope and accelerometer improve our robot’s ability to move precisely and respond to different conditions, especially in tasks that require accuracy in reading directions like wall avoidance, alignment, and parking.</p> 
 
-### 2.2.3. OpenMV Cam H7 Plus 
+### 2.2.4. OpenMV Cam H7 Plus 
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The OpenMV Cam H7 Plus serves as the self-driving robot’s vision system, enabling it to detect and interpret visual cues such as traffic signs in the Obstacle Challenge. This camera is small, low-power microcontroller, compact, and programmable with high-level Python scripts, allowing us to easily implement applications using machine vision in the real world.</p>
 
