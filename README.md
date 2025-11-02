@@ -374,7 +374,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| <img src="./docu-photos/image78.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/dcplate.png" alt="Figure 10.2" width="1080" height="566"> |
+| <img src="./docu-photos/image78.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/plate.png" alt="Figure 10.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 10.1 <br> Robot’s Technic™ Distance Sensor | Figure 10.2 <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
 
@@ -384,28 +384,29 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Three HC-SR04 Ultasonic Sensors are attached around the robot, particularly with one at the rear part, one at the left and right side of the robot, which will ensure that the obstacles the the robot will be needing to navigate can properly be sensed by the self-driving robot. With regards to the technicalities of the sensor, the HC-SR04 Ultrasonic Sensor, in terms of its hardware, contains two ultasonic tansducer that works together, with one acting as a transmitter, changing electrical signals into 40 kHz ultasonic sound pulses, and with the other functioning as a receiver, which receives and listens for this pulses after they bounce back from an object.  
 
+<center>
+
+| <img src="./docu-photos/hclayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/dcplate.png" alt="Figure 10.2" width="1080" height="566"> |
+|:---------------------:|:---------------------:|
+| Figure 10.1 <br> HC-SR04 Ultrasonic Sensor | Figure 10.2 <br> HC-SR04 Ultrasonic Sensor <br> Dimensions |
+
+</center>
+
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After the returning sound waves are detected from an object, it creates an output signal, and the distance of this signal to the sensor detects and measures the length of of how far the object is. Through measuring this signal length, the Arduino can calculate the exact distance to the object. And its capacity measures objects between 2 cm and 400 cm away with an accuracy of about 3 millimeters. </p>
 
 **Table 4\. HC-SR04 Technical Specifications**
 
-| Specifications  7.2V power supply | Technic™ Large  Angular Motor | Technic™ Medium  Angular Motor |
-| ----- | ----- | ----- |
-| Voltage Range | Min: 5V and Max: 9V | Min: 5V and Max: 9V |
-| Speed<sup>1</sup> (RPM) | 135 RPM to 175 RPM | 135 RPM to 185 RPM |
-| Torque<sup>2</sup> (Ncm) | 8 Ncm to 25 Ncm | 3.5 Ncm to 18 Ncm  |
-| Connectivity | Attachments on either side | Attachments to the front only |
-| Applications | High-power, high-torque applications | Lower-load, fast-response applications |
-
-<sup>1</sup> ***RPM*** = rotations per minute  
-<sup>2</sup> ***Ncm*** = newton centimeter&nbsp;&nbsp;&nbsp;
-
-<center>
-
-| <img src="./docu-photos/image78.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/dcplate.png" alt="Figure 10.2" width="1080" height="566"> |
-|:---------------------:|:---------------------:|
-| Figure 10.1 <br> Robot’s Technic™ Distance Sensor | Figure 10.2 <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
-
-</center>
+| Specifications | HC-SR04 Ultrasonic Sensore |
+| ----- | ----- |
+| Operating Voltage | DC 5V | 
+| Operating Current | 15 mA | 
+| Operating Frequency | 40KHz |
+| Maximum Range | 400 cm | 
+| Minimum Range | 2 cm | 
+| Ranging Accuracy | 3 mm |
+| Measuring Angle | 15 degrees |
+| Trigger Input Signal | 10µS TTL pulse |
+| Dimension | 45 x 20 x 15 mm |
 
 ### 2.2.3. Gyro Sensor 
 
