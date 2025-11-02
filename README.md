@@ -355,7 +355,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 ### 2.2. Sense Management
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The self-driving robot wouldn’t be in its form and purpose without its sensors and vision system. These components serve as the robot’s eyes, allowing it to perceive and respond to its surroundings with accuracy and intelligence. Through sensors such as the color sensor, distance sensor, and built-in gyro, the robot can detect objects, measure distances, identify markers that will decide its path or direction, and maintain orientation. Additionally, the integration of the OpenMV Cam H7 enables the robot to recognize traffic signs and make real-time decisions during navigation. The proper selection and programming of these sensing devices are critical to ensure that the robot’s performance will be reliable.</p> 
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The self-driving robot wouldn’t be in its form and purpose without its sensors and vision system. These components serve as the robot’s eyes, allowing it to perceive and respond to its surroundings with accuracy and intelligence. Through sensors such as the distance sensor and built-in gyro, the robot can detect objects, measure distances, identify the distance from both sides to decide its path or direction, and maintain orientation. Additionally, the integration of the OpenMV Cam H7 enables the robot to recognize traffic signs and make real-time decisions during navigation. The proper selection and programming of these sensing devices are critical to ensure that the robot’s performance will be reliable.</p> 
 
 <center>
 
@@ -386,7 +386,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| <img src="./docu-photos/hclayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/hcplate.png" alt="Figure 10.2" width="1080" height="566"> |
+| <img src="./docu-photos/hclayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/hcplate1.png" alt="Figure 10.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 10.1 <br> HC-SR04 Ultrasonic Sensor | Figure 10.2 <br> HC-SR04 Ultrasonic Sensor <br> Dimensions |
 
@@ -394,6 +394,8 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After the returning sound waves are detected from an object, it creates an output signal, and the distance of this signal to the sensor detects and measures the length of of how far the object is. Through measuring this signal length, the Arduino can calculate the exact distance to the object. And its capacity measures objects between 2 cm and 400 cm away with an accuracy of about 3 millimeters. </p>
 
+<center>
+  
 **Table 4\. HC-SR04 Technical Specifications**
 
 | Specifications | HC-SR04 Ultrasonic Sensore |
@@ -407,6 +409,8 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 | Measuring Angle | 15 degrees |
 | Trigger Input Signal | 10µS TTL pulse |
 | Dimension | 45 x 20 x 15 mm |
+
+</center>
 
 ### 2.2.3. Gyro Sensor 
 
