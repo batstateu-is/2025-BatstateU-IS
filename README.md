@@ -359,9 +359,9 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 9](./docu-photos/image12.png) |
+| ![Figure 9](./docu-photos/sensemm.png) |
 |:---------------------:|
-| Figure 9. <br> Robot’s Sensors and Vision System <br> Isometric and Rear View
+| Figure 9. <br> Robot’s Sensors and Vision System
 
 
 </center>
