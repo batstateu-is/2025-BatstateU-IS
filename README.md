@@ -39,7 +39,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 📑 Table of Contents (click to expand)
 </summary>
 
-- [📖 Introduction](#introduction)  
+- [📖 Introduction](#introduction)  X
 - [👥 Team Profile](#team-profile)  
 - [🤖 Robot Specifications](#robot-specifications)  
 - [1. ⚙️ Mobility Management](#1-mobility-management)  
@@ -352,7 +352,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| <img src="./docu-photos/.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/plate.png" alt="Figure 10.2" width="1080" height="566"> |
+| <img src="./docu-photos/hublayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/hubplate2.png" alt="Figure 10.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 10.1 <br> Technic™ Prime Large Hub | Figure 10.2 <br> Technic™ Prime Large Hub <br> Dimensions |
 
