@@ -446,7 +446,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 11](./docu-photos/.png) |
+| ![Figure 11](./docu-photos/gyros.png) |
 |:---------------------:|
 | Figure 11 <br> Robot’s Gyro Sensor
 
