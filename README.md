@@ -396,17 +396,28 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 ### 2.3.1. Technic™ Distance Sensor
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Technic™ Distance Sensors are one of the core components of our robot that makes navigation and obstacle detection possible. Equipped with Time-of-Flight (ToF) technology, it can measure the distance a nearby object is from itself. By integrating this at the front and rear part of our robot, the sensor allows it to detect walls, track spacing, and avoid collisions with boundary walls during both the Open and Obstacle Challenge. The sensor can measure distances from 50 to 2000 mm with a ±20 mm accuracy. For faster sensing, its range measures from 50 to 300 mm and an accuracy of ±15 mm.</p> 
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In addition to distance measurement, the sensor includes two built-in programmable LEDs that can also be viewed as its eyes. This can detect small objects or gestures when used at close range. However, in our application, the Distance Sensors are primarily used to detect obstacles and proximity from the boundary and parking walls. Consequently, the sensors communicate data to the hub at a frequency of up to 100 Hz, which allows the robot to quickly respond to changing surroundings. Its compact and design that is compatible with Technic build geometry makes it easy to integrate into the robot, and in our case, the first one is attached to a motor that rotates, similar to the eyes that can move sideways for a wider field of view and the second sensor is attached at the rear part of the robot to improve its capability to sense obstacles that are located behind it, specifically the parking wall. Overall, the two Technic™ Distance Sensors play a vital role in ensuring safe and accurate navigation by continuously monitoring the environment and helping the robot make decisions.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Technic™ Distance Sensor is one of the core components of our robot that makes navigation and obstacle detection possible. Equipped with Time-of-Flight (ToF) technology, it can measure the distance a nearby object is from itself. The sensor can measure distances from 50 to 2000 mm with a ±20 mm accuracy. For faster sensing, its range measures from 50 to 300 mm and an accuracy of ±15 mm. For easier viewing of its technical and mechanical specifications, attached below are the visual aids for more information about the distance sensor.</p> 
 
 <center>
 
-| <img src="./docu-photos/.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/plate.png" alt="Figure 10.2" width="1080" height="566"> |
+| <img src="./docu-photos/dclayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/dsplate.png" alt="Figure 10.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 10.1 <br> Robot’s Technic™ Distance Sensor | Figure 10.2 <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
 
 </center>
+
+**Table 4\. Technic™ Distance Sensor**
+
+| Specification | Description |
+| ----- | ----- |
+| Operating Voltage | 3.3 V | 
+| Interface | LPF2 | 
+| Detection Range | 4 cm – 200 cm |
+| Measurement Accuracy | ±1 cm | 
+| Field of View | ±15° | 
+| Dimensions | 48 mm × 40 mm × 24 mm |
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It emits high-frequency sound waves (ultrasound), which are inaudible to humans, and then measures the time it takes for the echo to bounce back after hitting an object. By calculating this time delay, the sensor determines how far the object is from the sensor. In our robot, the Technic™ Distance Sensor is mounted at the front, attached to the sensor motor, to measure the distance from the walls which will help determine the correct driving direction and prevent collisions in the Open Challenge and Obstacle Challenge round. It operates at up to 100 Hz, providing real-time distance data to the SPIKE™ Prime Hub for quick and accurate navigation decisions. Its compact, LEGO® Technic™-compatible design allows seamless integration into the robot’s structure.</p>
 
 ### 2.3.2. HC-SR04 Ultrasonic Sensor
 
@@ -421,12 +432,10 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 </center>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After the returning sound waves are detected from an object, it creates an output signal, and the distance of this signal to the sensor detects and measures the length of of how far the object is. Through measuring this signal length, the Arduino can calculate the exact distance to the object. And its capacity measures objects between 2 cm and 400 cm away with an accuracy of about 3 millimeters. </p>
-
-<center>
   
 **Table 4\. HC-SR04 Technical Specifications**
 
-| Specifications | HC-SR04 Ultrasonic Sensore |
+| Specifications | Description |
 | ----- | ----- |
 | Operating Voltage | DC 5V | 
 | Operating Current | 15 mA | 
@@ -437,8 +446,6 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 | Measuring Angle | 15 degrees |
 | Trigger Input Signal | 10µS TTL pulse |
 | Dimension | 45 x 20 x 15 mm |
-
-</center>
 
 ### 2.3.3. Gyro Sensor 
 
@@ -458,10 +465,6 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The OpenMV Cam H7 Plus serves as the self-driving robot’s vision system, enabling it to detect and interpret visual cues such as traffic signs in the Obstacle Challenge. This camera is small, low-power microcontroller, compact, and programmable with high-level Python scripts, allowing us to easily implement applications using machine vision in the real world.</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The camera features an STM32H7 Arm® Cortex® M7 processor running at 480 MHz, with 512 KB of RAM and 2 MB of flash memory. It is equipped with an image sensor capable of taking 2592 x 1944 (5MP) images.  Our team chose to work on LAB thresholding because it works best under different lighting conditions, separating values based on human perception rather than raw RGB. To be able to identify objects based on the density of color pixels detected, the camera analyzes pixel density, which results in a more precise detection. A higher pixel density of the nearby object reveals its color, allowing the robot to evaluate this information, convey it through the central hub, and take the necessary action to avoid the obstacle.</p>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In our setup, the OpenMV Cam H7 is mounted at the front of the robot, enclosed within a 3D-printed case that we designed ourselves. It is positioned and aligned to directly face the traffic signs that it will encounter across its laps. When the camera detects a traffic sign that is colored red or green, it processes the image and determines the appropriate direction where the robot should turn; left for green and right for red. We also programmed the camera to send its output by flashing a specific LED color (red or green). This helps us identify what the camera is seeing, allowing for easy and quick troubleshooting.</p>
-
 <center>
 
 | <img src="./docu-photos/mvlayout.png" alt="Figure 12.1" width="1080" height="566"> | <img src="./docu-photos/mvplate2.png" alt="Figure 12.2" width="1080" height="566"> |
@@ -469,6 +472,24 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 | Figure 12.1 <br> Robot’s OpenMV Cam H7 Plus | Figure 12.2 <br> Robot’s OpenMV Cam H7 Plus <br> Dimensions |
 
 </center>
+
+| Specification | Description |
+| ----- | ----- |
+| Processor | 480 MHz ARM Cortex-M7 | 
+| RAM | 1 MB SRAM | 
+| Flash Storage | 2 MB internal + microSD card support |
+| Image Sensor | OmniVision OV7725 | 
+| Frame Rate | Up to 60 FPS (QVGA), 30 FPS (VGA) | 
+| Lens | M12 mount, 115° field of view |
+| Interfaces | USB, UART, SPI, I²C |
+| Operating Voltage | 3.6 V – 5 V DC |
+| Dimensions | 45 mm × 36 mm × 30 mm |
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The camera features an STM32H7 Arm® Cortex® M7 processor running at 480 MHz, with 512 KB of RAM and 2 MB of flash memory. It is equipped with an image sensor capable of taking 2592 x 1944 (5MP) images.  Our team chose to work on LAB thresholding because it works best under different lighting conditions, separating values based on human perception rather than raw RGB. To be able to identify objects based on the density of color pixels detected, the camera analyzes pixel density, which results in a more precise detection. A higher pixel density of the nearby object reveals its color, allowing the robot to evaluate this information, convey it through the central hub, and take the necessary action to avoid the obstacle.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In our setup, the OpenMV Cam H7 is mounted at the front of the robot, enclosed within a 3D-printed case that we designed ourselves. It is positioned and aligned to directly face the traffic signs that it will encounter across its laps. When the camera detects a traffic sign that is colored red or green, it processes the image and determines the appropriate direction where the robot should turn; left for green and right for red. We also programmed the camera to send its output by flashing a specific LED color (red or green). This helps us identify what the camera is seeing, allowing for easy and quick troubleshooting.</p>
+
+
 
 ---
 
