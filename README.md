@@ -366,17 +366,20 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 ### 2.2.2. LMS-ESP32 
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The LMS-ESP32 is a MicroPython-based development board customized by Antons MINDSTORMS to expand the compatibility and connectivity of LEGO® systems such as SPIKE™ Prime, Robot Inventor, and EV3. It acts as an external interface that bridges LEGO controllers with a wide range of third-party electronic components. This setup enables a stable two-way data flow, reduces the strain and processing load on the main hub, and ensures that sensor and distance readings results are delivered efficiently in the main controller, and appropriate actions will be performed well by the robot. 
-
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The LMS-ESP32, also known as the Wi-Fi Python ESP32 Board for MINDSTORMS, is a MicroPython-based microcontroller specifically designed by Antons Mindstorms to extend the capabilities of LEGO® robotics systems such as SPIKE™ Prime, Robot Inventor, and EV3. Built on the Espressif ESP32 architecture, it combines a dual-core 32-bit LX6 processor with onboard Wi-Fi and Bluetooth (BLE) connectivity, allowing the robot to communicate wirelessly with other devices or cloud-based systems for data transfer and remote control. 
 <center>
 
-| <img src="./docu-photos/lmslayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/espplate.png" alt="Figure 10.2" width="1080" height="566"> | 
+| <img src="./docu-photos/lmslayout.png" alt="Figure 10.1" width="1090" height="566"> | <img src="./docu-photos/espplate.png" alt="Figure 10.2" width="1080" height="566"> | 
 |:---------------------:|:---------------------:|
 | Figure 10.1 <br> LMS-ESP32  | Figure 10.2 <br> LMS-ESP32  <br> Dimensions |
 
 </center>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With regards to the microcontroller's specifications, the LMS-ESP32 expanded its possibilities for attachment in LEGO 
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The board supports MicroPython firmware, which enables flexible programming and faster data handling through lightweight scripts. It features a UART serial interface for communication with the SPIKE™ Prime Hub, allowing bidirectional data transfer for sensor readings and camera inputs. This communication setup allows the ESP32 to act as a co-processor, offloading data processing tasks, such as filtering and processing the values read by the ultrasonic sensor, before sending processed information back to the hub.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hardware-wise, the LMS-ESP32 includes dedicated LEGO®-compatible connectors for easy integration, a USB-C port for programming and power input, and a regulated 5 V–3.3 V power converter that ensures compatibility with both standard LEGO voltage levels and external components. The board also provides multiple GPIO pins, I²C, and SPI interfaces, allowing connection to third-party sensors or peripherals.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the robot’s system, the LMS-ESP32 is powered by the UPS-18650 module through a USB connection, ensuring a stable 5 V supply. The data scanned from connected sensors are processed by the ESP32 and then transmitted to the SPIKE™ Hub via the serial interface and communication, which was configured with transistors and resistors for proper voltage level shifting and protection. This setup also lessened the strain for the SPIKE™ Hub by minimizing the data it needs to load and control. </p>
 
 ### 2.3. Sense Management
 
@@ -1226,7 +1229,7 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ---
 
-![Version 1](./docu-photos/v1.png)
+![Version 1](./docu-photos/.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The first version of our robot primarily focused on the conceptualization and testing of the mechanical design. One of the earliest features implemented was the parallel front-wheel steering mechanism, where we used an EV3 Small Wheel with a thicker tire to increase surface contact and enhance grip. This setup aimed to improve steering control and movement stability. In line with real-world cars design, we also incorporated a Rear-Wheel Drive (RWD) system to deliver consistent forward propulsion and better handling.
 
@@ -1245,46 +1248,3 @@ To run your script on the hub, click the “Run this program” button or press 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consequently, Version 2 became our first complete prototype that fully met the requirements of both the Open Challenge and Obstacle Challenge in the Future Engineers category. It established the foundation for the design we aimed to achieve.</p> 
 
 ---
-
-![Version 3](./docu-photos/v3.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For Version 3, we implemented several sudden yet necessary changes as a result of observational errors, identified weaknesses, and opportunities for improvement that would help the self-driving robot operate at its full potential. As shown in the provided images, one of the key enhancements was the integration of additional gears around the robot. These gears were strategically placed to promote smoother and more stable movement, especially when driving alongside the walls. This modification allowed the robot to gently adjust its path without losing balance or halting unexpectedly when placed in a position with a high risk of making contact with the boundary walls. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another major change was the removal of the differential gear from the rear drive system. While initially intended to improve turning stability, the differential gear was found to reduce control and torque during sharp turns. After eliminating it, we have found that the robot performed more synchronized wheel movement and improved consistency during turns. Overall, Version 3 focused on increasing the robot’s reliability and responsiveness, especially in narrow or tasks that involve obstacles. 
-
----
-
-![Version 4](./docu-photos/v4.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Version 4.1, we introduced a series of mechanical upgrades to enhance the robot’s stability, movement precision, and performance. One of the first changes was replacing the previous EV3 Small Wheels for steering with Technic™ White Wheels, which is highlighted in the first picture given above. This provided better surface grip and smoother turning, especially during sharp directional changes. Additionally, the large gears extended beyond the body of the robot sometimes led to contact with the parking walls. From the second image, we replaced them with medium-sized gears, making the robot more compact and easier to align within the parking area to address this issue. This change improved space management and reduced the risk of receiving penalties. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consequently, in Version 4.2, we replaced the OpenMV Cam H7 case made in LEGO® Technic™ parts with  3D-printed case, offering both security, accessibility, and   In addition, To support the weight distribution, particularly with more components mounted toward the front, we added a gyro steel ball beneath the rear of the robot. This allowed for more stable movement and prevented tilting during various movements.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Altogether, these refinements in Version 4 addressed several problems, which in return, brought the robot closer to its ideal form — reliable, consistent, and responsive — preparing it for a good performance in both the Open and Obstacle Challenges.
-
-
----
-
-![Version 5](./docu-photos/v5.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The changes we made in Version 5 were based on several issues we observed after our robot began performing inconsistently, particularly with walling, turning, and obstacle detection. In the first image provided, the custom 3D-printed camera case is shown, along with the additional beams placed beneath the Technic™ Distance Sensor. We redesigned the camera case because the previous version was poorly sized, which made it difficult for the camera to fit securely. In this version, the case was carefully measured to hold the OpenMV Cam H7 Plus properly, while also keeping the wires neatly in place. The design remained compact and lightweight to avoid affecting the robot’s balance. The added beams were meant to provide better support for the rotating motor mechanism that holds both the camera and the distance sensor.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The second image shows the EV3 Steel Ball, which we added to the rear of the robot to improve weight distribution. This small adjustment helped enhance the robot’s stability and movement, especially when turning or making sharp maneuvers. As a result, the robot's rear traction became more consistent and precise.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the third image, we extended the front gears slightly forward. Previously, the distance sensor was placed ahead of the front gears, which made it hit the wall before the gears could provide protection. This often caused inaccurate walling movements and disrupted the robot’s path. By repositioning the gears, the robot is now better protected from direct contact, allowing the sensor to function more effectively and improving the overall walling performance.
-
----
-
-![Version 6](./docu-photos/v6.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Technic™ Color Sensor that is placed in the previous versions plays a key role in the self-driving robot’s ability to recognize colors and respond based on the corresponding movement that it should perform. It was utilized to primarily detect colored lines, such as the orange and blue colored markers, which are essential for the robot to be able to determine its driving direction: if the color sensor detected an orange line, then the driving direction is clockwise, otherwise, if it is a blue line, the robot will move in a counterclockwise direction. However, with limited connection for integrating components in the hub, we are faced with two options: first, keeping the Color Sensor mounted at the bottom part for efficient and accurate checking of colored lines in the Open Challenge and second, replacing the Technic™ Color Sensor with another Technic™ Distance Sensor that will be placed at the rear part, facing the path behind the robot to keep track of the proximity of the walls that is beyond the robot’s front vision. After a thoughtful comparison of the two components and their purpose, we decided to integrate a second Technic™ Distance Sensor at the back as shown in Version 6. Our reason is that it has more purpose than the Color Sensor, since it can be programmed for both determining the driving direction in the Open Challenge and performing a safe alignment for parallel parking in the Obstacle Challenge. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, as highlighted in Version 6, we placed a steel ball at the front part of the robot to add more weight to the front section. We made this adjustment to improve the robot’s overall weight balance and distribution, especially after previous modifications from the former versions had made the rear side heavier. By redistributing or adding some weight to the front, the robot achieved better stability and traction, particularly during sharp turns and sudden stops.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lastly, Version 6 introduced the use of different driving wheels for the rear-wheel drive (RWD) mechanism, specifically the LEGO® Wheel with Motorcycle Tire.  This modification was made to improve the robot’s driving performance, both in straight and turning paths in the Open and Obstacle Challenge. The updated wheels provided better speed, traction, and handling, which contributed to more reliable and consistent movements, further achieving the progress that we need for a greater overall performance.  
-
----
-
-![Version 7](./docu-photos/v7.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Version 7, a key addition to the robot’s design was a rear-mounted spoiler, inspired by the function of spoilers in real cars. While it does not generate aerodynamic downforce in the traditional sense, this spoiler serves a practical role in the robot’s structure. This was mainly done to increase the robot’s total length, which also increases the allowed parking space due to the 1.5× multiplier in the rules. By making the robot longer, the allowed parking space also becomes wider, which makes it easier to fit and align properly during the parking challenge. The spoiler helped extend the robot without changing its main structure or performance, and it gave us more room to work with when moving backward or forward while parking inside the designated parking area. This addition was part of our effort to explore both aesthetic and functional enhancements that contribute to the robot’s overall performance.
