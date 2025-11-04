@@ -400,7 +400,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| <img src="./docu-photos/dclayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/dsplate.png" alt="Figure 10.2" width="1080" height="566"> |
+| <img src="./docu-photos/dclayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/dsplate2.png" alt="Figure 10.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 10.1 <br> Robot’s Technic™ Distance Sensor | Figure 10.2 <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
 
