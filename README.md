@@ -315,9 +315,9 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 6.1](./docu-photos/battery.png) | ![Figure 6.2]() |
-|:---------------------:|:---------------------:|
-| Figure 8.1. <br> SPIKE™ Prime Hub Rechargeable Battery |
+| ![Figure 9](./docu-photos/battery.png) |
+|:---------------------:|
+| Figure 9. <br> Installing Technic™ Large Hub Rechargeable Battery
 
 </center>
 
