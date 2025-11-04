@@ -349,9 +349,9 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 | Charging Current | Max 1 A (5 V input) |
 | Measurement Accuracy | Battery output percentage error ±1%; voltage measurement error ±3 mV | 
 
-| <img src="./docu-photos/upslayout.png" alt="Figure 12.1" width="1080" height="566"> | <img src="./docu-photos/plate.png" alt="Figure 12.2" width="1080" height="566"> |
+| <img src="./docu-photos/upslayout.png" alt="Figure 12.1" width="1080" height="566"> | <img src="./docu-photos/upsplate2.png" alt="Figure 12.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
-| Figure 12.1 <br> Robot’s OpenMV Cam H7 Plus | Figure 12.2 <br> Robot’s OpenMV Cam H7 Plus <br> Dimensions |
+| Figure 12.1 <br> Raspberry pi UPS-18650 Battery | Figure 12.2 <br> Raspberry pi UPS-18650 Battery <br> Dimensions |
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During early testing, we noticed that power drops from the main hub caused the ESP32 to reset, disrupting communication. To solve this, we decided to power the ESP32 independently using the UPS-18650. This setup worked effectively—the module automatically switches between external power and battery mode, so the ESP32 remains on at all times. Its built-in protection circuits against over-charge, over-discharge, and short circuits also gave us confidence that the system was safe and reliable.</p>
 
