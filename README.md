@@ -243,7 +243,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 1](./docu-photos/robotSteeringIso.png) | ![Figure 2](./docu-photos/robotSteeringBottom.png) |
+| ![Figure 1](./docu-photos/paralleliso.png) | ![Figure 2](./docu-photos/parallelbot.png) |
 |:---------------------:|:---------------------:|
 | Figure 1.1 Robot's Steering Mechanism <br> Isometric View | Figure 1.2 Robot's Steering Mechanism <br> Bottom View |
 
