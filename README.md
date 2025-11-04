@@ -247,7 +247,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 |:---------------------:|:---------------------:|
 | Figure 1.1 Robot's Steering Mechanism <br> Isometric View | Figure 1.2 Robot's Steering Mechanism <br> Bottom View |
 
-| ![Figure 3](./docu-photos/robotDrivingIso.png) | ![Figure 4](./docu-photos/robotDrivingRear.png) |
+| ![Figure 3](./docu-photos/rwdiso.png) | ![Figure 4](./docu-photos/rwdrear.png) |
 |:---------------------:|:---------------------:|
 | Figure 2.1 Robot's Driving Mechanism <br> Isometric View | Figure 2.2 Robot's Driving Mechanism <br> Rear View |
 
