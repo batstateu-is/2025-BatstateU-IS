@@ -786,10 +786,15 @@ def runRecord(currentLap):
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Despite these setbacks, the challenges taught us the importance of careful calibration and iterative design. Each failed print became an opportunity to refine our process and improve the accuracy of our models before printing again. These experiences strengthened our team’s problem-solving skills and patience, making the successful prints even more rewarding.</p>
 
-### 5.1. Faulty Power Source
+### 5.2. Faulty Power Source
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During testing, our team also encountered recurring problems with the power source, particularly with the UPS-18650 power module and its connected battery. At times, the module would suddenly fail to supply stable power, causing the ESP32 and sensors to shut down unexpectedly. In several instances, the 18650 battery itself became partially drained or “dead”, even after charging, leading to inconsistent startup behavior and communication loss between the ESP32 and the SPIKE™ Prime Hub.</p>
     
-### 5.3. Uneven and Unclean Field
+### 5.3. Spray Painting
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While working on the colored version of our robot, we encountered several challenges during the spray painting process. One of the main difficulties was that the paint took a long time to dry, especially since we applied multiple layers to achieve an even and vibrant finish. Because of this, we sometimes accidentally left fingerprints or smudges on the surface while checking the parts too early. The uneven drying also caused a few small areas to become sticky or textured, which meant we had to lightly sand and repaint them to fix the finish.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We also noticed that some paint didn’t adhere well to the 3D-printed PLA surfaces. To improve this, we tried light sanding before painting and applied thinner coats to avoid drips and pooling. Despite these minor setbacks, the experience taught us the importance of patience and timing when applying finishing touches. In the end, we were proud of how the paint brought our robot to life, giving it both a clean professional and well-engineered look.
+
+### 5.4.Uneven and Unclean Field
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As previously mentioned, the Obstacle and Open Challenge requires extreme focus in improving the robot’s precision in movement, obstacle detection, and turning. However, one of the problems we encountered during testing was the uneven, unclean, and unstable surface of the game field.  Certain areas, especially near the corners, had noticeable bumps, accumulated dust, gaps, or slight inclines that affected the robot’s movement. These surface irregularities caused unexpected tilting, loss of balance, and occasional slipping, particularly when the robot was executing tight turns or moving in a straight path.</p>
 
@@ -940,25 +945,19 @@ def runRecord(currentLap):
 
 </center>
 
-### 7.4. Rear-Mounted Spoiler
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the most unique engineering features in our robot is the rear-mounted spoiler. At first glance, it might look like just a visual add-on, but it actually serves a strategic purpose. Instead of using it for aerodynamics like in real cars, we designed the spoiler to increase the robot’s length. Doing this gave us a larger parking space to work with. This helped improve the robot’s alignment, positioning, and overall success rate during the parking task. We originally planned to 3D print the spoiler for a cleaner finish and a better fit with the existing chassis. However, due to limitations in time and available material, we decided to construct it manually using Technic™ parts instead. This alternative approach still met the design requirement, adding the necessary length, without compromising the robot’s balance or movement.</p> 
-
-<center>
-
-| ![Figure .](./docu-photos/spoiler.png) |
-|:---------------------:|
-| Figure . <br> Robot's Spoiler <br> Isometric View|
-
-</center>
-
 ---
 
 ## 8. 🔧 Mechanical Improvements
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throughout the development of our self-driving robot, we have considered various mechanical and technical aspects that will improve its functionality and accuracy in terms of movements, navigation, and such. Each component and configuration was carefully tested, altered, or replaced to improve the robot’s performance in tasks such as movement, turning, wall avoidance, and parking. These iterative improvements allowed us to enhance the robot’s reliability across both the Open Challenge and Obstacle Challenge rounds. Below are the major mechanical changes that we have implemented to reach the robot’s full potential.</p> 
 
-### 8.1. Testing of Perfect Size for Parking
+### 8.1. Weight Reduction through 3D Printing
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the major mechanical improvements we implemented in our robot was reducing its overall weight by replacing several LEGO® structural components with custom 3D-printed parts. During our initial builds, we noticed that the robot was relatively heavy, especially around the chassis and sensor mounts, which affected its speed, balance, and turning precision. To address this, we redesigned key sections, such as the chassis and sensor casing, in Blender, optimizing their geometry to maintain strength while minimizing material use.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By 3D printing these parts using PLA filament, we were able to control wall thickness and support structure, achieving a lighter yet structurally stable design. This adjustment not only reduced unnecessary mass but also improved the robot’s maneuverability and battery efficiency, since the motors required less torque to move the chassis.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We also took advantage of 3D printing’s flexibility to create compact and multi-functional parts, combining what used to be several LEGO assemblies into single integrated pieces. This further cut down on weight simplified the overall structure. Through these modifications, our robot became faster, more responsive, and more energy-efficient, showing how mechanical optimization through 3D printing directly contributed to its improved performance in navigation.</p>
 
 ---
 
@@ -1252,20 +1251,29 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ![Version 1](./docu-photos/.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The first version of our robot primarily focused on the conceptualization and testing of the mechanical design. One of the earliest features implemented was the parallel front-wheel steering mechanism, where we used an EV3 Small Wheel with a thicker tire to increase surface contact and enhance grip. This setup aimed to improve steering control and movement stability. In line with real-world cars design, we also incorporated a Rear-Wheel Drive (RWD) system to deliver consistent forward propulsion and better handling.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our first version of the robot was where everything started. We built the chassis entirely out of LEGO® Technic™ parts, which gave us a strong and reliable base to begin testing our ideas. On top of the structure, we mounted the UPS-18650 power module and the LMS-ESP32, and we added our very first 3D-printed camera case—our first move toward combining LEGO with custom-designed parts.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Technic™ Color Sensor was integrated into the front-bottom part of the robot, making it ready to be programmed for the Open Challenge, specifically for detecting the orange and blue directional lines. Additionally, we experimented with a differential gear placed at the rear axle where the driving wheels are connected. This allowed the left and right wheels to rotate at different speeds during turns, which we believed would help maintain traction and balance while cornering. This initial version laid the groundwork for our mechanical structure and served as a platform for evaluating essential components that will improve the robot’s mobility system.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At this stage, our goal was simply to bring all components together and see how they worked as one system. It was our starting point for testing movement, wiring, and basic power connections. This version helped us understand the layout and interaction between parts, and while it wasn’t yet optimized, it gave us the direction we needed for our next builds.
 
 ---
 
 ![Version 2](./docu-photos/version2.png)
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As our team had planned, Version 2 introduced a significant upgrade as this incorporated a 3D-printed chassis, in replace of the utilization of LEGO Technic™ pieces in constructing and developing the mechanical structure of the self-driving robot. Not only did it reduce the straints with the maintenance, but it also improved the weight distrbiution within the overall body of the self-driving robot. Consequently, this chassis was 3D-modeled in reference to our team's own preference with the design, while also giving importance in ensuring its compatibility with other electrical and mechanical components, making sure that other significant parts can be easily and efficiently integrated to the robot.</p> 
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As our team had planned, Version 2 introduced a significant upgrade as this incorporated a 3D-printed chassis, in replace of the utilization of LEGO Technic™ pieces in constructing and developing the mechanical structure of the self-driving robot. Not only did it reduce the straints with the maintenance, but it also improved the weight distribution within the overall body of the self-driving robot. Consequently, this chassis was 3D-modeled in reference to our team's own preference with the design, while also giving importance in ensuring its compatibility with other electrical and mechanical components, making sure that other significant parts can be easily and efficiently integrated to the robot.</p> 
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While integrating these new features, Version 2 retained key elements from Version 1, such as the parallel front-wheel steering, rear-wheel drive (RWD) system, rotating vision sensor, LMS-ESP32, and UPS 18650 Raspberry pi power supply. These systems worked together to support smooth and precise movements across the field. Additionally, this version incorporated structural improvements to increase balance and accommodate the added weight from the camera and rotating motor.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While integrating these new features, Version 2 retained key elements from Version 1, such as the parallel front-wheel steering, rear-wheel drive (RWD) system, rotating vision sensor, LMS-ESP32, and UPS 18650 Raspberry pi power supply. These systems worked together to support smooth and precise movements across the field. Additionally, this version incorporated structural improvements to increase balance and accommodate the added weight from the battery and added microcontroller.</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As specified in the visual aid, the previous Technic White Wheels attached in the parallel front-wheel steering mechanism were replaced with the EV3 Small Wheels with a thicker tire to increase surface contact and enhance the grip on the surface of the field. This setup aimed to improve the robot's steering control and movement stability.</p> 
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consequently, Version 2 became our first complete prototype that fully met the requirements of both the Open Challenge and Obstacle Challenge in the Future Engineers category. It established the foundation for the design we aimed to achieve.</p> 
 
 ---
+
+![Version 2](./docu-photos/version3.png)
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our third version of the robot marked a big step forward in both design and identity. After finalizing most of the mechanical and electronic components, we decided to give our robot a distinct look inspired by the Filipino Jeepney—a cultural icon and symbol of creativity and resilience in the Philippines. We used a metallic gray spray paint. and acrylic paints to apply a combination of yellow, blue, and red, representing the colors of the Philippine flag. This gave our robot not only a more striking and polished appearance but also a deeper meaning, as it carried the same pride and character that Jeepneys symbolize in Filipino culture.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this version, we retained all the core components from our previous builds, which are the LMS-ESP32, UPS-18650 power module, Technic™ Distance Sensor, and OpenMV Cam H7, but we arranged them more neatly for better organization and maintenance. The 3D-printed camera case and other printed mounts were also refined and repainted to match the new color scheme.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For us, Version 3 became more than just a technical upgrade; it was a reflection of who we are as a team. By combining functionality with our pride, we created a robot that not only performs well but also represents our identity as Filipinos competing on the global stage.</p>
+
