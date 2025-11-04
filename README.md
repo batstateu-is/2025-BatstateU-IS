@@ -972,7 +972,7 @@ def runRecord(currentLap):
 
 <center>
 
-| ![Figure .](./docu-photos/can-front.png) | ![Figure .](./docu-photos/cam-side.png) |
+| ![Figure .](./docu-photos/smfront.png) | ![Figure .](./docu-photos/smiso.png) |
 |:---------------------:| :---------------------:|
 | <center> Figure . <br> Robot's Rotating Mechanism <br> Front View </center> | <center> Figure . <br> Robot's Rotating Mechanism <br> Side View </center> |
 
