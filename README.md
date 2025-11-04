@@ -241,11 +241,11 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 1](./docu-photos/paralleliso.png) | ![Figure 2](./docu-photos/parallelbot.png) |
+| ![Figure 1](./docu-photos/paralleliso1.png) | ![Figure 2](./docu-photos/parallelbot1.png) |
 |:---------------------:|:---------------------:|
 | Figure 1.1 Robot's Steering Mechanism <br> Isometric View | Figure 1.2 Robot's Steering Mechanism <br> Bottom View |
 
-| ![Figure 3](./docu-photos/rwdiso.png) | ![Figure 4](./docu-photos/rwdrear.png) |
+| ![Figure 3](./docu-photos/rwdiso1.png) | ![Figure 4](./docu-photos/rwdrear1.png) |
 |:---------------------:|:---------------------:|
 | Figure 2.1 Robot's Driving Mechanism <br> Isometric View | Figure 2.2 Robot's Driving Mechanism <br> Rear View |
 
