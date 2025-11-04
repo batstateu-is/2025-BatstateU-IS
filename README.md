@@ -1,5 +1,3 @@
-<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/f62434fd-745e-43bc-80b8-b6b9918a1934" />***
-
 # ![J.E.E.P. (BatStateU-IS)](./docu-photos/updbanner.png)
 
 <center>
