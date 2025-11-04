@@ -315,6 +315,15 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Technic™ Large Hub Rechargeable Battery is the partner and intended power source for the SPIKE™ Prime Hub. It is a lithium-ion polymer (Li-ion) battery with a capacity of 2100 mAh at 7.3 volts that provides enough energy to power the hub, motors, and connected sensors during the operation of the self-driving robot. This battery is designed with the perfect dimension and structure to fit securely inside the Technic™ Large Hub. One of its main advantages is that it can be charged directly while it is inside the hub via a standard micro USB cable. This way, there is no need for the battery to be removed during charging. However, when needed, the battery can also be removed easily without using any mechanical tools, which makes maintenance quick and easy for everyone to do.</p>
 
+**Table 4\. Technic™ Large Hub Rechargeable Battery**
+
+| Specification | Description |
+| ----- | ----- |
+| Operating Voltage | 7.3 V DC (Rechargeable Li-ion Battery)| 
+| Charging Interface | micro USB cable | 
+| Lifetime | >500 cycles |
+| Storage lifetime | one year after production, then it needs to be recharged | 
+
 <center>
 
 | ![Figure 9](./docu-photos/battery.png) |
@@ -329,7 +338,18 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Raspberry pi UPS-18650 Battery functions as a regulated power source for the robot’s auxiliary electronic systems, specifically supplying a stable 5 V DC output to the LMS-ESP32 microcontroller. We mounted the module inside a custom 3D-printed case, ensuring it was securely positioned while keeping the wiring organized and easy to access. The module holds two 18650 lithium-ion batteries, which provide a regulated 5 V output through its built-in boost converter. We connected this output to the ESP32 using a USB cable, allowing the microcontroller to receive clean and consistent power even during high motor loads. </p>
 
-| <img src="./docu-photos/upslayout.png" alt="Figure 12.1" width="1080" height="566"> | <img src="./docu-photos/LMSplate.png" alt="Figure 12.2" width="1080" height="566"> |
+**Table 4\. Raspberry pi UPS-18650 Battery**
+
+| Specification | Description |
+| ----- | ----- |
+| Model | UPS 18650 Power Extension Board | 
+| Input Voltage | 5 V DC | 
+| Output Voltage | 5 V DC regulated | 
+| Battery Type | Supports 1–2 × 18650 Li-ion cells (removable) |
+| Charging Current | Max 1 A (5 V input) |
+| Measurement Accuracy | Battery output percentage error ±1%; voltage measurement error ±3 mV | 
+
+| <img src="./docu-photos/upslayout.png" alt="Figure 12.1" width="1080" height="566"> | <img src="./docu-photos/plate.png" alt="Figure 12.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 12.1 <br> Robot’s OpenMV Cam H7 Plus | Figure 12.2 <br> Robot’s OpenMV Cam H7 Plus <br> Dimensions |
 
@@ -362,6 +382,19 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The hub runs on a MicroPython operating system, allowing us to write and execute advanced programs using Python. It features a built-in 6-axis Gyro Sensor with three-axis accelerometer and three-axis gyroscope that helps the robot detect rotation, orientation, and motion. This is especially useful for tracking turns and maintaining direction during navigation.</p>
 
+**Table 4\. Technic™ Prime Large Hub**
+
+| Specification | Description |
+| ----- | ----- |
+| Input/Output Ports | 6 LPF2 ports (A–F) for motors and sensors | 
+| Built-in Sensors | 6-axis gyro and accelerometer |
+| Memory | 32 MB |
+| Processor | 100MHz M4 320 KB RAM 1M FLASH |
+| Display | 5 × 5 LED matrix | 
+| Buttons | Central button and directional navigation keys |
+| Communication Interface | USB, Bluetooth Classic 4.2 (BTC), and Bluetooth Low Energy (BLE) |
+| Operating Voltage | Battery output percentage error ±1%; voltage measurement error ±3 mV | 
+
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Physically, the hub includes a 5x5 LED matrix display, a three-button interface consisting of center, left, and right, and a speaker for feedback sounds. It supports both USB and Bluetooth connectivity, with Bluetooth 4.2 used for wireless communication and firmware updates. A rechargeable lithium-ion battery powers the hub, and it can be charged directly via a micro USB cable.</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With its compact size of 88.0 mm x 56.0 mm x 32.0 mm and compatibility with LEGO® Technic™ building elements, the SPIKE™ Large Hub is ideal for building smart and responsive robots like our self-driving robot. It provides 32 MB memory which is enough for programs and data, as well as a processing power of 100MHz M4 320 KB RAM 1M FLASH to support real-time decision-making and multitasking during both Open and Obstacle Challenge runs.</p> 
@@ -376,6 +409,18 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 | Figure 10.1 <br> LMS-ESP32  | Figure 10.2 <br> LMS-ESP32  <br> Dimensions |
 
 </center>
+
+**Table 4\. LMS-ESP32**
+
+| Specification | Description |
+| ----- | ----- |
+| Processor | Dual-core Xtensa® 32-bit LX6 (ESP32 architecture) | 
+| Clock Speed | up to 240 MHz |
+| Operating Voltage | 3.3 V to 5 V DC |
+| Communication Interface | UART Serial (for SPIKE™ / EV3 connection) |
+| Programming Language | MicroPhyton |
+| Memory | 520 KB SRAM + 4 MB Flash | 
+| Compatibility | LEGO® SPIKE™ Prime, Robot Inventor, and EV3 systems |
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The board supports MicroPython firmware, which enables flexible programming and faster data handling through lightweight scripts. It features a UART serial interface for communication with the SPIKE™ Prime Hub, allowing bidirectional data transfer for sensor readings and camera inputs. This communication setup allows the ESP32 to act as a co-processor, offloading data processing tasks, such as filtering and processing the values read by the ultrasonic sensor, before sending processed information back to the hub.</p>
 
