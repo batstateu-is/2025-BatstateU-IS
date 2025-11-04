@@ -281,15 +281,19 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 </center>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To balance the weight distribution of the robot throughout its body and for easier management and maintenance, the Technic™ Large Hub and LMS-ESP32 was placed between the drive and steer system. This central placement evenly distributed the weight across all wheels, and significantly improved the robot’s overall stability, turning accuracy, and movement consistency.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In designing our robot, we paid close attention to weight distribution, since it directly affects stability, traction, and turning accuracy. Early in our testing, we noticed that uneven weight, especially when heavier components were placed toward the back, made the robot tilt slightly during acceleration. To address this, we carefully rearranged the internal components to achieve a more balanced setup.
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In addition, during test runs, we noticed that adding a distance sensor to the rear caused an imbalance, making the front lighter and resulting in unstable movement. To solve this, we added an EV3 steel ball at the front to counterbalance the rear weight. This improved the robot’s overall stability, traction, and responsiveness during turns and directional changes.</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The UPS-18650 power module and Technic™ Large Hub were positioned near the center of the chassis to lower the robot’s center of gravity, improving balance and reducing unstability when moving or turning. The Technic™ Distance Sensor and OpenMV Cam H7 were mounted at the front, while the LMS-ESP32 and motors provided counterweight at the rear. This distribution helped maintain equal traction between the front and back wheels, making the robot more stable during sharp turns and obstacle navigation.
 
-| ![Figure 5](./docu-photos/weight.png) |
+<center>
+
+| ![Figure 5](./docu-photos/wdistrib.png) |
 |:---------------------:|
 | Figure 5. <br> Robot's Weight Distribution <br>
 
 </center>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By ensuring that the weight was spread evenly, the robot achieved smoother motion, faster acceleration, and improved precision when aligning or parking. This optimization not only enhanced performance but also extended motor efficiency, since less torque was wasted compensating for imbalance. Overall, the refined weight distribution played a crucial role in achieving consistent and reliable movement across all challenges.</p>
 
 ---
 
