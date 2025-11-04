@@ -315,13 +315,13 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| <img src="./docu-photos/image74.png" alt="Figure 8.1." width="1080" height="566"> | <img src="./docu-photos/LMSplate.png" alt="Figure 8.2." width="1080" height="566"> |
+| ![Figure 6.1](./docu-photos/battery.png) | ![Figure 6.2]() |
 |:---------------------:|:---------------------:|
-| Figure 8.1. <br> SPIKE™ Prime Hub Rechargeable Battery | Figure 8.2. <br> SPIKE™ Prime Hub Rechargeable Battery <br> Dimensions |
+| Figure 8.1. <br> SPIKE™ Prime Hub Rechargeable Battery |
 
 </center>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The battery is built for durability, with a minimum lifespan of over 500 charge cycles. After 500 full charge/discharge cycles, it is expected to retain at least 30% of its original capacity, making it reliable for long-term use. This rechargeable battery supports the robot’s need for consistent and portable power, which is essential for the several autonomous tasks that the robot is programmed to do during both the Open and Obstacle Challenge rounds. Its high energy capacity, ease of use, and compatibility with the SPIKE™ system make it a critical component of our robot's electronics and system.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shown above are the steps one must follow in order to install the battery to the hub. Consequently, the battery is built for durability, with a minimum lifespan of over 500 charge cycles. After 500 full charge/discharge cycles, it is expected to retain at least 30% of its original capacity, making it reliable for long-term use. This rechargeable battery supports the robot’s need for consistent and portable power, which is essential for the several autonomous tasks that the robot is programmed to do during both the Open and Obstacle Challenge rounds. Its high energy capacity, ease of use, and compatibility with the SPIKE™ system make it a critical component of our robot's electronics and system.</p>
 
 ### 2.1.3. Raspberry pi UPS-18650-Lite
 
