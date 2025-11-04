@@ -1,5 +1,3 @@
-# Contains Utils and Classes
-
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
@@ -23,17 +21,30 @@ keys.register(stdin)
 # Consts
 STEERING = -1
 SENSE = 1
-DEBUG = True
+
+PUSH = 1
+INSERT = -1
+
+FRONT = "front"
+LEFT = "left"
+RIGHT = "right"
+BACK = "back"
+
+DEBUG = False
 SCREENWIDTH = 320
 SCREENHEIGHT = 169
 
-MAXCORRECTION_DRIVE = 13
-MINCORRECTION_DRIVE = -20
+MAXCORRECTION_DRIVE = 15
+MINCORRECTION_DRIVE = -15
 
-MAX_TURN_ANGLE = 45
-MIN_TURN_ANGLE = -49
-ANGLE_KP_THRESHOLD = 50
-MINTHRESHOLD = 300
+MAX_TURN_ANGLE = 42
+MIN_TURN_ANGLE = -42
+ANGLE_KP_THRESHOLD = 60
+MINTHRESHOLD = 110
+
+COMPE = True
+
+logs = []
 
 ## To be Copied Over
 def clearOutput():
@@ -43,7 +54,16 @@ def clearOutput():
 def beep(freq=500, dur=10):
     HUB.speaker.beep(freq, dur)
 
+def chopsuey(sannisLivisa: FE):
+    sannisLivisa.eBrake(400)
+    k
+
 def linearMap(lmInput, lmInputMin, lmInputMax, lmOutputMin, lmOutputMax):
+    if lmInput <lmInputMin:
+        return lmOutputMin
+    elif lmInput > lmInputMax:
+        return lmOutputMax
+
     if lmInputMin > lmInputMax:
         lmInputMin, lmInputMax = lmInputMax, lmInputMin
         lmOutputMin, lmOutputMax = lmOutputMax, lmOutputMin
@@ -57,26 +77,46 @@ def tLinearMap(lmInput, lmInputMin, lmInputMax, lmOutputMin, lmOutputMax):
     lmOutputRange = lmOutputMax - lmOutputMin
     return lmOutputMax - (lmNormalized * lmOutputRange)
 
+
+# tLinearap((left + right) / 2, 0, 100, 500, 1000, 500)
+# start = (left.angle() + right.angle()) / 2
+# while True:
+#     current = left.angle() + right.angle()) / 2
+#     left.run(tLinearap(current, start, 100, 500, 1000, 500))
+#     right.run(tLinearap(current, start, 100, 500, 1000, 500))
+
 def pid(KP, KI, KD, inError, inSum, inPrevError, maxSum=150, minSum=-150):
-    p = inError * KP
-    newSum = inError + inSum
-    if newSum > 0:
-        inSum = newSum if newSum < maxSum else maxSum
-
+    # if inError < 0.1 and inError > -0.1 :
+    #     newSum = 0
+    if inError > 0.25 or inError < -0.25:
+        newSum = inError + inSum
     else:
-        inSum = newSum if newSum > -minSum else -minSum
+        newSum = inSum
 
+
+    # Clamp the integral sum
+    if newSum > maxSum:
+        inSum = maxSum
+    elif newSum < minSum:
+        inSum = minSum
+    else:
+        inSum = newSum
+
+    # Continue with PID calculation
+    p = inError * KP
     i = inSum * KI
     d = (inError - inPrevError) * KD
 
     output = p + i + d
-
+    # print(f"Err: {inError:.2f}, P: {p:.2f}, KP: {KP},  D: {d:.2f}, I: {i}, Corr: {output:.2f}, Sum: {inSum}")
     return inSum, inError, output
+
 
 def colorSensorIntHSV(colorSensor, colorSensorReturnValue = -1):
     # 0 = hue
     # 1 = sat
     # 2 = val
+    # print(colorSensor.hsv())
     if (colorSensorReturnValue == -1):
         return [int(str(colorSensor.hsv()).split(",")[0].split("=")[1]), int(str(colorSensor.hsv()).split(",")[1].split("=")[1]), int(str(colorSensor.hsv()).split(",")[2].split("=")[1].split(")")[0])];
     elif (colorSensorReturnValue == 0):
@@ -87,7 +127,34 @@ def colorSensorIntHSV(colorSensor, colorSensorReturnValue = -1):
         return int(str(colorSensor.hsv()).split(",")[2].split("=")[1].split(")")[0]);
 
 def log(*args, level="LOG"):
+    # global logs
+    # if COMPE:
+    # print(args)
+    # logs.append(f"[{level}]" + " ".join(str(arg) for arg in args))
+    # if DEBUG:
     print(f"[{level}]", *args)
+
+def saveLogs(logs):
+    result = []
+
+    for string in logs:
+        result.extend([ord(char) for char in string] + [10])
+
+    length = len(result)
+    result.insert(0, length)
+    return result
+
+def readLogs():
+    processed = ""
+    num = ord(HUB.system.storage(0, read=1))
+    # print(num)
+
+    data = HUB.system.storage(1, read=num)
+
+    for char in data:
+        processed += chr(char)
+
+    return processed
 
 def printInfo():
     clearOutput()
@@ -129,7 +196,7 @@ def scanList(sannisLivisa, startAngle, endAngle, delayTime=10, minThreshold=MINT
             lastSeenColor = tempColor
             lastSeenData = tempData
             lastSeenAngle = _
-            beep(dur=delayTime)
+            wait(delayTime)
         else:
             tryAppend()
             wait(delayTime)
@@ -171,35 +238,28 @@ def scanList(sannisLivisa, startAngle, endAngle, delayTime=10, minThreshold=MINT
     else:
         return "None", (0, 0, 0), [("None", (0, 0, 0), 0)]
 
-def scanOnce(sannisLivisa: FE, startAngle: FE, endAngle: int, delayTime: int=10, minThreshold: int=MINTHRESHOLD):
+def scanOnce(sannisLivisa: FE, startAngle: int, endAngle: int, delayTime: int=10, minThreshold: int=MINTHRESHOLD):
     pillarColor = "None"
-    pillarData = (0, 0, 0)
-
     greenDetections = 0
     redDetections = 0
 
-    _ = startAngle
     angleStep = 1 if startAngle < endAngle else -1
 
-    while (startAngle < endAngle and sannisLivisa.senseMotor.angle() < endAngle) or \
-          (startAngle > endAngle and sannisLivisa.senseMotor.angle() > endAngle):
-
-        sannisLivisa.lookDir(_, asyncBool=False)
+    for angle in range(startAngle, endAngle + angleStep, angleStep):
+        sannisLivisa.lookDir(angle, asyncBool=False)
         tempColor, tempData = sannisLivisa.determineTrafficSignBlob()
 
         if tempColor != "None" and tempData[2] > minThreshold:
-            pixelWeight = linearMap(tempData[2], minThreshold, 4000, 0.2, 1.0)  # You can adjust range/scale
-            # print(pixelWeight, tempData[2])
+            pixelWeight = linearMap(tempData[2], minThreshold, 4000, 0.2, 1.0)
             if tempColor == "Green":
                 greenDetections += pixelWeight
             elif tempColor == "Red":
                 redDetections += pixelWeight
-            beep(500, delayTime)
-        else:
+            # beep(500, delayTime)
             wait(delayTime)
 
-
-        _ += angleStep
+        else:
+            wait(delayTime)
 
     log("Red:", redDetections, "| Green:", greenDetections)
 
@@ -209,6 +269,53 @@ def scanOnce(sannisLivisa: FE, startAngle: FE, endAngle: int, delayTime: int=10,
         return "Red"
     else:
         return "None"
+
+def sharedParking(sannisLivisa: FE):
+    sannisLivisa.drive(200, 500, 600)
+    sannisLivisa.eBrake(200)
+    HUB.imu.reset_heading(-90)
+    sannisLivisa.lookDir(-50)
+    sannisLivisa.turn(300, 7, True)
+    # sannisLivisa.drive(300, 200, 300, heading=0)
+    sannisLivisa.drive(90, 200, 300, heading=0)
+    sannisLivisa.drive(-50, 200, 300, heading=0)
+    sannisLivisa.turn(300, 60, True)
+
+    beep()
+    sannisLivisa.driveUntilProximity(-210, 50, selection="back", heading=60, lookHeading=-40)
+    # sannisLivisa.drive(-360, 200, 300, heading=60)
+    sannisLivisa.reverseUntilAngleOrWall(300, 0, 50)
+    # sannisLivisa.driveUntilProximity(-160, 54, selection="back", heading=0, lookHeading=0)
+    # i = 0
+    # while abs(0 - HUB.imu.heading()) > 6 and i < 2:
+    #     print(i)
+    sannisLivisa.driveUntilProximity(110, 40, selection="front", heading=-11, lookHeading=0)
+    sannisLivisa.driveUntilProximity(-110, 53, selection="back", heading=2, lookHeading=0)
+        # log(abs(0 - HUB.imu.heading()))
+        # i += 1
+
+    sannisLivisa.driveUntilProximity(110, 40, selection="front", heading=-3, lookHeading=0)
+
+    sannisLivisa.eBrake(200)
+
+def checkIfFlushWithWall(sannisLivisa, errorTolerance, forwardAmount, backwardSpeed, targetHeading, turnDuration, steerAngle):
+    log("Error in walling:", abs(HUB.imu.heading() - targetHeading))
+    error = HUB.imu.heading() - targetHeading
+    if abs(error) > errorTolerance:
+        sannisLivisa.drive(forwardAmount, 500, 600)
+        sannisLivisa.eBrake(10)
+
+        turntimer = StopWatch()
+        turntimer.reset()
+        turntimer.pause()
+        beep(700)
+        direc = -steerAngle if error > 0 else steerAngle
+        turntimer.resume()
+        while turntimer.time() < turnDuration:
+            sannisLivisa.move(-backwardSpeed, direc)
+        turntimer.reset()
+        turntimer.pause()
+
 
 class FE():
     def __init__(self, steeringMotor: Port, driveMotor: Port, senseMotor: Port, distSensorB: Port, distSensor: Port, camSensor: Port, camEnabled: bool = True):
@@ -224,6 +331,8 @@ class FE():
         self.driveMotor.control.limits(2000, 20000, 1000)
         self.steeringMotor.control.limits(2000, 20000, 1000)
         self.senseMotor.control.limits(2000, 20000, 1000)
+
+        print(self.driveMotor.settings())
         
         # -- Reset Angle of Movement motors -- #
 
@@ -232,51 +341,55 @@ class FE():
         self.driveMotor.reset_angle(0)
 
         # self.colorSensor = ColorSensor(colorSensor)
+
         self.distSensor = UltrasonicSensor(distSensor)
-        self.distSensorBack = UltrasonicSensor(distSensorB)
+
+        print("goods")
+
+        # TODO try except which sets global flag
+        self.distSensorBack = PUPRemoteHub(distSensorB)
+        self.distSensorBack.add_command('line', 'hhh') 
+        print("goods")
 
         # -- PID Constants - Forward Direction -- #
-        self.KPdriveFCT = 4.6
-        self.KIdriveFCT = 0.00004    
+        self.KPdriveFCT = 4.8
+        self.KIdriveFCT = 0.000026
 
-        self.KPdriveBCT = 4.8
-        self.KIdriveBCT = 0.00004
+        self.KPdriveBCT = 3.5
+        self.KIdriveBCT = 0.00003
 
-        self.KPdriveFC  = 4.6
-        self.KIdriveFC  = 0.000056
+        self.KPdriveFC  = 4.5
+        self.KIdriveFC  = 0.00001
 
-        self.KPdriveBC  = 4.2
-        self.KIdriveBC  = 0.00004
-
-        self.KDdrive    = 0.91
+        self.KPdriveBC  = 4.6
+        self.KIdriveBC  = 0.000002
+        self.KDdrive    = 0.04
         self.prevError  = 0
         self.errorSum   = 0
 
-        self.KPturnLeftLess     = 0.9
-        self.KPturnLeftMore     = 1.11
+        self.KPturnLeftLess     = 1.05
+        self.KPturnLeftMore     = 1.78
 
-        self.KPturnRightLess    = 0.89
-        self.KPturnRightMore    = 0.9
+        self.KPturnRightLess    = 1.02
+        self.KPturnRightMore    = 1.7
 
-        self.KDturn     = 0.81
+        self.KDturn     = 0.48
         self.KITurn     = 0
 
-        self.forwardMinTorque = 310
+        self.forwardMinTorque = 390
         self.backwardMinTorque = 320
         self.stalledTime = 1500
 
-        self.forwardTurnLeftTolerance = 17
-        self.forwardTurnRightTolerance = 9
-        self.backwardTurnLeftTolerance = 15
-        self.backwardTurnRightTolerance = 18 
-
+        self.forwardTurnLeftTolerance = 13
+        self.forwardTurnRightTolerance = 15
+        self.backwardTurnLeftTolerance = 12
+        self.backwardTurnRightTolerance = 9
 
         self.driveSpeedMin = 500
         self.driveSpeedMax = 1000
         self.lookSpeed     = 1000
 
         HUB.imu.reset_heading(0)
-
         self.memory = {}
         self.resetParams()
 
@@ -308,10 +421,17 @@ class FE():
         return self.driveMotor.angle()
 
     def getDistance(self, selection):
-        if selection == "front":
-            return self.distSensor.distance()
-        else:
-            return self.distSensorBack.distance()
+        try:
+            if selection == FRONT:
+                return self.distSensor.distance()
+            elif selection == LEFT:
+                return self.distSensorBack.call("line")[0]
+            elif selection == RIGHT:
+                return self.distSensorBack.call("line")[1]
+            else:
+                return self.distSensorBack.call("line")[2]
+        except:
+            return 0
 
     def lookDir(self, deg, asyncBool: bool = True, speed = None, delayTimeation: int = 200):
         if speed == None:
@@ -329,7 +449,19 @@ class FE():
         self.errorSum = 0
         self.prevError = 0
 
-    def record(self, key, value):
+    def record(self, key, value, method=PUSH):
+        if key in self.memory.keys():
+
+            if method == PUSH:
+                if type(value) != int:
+                    self.memory[key].append(value)
+                else:
+                    self.memory[key] = value
+
+            else:
+                self.memory[key].insert(0, value)
+            return
+
         self.memory[key] = value
     
     # --- Movement --- #
@@ -361,28 +493,167 @@ class FE():
         self.driveMotor.stop()
 
     def move(self, speed, angle):
-        self.steeringMotor.run_target(1000, angle)
+        self.steeringMotor.run_target(1000, angle, wait=False)
         self.driveMotor.run(speed)
 
-    def drive(self, dist, initialSpeed, finalSpeed, heading="", stopBool=False, stopDuration=100):
-        global MAXCORRECTION_DRIVE, MINCORRECTION_DRIVE
+    def determineDirOld(self, exclude=2000):
+        checkTimer = StopWatch()
+        checkTimer.pause()
+        checkTimer.reset()
+        self.lookDir(90, speed=1000)
+        while self.senseMotor.angle() < 88:
+            pass
+        
+        start = self.mileage()
+        target = start - 80
+        self.driveMotor.run_target(180, target, wait=False)
+
+        checkTimer.resume()
+        largestRight = 0
+        while checkTimer.time() < 800:
+            dist = self.distSensor.distance()
+            if dist > largestRight and dist != exclude:
+                largestRight = dist
+
+        checkTimer.pause()
+        checkTimer.reset()
+        log("Dist RIght:", largestRight, level="DETERMINE DIR")
+
+        self.lookDir(-90, speed=1000)
+        while self.senseMotor.angle() > -88:
+            pass
+        
+        self.driveMotor.run_target(180, start, wait=False)
+
+        checkTimer.resume()
+        largestLeft = 0
+        while checkTimer.time() < 800:
+            dist = self.distSensor.distance()
+            if dist > largestLeft and dist != exclude:
+                largestLeft = dist
+
+        checkTimer.pause()
+        checkTimer.reset()
+
+        log("Dist Left:", largestLeft, level="DETERMINE DIR")
+
+        if largestLeft > largestRight:
+            direction = -1
+        else:
+            direction = 1
+
+        log(direction, level="DETERMINE DIR")
+        self.center()
+        return direction
+
+    def determineDir(self, exclude=2000, measureTime=100):
+        try:
+            checkTimer = StopWatch()
+            checkTimer.pause()
+            checkTimer.reset()
+        
+            checkTimer.resume()
+            largestRight = 0
+            largestLeft = 0
+            while checkTimer.time() < measureTime:
+                dists = self.distSensorBack.call("line")
+
+                dist = dists[1]
+                if dist > largestRight and dist != exclude:
+                    largestRight = dist
+
+                dist = dists[0]
+                if dist > largestLeft and dist != exclude:
+                    largestLeft = dist
+
+            checkTimer.pause()
+            checkTimer.reset()
+
+            log("Dist Right:", largestRight, level="DETERMINE DIR")
+            log("Dist Left:", largestLeft, level="DETERMINE DIR")
+            log("Backup (Front):", largestLeft, level="DETERMINE DIR")
+
+            if largestLeft > largestRight:
+                direction = -1
+            else:
+                direction = 1
+
+            log(direction, level="DETERMINE DIR")
+            return direction
+        except:
+            log("LMS-ESP 32 Refused to connect!", level="ERROR")
+            return self.determineDirOld()
+        
+    def getTrafficSigns(self):
+        if COMPE:
+            try:
+                data = self.camSensor.call("blob")
+
+                green = data[0:3]
+                red = data[3:6]
+            
+                return green, red
+            except:
+                print("Error! Problem Encountered while attempting to retreive data from camera!\n Maybe connection is loose?")
+                
+                return ((0, 0, 0), (0, 0, 0))
+        else:
+            data = self.camSensor.call("blob")
+
+            green = data[0:3]
+            red = data[3:6]
+        
+            return green, red
+
+    def determineTrafficSignBlob(self):
+        currentGreen, currentRed = self.getTrafficSigns()
+        greenX, greenY, greenPix = currentGreen
+        redX, redY, redPix = currentRed
+        obstacleData = (0, 0, 0)
+        obsColor = "None"
+
+        # determin & log first obstacle
+        if greenPix > redPix:
+            obstacleData = currentGreen
+            obsColor = "Green"
+        elif redPix > greenPix:
+            obstacleData = currentRed
+            obsColor = "Red"
+        else:
+            if DEBUG:
+                pass
+                # log("No Traffic Signs Detected!")
+
+        return [obsColor, obstacleData]
+    
+    def kc(self):
+        self.senseMotor.close()
+        self.steeringMotor.close()
+        self.driveMotor.close()
+
+    def drive(self, dist, initialSpeed, finalSpeed, heading="", stopBool=False, stopDuration=100, decelerate=False):
         heading = HUB.imu.heading() if heading == "" else heading
         start = self.driveMotor.angle()
         target = start + dist
 
         # Select PID constants once based on initial heading
         baseKP, KI = self._selectPIDConstants(heading, forward=(dist > 0))
+        if decelerate == False:
+            mappingFunc = linearMap
+        else:
+            mappingFunc = tLinearMap
         # print(start, target, heading, HUB.imu.heading(), baseKP, KI)
         if (dist > 0):
             while self.driveMotor.angle() < target:
                 error = heading - HUB.imu.heading()
-                speed = linearMap(self.driveMotor.angle(), start, target, initialSpeed, finalSpeed)
+                speed = mappingFunc(self.driveMotor.angle(), start, target, initialSpeed, finalSpeed)
                 KP = linearMap(self.driveMotor.speed(), 0, 1000, 0, baseKP)
                 KD = linearMap(self.driveMotor.speed(), 0, 1000, 0, self.KDdrive)
                 
                 self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
                 correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
                 correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+                # print(correction)
 
                 self.move(speed, correction)
 
@@ -391,27 +662,21 @@ class FE():
             while self.driveMotor.angle() > target:
                 error = HUB.imu.heading() - heading
 
-                speed = linearMap(self.driveMotor.angle(), start, target, -initialSpeed, -finalSpeed)
-                KP = linearMap(self.driveMotor.speed(), 0, -1000, 0, baseKP)
-                KD = linearMap(self.driveMotor.speed(), 0, -1000, self.KDdrive, 0)
+                speed = mappingFunc(self.driveMotor.angle(), start, target, -initialSpeed, -finalSpeed)
+                KP = linearMap(self.driveMotor.speed(), -1000, 0, 0, baseKP)
+                KD = linearMap(self.driveMotor.speed(), -1000, 0, self.KDdrive, 0)
                 
                 self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
-                # if correction >= 0:
                 correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
-                # else:
                 correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
 
-                self.steeringMotor.run_target(1000, correction)
-                self.driveMotor.run(speed)
+                self.move(speed, correction)
 
         if stopBool:
             self.eBrake(stopDuration)
-        # else:
-        #     self.stop()
-            
         self.resetParams()
 
-    def driveUntilStalled(self, accelDist, initialSpeed, finalSpeed, heading=""):
+    def driveUntilStalled(self, accelDist, initialSpeed, finalSpeed, heading="", decelerate=False):
         heading = HUB.imu.heading() if heading == "" else heading
         start = self.driveMotor.angle()
         target = start + accelDist
@@ -425,55 +690,53 @@ class FE():
         stallClock = StopWatch()
         stallClock.reset()
         stallClock.resume()
+
+        if decelerate == False:
+            mappingFunc = linearMap
+        else:
+            mappingFunc = tLinearMap
         
 
         if (accelDist > 0):
             self.driveMotor.control.limits(torque=self.forwardMinTorque)
-            self.forwardStallSpeed = finalSpeed // 2
+            self.forwardStallSpeed = finalSpeed // 1.8
 
             while (self.driveMotor.speed() > self.forwardStallSpeed and stallClock.time() < self.stalledTime):
                 error = heading - HUB.imu.heading()
-                speed = linearMap(self.driveMotor.angle(), start, target, initialSpeed, finalSpeed)
+                speed = mappingFunc(self.driveMotor.angle(), start, target, initialSpeed, finalSpeed)
                 KP = linearMap(self.driveMotor.speed(), 0, 1000, 0, baseKP)
                 KD = linearMap(self.driveMotor.speed(), 0, 1000, 0, self.KDdrive)
                 
                 self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
                 
-                # if correction >= 0:
                 correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
-                # else:
                 correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
 
                 self.move(speed, correction)
 
             self.driveMotor.stop()
             self.driveMotor.control.limits(torque=self.defaultDriveValues[2])
-            self.center(STEERING)
-            # self.drive(110, initialSpeed, finalSpeed)
         else:
             self.driveMotor.control.limits(torque=self.backwardMinTorque)
-            self.backwardStallSpeed = -(finalSpeed // 2.4)
+            self.backwardStallSpeed = -(finalSpeed // 2)
 
             while (self.driveMotor.speed() < self.backwardStallSpeed and stallClock.time() < self.stalledTime):
                 error = HUB.imu.heading() - heading
 
-                speed = linearMap(self.driveMotor.angle(), start, target, -initialSpeed, -finalSpeed)
-                KP = linearMap(self.driveMotor.speed(), 0, -1000, 0, baseKP)
-                KD = linearMap(self.driveMotor.speed(), 0, -1000, self.KDdrive, 0)
+                speed = mappingFunc(self.driveMotor.angle(), start, target, -initialSpeed, -finalSpeed)
+                KP = linearMap(self.driveMotor.speed(), -1000, 0, 0, baseKP)
+                KD = linearMap(self.driveMotor.speed(), -1000, 0, self.KDdrive, 0)
                 
                 self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
 
-                # if correction >= 0:
                 correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
-                # else:
                 correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
 
                 self.move(speed, correction)
 
             self.driveMotor.stop()
             self.driveMotor.control.limits(torque=self.defaultDriveValues[2])
-            self.center(STEERING)
-            self.drive(-110, initialSpeed, finalSpeed)
+            # self.drive(-80, initialSpeed, finalSpeed)
         stallClock.pause()
         stallClock.reset()
             
@@ -502,8 +765,8 @@ class FE():
                 while self.getDistance(selection) > proximity:
                     # log(self.getDistance(selection))
                     error = HUB.imu.heading() - heading
-                    KP = linearMap(self.driveMotor.speed(), 0, -1000, 0, baseKP)
-                    KD = linearMap(self.driveMotor.speed(), 0, -1000, self.KDdrive, 0)
+                    KP = linearMap(self.driveMotor.speed(), -1000, 0, 0, baseKP)
+                    KD = linearMap(self.driveMotor.speed(), -1000, 0, self.KDdrive, 0)
                     self.lookDir(lookHeading - HUB.imu.heading(), False)
                     
                     self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
@@ -515,8 +778,8 @@ class FE():
                 while self.getDistance(selection) > proximity:
                     # print(self.getDistance(selection))
                     error = HUB.imu.heading() - heading
-                    KP = linearMap(self.driveMotor.speed(), 0, -1000, 0, baseKP)
-                    KD = linearMap(self.driveMotor.speed(), 0, -1000, self.KDdrive, 0)
+                    KP = linearMap(self.driveMotor.speed(), -1000, 0, 0, baseKP)
+                    KD = linearMap(self.driveMotor.speed(), -1000, 0, self.KDdrive, 0)
                     
                     self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
 
@@ -526,13 +789,216 @@ class FE():
                     self.lookDir(lookHeading - HUB.imu.heading(), False)
                     self.move(speed, correction)
 
-    
-        # self.driveMotor.stop()
         if brake:
             self.eBrake(200)
+
         print(f"Final Distance From Wall: {self.getDistance(selection)}")
 
-    def turn(self, speed, targetAngle, reverse=False, ):
+    def driveDeterminDir(self, dist, initialSpeed, finalSpeed, heading="", stopBool=False, stopDuration=100, decelerate=False, sideThreshold=200, frontThreshold=200):
+        heading = HUB.imu.heading() if heading == "" else heading
+        start = self.driveMotor.angle()
+        target = start + dist
+
+        # Select PID constants once based on initial heading
+        baseKP, KI = self._selectPIDConstants(heading, forward=(dist > 0))
+        if decelerate == False:
+            mappingFunc = linearMap
+        else:
+            mappingFunc = tLinearMap
+
+        if (dist > 0):
+            ctr = 0
+            while ctr < 3:
+                if (self.getDistance(LEFT) - self.getDistance(RIGHT) > sideThreshold) or \
+                    (self.getDistance(RIGHT) - self.getDistance(LEFT) > sideThreshold) or \
+                    (self.getDistance(FRONT) < frontThreshold):
+                    ctr += 1
+                error = heading - HUB.imu.heading()
+                speed = mappingFunc(self.driveMotor.angle(), start, target, initialSpeed, finalSpeed)
+                KP = linearMap(self.driveMotor.speed(), 0, 1000, 0, baseKP)
+                KD = linearMap(self.driveMotor.speed(), 0, 1000, 0, self.KDdrive)
+                
+                self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+                correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
+                correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+                # print(correction)
+
+                self.move(speed, correction)
+        else:
+            while (self.getDistance(LEFT) - self.getDistance(RIGHT) > sideThreshold) or \
+                    (self.getDistance(RIGHT) - self.getDistance(LEFT) > threshold) or \
+                    (self.getDistance(BACK) > frontThreshold):
+                error = HUB.imu.heading() - heading
+
+                speed = mappingFunc(self.driveMotor.angle(), start, target, -initialSpeed, -finalSpeed)
+                KP = linearMap(self.driveMotor.speed(), -1000, 0, 0, baseKP)
+                KD = linearMap(self.driveMotor.speed(), -1000, 0, self.KDdrive, 0)
+                
+                self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+                correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
+                correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+
+                self.move(speed, correction)
+
+        if stopBool:
+            self.eBrake(stopDuration)
+        self.resetParams()
+
+        return self.determineDir(measureTime=50)
+
+    def scanAndDrive(self, dist, initialSpeed, finalSpeed, lookHeading, heading="", stopBool=False, stopDuration=100, decelerate=False):
+
+        heading = HUB.imu.heading() if heading == "" else heading
+        start = self.driveMotor.angle()
+        target = start + dist
+
+        # Select PID constants once based on initial heading
+        baseKP, KI = self._selectPIDConstants(heading, forward=(dist > 0))
+        if decelerate == False:
+            mappingFunc = linearMap
+        else:
+            mappingFunc = tLinearMap
+        # print(start, target, heading, HUB.imu.heading(), baseKP, KI)
+        greenDetections = 0
+        redDetections = 0
+
+        self.lookDir(lookHeading, asyncBool=False)
+
+        if (dist > 0):
+            while self.driveMotor.angle() < target:
+                error = heading - HUB.imu.heading()
+                speed = mappingFunc(self.driveMotor.angle(), start, target, initialSpeed, finalSpeed)
+                KP = linearMap(self.driveMotor.speed(), 0, 1000, 0, baseKP)
+                KD = linearMap(self.driveMotor.speed(), 0, 1000, 0, self.KDdrive)
+                
+                self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+                correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
+                correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+                # print(correction)
+
+                tempColor, tempData = self.determineTrafficSignBlob()
+                if tempColor != "None" and tempData[2] > MINTHRESHOLD:
+                    pixelWeight = linearMap(tempData[2], MINTHRESHOLD, 4000, 0.2, 1.0)
+                    if tempColor == "Green":
+                        greenDetections += pixelWeight
+                    elif tempColor == "Red":
+                        redDetections += pixelWeight
+
+                self.move(speed, correction)
+
+            # print(i)
+        else:
+            while self.driveMotor.angle() > target:
+                error = HUB.imu.heading() - heading
+
+                speed = mappingFunc(self.driveMotor.angle(), start, target, -initialSpeed, -finalSpeed)
+                KP = linearMap(self.driveMotor.speed(), -1000, 0, 0, baseKP)
+                KD = linearMap(self.driveMotor.speed(), -1000, 0, self.KDdrive, 0)
+                
+                self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+                correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
+                correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+
+                tempColor, tempData = self.determineTrafficSignBlob()
+                if tempColor != "None" and tempData[2] > MINTHRESHOLD:
+                    pixelWeight = linearMap(tempData[2], MINTHRESHOLD, 4000, 0.2, 1.0)
+                    if tempColor == "Green":
+                        greenDetections += pixelWeight
+                    elif tempColor == "Red":
+                        redDetections += pixelWeight
+
+                self.move(speed, correction)
+
+        if stopBool:
+            self.eBrake(stopDuration)
+        self.resetParams()
+
+        return (greenDetections, redDetections)
+
+    def scanUntilStallled(self, accelDist, initialSpeed, finalSpeed, lookHeading, heading="", decelerate=False):
+        heading = HUB.imu.heading() if heading == "" else heading
+        start = self.driveMotor.angle()
+        target = start + accelDist
+        self.resetParams()
+
+        greenDetections, redDetections = self.scanAndDrive(accelDist, initialSpeed, finalSpeed, lookHeading, heading=heading)
+
+        # Select PID constants once based on initial heading
+        baseKP, KI = self._selectPIDConstants(heading, forward=(accelDist > 0))
+
+        stallClock = StopWatch()
+        stallClock.reset()
+        stallClock.resume()
+
+        if decelerate == False:
+            mappingFunc = linearMap
+        else:
+            mappingFunc = tLinearMap
+        
+        # self.lookDir(lookHeading, asyncBool=False)
+
+        if (accelDist > 0):
+            self.driveMotor.control.limits(torque=self.forwardMinTorque)
+            self.forwardStallSpeed = finalSpeed // 2
+
+            while (self.driveMotor.speed() > self.forwardStallSpeed and stallClock.time() < self.stalledTime):
+                error = heading - HUB.imu.heading()
+                speed = mappingFunc(self.driveMotor.angle(), start, target, initialSpeed, finalSpeed)
+                KP = linearMap(self.driveMotor.speed(), 0, 1000, 0, baseKP)
+                KD = linearMap(self.driveMotor.speed(), 0, 1000, 0, self.KDdrive)
+                
+                self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+                
+                correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
+                correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+
+                tempColor, tempData = self.determineTrafficSignBlob()
+                if tempColor != "None" and tempData[2] > MINTHRESHOLD:
+                    pixelWeight = linearMap(tempData[2], MINTHRESHOLD, 4000, 0.2, 1.0)
+                    if tempColor == "Green":
+                        greenDetections += pixelWeight
+                    elif tempColor == "Red":
+                        redDetections += pixelWeight
+
+                self.move(speed, correction)
+
+            self.driveMotor.stop()
+            self.driveMotor.control.limits(torque=self.defaultDriveValues[2])
+        else:
+            self.driveMotor.control.limits(torque=self.backwardMinTorque)
+            self.backwardStallSpeed = -(finalSpeed // 2.4)
+
+            while (self.driveMotor.speed() < self.backwardStallSpeed and stallClock.time() < self.stalledTime):
+                error = HUB.imu.heading() - heading
+
+                speed = mappingFunc(self.driveMotor.angle(), start, target, -initialSpeed, -finalSpeed)
+                KP = linearMap(self.driveMotor.speed(), -1000, 0, 0, baseKP)
+                KD = linearMap(self.driveMotor.speed(), -1000, 0, self.KDdrive, 0)
+                
+                self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+
+                correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
+                correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+
+                tempColor, tempData = self.determineTrafficSignBlob()
+                if tempColor != "None" and tempData[2] > MINTHRESHOLD:
+                    pixelWeight = linearMap(tempData[2], MINTHRESHOLD, 4000, 0.2, 1.0)
+                    if tempColor == "Green":
+                        greenDetections += pixelWeight
+                    elif tempColor == "Red":
+                        redDetections += pixelWeight
+
+                self.move(speed, correction)
+
+            self.driveMotor.stop()
+            self.driveMotor.control.limits(torque=self.defaultDriveValues[2])
+            self.drive(-80, initialSpeed, finalSpeed)
+        stallClock.pause()
+        stallClock.reset()
+
+        return (greenDetections, redDetections)
+
+    def turn(self, speed, targetAngle, reverse=False):
         # reset error sum and prev error
         self.resetParams()
         current = HUB.imu.heading()
@@ -552,7 +1018,7 @@ class FE():
         if reverse == False:
             if direction > 0:
                 correction = 100
-                tolerance = self.forwardTurnRightTolerance * 1.5 if abs(targetError) > ANGLE_KP_THRESHOLD else self.forwardTurnRightTolerance
+                tolerance = self.forwardTurnRightTolerance * 1.1 if abs(targetError) > ANGLE_KP_THRESHOLD else self.forwardTurnRightTolerance
                 toFollow = targetAngle - tolerance
                 if DEBUG:
                     log(f"Turn to {targetAngle}deg ending", toFollow)
@@ -561,16 +1027,15 @@ class FE():
                     error = targetAngle - HUB.imu.heading()
                     self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
                     correction = 45 if correction > 45 else correction
-                    correction = 3 if correction < 3 else correction
+                    correction = 4 if correction < 4 else correction
                     self.move(speed, correction)
 
-
-
             else:
-                tolerance = self.forwardTurnLeftTolerance * 1.2 if abs(targetError) > 40 else self.forwardTurnLeftTolerance // 2
+                tolerance = self.forwardTurnLeftTolerance * 1.1 if abs(targetError) > ANGLE_KP_THRESHOLD else self.forwardTurnLeftTolerance
+                
                 toFollow = targetAngle + tolerance
                 if DEBUG:
-                    log(f"Turn to {targetAngle}deg ending", targetAngle+tolerance)
+                    log(f"Turn to {targetAngle}deg ending {tolerance}", targetAngle+tolerance)
                 while HUB.imu.heading() > toFollow:
                     error = targetAngle - HUB.imu.heading()
                     self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
@@ -597,78 +1062,131 @@ class FE():
                     correction = 45 if correction > 45 else correction
                     self.move(-speed, correction)
 
-        print(HUB.imu.heading())
-
-    def turnDriveAndCheckIfSnag(self, turnSpeed, targetAngle, initalDriveSpeed, driveDist, graceTime):
-        snagTimer = StopWatch()
-        snagTimer.pause()
-        snagTimer.reset()
-
-    def determineDir(self):
-        self.lookDir(90, speed=1000)
-        wait(200)
-        distRight = self.distSensor.distance()
-        print(distRight)
-
-        self.lookDir(-90, speed=1000)
-        wait(200)
-        distLeft = self.distSensor.distance()
-        print(distLeft)
-
-        if distLeft > distRight:
-            direction = -1
+    def reverseUntilAngleOrWall(self, speed, targetAngle, stopDistance, headingTolerance=3):
+        """
+        Reverse and turn until reaching targetAngle or until rear distance is too close.
+        Stops immediately if wall detected within stopDistance.
+        """
+        self.resetParams()
+        current = HUB.imu.heading()
+        targetError = targetAngle - current
+        direction = 1 if targetError > 0 else -1
+        # Set PID constants
+        if direction > 0:
+            KP = self.KPturnRightLess if abs(targetError) < ANGLE_KP_THRESHOLD else self.KPturnRightMore
         else:
-            direction = 1
+            KP = self.KPturnLeftLess if abs(targetError) < ANGLE_KP_THRESHOLD else self.KPturnLeftMore
 
-        print(direction)
-        self.center()
-        return direction
-        
-    def getTrafficSigns(self):
-        # if DEBUG:
-        #     data = self.camSensor.call("blob")
+        KI = self.KITurn
+        KD = self.KDturn
 
-        #     green = data[0:3]
-        #     red = data[3:6]
-        
-        #     return green, red
-        # else:
-        try:
-            data = self.camSensor.call("blob")
+        prevCorrection = 0
 
-            green = data[0:3]
-            red = data[3:6]
-        
-            return green, red
-        except:
-            print("Error! Problem Encountered while attempting to retreive data from camera!\n Maybe connection is loose?")
-            return ((0, 0, 0), (0, 0, 0))
+        if direction > 0:
+            if DEBUG:
+                log(f"Turn to {targetAngle}deg ending", targetAngle - self.backwardTurnRightTolerance)
 
-    def determineTrafficSignBlob(self):
-        currentGreen, currentRed = self.getTrafficSigns()
-        greenX, greenY, greenPix = currentGreen
-        redX, redY, redPix = currentRed
-        obstacleData = (0, 0, 0)
-        obsColor = "None"
-
-        # determin & log first obstacle
-        if greenPix > redPix:
-            obstacleData = currentGreen
-            obsColor = "Green"
-        elif redPix > greenPix:
-            obstacleData = currentRed
-            obsColor = "Red"
+            while HUB.imu.heading() < targetAngle - self.backwardTurnRightTolerance:
+                if self.getDistance(BACK) < stopDistance:
+                    
+                    self.eBrake(400)
+                    break
+                error = HUB.imu.heading() - targetAngle
+                self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+                correction = -60 if correction < -60 else correction
+                self.move(-speed, correction)
         else:
             if DEBUG:
-                pass
-                # log("No Traffic Signs Detected!")
+                log(f"Turn to {targetAngle}deg ending", targetAngle + self.backwardTurnLeftTolerance)
+            while HUB.imu.heading() > targetAngle + self.backwardTurnLeftTolerance:
+                if self.getDistance(BACK) < stopDistance:
+                    self.eBrake(400)
+                    break
 
-        return [obsColor, obstacleData]
+                print(self.getDistance(BACK))
+                error = HUB.imu.heading() - targetAngle
+                self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+                correction = 45 if correction > 45 else correction
+                self.move(-speed, correction)
+
+
+    def turnDriveAndCheckIfSnag(self, turnSpeed, targetAngle, initialSpeed, finalSpeed, driveDist, decelerate=False, stopBool=False):
+        turnTimer = StopWatch()
+        turnTimer.reset()
+        turnTimer.resume()
+        self.resetParams()
+        current = HUB.imu.heading()
+        targetError = targetAngle - current
+        direction = 1 if targetError > 0 else -1
+
+        KI = self.KITurn
+        KD = self.KDturn
+
+        if direction > 0:
+            KP = self.KPturnRightLess if abs(targetError) < ANGLE_KP_THRESHOLD else self.KPturnRightMore
+        else:
+            KP = self.KPturnLeftLess if abs(targetError) < ANGLE_KP_THRESHOLD else self.KPturnLeftMore
+
+        if direction > 0:
+            correction = 100
+            tolerance = self.forwardTurnRightTolerance * 1.1 if abs(targetError) > ANGLE_KP_THRESHOLD else self.forwardTurnRightTolerance
+            toFollow = targetAngle - tolerance
+            if DEBUG:
+                log(f"Turn to {targetAngle}deg ending", toFollow)
     
-    def kc(self):
-        self.senseMotor.close()
-        self.steeringMotor.close()
-        self.driveMotor.close()
+            while HUB.imu.heading() < toFollow and turnTimer.time() < 2000:
+                error = targetAngle - HUB.imu.heading()
+                self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+                correction = 45 if correction > 45 else correction
+                correction = 4 if correction < 4 else correction
+                self.move(turnSpeed, correction)
+
+                deltaHeading = self.prevError - error
+        else:
+            tolerance = self.forwardTurnLeftTolerance * 1.1 if abs(targetError) > ANGLE_KP_THRESHOLD else self.forwardTurnLeftTolerance
+            
+            toFollow = targetAngle + tolerance
+            if DEBUG:
+                log(f"Turn to {targetAngle}deg ending {tolerance}", targetAngle+tolerance)
+            while HUB.imu.heading() > toFollow and turnTimer.time() < 2000:
+                error = targetAngle - HUB.imu.heading()
+                self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+                correction = -48 if correction < -48 else correction
+                correction = -8 if correction > -8 else correction
+                self.move(turnSpeed, correction)
+
+                deltaHeading = self.prevError - error
+
+        # If the final heading is too far off from target, reverse slightly to retry
+        if abs(HUB.imu.heading() - targetAngle) >25:
+            log("Heading offset too large after turn, reversing to correct")
+            log(f"CurrentHeading:", HUB.imu.heading())
+            # self.turn(300, -4, True)
+            # self.drive(-80, 300, 400, heading=0, stopBool=True, stopDuration=150)
+            self.turn(300, 0, True)
+            self.drive(driveDist+90, 300, 400, heading=0, stopBool=True, stopDuration=150)
+        
+
+        heading = targetAngle
+        start = self.driveMotor.angle()
+        target = start + driveDist
+
+        baseKP, KI = self._selectPIDConstants(heading, forward=(driveDist > 0))
+        mappingFunc = linearMap if not decelerate else tLinearMap
+
+        while self.driveMotor.angle() < target:
+            error = heading - HUB.imu.heading()
+            speed = mappingFunc(self.driveMotor.angle(), start, target, initialSpeed, finalSpeed)
+            KP = linearMap(self.driveMotor.speed(), 0, 1000, 0, baseKP)
+            KD = linearMap(self.driveMotor.speed(), 0, 1000, 0, self.KDdrive)
+
+            self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+            correction = min(max(correction, MINCORRECTION_DRIVE), MAXCORRECTION_DRIVE)
+
+            self.move(speed, correction)
+
+        if stopBool:
+            self.eBrake(stopDuration)
 
     def remoteControl(self):
         key = ""
@@ -677,20 +1195,25 @@ class FE():
         while True:
             if keys.poll(0):
                 key = stdin.read(1)
-                if (key == "w"): 
-                    vel = 800
-                if (key == "s"): 
+                if key == "w": 
+                    vel = 1000
+                if key == "s": 
                     vel = -800
-                if (key == "a"): 
-                    theta = min(theta - 40, -40)
-                if (key == "q"):
+                if key == "a": 
+                    theta -= 40
+                    if theta < -40:
+                        theta = -40
+                if key == "q":
                     theta = 0
-                if (key == "d"): 
-                    theta = max(theta  + 40, 40)
-                if (key == " "):
+                if key == "d": 
+                    theta += 40
+                    if theta > 40:
+                        theta = 40
+                if key == " ":
                     vel = 0
 
             self.move(vel, theta)
+
 
 # # Avoid Misdownload of Code
 if __name__ == "__main__":
