@@ -1,4 +1,4 @@
-***
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/f62434fd-745e-43bc-80b8-b6b9918a1934" />***
 
 # ![J.E.E.P. (BatStateU-IS)](./docu-photos/updbanner.png)
 
@@ -307,9 +307,9 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 6.1](./docu-photos/image59.png) | ![Figure 6.2]() |
-|:---------------------:|:---------------------:|
-| Figure 6.1 <br> SPIKE™ Prime Hub <br> Specification | Figure 6.2 <br> SPIKE™ Prime Hub <br> Dimensions |
+| ![Figure 6.1](./docu-photos/powerm.png) |
+|:---------------------:|
+| Figure 6.1 <br> Power Management |
 
 </center>
 
@@ -346,7 +346,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 | ![Figure 9](./docu-photos/mcm.png) |
 |:---------------------:|
-| Figure 9. <br> Robot’s Sensors and Vision System
+| Figure 9. <br> Microcontroller Management
 
 </center>
 
