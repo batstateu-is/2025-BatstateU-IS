@@ -1012,11 +1012,27 @@ def runRecord(currentLap):
 
 | ![Figure 26.1](./docu-photos/.png) | ![Figure 26.2](./docu-photos/uscaseplate2.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 24.1. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 24.2 <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+| <center> Figure 26.1. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 26.2 <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
 
 </center>
 
-### 7.5. Rotating Camera and Distance Sensor
+### 7.5. 3D-Printed Robot Chassis
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 3D-printed chassis was one of the most challenging yet rewarding engineering factors in our robot’s development. Since it served as the main structural frame that held all other components together, achieving accuracy and strength was crucial. During the early stages, we went through several trial-and-error attempts using the Flashforge Adventurer 4, where we encountered various issues such as unfinished prints, misaligned parts, and incorrect dimensions. These problems often came from minor modeling errors or printer calibration inconsistencies.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After multiple iterations, we successfully produced a functional prototype that met our initial expectations. However, we wanted to further improve its precision and fit quality. To do this, we remodeled the chassis from Blender to Fusion 360, a more advanced CAD software that allowed us to apply exact measurements and parametric adjustments. This transition significantly improved the model’s alignment and overall geometry.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the final version, we used the Bambu Lab 3D printer, which provided higher resolution, better print stability, and smoother surface finish. The result was a strong, lightweight, and accurately fitted chassis that perfectly supported our robot’s electronic and mechanical components.</p>
+
+<center>
+
+| ![Figure 27.1](./docu-photos/.png) | ![Figure 27.2](./docu-photos/chassisplate2.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 27.1. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 27.2 <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+
+</center>
+
+### 7.6. Rotating Camera and Distance Sensor
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To maximize the functionality of both the camera and the distance sensor, the robot is equipped with a Technic™ Large Angular Motor that enables these sensors to rotate approximately (degrees) in both directions from a central starting position. This rotational mechanism significantly expands the sensors' field of view, allowing the robot to better observe its surroundings, detect walls and obstacles from multiple angles, and respond more accurately to changes in the environment. This feature was developed in response to the limited number of available ports on the Technic™ Large Hub, which restricted the number of sensors that could be connected at once. By mounting both the OpenMV Cam H7 and the Technic™ Distance Sensor on a rotating platform powered by a single motor, we were able to simulate the presence of multiple sensors while conserving ports. The rotating sensor system plays a key role in obstacle detection, wall tracking, and situational awareness across both the Open and Obstacle Challenge rounds.</p>
 
@@ -1027,6 +1043,39 @@ def runRecord(currentLap):
 | <center> Figure 27.1 <br> Robot's Rotating Mechanism <br> Front View </center> | <center> Figure 27.2 <br> Robot's Rotating Mechanism <br> Side View </center> |
 
 </center>
+
+### 7.7. One-Button Power Mechanism
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the most important engineering factors we implemented in our robot is the one-button power mechanism. This design follows the Future Engineers competition rule, which specifies that the robot must be powered on using only one button and only one motion. To achieve this, we carefully planned the power distribution between the SPIKE™ Prime Large Hub, the LMS-ESP32, and the UPS-18650 power module so that activating a single button would turn on the entire system simultaneously.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We accomplished this by connecting the UPS-18650 to the LMS-ESP32 via USB, and then linking the ESP32 to the SPIKE™ Prime Hub through a serial connection that uses transistors and resistors for voltage regulation and logic control. The SPIKE™ Hub’s power button acts as the main trigger—when it is pressed, it powers not only itself but also activates the ESP32 and the UPS module.</p>
+  
+<center>
+
+| ![Figure 28.1](./docu-photos/.png) | ![Figure 28.2](./docu-photos/.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 28.1 <br> Actual Appearance </center> | <center> Figure 28.2 <br> Schematic Diagram </center> |
+
+</center>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This schematic diagram and wiring shows the electrical connection and switching logic between the LMS-ESP32, the SPIKE™ Prime Hub, and the ultrasonic sensors that we integrated into our robot’s system. It represents both the main control circuit and the switching circuit that enables the one-button power mechanism we implemented. Each section of the diagram will be explained below.</p>
+
+<b> 1. LMS-ESP32 Module (Center Right) </b>
+- This is the core microcontroller handling sensor input and communication with the SPIKE™ Prime Hub. 
+  - It connects to three ultrasonic sensors (labeled U2, U3, and U4) placed at the rear, right, and left of the robot.
+  - Each sensor receives +5V and GND power directly from the UPS-18650 module.
+  - The Echo and Trigger pins of each sensor are connected to specific GPIO pins of the LMS-ESP32 for distance measurement.
+  - The diagram also includes a +5V (Battery) line that powers the ESP32 board from the UPS module, ensuring independent operation even when the SPIKE Hub restarts.
+
+<b> 2. Switching Circuit (Top Left) </b>
+- This circuit enables the one-button power control mechanism.
+  - It uses an IRF3205 N-channel MOSFET (Q1) to control the ground connection between the battery and the ESP32 circuit.
+  - The gate of the MOSFET is connected to the 3.3V logic signal from the SPIKE™ Prime LPF2 connector.
+  - Resistors R1 (10kΩ) and R2 (470Ω) form a voltage divider and pull-down setup, ensuring stable switching behavior.
+  - When the SPIKE Hub is powered on, it sends a 3.3V signal to the MOSFET gate, completing the ground path and turning on the LMS-ESP32 and the sensors—allowing the entire system to be powered by a single button.
+
+<b> 3. LPF2 Connector Table (Bottom Center) </b>
+- This small reference table defines the pinout of the LPF2 communication connector used by the SPIKE™ Hub, specifying the lines for GND, 3.3V, and serial communication pins (ID1–ID2). This helps align the correct wiring for signal and power integration between the LEGO hub and the ESP32.
 
 ---
 
