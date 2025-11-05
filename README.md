@@ -269,9 +269,9 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;These design choices highlight the team’s growing proficiency in applying mechanical design concepts and engineering problem-solving to create practical yet original solutions. Further discussions and technical details about the 3D-printed components and their engineering factors are provided in <b>Chapter 5: Engineering Factor.</b></p>
 
-| ![Figure 3.1](./docu-photos/.png) | ![Figure 3.2](./docu-photos/.png) |
+| ![Figure 3.1](./docu-photos/chassis.png) | ![Figure 3.2](./docu-photos/chassis1.png) |
 |:---------------------:|:---------------------:|
-| Figure 3.1 <br> Robot Chassis <br> Left Side View | Figure 3.2 <br> Robot Chassis with Electrical Components <br> Left Side View |
+| Figure 3.1 <br> Robot Chassis <br> Left Side View | Figure 3.2 <br> Robot Chassis with LEGO® Components <br> Left Side View |
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the length of the robot is built to be longer, given that while the length of the robot increases, the larger the space will be intended for the parking area. We have utilized two different materials for the robot's wheels: the LEGO® Wheel 75 mm x 17 mm with Motorcycle Tire 94.2 mm x 20 mm and LEGO® Wheel 30.4 mm D. x 20 mm with Black Tire 43.2 mm x 22 mm, which handles the driving and steering mechanism, respectively. The large wheels were used for the rear-wheel drive system since a larger wheel possesses a larger circumference, and thus, having the ability to travel longer distances per rotation. It also increases the maximum speed limit a robot can travel per unit of time. Consequently, smaller wheels were utilized for the steering mechanism since they have a smaller turning radius, which makes it easier for the robot to handle tight turns in navigating obstacles, corners, and small spaces. Moreover, larger wheels cannot be used at the front part of the robot as these can block the view of the distance sensor, disabling the sensor to detect objects properly and accurately. The LEGO® Wheel with Black Tire also offer larger surface contact with more precision and finer control, preventing slips that makes the robot’s movement smooth and quick.</p> 
 
