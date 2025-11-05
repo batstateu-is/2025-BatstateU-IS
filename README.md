@@ -894,7 +894,7 @@ def runRecord(currentLap):
 
 <center>
 
-| ![Figure 19.1](./docu-photos/model1.jpg) | ![Figure 19.2](./docu-photos/model2.jpg) |
+| ![Figure 19.1](./docu-photos/model1.png) | ![Figure 19.2](./docu-photos/model2.png) |
 |:---------------------:| :---------------------:|
 | <center> Figure 19.1 <br> 3D Modeling </center> | <center> Figure 19.2 <br> 3D Modeling </center>|  
 
@@ -912,13 +912,13 @@ def runRecord(currentLap):
 
 ### 6.3. 3D Printing Settings
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After designing our custom components in Blender, we prepared them for printing using slicing software, FlashPrint 5 configured with optimized settings for PLA filament. Our goal in printing the components was to achieve a balance between strength, accuracy, weight, and print time while ensuring each part met the functional requirements of our robot.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After designing our custom components in Blender and Fudion 360, we prepared them for printing using slicing software, FlashPrint 5 and Bambu Studio configured with optimized settings for PLA filament. Our goal in printing the components was to achieve a balance between strength, accuracy, weight, and print time while ensuring each part met the functional requirements of our robot.</p>
 
 <center>
 
-| ![Figure 20.](./docu-photos/image54.png) |
-|:---------------------:|
-| Figure 20. <br> Print Settings Z |
+| ![Figure 20.1](./docu-photos/model1.png) | ![Figure 20.2](./docu-photos/model2.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 20.1 <br> FlashForge Print Settings </center> | <center> Figure 20.2 <br> Bambu Lab Print Settings </center>|  
 
 </center>
 
@@ -928,22 +928,27 @@ def runRecord(currentLap):
 
 ### 6.4. Printing
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We used the FlashForge Adventurer 4 3D printer to print all the parts we have created and spliced. This printer was chosen for its reliability, ease of use, and compatibility with PLA filament. It features a fully enclosed printing chamber, which helps maintain a stable temperature during prints and reduces the risk of warping, especially useful when printing parts with larger surface areas or fine details.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We used the <b>FlashForge Adventurer 4</b> for printing our sensor housings and the initial version of the chassis, while the <b>Bambu Lab</b> printer was used for the <b>final chassis</b> and other refined components. These printers were chosen for their reliability, ease of use, and compatibility with <b>PLA filament</b>. Both feature fully enclosed printing chambers that maintain a consistent temperature during prints, helping reduce warping and ensuring dimensional accuracy. This setup provided us with the flexibility to print prototypes quickly while also achieving high-quality results for the final model.</p>
 
 <center>
 
-| ![Figure 21.](./docu-photos/image37.png) |
-|:---------------------:|
-| Figure 21. <br> FlashForge Adventurer 4 |
+| ![Figure 21.1](./docu-photos/fprinter.png) | ![Figure 21.2](./docu-photos/bprinter.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 21.1 <br> Flashforge Printer </center> | <center> Figure 21.2 <br> Bambu Lab Printer </center>| 
+
 </center>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Adventurer 4’s built-in camera and touchscreen interface allowed us to monitor progress in real time, making it easy to pause or stop a print if an error was detected. Its removable build plate also simplified part removal, reducing the risk of damaging delicate components. The use of the FlashForge Adventurer 4 played a key role in bringing our 3D designs to life and maintaining the overall quality of the robot’s construction.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The <b>FlashForge Adventurer 4</b> features a <b>build volume of 220 × 200 × 250 mm</b>, a <b>layer resolution of 0.1–0.4 mm</b>, and a <b>nozzle temperature up to 265 °C</b>. Its <b>removable flexible build plate</b> made it easier to detach finished parts, while the <b>built-in camera</b> and <b>touchscreen interface</b> allowed us to monitor progress and control prints efficiently. With a print speed of up to <b>100 mm/s</b>, it served as our main prototyping machine for testing fits, tolerances, and mechanical functionality.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the final chassis, we used the <b>Bambu Lab X1 Carbon Combo</b> printer, which offers a <b>build volume of 256 × 256 × 256 mm</b> and supports a <b>maximum print speed of up to 500 mm/s</b> with an acceleration of <b>up to 20,000 mm/s²</b>. It operates with a <b>0.1–0.4 mm layer height range</b> and a <b>nozzle temperature of up to 300 °C</b>, making it suitable for a wide range of materials, including PLA, PETG, ABS, ASA, and carbon fiber-reinforced filaments. The printer also includes advanced features such as <b>automatic bed leveling</b>, <b>dual auto bed calibration</b>, <b>active vibration compensation</b>, and a <b>carbon HEPA filtration system</b> for clean and precise printing. The <b>Automatic Material System (AMS)</b> enabled us to handle multi-filament setups efficiently. With its high-speed performance and consistent accuracy, the X1 Carbon Combo allowed us to fabricate a strong, dimensionally precise, and professional-quality final chassis that perfectly fit our robot’s design and structure.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Together, these two printers complemented each other in our workflow—the FlashForge Adventurer 4 for reliable prototyping and the Bambu Lab for final, high-quality fabrication. </p>
 
 <center>
 
-| ![Figure 22.1](./docu-photos/image10.jpg) | ![Figure 22.2](./docu-photos/image52.jpg) |
+| ![Figure 22.1](./docu-photos/ff.png) | ![Figure 22.2](./docu-photos/bl.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 22.1 <br> 3D Printing </center> | <center> Figure 22.2 <br> 3D Printing </center>|  
+| <center> Figure 22.1 <br> 3D Printing in FlashForge </center> | <center> Figure 22.2 <br> 3D Printing n Bambu Lab </center>|  
 
 </center>
 
