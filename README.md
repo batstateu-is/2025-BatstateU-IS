@@ -369,13 +369,8 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Furtehrmore, in accordance with the Future Engineers Rulebook, which specifies that the robot must utilize only one main power button for activation, the system was designed so that the SPIKE™ Prime Hub’s power button simultaneously powers the UPS-18650 module and the LMS-ESP32. This combined power management approach ensures a synchronized startup and shutdown across all electronic subsystems, preventing inconsistent power status or data transmission errors. Discussed at Section 7. Engineering Factor is the wiring diagram, detailing how the UPS-18650, LMS-ESP32, and SPIKE™ Prime Hub are interconnected, showing the power delivery path and serial communication interface integrated into the robot’s electrical architecture.</p>
 
-<<<<<<< HEAD
-### 2.2.. Microcontroller Management
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The microcontroller management system ensures that there is seamless coordination between the robot’s controllers and connected electronic components to enable efficient prcoessing of data and real-time decision-making. Specifically, the <b>SPIKE™ Prime Hub</b> serves as the main controller that handles decision-making within the robot and commands for movements it should perform, while the <b>LMS-ESP32</b> module functions as an interface for external sensors through serial communication. Powered by the <b>UPS-18650</b> module and <b>SPIKE™ Prime Hub Rechargeable Battery</b>, this setup is tested to provide stable regulation of voltage and uninterrupted operation. Together, these critical controllers manage data flow and maintain synchronization, ensuring that the robot operates smoothly and responds accurately in coordination to the environment it sees.
-=======
 ### 2.2. Microcontroller Management
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The microcontroller management system ensures that there is seamless coordination between the robot’s controllers and connected electronic components to enable efficient prcoessing of data and real-time decision-making. Specifically, the SPIKE™ Prime Hub serves as the main controller that handles decision-making within the robot and commands for movements it should perform, while the LMS-ESP32 module functions as an interface for external sensors through serial communication. Powered by the UPS-18650 module and SPIKE™ Prime Hub Rechargeable Battery, this setup is tested to provide stable regulation of voltage and uninterrupted operation. Together, these critical controllers manage data flow and maintain synchronization, ensuring that the robot operates smoothly and responds accurately in coordination to the environment it sees.
->>>>>>> df760aab3ddef1ca06433807f94b97c79ca120da
 
 <center>
 
@@ -385,7 +380,76 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 </center> 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On the LMS-ESP 32 side, the microcontroller continuously gathers distance data from the three (3) HC-SR04 ultrasonic sensors and transmits that data to the SPIKE™ Prime Hub using the same process used in [Traffic Sign Detection.](#41-traffic-sign-detection) This setup enables the ESP32 to function as a dedicated processing unit for the ultrasonic sensors. Since the SPIKE™ Prime Hub cannot directly interface with standard ultrasonic modules like the HC-SR04, the ESP32 handles the timing, signal processing, and distance calculation. It then transmits the processed data to the hub in a readable format, effectively bridging the sensors and the main controller.
+### 2.2.1. Technic™ Prime Large Hub
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The SPIKE™ Prime Technic™ Large Hub is the main controller of our self-driving robot. It is a programmable control unit that connects to LEGO® motors and sensors through six input/output (I/O) ports, labeled A to F. These ports allow the hub to power motors, read sensor values, and control various functions of the robot.</p>
+
+<center>
+
+| <img src="./docu-photos/hublayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/hubplate2.png" alt="Figure 10.2" width="1080" height="566"> |
+|:---------------------:|:---------------------:|
+| Figure 10.1 <br> Technic™ Prime Large Hub | Figure 10.2 <br> Technic™ Prime Large Hub <br> Dimensions |
+
+</center>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The hub runs on a MicroPython operating system, allowing us to write and execute advanced programs using Python. It features a built-in 6-axis Gyro Sensor with three-axis accelerometer and three-axis gyroscope that helps the robot detect rotation, orientation, and motion. This is especially useful for tracking turns and maintaining direction during navigation.</p>
+
+<center>
+
+**Table 6\. Technic™ Prime Large Hub**
+
+| Specification | Description |
+| ----- | ----- |
+| Input/Output Ports | 6 LPF2 ports (A–F) for motors and sensors | 
+| Built-in Sensors | 6-axis gyro and accelerometer |
+| Memory | 32 MB |
+| Processor | 100MHz M4 320 KB RAM 1M FLASH |
+| Display | 5 × 5 LED matrix | 
+| Buttons | Central button and directional navigation keys |
+| Communication Interface | USB, Bluetooth Classic 4.2 (BTC), and Bluetooth Low Energy (BLE) |
+| Operating Voltage | Battery output percentage error ±1%; voltage measurement error ±3 mV | 
+
+</center>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Physically, the hub includes a 5x5 LED matrix display, a three-button interface consisting of center, left, and right, and a speaker for feedback sounds. It supports both USB and Bluetooth connectivity, with Bluetooth 4.2 used for wireless communication and firmware updates. A rechargeable lithium-ion battery powers the hub, and it can be charged directly via a micro USB cable.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With its compact size of 88.0 mm x 56.0 mm x 32.0 mm and compatibility with LEGO® Technic™ building elements, the SPIKE™ Large Hub is ideal for building smart and responsive robots like our self-driving robot. It provides 32 MB memory which is enough for programs and data, as well as a processing power of 100MHz M4 320 KB RAM 1M FLASH to support real-time decision-making and multitasking during both Open and Obstacle Challenge runs.</p> 
+
+### 2.2.2. LMS-ESP32 
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The LMS-ESP32, also known as the Wi-Fi Python ESP32 Board for MINDSTORMS, is a MicroPython-based microcontroller specifically designed by Antons Mindstorms to extend the capabilities of LEGO® robotics systems such as SPIKE™ Prime, Robot Inventor, and EV3. Built on the Espressif ESP32 architecture, it combines a dual-core 32-bit LX6 processor with onboard Wi-Fi and Bluetooth (BLE) connectivity, allowing the robot to communicate wirelessly with other devices or cloud-based systems for data transfer and remote control. 
+
+<center>
+
+| <img src="./docu-photos/lmslayout.png" alt="Figure 11.1" width="1090" height="566"> | <img src="./docu-photos/espplate.png" alt="Figure 11.2" width="1080" height="566"> | 
+|:---------------------:|:---------------------:|
+| Figure 11.1 <br> LMS-ESP32  | Figure 11.2 <br> LMS-ESP32  <br> Dimensions |
+
+</center>
+
+<center>
+
+**Table 7\. LMS-ESP32**
+
+| Specification | Description |
+| ----- | ----- |
+| Processor | Dual-core Xtensa® 32-bit LX6 (ESP32 architecture) | 
+| Clock Speed | up to 240 MHz |
+| Operating Voltage | 3.3 V to 5 V DC |
+| Communication Interface | UART Serial (for SPIKE™ / EV3 connection) |
+| Programming Language | MicroPhyton |
+| Memory | 520 KB SRAM + 4 MB Flash | 
+| Compatibility | LEGO® SPIKE™ Prime, Robot Inventor, and EV3 systems |
+
+</center>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The board supports MicroPython firmware, which enables flexible programming and faster data handling through lightweight scripts. It features a UART serial interface for communication with the SPIKE™ Prime Hub, allowing bidirectional data transfer for sensor readings and camera inputs. This communication setup allows the ESP32 to act as a co-processor, offloading data processing tasks, such as filtering and processing the values read by the ultrasonic sensor, before sending processed information back to the hub.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hardware-wise, the LMS-ESP32 includes dedicated LEGO®-compatible connectors for easy integration, a USB-C port for programming and power input, and a regulated 5 V–3.3 V power converter that ensures compatibility with both standard LEGO voltage levels and external components. The board also provides multiple GPIO pins, I²C, and SPI interfaces, allowing connection to third-party sensors or peripherals.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the robot’s system, the LMS-ESP32 is powered by the UPS-18650 module through a USB connection, ensuring a stable 5 V supply. The data scanned from connected sensors are processed by the ESP32 and then transmitted to the SPIKE™ Hub via the serial interface and communication, which was configured with transistors and resistors for proper voltage level shifting and protection. This setup also lessened the strain for the SPIKE™ Hub by minimizing the data it needs to load and control.</p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On the software side, the LMS-ESP 32 continuously gathers distance data from the three (3) HC-SR04 ultrasonic sensors and transmits that data to the SPIKE™ Prime Hub using the same process used in [Traffic Sign Detection.](#41-traffic-sign-detection) This setup enables the ESP32 to function as a dedicated processing unit for the ultrasonic sensors. Since the SPIKE™ Prime Hub cannot directly interface with standard ultrasonic modules like the HC-SR04, the ESP32 handles the timing, signal processing, and distance calculation. It then transmits the processed data to the hub in a readable format, effectively bridging the sensors and the main controller.
 
 ```py
 from machine import Pin, time_pulse_us
@@ -482,75 +546,6 @@ elif selection == LEFT:
 ```
 
 Here, the call to `self.distSensorBack.call("line")` triggers a serial request to the ESP32, which responds with the most recent ultrasonic measurements. The hub then interprets the data and assigns each value to its corresponding directional reading.
-
-### 2.2.1. Technic™ Prime Large Hub
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The SPIKE™ Prime Technic™ Large Hub is the main controller of our self-driving robot. It is a programmable control unit that connects to LEGO® motors and sensors through six input/output (I/O) ports, labeled A to F. These ports allow the hub to power motors, read sensor values, and control various functions of the robot.</p>
-
-<center>
-
-| <img src="./docu-photos/hublayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/hubplate2.png" alt="Figure 10.2" width="1080" height="566"> |
-|:---------------------:|:---------------------:|
-| Figure 10.1 <br> Technic™ Prime Large Hub | Figure 10.2 <br> Technic™ Prime Large Hub <br> Dimensions |
-
-</center>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The hub runs on a MicroPython operating system, allowing us to write and execute advanced programs using Python. It features a built-in 6-axis Gyro Sensor with three-axis accelerometer and three-axis gyroscope that helps the robot detect rotation, orientation, and motion. This is especially useful for tracking turns and maintaining direction during navigation.</p>
-
-<center>
-
-**Table 6\. Technic™ Prime Large Hub**
-
-| Specification | Description |
-| ----- | ----- |
-| Input/Output Ports | 6 LPF2 ports (A–F) for motors and sensors | 
-| Built-in Sensors | 6-axis gyro and accelerometer |
-| Memory | 32 MB |
-| Processor | 100MHz M4 320 KB RAM 1M FLASH |
-| Display | 5 × 5 LED matrix | 
-| Buttons | Central button and directional navigation keys |
-| Communication Interface | USB, Bluetooth Classic 4.2 (BTC), and Bluetooth Low Energy (BLE) |
-| Operating Voltage | Battery output percentage error ±1%; voltage measurement error ±3 mV | 
-
-</center>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Physically, the hub includes a 5x5 LED matrix display, a three-button interface consisting of center, left, and right, and a speaker for feedback sounds. It supports both USB and Bluetooth connectivity, with Bluetooth 4.2 used for wireless communication and firmware updates. A rechargeable lithium-ion battery powers the hub, and it can be charged directly via a micro USB cable.</p>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With its compact size of 88.0 mm x 56.0 mm x 32.0 mm and compatibility with LEGO® Technic™ building elements, the SPIKE™ Large Hub is ideal for building smart and responsive robots like our self-driving robot. It provides 32 MB memory which is enough for programs and data, as well as a processing power of 100MHz M4 320 KB RAM 1M FLASH to support real-time decision-making and multitasking during both Open and Obstacle Challenge runs.</p> 
-
-### 2.2.2. LMS-ESP32 
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The LMS-ESP32, also known as the Wi-Fi Python ESP32 Board for MINDSTORMS, is a MicroPython-based microcontroller specifically designed by Antons Mindstorms to extend the capabilities of LEGO® robotics systems such as SPIKE™ Prime, Robot Inventor, and EV3. Built on the Espressif ESP32 architecture, it combines a dual-core 32-bit LX6 processor with onboard Wi-Fi and Bluetooth (BLE) connectivity, allowing the robot to communicate wirelessly with other devices or cloud-based systems for data transfer and remote control. 
-
-<center>
-
-| <img src="./docu-photos/lmslayout.png" alt="Figure 11.1" width="1090" height="566"> | <img src="./docu-photos/espplate.png" alt="Figure 11.2" width="1080" height="566"> | 
-|:---------------------:|:---------------------:|
-| Figure 11.1 <br> LMS-ESP32  | Figure 11.2 <br> LMS-ESP32  <br> Dimensions |
-
-</center>
-
-<center>
-
-**Table 7\. LMS-ESP32**
-
-| Specification | Description |
-| ----- | ----- |
-| Processor | Dual-core Xtensa® 32-bit LX6 (ESP32 architecture) | 
-| Clock Speed | up to 240 MHz |
-| Operating Voltage | 3.3 V to 5 V DC |
-| Communication Interface | UART Serial (for SPIKE™ / EV3 connection) |
-| Programming Language | MicroPhyton |
-| Memory | 520 KB SRAM + 4 MB Flash | 
-| Compatibility | LEGO® SPIKE™ Prime, Robot Inventor, and EV3 systems |
-
-</center>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The board supports MicroPython firmware, which enables flexible programming and faster data handling through lightweight scripts. It features a UART serial interface for communication with the SPIKE™ Prime Hub, allowing bidirectional data transfer for sensor readings and camera inputs. This communication setup allows the ESP32 to act as a co-processor, offloading data processing tasks, such as filtering and processing the values read by the ultrasonic sensor, before sending processed information back to the hub.</p>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hardware-wise, the LMS-ESP32 includes dedicated LEGO®-compatible connectors for easy integration, a USB-C port for programming and power input, and a regulated 5 V–3.3 V power converter that ensures compatibility with both standard LEGO voltage levels and external components. The board also provides multiple GPIO pins, I²C, and SPI interfaces, allowing connection to third-party sensors or peripherals.</p>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the robot’s system, the LMS-ESP32 is powered by the UPS-18650 module through a USB connection, ensuring a stable 5 V supply. The data scanned from connected sensors are processed by the ESP32 and then transmitted to the SPIKE™ Hub via the serial interface and communication, which was configured with transistors and resistors for proper voltage level shifting and protection. This setup also lessened the strain for the SPIKE™ Hub by minimizing the data it needs to load and control. </p>
 
 ### 2.3. Sense Management
 
@@ -681,13 +676,8 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Open Challenge Round of the Future Engineers category requires the self-driving robot to autonomously travel and complete three full laps around the game field with random placements of the inside track walls while ensuring that the robot will not make any contact with the outer boundary wall. The goals that we have established for our robot to accomplish in this round is to be able to accurately determine its driving direction at the beginning, maintain a stable motion and control across the entire loop, consistently avoid collisions with both the inner and outer walls, and successfully complete three full laps by making the turns, movement, and counter precise. Thus, we have considered various techniques and movement strategies for determining driving direction, wall detection and avoidance, and lap counting.</p> 
 
 <center>
-<<<<<<< HEAD
 <!--Need to update-->
 | ![Figure 13](./docu-photos/FE-Flowchart.jpg) |
-=======
-
-| ![Figure 17](./docu-photos/FE-Flowchart.jpg) |
->>>>>>> df760aab3ddef1ca06433807f94b97c79ca120da
 |:---------------------:|
 | Figure 17. <br> Open Challenge Flowchart
 
