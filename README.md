@@ -22,7 +22,7 @@ This repository contains the comprehensive development of a **self-driving robot
 under the **Future Engineers category**. Designed for **_autonomous navigation_**, 
 **_obstacle avoidance_**, and **_traffic sign detection_**, the robot integrates [**LMS-ESP32**](https://www.antonsmindstorms.com/product/wifi-python-esp32-board-for-mindstorms/?srsltid=AfmBOopfdoKXv4-t9PTAc_VNohW6cx7w24SMns8QDY4nlufSxlDntJdL) as its microcontroller, allowing the **LEGO® SPIKE™ Prime** and **Arduino** electronics to communicate with one another. In addition, the robot ensures high precision detection with a vision system powered by the [**OpenMV Cam H7 Plus**](https://openmv.io/products/openmv-cam-h7-plus). Custom 3D-printed components were used to develop the chassis, serving as the main body of the self-driving robot, which better improved its mechanical structure, secured sensors, and optimized its internal space. Through iterative testing, the team enhanced its performance with innovated mechanism and steering geometry. Overall, this project showcases practical engineering, strategic design, and reliable performance under dynamic conditions.
 
-<p align="justify"> You may view the full performance of our robot through the link provided below. Watching the complete run will offer a clear understanding of how our mechanical design, sensor integration, and code execution come together in real-time to accomplish each task.</p>  
+<p align="justify"> You may view the full performance of the team's robot through the link provided below. Watching the complete run will offer a clear understanding of how the mechanical design, sensor integration, and code execution come together in real-time to accomplish each task.</p>  
 
 <p align="justify"> The video showcases the inspiring journey of the Future Engineers team as they prepare for the upcoming 2025 World Robot Olympiad. It highlights the team members, the self-driving robot they built, and provides an in-depth look into its design, functionality, and programming. Featured segments include the Open Challenge and Obstacle Challenge, where the team's strategies and technical innovations are put to the test.</p>  
 
@@ -108,11 +108,11 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 ***
 ## 📖 Introduction
 
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Engineering is the heart of innovation that gives life to initiatives. It bridges science, technology, and creativity to provide solutions for real-world problems. In the field of robotics, engineering allows everyone to think and design beyond the current possibilities, highlighting that a future with numerous solutions can be made. Thus, through this, we were able to challenge ourselves to integrate various engineering concepts in autonomous navigation. As a team of student innovators and future engineers, we embraced this opportunity to create a self-driving robot that exemplifies the spirit of modern engineering.</p>  
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Engineering is the heart of innovation that gives life to initiatives. It bridges science, technology, and creativity to provide solutions for real-world problems. In the field of robotics, engineering allows everyone to think and design beyond the current possibilities, highlighting that a future with numerous solutions can be made. Thus, through this, the team were able to challenge themselves to integrate various engineering concepts in autonomous navigation. As a team of student innovators and future engineers, the team embraced this opportunity to create a self-driving robot that exemplifies the spirit of modern engineering.</p>  
 
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This engineering documentation provides a comprehensive record of J.E.E.P. BatStateU-IS’s design process, program construction,  problem-solving strategies, and technical decisions throughout the development of our self-driving robot. This provides insight into our robot’s architecture, programming approach, strategies we came up with, and the challenges we encountered and overcame along the way. Intended for the Future Engineers Category in the 25th World Robot Olympiad, this documentation reflects the dedication and initiative of our team to produce an innovation that goes beyond the boundaries of autonomous technology.</p> 
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This engineering documentation provides a comprehensive record of J.E.E.P. BatStateU-IS’s design process, program construction,  problem-solving strategies, and technical decisions throughout the development of the team's self-driving robot. This provides insight into the robot’s architecture, programming approach, strategies, and the challenges encountered. Intended for the Future Engineers Category in the 25th World Robot Olympiad, this documentation reflects the dedication and initiative of the team to produce an innovation that goes beyond the boundaries of autonomous technology.</p> 
 
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We have featured key aspects involved in the development of our robot such as the Robot Specifications which provides information about the architecture of the robot, and selection of sensors, motors, and mechanical components with consideration to different aspects like speed, power, and specifications; Mobility Management that focuses on the specific movements that the robot can do; Power and Sense Management that is responsible for the description of the programming language and libraries utilized, algorithm explanations, and program logic flow; Challenge Strategies which features code snippets with explanations of its purpose, and the strategies we came up for the Open Challenge, Obstacle Challenge, traffic sign avoidance, and parking; and performance testings which includes setup conditions, observed issues, and video demonstrations. In addition, the engineering innovations integrated into the robot and a guide for its construction were added. To further support the technical information, the team added visual documentation that features actual and 3D model images of the robot. With these, the team aimed and continuously aims to demonstrate engineering discipline rooted in teamwork, determination, rigorous testing, and excellence with a purpose of being able to think of and design an innovative and modern solution as future engineers.</p> 
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team featured key aspects involved in the development of the robot such as the <b>Robot Specifications</b> which provides information about the architecture of the robot, and selection of sensors, motors, and mechanical com2ponents with consideration to aspects like speed, power, and specifications; <b>Mobility Management</b> that focuses on the specific movements that the robot can do; Power and Sense Management that is responsible for the description of the programming language and libraries utilized, algorithm explanations, and program logic flow; Challenge Strategies which features code snippets with explanations of its purpose, and the strategies we came up for the Open Challenge, Obstacle Challenge, traffic sign avoidance, and parking; and performance testings which includes setup conditions, observed issues, and video demonstrations. In addition, the engineering innovations integrated into the robot and a guide for its construction were added. To further support the technical information, the team added visual documentation that features actual and 3D model images of the robot. With these, the team aimed and continuously aims to demonstrate engineering discipline rooted in teamwork, determination, rigorous testing, and excellence with a purpose of being able to think of and design an innovative and modern solution as future engineers.</p> 
 
 ***
 
@@ -157,6 +157,8 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following specifications provide a detailed overview of the key physical and mechanical characteristics of our team’s self-driving robot. We designed this while giving importance to precision, agility, and durability, so the features of the robot have been carefully optimized to balance speed and stability during runs.</p>
 
 <center>
+
+**Table 1\. Robot Specifications**
   
 | <center>Specification</center> | <center> Details </center> |
 | ----- | ----- |
@@ -195,7 +197,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 | ![alt](./docu-photos/esp32.png)| 1 | The **LMS-ESP32** serves as an interface module between the Arduino ultrasonic sensors and the SPIKE™ Prime Hub, managing serial communication and data transfer. It ensures synchronized, low-latency transmission of distance readings to the main controller for accurate obstacle detection and responsive movement control. |
 | ![alt](./docu-photos/image50.png)| 1 | The **OpenMV Cam H7 Plus** was used as the robot’s vision system to detect traffic signs and understand its surroundings. It processed images in real time and sent data to the main controller, helping the robot decide when to turn or react to visual cues during the Obstacle Challenge. |
 | ![alt](./docu-photos/jumper.png) | 4 | **Jumper wires** were used to connect the OpenMV Cam H7 to the main controller, the SPIKE™ Prime Hub. They ensured that the data processed by the camera was transmitted to the Python-based program running on the hub.  |
-| ![alt](./docu-photos/image24.png) | Multiple were used | **PLA 3D Printing Filament** was utilized to create the 3D-printed components of the robot, sepcifically the chassis, and the cases for the OpenMV Cam H7 Plus, HC-SR04 Ultasonic Distance Sensors, UPS-18650 Power Module, and LMS-ESP32. White filaments are said to produce designs with great strength. PLA filament is also popular in 3D printing because of its ease of use, biodegradability, and versatility.  |
+| ![alt](./docu-photos/image24.png) | Multiple were used | **PLA 3D Printing Filament** was utilized to create the 3D-printed components of the robot, sepcifically the chassis, and the cases for the OpenMV Cam H7 Plus, HC-SR04 Ultrasonic Distance Sensors, UPS-18650 Power Module, and LMS-ESP32. White filaments are said to produce designs with great strength. PLA filament is also popular in 3D printing because of its ease of use, biodegradability, and versatility.  |
 
 </center>
 
@@ -241,11 +243,11 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 1](./docu-photos/paralleliso1.png) | ![Figure 2](./docu-photos/parallelbot1.png) |
+| ![Figure 1.1](./docu-photos/paralleliso1.png) | ![Figure 1.2](./docu-photos/parallelbot1.png) |
 |:---------------------:|:---------------------:|
 | Figure 1.1 Robot's Steering Mechanism <br> Isometric View | Figure 1.2 Robot's Steering Mechanism <br> Bottom View |
 
-| ![Figure 3](./docu-photos/rwdiso1.png) | ![Figure 4](./docu-photos/rwdrear1.png) |
+| ![Figure 2.1](./docu-photos/rwdiso1.png) | ![Figure 2.2](./docu-photos/rwdrear1.png) |
 |:---------------------:|:---------------------:|
 | Figure 2.1 Robot's Driving Mechanism <br> Isometric View | Figure 2.2 Robot's Driving Mechanism <br> Rear View |
 
@@ -254,6 +256,8 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the robot’s steering mechanism, one Technic™ Large Angular Motor is integrated at the front of the self-driving robot to steer the front wheels, where they turn in the same direction at the same angle. This method is referred to as parallel steering and is similar to how steering works in real cars. We chose this steering geometry over other options such as Differential Steering, where one wheel moves faster than the other in order to turn; Ackermann, in which the inner wheel turns at a greater angle than the outer wheel, as well as the counterpart of Ackermann, Anti-Ackermann. It offers simplicity compared to other options that are more complex to build and control. Furthermore, both the Open and Obstacle Challenge requires maneuverability; thus, the smaller turning radius offered by parallel steering is advantageous especially for tight spaces like parking. This steering geometry also solves our problem with an uneven and irregular field as it improves the stability and handling of movement and turns of the self-driving robot.</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consequently, we selected rear-wheel drive (RWD) because it provides better traction, especially when the robot needs to travel consistently. Our team also believes that RWD is better than front-wheel drive (FWD), which can make the robot harder to balance, especially when it needs to carry sensors and components at the front.</p> 
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In our drive system, we initially considered using a differential gear since it helps balance wheel speed during turns and provides smoother movement. However, we decided not to include it because of the uneven surface problem of our practice field. Consequently, a differential requires flat, consistent traction to function properly, and on an uneven ground, it could cause one wheel to lose contact and reduce stability. Instead, we used a direct drive setup where each wheel is powered by its own motor. This made the robot more stable and easier to control, especially when turning or driving over small bumps. It also simplified the design and reduced weight, making the robot more reliable during runs. </p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By combining RWD and parallel steering, we achieved a movement system that was both stable and precise. The rear wheels provided consistent driving force, while the front wheels helped for smooth turning without affecting the robot's balance. This setup made it easier for our robot to navigate around tight corners and spaces, maintain alignment, and avoid obstacles effectively.</p>
 
@@ -265,9 +269,9 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;These design choices highlight the team’s growing proficiency in applying mechanical design concepts and engineering problem-solving to create practical yet original solutions. Further discussions and technical details about the 3D-printed components and their engineering factors are provided in <b>Chapter 5: Engineering Factor.</b></p>
 
-| ![Figure 3.1](./docu-photos/.png) | ![Figure 3.2](./docu-photos/.png) |
+| ![Figure 3.1](./docu-photos/chassis.png) | ![Figure 3.2](./docu-photos/chassis1.png) |
 |:---------------------:|:---------------------:|
-| Figure 3.1 <br> Robot Chassis <br> Left Side View | Figure 3.2 <br> Robot Chassis with Electrical Components <br> Left Side View |
+| Figure 3.1 <br> Robot Chassis <br> Left Side View | Figure 3.2 <br> Robot Chassis with LEGO® Components <br> Left Side View |
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the length of the robot is built to be longer, given that while the length of the robot increases, the larger the space will be intended for the parking area. We have utilized two different materials for the robot's wheels: the LEGO® Wheel 75 mm x 17 mm with Motorcycle Tire 94.2 mm x 20 mm and LEGO® Wheel 30.4 mm D. x 20 mm with Black Tire 43.2 mm x 22 mm, which handles the driving and steering mechanism, respectively. The large wheels were used for the rear-wheel drive system since a larger wheel possesses a larger circumference, and thus, having the ability to travel longer distances per rotation. It also increases the maximum speed limit a robot can travel per unit of time. Consequently, smaller wheels were utilized for the steering mechanism since they have a smaller turning radius, which makes it easier for the robot to handle tight turns in navigating obstacles, corners, and small spaces. Moreover, larger wheels cannot be used at the front part of the robot as these can block the view of the distance sensor, disabling the sensor to detect objects properly and accurately. The LEGO® Wheel with Black Tire also offer larger surface contact with more precision and finer control, preventing slips that makes the robot’s movement smooth and quick.</p> 
 
@@ -305,15 +309,17 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 6.1](./docu-photos/powerm.png) |
+| ![Figure 6](./docu-photos/powerm.png) |
 |:---------------------:|
-| Figure 6.1 <br> Power Management |
+| Figure 6. <br> Power Management |
 
 </center>
 
-### 2.1.2. Technic™ Large Hub Rechargeable Battery
+### 2.1.1. Technic™ Large Hub Rechargeable Battery
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Technic™ Large Hub Rechargeable Battery is the partner and intended power source for the SPIKE™ Prime Hub. It is a lithium-ion polymer (Li-ion) battery with a capacity of 2100 mAh at 7.3 volts that provides enough energy to power the hub, motors, and connected sensors during the operation of the self-driving robot. This battery is designed with the perfect dimension and structure to fit securely inside the Technic™ Large Hub. One of its main advantages is that it can be charged directly while it is inside the hub via a standard micro USB cable. This way, there is no need for the battery to be removed during charging. However, when needed, the battery can also be removed easily without using any mechanical tools, which makes maintenance quick and easy for everyone to do.</p>
+
+<center>
 
 **Table 4\. Technic™ Large Hub Rechargeable Battery**
 
@@ -324,21 +330,25 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 | Lifetime | >500 cycles |
 | Storage lifetime | one year after production, then it needs to be recharged | 
 
+</center>
+
 <center>
 
-| ![Figure 9](./docu-photos/battery.png) |
+| ![Figure 7](./docu-photos/battery.png) |
 |:---------------------:|
-| Figure 9. <br> Installing Technic™ Large Hub Rechargeable Battery
+| Figure 7. <br> Installing Technic™ Large Hub Rechargeable Battery
 
 </center>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shown above are the steps one must follow in order to install the battery to the hub. Consequently, the battery is built for durability, with a minimum lifespan of over 500 charge cycles. After 500 full charge/discharge cycles, it is expected to retain at least 30% of its original capacity, making it reliable for long-term use. This rechargeable battery supports the robot’s need for consistent and portable power, which is essential for the several autonomous tasks that the robot is programmed to do during both the Open and Obstacle Challenge rounds. Its high energy capacity, ease of use, and compatibility with the SPIKE™ system make it a critical component of our robot's electronics and system.</p>
 
-### 2.1.3. Raspberry pi UPS-18650 Battery
+### 2.1.2. Raspberry pi UPS-18650 Battery
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Raspberry pi UPS-18650 Battery functions as a regulated power source for the robot’s auxiliary electronic systems, specifically supplying a stable 5 V DC output to the LMS-ESP32 microcontroller. We mounted the module inside a custom 3D-printed case, ensuring it was securely positioned while keeping the wiring organized and easy to access. The module holds two 18650 lithium-ion batteries, which provide a regulated 5 V output through its built-in boost converter. We connected this output to the ESP32 using a USB cable, allowing the microcontroller to receive clean and consistent power even during high motor loads. </p>
 
-**Table 4\. Raspberry pi UPS-18650 Battery**
+<center>
+
+**Table 5\. Raspberry pi UPS-18650 Battery**
 
 | Specification | Description |
 | ----- | ----- |
@@ -349,16 +359,23 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 | Charging Current | Max 1 A (5 V input) |
 | Measurement Accuracy | Battery output percentage error ±1%; voltage measurement error ±3 mV | 
 
-| <img src="./docu-photos/upslayout.png" alt="Figure 12.1" width="1080" height="566"> | <img src="./docu-photos/upsplate2.png" alt="Figure 12.2" width="1080" height="566"> |
+</center>
+
+| <img src="./docu-photos/upslayout.png" alt="Figure 8.1" width="1080" height="566"> | <img src="./docu-photos/upsplate2.png" alt="Figure 8.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
-| Figure 12.1 <br> Raspberry pi UPS-18650 Battery | Figure 12.2 <br> Raspberry pi UPS-18650 Battery <br> Dimensions |
+| Figure 8.1 <br> Raspberry pi UPS-18650 Battery | Figure 8.2 <br> Raspberry pi UPS-18650 Battery <br> Dimensions |
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During early testing, we noticed that power drops from the main hub caused the ESP32 to reset, disrupting communication. To solve this, we decided to power the ESP32 independently using the UPS-18650. This setup worked effectively—the module automatically switches between external power and battery mode, so the ESP32 remains on at all times. Its built-in protection circuits against over-charge, over-discharge, and short circuits also gave us confidence that the system was safe and reliable.</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Furtehrmore, in accordance with the Future Engineers Rulebook, which specifies that the robot must utilize only one main power button for activation, the system was designed so that the SPIKE™ Prime Hub’s power button simultaneously powers the UPS-18650 module and the LMS-ESP32. This combined power management approach ensures a synchronized startup and shutdown across all electronic subsystems, preventing inconsistent power status or data transmission errors. Discussed at Section 7. Engineering Factor is the wiring diagram, detailing how the UPS-18650, LMS-ESP32, and SPIKE™ Prime Hub are interconnected, showing the power delivery path and serial communication interface integrated into the robot’s electrical architecture.</p>
 
+<<<<<<< HEAD
 ### 2.2.. Microcontroller Management
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The microcontroller management system ensures that there is seamless coordination between the robot’s controllers and connected electronic components to enable efficient prcoessing of data and real-time decision-making. Specifically, the <b>SPIKE™ Prime Hub</b> serves as the main controller that handles decision-making within the robot and commands for movements it should perform, while the <b>LMS-ESP32</b> module functions as an interface for external sensors through serial communication. Powered by the <b>UPS-18650</b> module and <b>SPIKE™ Prime Hub Rechargeable Battery</b>, this setup is tested to provide stable regulation of voltage and uninterrupted operation. Together, these critical controllers manage data flow and maintain synchronization, ensuring that the robot operates smoothly and responds accurately in coordination to the environment it sees.
+=======
+### 2.2. Microcontroller Management
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The microcontroller management system ensures that there is seamless coordination between the robot’s controllers and connected electronic components to enable efficient prcoessing of data and real-time decision-making. Specifically, the SPIKE™ Prime Hub serves as the main controller that handles decision-making within the robot and commands for movements it should perform, while the LMS-ESP32 module functions as an interface for external sensors through serial communication. Powered by the UPS-18650 module and SPIKE™ Prime Hub Rechargeable Battery, this setup is tested to provide stable regulation of voltage and uninterrupted operation. Together, these critical controllers manage data flow and maintain synchronization, ensuring that the robot operates smoothly and responds accurately in coordination to the environment it sees.
+>>>>>>> df760aab3ddef1ca06433807f94b97c79ca120da
 
 <center>
 
@@ -480,7 +497,9 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The hub runs on a MicroPython operating system, allowing us to write and execute advanced programs using Python. It features a built-in 6-axis Gyro Sensor with three-axis accelerometer and three-axis gyroscope that helps the robot detect rotation, orientation, and motion. This is especially useful for tracking turns and maintaining direction during navigation.</p>
 
-**Table 4\. Technic™ Prime Large Hub**
+<center>
+
+**Table 6\. Technic™ Prime Large Hub**
 
 | Specification | Description |
 | ----- | ----- |
@@ -493,6 +512,8 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 | Communication Interface | USB, Bluetooth Classic 4.2 (BTC), and Bluetooth Low Energy (BLE) |
 | Operating Voltage | Battery output percentage error ±1%; voltage measurement error ±3 mV | 
 
+</center>
+
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Physically, the hub includes a 5x5 LED matrix display, a three-button interface consisting of center, left, and right, and a speaker for feedback sounds. It supports both USB and Bluetooth connectivity, with Bluetooth 4.2 used for wireless communication and firmware updates. A rechargeable lithium-ion battery powers the hub, and it can be charged directly via a micro USB cable.</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With its compact size of 88.0 mm x 56.0 mm x 32.0 mm and compatibility with LEGO® Technic™ building elements, the SPIKE™ Large Hub is ideal for building smart and responsive robots like our self-driving robot. It provides 32 MB memory which is enough for programs and data, as well as a processing power of 100MHz M4 320 KB RAM 1M FLASH to support real-time decision-making and multitasking during both Open and Obstacle Challenge runs.</p> 
@@ -500,15 +521,18 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 ### 2.2.2. LMS-ESP32 
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The LMS-ESP32, also known as the Wi-Fi Python ESP32 Board for MINDSTORMS, is a MicroPython-based microcontroller specifically designed by Antons Mindstorms to extend the capabilities of LEGO® robotics systems such as SPIKE™ Prime, Robot Inventor, and EV3. Built on the Espressif ESP32 architecture, it combines a dual-core 32-bit LX6 processor with onboard Wi-Fi and Bluetooth (BLE) connectivity, allowing the robot to communicate wirelessly with other devices or cloud-based systems for data transfer and remote control. 
+
 <center>
 
-| <img src="./docu-photos/lmslayout.png" alt="Figure 10.1" width="1090" height="566"> | <img src="./docu-photos/espplate.png" alt="Figure 10.2" width="1080" height="566"> | 
+| <img src="./docu-photos/lmslayout.png" alt="Figure 11.1" width="1090" height="566"> | <img src="./docu-photos/espplate.png" alt="Figure 11.2" width="1080" height="566"> | 
 |:---------------------:|:---------------------:|
-| Figure 10.1 <br> LMS-ESP32  | Figure 10.2 <br> LMS-ESP32  <br> Dimensions |
+| Figure 11.1 <br> LMS-ESP32  | Figure 11.2 <br> LMS-ESP32  <br> Dimensions |
 
 </center>
 
-**Table 4\. LMS-ESP32**
+<center>
+
+**Table 7\. LMS-ESP32**
 
 | Specification | Description |
 | ----- | ----- |
@@ -519,6 +543,8 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 | Programming Language | MicroPhyton |
 | Memory | 520 KB SRAM + 4 MB Flash | 
 | Compatibility | LEGO® SPIKE™ Prime, Robot Inventor, and EV3 systems |
+
+</center>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The board supports MicroPython firmware, which enables flexible programming and faster data handling through lightweight scripts. It features a UART serial interface for communication with the SPIKE™ Prime Hub, allowing bidirectional data transfer for sensor readings and camera inputs. This communication setup allows the ESP32 to act as a co-processor, offloading data processing tasks, such as filtering and processing the values read by the ultrasonic sensor, before sending processed information back to the hub.</p>
 
@@ -532,9 +558,9 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| ![Figure 9](./docu-photos/sensemm.png) |
+| ![Figure 12](./docu-photos/sensemm.png) |
 |:---------------------:|
-| Figure 9. <br> Robot’s Sensors and Vision System
+| Figure 12. <br> Robot’s Sensors and Vision System
 
 
 </center>
@@ -545,13 +571,15 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| <img src="./docu-photos/dclayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/dsplate2.png" alt="Figure 10.2" width="1080" height="566"> |
+| <img src="./docu-photos/dclayout.png" alt="Figure 13.1" width="1080" height="566"> | <img src="./docu-photos/dsplate2.png" alt="Figure 13.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
-| Figure 10.1 <br> Robot’s Technic™ Distance Sensor | Figure 10.2 <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
+| Figure 13.1 <br> Robot’s Technic™ Distance Sensor | Figure 13.2 <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
 
 </center>
 
-**Table 4\. Technic™ Distance Sensor**
+<center>
+
+**Table 8\. Technic™ Distance Sensor**
 
 | Specification | Description |
 | ----- | ----- |
@@ -562,23 +590,27 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 | Field of View | ±15° | 
 | Dimensions | 48 mm × 40 mm × 24 mm |
 
+</center>
+
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It emits high-frequency sound waves (ultrasound), which are inaudible to humans, and then measures the time it takes for the echo to bounce back after hitting an object. By calculating this time delay, the sensor determines how far the object is from the sensor. In our robot, the Technic™ Distance Sensor is mounted at the front, attached to the sensor motor, to measure the distance from the walls which will help determine the correct driving direction and prevent collisions in the Open Challenge and Obstacle Challenge round. It operates at up to 100 Hz, providing real-time distance data to the SPIKE™ Prime Hub for quick and accurate navigation decisions. Its compact, LEGO® Technic™-compatible design allows seamless integration into the robot’s structure.</p>
 
 ### 2.3.2. HC-SR04 Ultrasonic Sensor
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Three HC-SR04 Ultasonic Sensors are attached around the robot, particularly with one at the rear part, one at the left and right side of the robot, which will ensure that the obstacles the the robot will be needing to navigate can properly be sensed by the self-driving robot. With regards to the technicalities of the sensor, the HC-SR04 Ultrasonic Sensor, in terms of its hardware, contains two ultasonic tansducer that works together, with one acting as a transmitter, changing electrical signals into 40 kHz ultasonic sound pulses, and with the other functioning as a receiver, which receives and listens for this pulses after they bounce back from an object.  
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Three HC-SR04 Ultrasonic Sensors are attached around the robot, particularly with one at the rear part, one at the left and right side of the robot, which will ensure that the obstacles the the robot will be needing to navigate can properly be sensed by the self-driving robot. With regards to the technicalities of the sensor, the HC-SR04 Ultrasonic Sensor, in terms of its hardware, contains two ultrasonic tansducer that works together, with one acting as a transmitter, changing electrical signals into 40 kHz ultrasonic sound pulses, and with the other functioning as a receiver, which receives and listens for this pulses after they bounce back from an object.  
 
 <center>
 
-| <img src="./docu-photos/hclayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/hcplate2.png" alt="Figure 10.2" width="1080" height="566"> |
+| <img src="./docu-photos/hclayout.png" alt="Figure 14.1" width="1080" height="566"> | <img src="./docu-photos/hcplate2.png" alt="Figure 14.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
-| Figure 10.1 <br> HC-SR04 Ultrasonic Sensor | Figure 10.2 <br> HC-SR04 Ultrasonic Sensor <br> Dimensions |
+| Figure 14.1 <br> HC-SR04 Ultrasonic Sensor | Figure 14.2 <br> HC-SR04 Ultrasonic Sensor <br> Dimensions |
 
 </center>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After the returning sound waves are detected from an object, it creates an output signal, and the distance of this signal to the sensor detects and measures the length of of how far the object is. Through measuring this signal length, the Arduino can calculate the exact distance to the object. And its capacity measures objects between 2 cm and 400 cm away with an accuracy of about 3 millimeters. </p>
+
+<center>
   
-**Table 4\. HC-SR04 Technical Specifications**
+**Table 9\. HC-SR04 Technical Specifications**
 
 | Specifications | Description |
 | ----- | ----- |
@@ -592,15 +624,17 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 | Trigger Input Signal | 10µS TTL pulse |
 | Dimension | 45 x 20 x 15 mm |
 
+</center>
+
 ### 2.3.3. Gyro Sensor 
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In addition to external sensors, the SPIKE™ Prime Hub includes built-in motion sensors: a three-axis gyroscope and a three-axis accelerometer. These internal sensors play a crucial role in helping our self-driving robot detect its orientation, motion, and rotation during its operation. The accelerometer measures the direction of gravity along three axes — X, Y, and Z — allowing the hub to determine which side is facing up or down. This helps the robot identify its current orientation, such as whether it is upright, tilted, or falling. It also enables the detection of gestures such as taps, free fall, and shaking.</p>
 
 <center>
 
-| ![Figure 11](./docu-photos/gyros.png) |
+| ![Figure 15](./docu-photos/gyros.png) |
 |:---------------------:|
-| Figure 11 <br> Robot’s Gyro Sensor
+| Figure 15. <br> Robot’s Gyro Sensor
 
 </center>
 
@@ -612,11 +646,15 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| <img src="./docu-photos/mvlayout.png" alt="Figure 12.1" width="1080" height="566"> | <img src="./docu-photos/mvplate2.png" alt="Figure 12.2" width="1080" height="566"> |
+| <img src="./docu-photos/mvlayout.png" alt="Figure 16.1" width="1080" height="566"> | <img src="./docu-photos/mvplate2.png" alt="Figure 16.2" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
-| Figure 12.1 <br> Robot’s OpenMV Cam H7 Plus | Figure 12.2 <br> Robot’s OpenMV Cam H7 Plus <br> Dimensions |
+| Figure 16.1 <br> Robot’s OpenMV Cam H7 Plus | Figure 16.2 <br> Robot’s OpenMV Cam H7 Plus <br> Dimensions |
 
 </center>
+
+<center>
+
+**Table 10\. OpenMV Cam H7 Plus Technical Specifications**
 
 | Specification | Description |
 | ----- | ----- |
@@ -630,11 +668,11 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 | Operating Voltage | 3.6 V – 5 V DC |
 | Dimensions | 45 mm × 36 mm × 30 mm |
 
+</center>
+
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The camera features an STM32H7 Arm® Cortex® M7 processor running at 480 MHz, with 512 KB of RAM and 2 MB of flash memory. It is equipped with an image sensor capable of taking 2592 x 1944 (5MP) images.  Our team chose to work on LAB thresholding because it works best under different lighting conditions, separating values based on human perception rather than raw RGB. To be able to identify objects based on the density of color pixels detected, the camera analyzes pixel density, which results in a more precise detection. A higher pixel density of the nearby object reveals its color, allowing the robot to evaluate this information, convey it through the central hub, and take the necessary action to avoid the obstacle.</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In our setup, the OpenMV Cam H7 is mounted at the front of the robot, enclosed within a 3D-printed case that we designed ourselves. It is positioned and aligned to directly face the traffic signs that it will encounter across its laps. When the camera detects a traffic sign that is colored red or green, it processes the image and determines the appropriate direction where the robot should turn; left for green and right for red. We also programmed the camera to send its output by flashing a specific LED color (red or green). This helps us identify what the camera is seeing, allowing for easy and quick troubleshooting.</p>
-
-
 
 ---
 
@@ -643,10 +681,15 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Open Challenge Round of the Future Engineers category requires the self-driving robot to autonomously travel and complete three full laps around the game field with random placements of the inside track walls while ensuring that the robot will not make any contact with the outer boundary wall. The goals that we have established for our robot to accomplish in this round is to be able to accurately determine its driving direction at the beginning, maintain a stable motion and control across the entire loop, consistently avoid collisions with both the inner and outer walls, and successfully complete three full laps by making the turns, movement, and counter precise. Thus, we have considered various techniques and movement strategies for determining driving direction, wall detection and avoidance, and lap counting.</p> 
 
 <center>
+<<<<<<< HEAD
 <!--Need to update-->
 | ![Figure 13](./docu-photos/FE-Flowchart.jpg) |
+=======
+
+| ![Figure 17](./docu-photos/FE-Flowchart.jpg) |
+>>>>>>> df760aab3ddef1ca06433807f94b97c79ca120da
 |:---------------------:|
-| Figure 13 <br> Open Challenge Flowchart
+| Figure 17. <br> Open Challenge Flowchart
 
 </center>
 
@@ -728,25 +771,25 @@ while abs(senseMotor.angle()) > 5:
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Based on the strategy we have implemented in the Obstacle Challenge which is outlined in the flowchart below, our robot begins by initializing its sensors. After that, the robot rotates its distance sensor to the left to measure the distance and stores the value in a variable called left. It then does the same to the right and stores that value in right. Consequently, the robot compares the two distances; if the left side has more space, it sets the direction clockwise; if the right side has more, it sets the direction counterclockwise. And this is significantly similar to how we begin and determine the drive direction in the Open Challenge.</p> 
 
-| ![Figure 14.1](./docu-photos/ObstacleFlowcharts/Obstacle-Direction.jpg) |
+| ![Figure 18.1](./docu-photos/ObstacleFlowcharts/Obstacle-Direction.jpg) |
 |:---------------------:|
-| Figure 14.1 <br> Obstacle Challenge Flowchart <br> Start |
+| Figure 18.1 <br> Obstacle Challenge Flowchart <br> Start |
 
-| ![Figure 14.2](./docu-photos/ObstacleFlowcharts/Obstacle-ExitParking.jpg) |
+| ![Figure 18.2](./docu-photos/ObstacleFlowcharts/Obstacle-ExitParking.jpg) |
 |:---------------------:|
-| Figure 14.2 <br> Obstacle Challenge Flowchart <br> From Start |
+| Figure 18.2 <br> Obstacle Challenge Flowchart <br> From Start |
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After deciding the direction, the robot proceeds to exit the parking area by turning 90 degrees based on the chosen direction and reverses until it stalls against the wall. Once in position, the robot begins scanning the lap to detect obstacles and stores them based on the direction of movement. Then, it identifies the first obstacle it needs to avoid and uses this to decide the proper avoidance function or decision as it leaves the parking area. Depending on whether the obstacle is red or green, it runs a specific function to safely pass it.</p>
 
-| ![Figure 14.3](./docu-photos/ObstacleFlowcharts/obstacle-recording.jpg) |
+| ![Figure 18.3](./docu-photos/ObstacleFlowcharts/obstacle-recording.jpg) |
 |:---------------------:|
-| Figure 14.3 <br> Obstacle Challenge Flowchart <br> From Exit Parking |
+| Figure 18.3 <br> Obstacle Challenge Flowchart <br> From Exit Parking |
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once it’s out of the parking lap, the robot enters the recording phase, where it scans and avoids obstacles section by section. It rotates the sensor motor to face the straight section, records the color of the first obstacle, avoids it accordingly, then continues to detect and respond to the next one. After passing each obstacle, it updates the recorded information and continues this loop up to three times. Finally, when the recording phase ends, the robot uses the stored movement patterns to replay its actions. It now proceeds to perform the laps based on pre-recorded data instead of re-scanning.</p>
 
-| ![Figure 14.4](./docu-photos/ObstacleFlowcharts/Obstacle-recorded.jpg) |
+| ![Figure 18.4](./docu-photos/ObstacleFlowcharts/Obstacle-recorded.jpg) |
 |:---------------------:|
-| Figure 14.4 <br> Obstacle Challenge Flowchart <br> From Recording |
+| Figure 18.4 <br> Obstacle Challenge Flowchart <br> From Recording |
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finally, when the recording phase ends, the robot uses the stored movement patterns to replay its actions. It now proceeds to perform the laps based on pre-recorded data instead of re-scanning.</p> 
 
@@ -981,20 +1024,19 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 ### 6.1. 3D Modeling
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To design our 3D-printed parts, we used Blender, an open-source 3D modeling software known for its powerful tools for creating animation, visual effects, and accurate models suitable for 3D printing. We chose Blender because it allowed us to build detailed and customized components that were not possible using standard LEGO parts alone. The parts we created were carefully dimensioned to fit securely with existing LEGO Technic elements.</p> 
-
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To design our 3D-printed parts, we used <b>Blender</b>, an open-source 3D modeling software known for its versatility in creating animations, visual effects, and accurate 3D models suitable for printing. We chose Blender because it allowed us to design detailed and customized components that were not possible using standard LEGO® parts alone. In particular, we used Blender to model the <b>electronic component cases</b> such as the camera mount, sensor housings, and the initial version of our robot’s chassis. These parts were dimensioned carefully to fit securely with existing LEGO Technic™ elements while maintaining proper alignment and stability.</p> 
 
 <center>
 
-| ![Figure 15.](./docu-photos/image84.png) |
-|:---------------------:|
-| Figure 15. <br> 3D Modelling in Blender
+| ![Figure 19.1](./docu-photos/model1.png) | ![Figure 19.2](./docu-photos/model2.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 19.1 <br> 3D Modeling </center> | <center> Figure 19.2 <br> 3D Modeling </center>|  
 
 </center>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In our workflow, we started by sketching the design based on the robot’s needs, then used Blender’s modeling tools to build the 3D geometry. We paid close attention to scale and alignment especially for parts that needed tight fits or moving mechanisms. Blender’s precise measurement tools and modifier system helped us refine each model before exporting them as STL files for slicing and 3D printing.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our workflow started by sketching each design based on the robot’s requirements and physical constraints. Using Blender’s modeling tools, we created precise 3D geometries and paid close attention to scale and alignment, especially for components that required tight fits. Blender’s measurement tools and modifier system helped us refine every model before exporting them as STL files for slicing and printing. Later in the design process, we transitioned to <b>Fusion 360</b> for the <b>final chassis modeling</b>. Fusion 360’s parametric features allowed for more accurate measurements and better integration between parts, resulting in a more professional and reliable final model.</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overall, Blender was a great tool for us to quickly iterate, visualize, and finalize our parts with control and creativity. It played a crucial role in enhancing the robot’s functionality and design, making our build more advanced and innovative.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overall, combining Blender’s flexibility with Fusion 360’s precision helped us iterate faster and achieve better results. These tools played a crucial role in enhancing both the functionality and aesthetic and engineering quality of our robot.</p>
 
 ### 6.2. Material Selection 
 
@@ -1004,13 +1046,13 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 ### 6.3. 3D Printing Settings
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After designing our custom components in Blender, we prepared them for printing using slicing software, FlashPrint 5 configured with optimized settings for PLA filament. Our goal in printing the components was to achieve a balance between strength, accuracy, weight, and print time while ensuring each part met the functional requirements of our robot.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After designing our custom components in Blender and Fudion 360, we prepared them for printing using slicing software, FlashPrint 5 and Bambu Studio configured with optimized settings for PLA filament. Our goal in printing the components was to achieve a balance between strength, accuracy, weight, and print time while ensuring each part met the functional requirements of our robot.</p>
 
 <center>
 
-| ![Figure 16.](./docu-photos/image54.png) |
-|:---------------------:|
-| Figure 16. <br> Print Settings Z |
+| ![Figure 20.1](./docu-photos/model1.png) | ![Figure 20.2](./docu-photos/model2.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 20.1 <br> FlashForge Print Settings </center> | <center> Figure 20.2 <br> Bambu Lab Print Settings </center>|  
 
 </center>
 
@@ -1020,22 +1062,27 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 ### 6.4. Printing
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We used the FlashForge Adventurer 4 3D printer to print all the parts we have created and spliced. This printer was chosen for its reliability, ease of use, and compatibility with PLA filament. It features a fully enclosed printing chamber, which helps maintain a stable temperature during prints and reduces the risk of warping, especially useful when printing parts with larger surface areas or fine details.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We used the <b>FlashForge Adventurer 4</b> for printing our sensor housings and the initial version of the chassis, while the <b>Bambu Lab</b> printer was used for the <b>final chassis</b> and other refined components. These printers were chosen for their reliability, ease of use, and compatibility with <b>PLA filament</b>. Both feature fully enclosed printing chambers that maintain a consistent temperature during prints, helping reduce warping and ensuring dimensional accuracy. This setup provided us with the flexibility to print prototypes quickly while also achieving high-quality results for the final model.</p>
 
 <center>
 
-| ![Figure 17.](./docu-photos/image37.png) |
-|:---------------------:|
-| Figure 17. <br> FlashForge Adventurer 4 |
+| ![Figure 21.1](./docu-photos/fprinter.png) | ![Figure 21.2](./docu-photos/bprinter.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 21.1 <br> Flashforge Printer </center> | <center> Figure 21.2 <br> Bambu Lab Printer </center>| 
+
 </center>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Adventurer 4’s built-in camera and touchscreen interface allowed us to monitor progress in real time, making it easy to pause or stop a print if an error was detected. Its removable build plate also simplified part removal, reducing the risk of damaging delicate components. The use of the FlashForge Adventurer 4 played a key role in bringing our 3D designs to life and maintaining the overall quality of the robot’s construction.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The <b>FlashForge Adventurer 4</b> features a <b>build volume of 220 × 200 × 250 mm</b>, a <b>layer resolution of 0.1–0.4 mm</b>, and a <b>nozzle temperature up to 265 °C</b>. Its <b>removable flexible build plate</b> made it easier to detach finished parts, while the <b>built-in camera</b> and <b>touchscreen interface</b> allowed us to monitor progress and control prints efficiently. With a print speed of up to <b>100 mm/s</b>, it served as our main prototyping machine for testing fits, tolerances, and mechanical functionality.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the final chassis, we used the <b>Bambu Lab X1 Carbon Combo</b> printer, which offers a <b>build volume of 256 × 256 × 256 mm</b> and supports a <b>maximum print speed of up to 500 mm/s</b> with an acceleration of <b>up to 20,000 mm/s²</b>. It operates with a <b>0.1–0.4 mm layer height range</b> and a <b>nozzle temperature of up to 300 °C</b>, making it suitable for a wide range of materials, including PLA, PETG, ABS, ASA, and carbon fiber-reinforced filaments. The printer also includes advanced features such as <b>automatic bed leveling</b>, <b>dual auto bed calibration</b>, <b>active vibration compensation</b>, and a <b>carbon HEPA filtration system</b> for clean and precise printing. The <b>Automatic Material System (AMS)</b> enabled us to handle multi-filament setups efficiently. With its high-speed performance and consistent accuracy, the X1 Carbon Combo allowed us to fabricate a strong, dimensionally precise, and professional-quality final chassis that perfectly fit our robot’s design and structure.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Together, these two printers complemented each other in our workflow—the FlashForge Adventurer 4 for reliable prototyping and the Bambu Lab for final, high-quality fabrication. </p>
 
 <center>
 
-| ![Figure 18.1](./docu-photos/image10.jpg) | ![Figure 18.2](./docu-photos/image52.jpg) |
+| ![Figure 22.1](./docu-photos/ff.png) | ![Figure 22.2](./docu-photos/bl.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 18.1 <br> 3D Printing </center> | <center> Figure 18.2 <br> 3D Printing </center>|  
+| <center> Figure 22.1 <br> 3D Printing in FlashForge </center> | <center> Figure 22.2 <br> 3D Printing n Bambu Lab </center>|  
 
 </center>
 
@@ -1049,28 +1096,17 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the key engineering features we developed was a 3D-printed case for the OpenMV Cam H7, which serves as one of the robot’s vision. We created this case to hold the camera securely while also making it easy to access and remove when necessary. Instead of using a fixed mount that would waste time for disassembling, we designed a slide-lock mechanism. This lets us attach or remove the camera quickly, which is very helpful during testing, troubleshooting, or rewiring. The slide-lock also protects the camera from movement or shaking during runs, keeping it stable throughout each challenge.</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The process involved several iterations to ensure that the case we create is both secure and easy to use. We began by creating a basic design of the case. The original plan was to use a simple screw to hold the camera in place. However, we couldn’t find the right screw size that could perfectly close the camera case. To solve this, we decided to redesign a case with a slide-lock mechanism. This would let us attach and remove the camera more easily without needing any mechanical materials or tools. The second version with a slide-lock design was printed, but the dimensions were slightly off compared to the actual size of the camera. However, we used this initial print to test the locking mechanism, and we found that it functioned properly.</p> 
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The process involved several iterations to ensure that the case we create is both secure and easy to use. We began by creating a basic design of the case. The original plan was to use a simple screw to hold the camera in place. However, we couldn’t find the right screw size that could perfectly close the camera case. To solve this, we decided to redesign a case with a slide-lock mechanism. This would let us attach and remove the camera more easily without needing any mechanical materials or tools. The second version with a slide-lock design was printed, but the dimensions were slightly off compared to the actual size of the camera. </p> 
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In our third attempt, we carefully measured the dimensions of the camera and adjusted the case with slide-lock design to ensure a more accurate fit. This version successfully held the camera in place, allowed quick access, and ensured the wiring remained manageable and secure. </p>
 
 <center>
 
-| ![Figure 19.](./docu-photos/image41-1.png) | ![Figure 19.](./docu-photos/image41.png) |
+| ![Figure 23.1](./docu-photos/.png) | ![Figure 23.2](./docu-photos/camcaseplate2.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 19. <br> First Trial </center> | <center> Figure 19. <br> Second Trial </center> |
+| <center> Figure 23.1. <br> 3D-Printed OpenMV Cam H7 Plus Case  </center> | <center> Figure 23.2 <br> 3D-Printed OpenMV Cam H7 Plus Case  <br> Dimesions </center> |
 
 </center>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In our third attempt, we carefully measured the dimensions of the camera and adjusted the case with slide-lock design to ensure a more accurate fit. A 3D-printed beam was attached at the bottom of this case  to be able to mount it on the LEGO-built structure of the robot. This version successfully held the camera in place, allowed quick access, and ensured the wiring remained manageable and secure.</p>
-
-
-<center>
-
-| ![Figure 20.](./docu-photos/image27.png) |
-|:---------------------:|
-| Figure 20. <br> Third Trial |
-
-</center>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We created all designs using Blender, a 3D modeling software. Once the design was complete, we sliced the file using FlashPrint, and then printed the case using a FlashForge Adventurer 4 3D printer. Using 3D printing allowed us to customize the case that fits the camera perfectly. This step-by-step design process helped us build a camera case that was functional, durable, and easy to maintain.</p>
 
 ### 7.2. 3D-Printed LMS-ESP 32 Case
 
@@ -1080,39 +1116,104 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 19.](./docu-photos/.png) | ![Figure 19.](./docu-photos/espcaseplate.png) |
+| ![Figure 24.1](./docu-photos/.png) | ![Figure 24.2](./docu-photos/espcaseplate2.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 19. <br> First Trial </center> | <center> Figure 19. <br> Second Trial </center> |
+| <center> Figure 24.1. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 24.2 <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
 
 </center>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Several iterations were printed to achieve proper alignment of holes and connectors, as initial prototypes showed minor mismatches between the ESP32’s pin layout and the robot’s structural frame. Adjustments to thickness and hole diameter were made after each test print, improving both the mechanical strength and ease of access for maintenance. The final version of the case achieved a balance between rigidity and light weight.
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Several iterations were printed to achieve proper alignment of holes and connectors, as initial prototypes showed minor mismatches between the ESP32’s pin layout and the robot’s structural frame. Adjustments to thickness and hole diameter were made after each test print, improving both the mechanical strength and ease of access for maintenance. The final version of the case achieved a balance between rigidity and light weight.</p>
 
-### 7.2. Rotating Camera and Distance Sensor
+### 7.3. 3D-Printed UPS-18650 Case
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 3D-printed case for the UPS-18650 module served as another important engineering factor in our robot’s design. Since we had already gained experience from modeling and printing earlier components such as the camera and sensor cases, creating this one became a smoother and more efficient process. We already had a clear understanding of the required dimensions and mounting alignment for fitting electronic parts securely, which made it easier to design a form-fitting enclosure for the UPS module.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using Blender for 3D modeling, we ensured that the case provided proper space for the module’s ports, indicators, and wiring while maintaining a compact structure that aligned neatly with the robot’s frame. Once printed, the case was easy to assemble and mount, offering both protection and stability for the UPS-18650. The design also improved cable management, reducing clutter and making maintenance more convenient.</p>
+
+<center>
+
+| ![Figure 25.1](./docu-photos/.png) | ![Figure 25.2](./docu-photos/upscaseplate2.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 25.1. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 25.2 <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+
+</center>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This part reflected how our team’s progressive learning in 3D modeling and fabrication directly contributed to faster, more precise design iterations.</p>
+
+### 7.4. 3D-Printed HC-SR04 Ultrasonic Sensor Case
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 3D-printed case for the HC-SR04 Ultrasonic Sensor was another engineering factor that improved both functionality and integration within our robot. Since the sensor is a third-party component that is not originally designed for LEGO® systems, we created a custom case with side holes that allow it to be securely mounted onto LEGO Technic™ parts. This adaptation made it possible to align the sensor precisely with the robot’s frame, ensuring accurate distance measurements and stable positioning during movement.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We carefully measured the sensor’s transducers, PCB layout, and mounting dimensions to ensure a snug fit while leaving open access for the sensor’s pins and wiring. The final 3D-printed design not only improved the sensor’s protection and durability but also maintained proper alignment for consistent readings.</p>
+
+<center>
+
+| ![Figure 26.1](./docu-photos/.png) | ![Figure 26.2](./docu-photos/uscaseplate2.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 26.1. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 26.2 <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+
+</center>
+
+### 7.5. 3D-Printed Robot Chassis
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 3D-printed chassis was one of the most challenging yet rewarding engineering factors in our robot’s development. Since it served as the main structural frame that held all other components together, achieving accuracy and strength was crucial. During the early stages, we went through several trial-and-error attempts using the Flashforge Adventurer 4, where we encountered various issues such as unfinished prints, misaligned parts, and incorrect dimensions. These problems often came from minor modeling errors or printer calibration inconsistencies.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After multiple iterations, we successfully produced a functional prototype that met our initial expectations. However, we wanted to further improve its precision and fit quality. To do this, we remodeled the chassis from Blender to Fusion 360, a more advanced CAD software that allowed us to apply exact measurements and parametric adjustments. This transition significantly improved the model’s alignment and overall geometry.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the final version, we used the Bambu Lab 3D printer, which provided higher resolution, better print stability, and smoother surface finish. The result was a strong, lightweight, and accurately fitted chassis that perfectly supported our robot’s electronic and mechanical components.</p>
+
+<center>
+
+| ![Figure 27.1](./docu-photos/.png) | ![Figure 27.2](./docu-photos/chassisplate2.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 27.1. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 27.2 <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+
+</center>
+
+### 7.6. Rotating Camera and Distance Sensor
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To maximize the functionality of both the camera and the distance sensor, the robot is equipped with a Technic™ Large Angular Motor that enables these sensors to rotate approximately (degrees) in both directions from a central starting position. This rotational mechanism significantly expands the sensors' field of view, allowing the robot to better observe its surroundings, detect walls and obstacles from multiple angles, and respond more accurately to changes in the environment. This feature was developed in response to the limited number of available ports on the Technic™ Large Hub, which restricted the number of sensors that could be connected at once. By mounting both the OpenMV Cam H7 and the Technic™ Distance Sensor on a rotating platform powered by a single motor, we were able to simulate the presence of multiple sensors while conserving ports. The rotating sensor system plays a key role in obstacle detection, wall tracking, and situational awareness across both the Open and Obstacle Challenge rounds.</p>
 
 <center>
 
-| ![Figure .](./docu-photos/smfront.png) | ![Figure .](./docu-photos/smiso.png) |
+| ![Figure 27.1](./docu-photos/smfront.png) | ![Figure 27.2](./docu-photos/smiso.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure . <br> Robot's Rotating Mechanism <br> Front View </center> | <center> Figure . <br> Robot's Rotating Mechanism <br> Side View </center> |
+| <center> Figure 27.1 <br> Robot's Rotating Mechanism <br> Front View </center> | <center> Figure 27.2 <br> Robot's Rotating Mechanism <br> Side View </center> |
 
 </center>
 
-### 7.3. Side Free Wheels
+### 7.7. One-Button Power Mechanism
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To enhance the safety, stability, and wall-tracking performance of the self-driving robot, the team integrated six medium-sized gears along the left and right sides of its frame. These gears function as free-rolling support wheels, strategically placed to help the robot maintain smooth movement when traveling close to walls. Unlike having a frame without these gears, these rotate freely, enabling the robot to glide alongside the walls without resistance.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the most important engineering factors we implemented in our robot is the one-button power mechanism. This design follows the Future Engineers competition rule, which specifies that the robot must be powered on using only one button and only one motion. To achieve this, we carefully planned the power distribution between the SPIKE™ Prime Large Hub, the LMS-ESP32, and the UPS-18650 power module so that activating a single button would turn on the entire system simultaneously.</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This design allows the robot to self-correct its path by using the gears as passive alignment guides. When slight contact with a wall occurs, the gears help redirect the robot without causing it to tilt, stop, or lose speed. This is especially valuable in narrow spaces or during tight turns, where precise positioning is essential. Additionally, by minimizing the risk of direct collision between the robot’s core components and the wall, the system becomes more robust and consistent—even when facing unexpected environmental shifts or alignment errors. This solution significantly contributes to the robot’s overall reliability and control during both Open and Obstacle Challenge rounds.</p>
-
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We accomplished this by connecting the UPS-18650 to the LMS-ESP32 via USB, and then linking the ESP32 to the SPIKE™ Prime Hub through a serial connection that uses transistors and resistors for voltage regulation and logic control. The SPIKE™ Hub’s power button acts as the main trigger—when it is pressed, it powers not only itself but also activates the ESP32 and the UPS module.</p>
+  
 <center>
 
-| ![Figure .](./docu-photos/image15.png) |
-|:---------------------:|
-| Figure . <br> Robot's Side Free Wheels <br> Front View|
+| ![Figure 28.1](./docu-photos/wiring.png) | ![Figure 28.2](./docu-photos/schemdia.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 28.1 <br> Actual Appearance </center> | <center> Figure 28.2 <br> Schematic Diagram </center> |
 
 </center>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This schematic diagram and wiring shows the electrical connection and switching logic between the LMS-ESP32, the SPIKE™ Prime Hub, and the ultrasonic sensors that we integrated into our robot’s system. It represents both the main control circuit and the switching circuit that enables the one-button power mechanism we implemented. Each section of the diagram will be explained below.</p>
+
+<b> 1. LMS-ESP32 Module (Center Right) </b>
+- This is the core microcontroller handling sensor input and communication with the SPIKE™ Prime Hub. 
+  - It connects to three ultrasonic sensors (labeled U2, U3, and U4) placed at the rear, right, and left of the robot.
+  - Each sensor receives +5V and GND power directly from the UPS-18650 module.
+  - The Echo and Trigger pins of each sensor are connected to specific GPIO pins of the LMS-ESP32 for distance measurement.
+  - The diagram also includes a +5V (Battery) line that powers the ESP32 board from the UPS module, ensuring independent operation even when the SPIKE Hub restarts.
+
+<b> 2. Switching Circuit (Top Left) </b>
+- This circuit enables the one-button power control mechanism.
+  - It uses an IRF3205 N-channel MOSFET (Q1) to control the ground connection between the battery and the ESP32 circuit.
+  - The gate of the MOSFET is connected to the 3.3V logic signal from the SPIKE™ Prime LPF2 connector.
+  - Resistors R1 (10kΩ) and R2 (470Ω) form a voltage divider and pull-down setup, ensuring stable switching behavior.
+  - When the SPIKE Hub is powered on, it sends a 3.3V signal to the MOSFET gate, completing the ground path and turning on the LMS-ESP32 and the sensors—allowing the entire system to be powered by a single button.
+
+<b> 3. LPF2 Connector Table (Bottom Center) </b>
+- This small reference table defines the pinout of the LPF2 communication connector used by the SPIKE™ Hub, specifying the lines for GND, 3.3V, and serial communication pins (ID1–ID2). This helps align the correct wiring for signal and power integration between the LEGO hub and the ESP32.
 
 ---
 
