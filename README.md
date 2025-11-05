@@ -685,77 +685,259 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 </center>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In line with the flowchart above, the starting condition we implemented for the Open Challenge round involves the self-driving robot resetting its sensors and heading, then beginning its movement by driving forward at a constant speed. It continues this motion until its front-facing distance sensor detects a wall closer than a preset threshold. This initial forward movement ensures that the robot consistently reaches a defined checkpoint before making any directional decisions.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In our Open Challenge strategy, the robot drives forward until a turn is detected or it gets too close to a wall. It then determines its driving direction using the two side ultrasonic sensors and records the distance of each straight section during the first lap. These recorded distances are reused in the following laps to ensure consistent movement and prevent undershooting along each straight section.</p>
+
+<!-- <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In line with the flowchart above, the starting condition we implemented for the Open Challenge round involves the self-driving robot resetting its sensors and heading, then beginning its movement by driving forward. It continues this motion until one of three conditions is met:
+<br>(1) the distance on the left side becomes significantly greater than the right (indicating open space or a corner),
+<br>(2) the distance on the right side becomes significantly greater than the left (indicating a similar opening on the opposite side), or
+<br>(3) the front distance sensor detects a wall closer than the defined front threshold.</p> -->
 
 <!-- OLD - It continues this motion until its front-facing distance sensor detects a wall closer than a preset threshold. This initial forward movement ensures that the robot consistently reaches a defined checkpoint before making any directional decisions. -->
-
+<!-- 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once this threshold is met, the robot stops and proceeds to determine its driving direction: either clockwise or counterclockwise. To do this, the sensor mounted on a rotating motor scans both directions — first rotating to the left, measuring the distance, and then to the right. The robot then compares the measured values. If the right side has a greater distance, it sets the direction clockwise; otherwise, it sets it counterclockwise. This step is essential for adjusting the robot's path depending on the randomized starting location and ensuring that the robot follows the correct path and direction around the field.</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However, before turning, the rotating sensor must rotate along with the chosen direction to signal the upcoming turn. This can also assist with determining mistakes and debugging since it can communicate its movement with us. After performing the 90-degree turn, the sensor motor will then return to its original position — facing forward — to indicate that the turn has been completed and is prepared for the next turn or section. Moreover, while driving forward after each section and checking the distance from the preceding wall, the Technic™ Distance Sensor’s LEDs are programmed to light up on the side based on its direction. This action functions as a visual cue for the team, assisting in debugging and monitoring direction.</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The robot then enters the lap execution loop, where it repeats a drive-turn sequence until it completes three full laps. As it moves forward, the robot uses PID control (as outlined in the flowchart) to maintain smooth and accurate motion, adjusting based on real-time distance measurements. When the front distance falls below the target proximity, the robot resets its PID settings, updates its target heading by 90 degrees (multiplied by its set direction), executes the turn, and increments the lap counter by 0.25, representing one segment of a full lap. This loop continues until the lap counter reaches 3.0, signaling that the three laps are complete.</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To finish, the robot executes a final command to drive straight to the center of the starting section using its distance sensor and then stops, completing the Open Challenge run. This process ensures both consistency and accuracy in lap tracking and navigation, allowing the robot to adapt to changing conditions while maintaining reliable performance.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To finish, the robot executes a final command to drive straight to the center of the starting section using its distance sensor and then stops, completing the Open Challenge run. This process ensures both consistency and accuracy in lap tracking and navigation, allowing the robot to adapt to changing conditions while maintaining reliable performance.</p> -->
 
 ### 3.1. Determining Drive Direction 
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At the start of the Open Challenge, the self-driving robot must decide which direction it should take around the field, which is either clockwise or counterclockwise. This decision that the robot will make depends on its position and surroundings at the beginning of the run. This step is one of the most crucial tasks, as it sets the course of the robot. Therefore, our team made sure to select the most appropriate strategy and components to ensure that the detection of direction will be accurate and consistent. This involved integrating the necessary sensors and programming logic that would allow the robot to make the correct decision.</p> 
 
 ```python
-def determineDir():
-    lookDir(90)
-    distRight = distSensor.distance()
-
-    lookDir(-90)
-    distLeft = distSensor.distance()
-
-    if distLeft > distRight:
-        direction = -1  # Counterclockwise
-    else:
-        direction = 1   # Clockwise
-        
-    return direction
-
+direction = sannisLivisa.driveDeterminDir(500, 600, 700, decelerate=True, sideThreshold=600, frontThreshold=350)
 ```
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once arrived on a certain position away from the wall, the robot executes a scanning sequence — rotating the sensor motor to the left, recording the measured distance, then repeating the process to the right. These two values are compared to determine which direction offers more open space. If the left side has more distance, meaning it's farther to a wall, the robot infers that this side is clearer and sets its course counterclockwise. Conversely, if the right distance is greater or larger, the robot will move clockwise.</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As explained in [Section 2.2.1](#221-technic-distance-sensor): Technic™ Distance Sensor under the Sense Management section, this distance sensor setup expands the robot’s field of view and enables it to assess space on both sides before beginning full movement. This strategy allows the robot to adapt to varying starting positions and ensures accurate detection into its navigation sequence.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In line with the flowchart above, the starting condition we implemented for the Open Challenge round involves the robot first begins by driving forward. It continues this movement until one of three conditions is met:
+<br>(1) the distance on the left side becomes significantly greater than the right (indicating open space or a corner),
+<br>(2) the distance on the right side becomes significantly greater than the left (indicating a similar opening on the opposite side), or
+<br>(3) the front distance sensor detects a wall closer than the defined front threshold.</p>
+
+```python
+def determineDir(self, exclude=2000, measureTime=100):
+    try:
+        checkTimer = StopWatch()
+        checkTimer.pause()
+        checkTimer.reset()
+    
+        checkTimer.resume()
+        largestRight = 0
+        largestLeft = 0
+        while checkTimer.time() < measureTime:
+            dists = self.distSensorBack.call("line")
+
+            dist = dists[1]
+            if dist > largestRight and dist != exclude:
+                largestRight = dist
+
+            dist = dists[0]
+            if dist > largestLeft and dist != exclude:
+                largestLeft = dist
+
+        checkTimer.pause()
+        checkTimer.reset()
+
+        log("Dist Right:", largestRight, level="DETERMINE DIR")
+        log("Dist Left:", largestLeft, level="DETERMINE DIR")
+        log("Backup (Front):", largestLeft, level="DETERMINE DIR")
+
+        if largestLeft > largestRight:
+            direction = -1
+        else:
+            direction = 1
+
+        log(direction, level="DETERMINE DIR")
+        return direction
+    except:
+        log("LMS-ESP 32 Refused to connect!", level="ERROR")
+        return self.determineDirOld()
+```
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once positioned at an appropriate distance from the wall, the robot determines its driving direction by comparing the readings from the two side ultrasonic sensors managed by the LMS-ESP32 module. During this process, the robot continuously samples both the left and right distance values for a short duration, ignoring any invalid or excluded readings. It records the largest valid distance detected on each side within this period. After the sampling phase, the robot compares these two maximum values — if the left side has the greater distance, it sets its driving direction to counterclockwise; otherwise, it drives clockwise. This method provides a more reliable and noise-resistant approach by evaluating multiple sensor samples over time rather than relying on a single reading, ensuring a consistent and accurate decision on the robot’s initial driving direction.</p>
 
 ### 3.2. Wall Detection and Avoidance
 
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ensure that the robot can properly avoid collisions with both the randomly placed inner wall and the outer boundary walls of the game field, we implemented a dynamic wall detection strategy using the Technic™ Distance Sensor and the two (2) HC-SR04 Ultrasonic Sensors mounted on either side of the robot. </p>
+
 ```python
-# Pseudocode for Wall Detection and Avoidance
-while distanceFromWall() > targetProximity:
-  # Calculate deviation from target heading
-    error = targetHeading - currentHeading
-    
-    # Use PID with error to increase its reliability
-    errorSum, prevError, correction = pid(KP, KI, KD, error, errorSum, prevError)
 
-    # Apply Correction to center the Robot
-    move(MAXSPEED, correction)
+while currentLap < 3:
+    correction = 0
+    if currentLap == 0:
+        targetHeading += 90 * direction
+        if direction < 0:
+            targetHeading -= 0.9
 
+        sannisLivisa.resetParams()
+        turnFunc(sannisLivisa, targetHeading, turnErrorKp, KI, turnErrorKd, MAXSPEED, turnTolerance)
+        currentLap += 0.25
+        continue
+
+    elif currentLap <= 1:
+        lastRot = sannisLivisa.driveMotor.angle()
+        distTraveled = 0
+
+        while sannisLivisa.getDistance(FRONT) < safetyDistance or distTraveled < otherSafetyDistance:
+            leftAdjust = 0
+            rightAdjust = 0
+
+            if sannisLivisa.getDistance(LEFT) < leftThreshold or sannisLivisa.getDistance(RIGHT) < rightThreshold:
+                leftAdjust = sannisLivisa.getDistance(LEFT)
+                rightAdjust = sannisLivisa.getDistance(RIGHT)
+
+            error = rightAdjust + targetHeading - HUB.imu.heading() - leftAdjust
+            KP = baseKP
+            KD = linearMap(sannisLivisa.driveMotor.speed(), 0, 1000, 0, KDdrive)
+
+            sannisLivisa.errorSum, sannisLivisa.prevError, correction = pid(
+                KP, KI, KD, error, sannisLivisa.errorSum, sannisLivisa.prevError,
+                maxSum=355, minSum=-355
+            )
+
+            correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
+            correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+
+            sannisLivisa.move(MAXSPEED, correction)
+            distTraveled = sannisLivisa.driveMotor.angle() - lastRot
+
+        while sannisLivisa.getDistance(distSensor) < targetProximity and sannisLivisa.getDistance("front") > targetProximityFront:
+            leftAdjust = 0
+            rightAdjust = 0
+
+            if sannisLivisa.getDistance(LEFT) < leftThreshold or sannisLivisa.getDistance(RIGHT) < rightThreshold:
+                leftAdjust = sannisLivisa.getDistance(LEFT)
+                rightAdjust = sannisLivisa.getDistance(RIGHT)
+
+            error = rightAdjust + targetHeading - HUB.imu.heading() - leftAdjust
+            KP = baseKP
+            KD = linearMap(sannisLivisa.driveMotor.speed(), 0, 1000, 0, KDdrive)
+
+            sannisLivisa.errorSum, sannisLivisa.prevError, correction = pid(
+                KP, KI, KD, error, sannisLivisa.errorSum, sannisLivisa.prevError,
+                maxSum=355, minSum=-355
+            )
+
+            correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
+            correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+            sannisLivisa.move(MAXSPEED, correction)
+
+        distTraveled = sannisLivisa.driveMotor.angle() - lastRot
+        roundedDist = distTraveled
+
+        sannisLivisa.record(str(currentLap)[1::], roundedDist + 30)
+```
+
+<p> During the <b>first lap</b>, it operates in an exploratory mode: it follows the detected wall, turning 90° at each corner while recording the distances it travels between turns. This is done using the <code>record()</code> function, which saves the measured distance traveled before each turn into memory. These stored distances will later guide the robot in subsequent laps, allowing it to “remember” the most successful path even when the field’s inner walls are rearranged.</p>
+
+```python
+while sannisLivisa.getDistance(distSensor) < targetProximity and sannisLivisa.getDistance("front") > targetProximityFront:
+    leftAdjust = 0
+    rightAdjust = 0
+
+    if sannisLivisa.getDistance(LEFT) < leftThreshold or sannisLivisa.getDistance(RIGHT) < rightThreshold:
+        leftAdjust = sannisLivisa.getDistance(LEFT)
+        rightAdjust = sannisLivisa.getDistance(RIGHT)
+
+    error = rightAdjust + targetHeading - HUB.imu.heading() - leftAdjust
+    KP = baseKP
+    KD = linearMap(sannisLivisa.driveMotor.speed(), 0, 1000, 0, KDdrive)
+
+    sannisLivisa.errorSum, sannisLivisa.prevError, correction = pid(
+        KP, KI, KD, error, sannisLivisa.errorSum, sannisLivisa.prevError,
+        maxSum=355, minSum=-355
+    )
+
+    correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
+    correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+    sannisLivisa.move(MAXSPEED, correction)
+```
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wall following is maintained through a continuous PID feedback loop. The robot measures its current heading using the IMU and its distance from the side wall using the active distance sensor. If the robot drifts too close to either wall, it calculates a composite correction by combining the left and right readings, effectively re-centering itself between them. The PID control uses the heading error — <code>error = targetHeading - HUB.imu.heading()</code> — adjusted by these lateral offsets</p>
+
+```python
+leftAdjust = 0
+rightAdjust = 0
+
+if sannisLivisa.getDistance(LEFT) < leftThreshold or sannisLivisa.getDistance(RIGHT) < rightThreshold:
+    leftAdjust = sannisLivisa.getDistance(LEFT)
+    rightAdjust = sannisLivisa.getDistance(RIGHT)
+
+error = rightAdjust + targetHeading - HUB.imu.heading() - leftAdjust
+KP = baseKP
+KD = linearMap(sannisLivisa.driveMotor.speed(), 0, 1000, 0, KDdrive)
+```
+
+<p> to apply smooth steering corrections through <code>sannisLivisa.move()</code>. The derivative term <code>KD</code> is dynamically mapped to the robot’s current driving speed to maintain stability at varying velocities.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After completing the first lap, the robot transitions to playback mode. </p>
+
+```python
+while currentLap < 3:
+    correction = 0
+    if currentLap == 0:
+        ...
+
+    elif currentLap <= 1:
+        ...
+
+    else:
+        # Remember recorded distances
+        lastRot = sannisLivisa.driveMotor.angle()
+        distTraveled = 0
+        distToTravel = sannisLivisa.remember(str(currentLap)[1::])
+        while distTraveled < distToTravel and \
+                sannisLivisa.getDistance("front") > minimumDistance and \
+                sannisLivisa.getDistance(distSensor) < targetProximity:
+            leftAdjust = 0
+            rightAdjust = 0
+            distTraveled = sannisLivisa.driveMotor.angle() - lastRot
+            if sannisLivisa.getDistance(LEFT) < leftThreshold or sannisLivisa.getDistance(RIGHT) < rightThreshold:
+                leftAdjust = sannisLivisa.getDistance(LEFT)
+                rightAdjust = sannisLivisa.getDistance(RIGHT)
+
+            error = rightAdjust + targetHeading - HUB.imu.heading() - leftAdjust
+            KP = baseKP
+            KD = linearMap(sannisLivisa.driveMotor.speed(), 0, 1000, 0, KDdrive)
+
+            sannisLivisa.errorSum, sannisLivisa.prevError, correction = pid(
+                KP, KI, KD, error, sannisLivisa.errorSum, sannisLivisa.prevError,
+                maxSum=355, minSum=-355
+            )
+
+            correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
+            correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+            # print(MAXSPEED, correction)
+            sannisLivisa.move(MAXSPEED, correction)
+```
+
+<p>In the following laps, it recalls previously recorded distances using <code>remember()</code> and repeats those driving segments while still maintaining real-time heading correction. This hybrid strategy combines memory-based navigation with continuous feedback, allowing the robot to drive more efficiently while still reacting dynamically to minor deviations or sensor noise.</p>
+
+```python
 targetHeading += 90 * direction
-turn(targetHeading)
+if direction < 0:
+    targetHeading -= 0.12
+else:
+    targetHeading += 0.25
+turnFunc(sannisLivisa, targetHeading, turnErrorKp, KI, turnErrorKd, MAXSPEED, turnTolerance)
 ```
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ensure that the robot can properly avoid collisions with both the randomly placed inner wall and the outer boundary walls of the game field, we implemented a dynamic wall detection strategy using a Technic™ Distance Sensor mounted on a Technic™ Large Angular Motor. We thought that giving it the ability to rotate sideways is a better technique for detection instead of keeping the sensor fixed, thus the robot’s field of view is increased, allowing it to detect walls in multiple directions without requiring the robot to physically change its orientation. Moreover, this design allows the robot to scan its surroundings at key decision points such as straight paths or before a turn, and determine the relative position of nearby walls. It allows the robot to compensate for the limitations of a fixed-sensor design, especially when the robot is driving alongside long stretches of wall or in unpredictable inner wall placements.</p> 
-
-![Distance Sensor](./docu-photos/distSensorFront.png)
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After each straight section, the robot performs a 90° turn using the IMU as reference. A small offset (−0.12° for counterclockwise and +0.25° for clockwise) compensates for observed drift and sensor rounding errors, ensuring that the robot’s orientation remains aligned with the course across multiple laps.</p>
 
 ```python
-# Make the sensor face forward again
-lookDir(0, speed=200)
-
-# Keep moving forward while the sensor returns to center
-while abs(senseMotor.angle()) > 5:
-    correction = calculateHeadingCorrection()
-    move(MAXSPEED, correction)
+while sannisLivisa.getDistance("front") > endTarget:
+    error = targetHeading - HUB.imu.heading()
+    sannisLivisa.errorSum, sannisLivisa.prevError, correction = pid(KP, KI, KD, error, ...)
+    sannisLivisa.move(MAXSPEED, correction)
+sannisLivisa.eBrake(1000)
 ```
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ensure consistency and accuracy, the sensor resets to its original position; it faces forward after each detection cycle. The scanning movement is also synchronized with the robot’s movement speed, so that sensor rotation does not delay navigation or cause imbalance. This wall detection system is one of the key innovations that makes our robot's Open Challenge performance more reliable and intelligent, especially under randomized field conditions.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finally, once the robot completes the 3 laps, it aligns itself with the center of the track and drives forward until the front distance sensor detects the finishing wall. The PID controller continues to fine-tune the heading throughout this segment to ensure a straight and stable final approach before executing a controlled stop using <code>eBrake()</code>.</p>
 
----
+<!-- ![Distance Sensor](./docu-photos/distSensorFront.png) -->
+
+
 
 ## 4. 🚧 Obstacle Challenge Strategy
 
