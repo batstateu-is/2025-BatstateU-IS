@@ -276,7 +276,6 @@ def wallingTurn(sannisLivisa: FE):
 # --            Lap Logic            -- #
 #########################################
 def recordQuarterLap(sannisLivisa: FE, initalDetection: tuple, currentLap=0.25):
-    # sannisLivisa.center()
     pillarColor = wallingTurnAndRecord(sannisLivisa, initalDetection)
     
     currentLapRecord = []
@@ -325,7 +324,6 @@ def recordQuarterLap(sannisLivisa: FE, initalDetection: tuple, currentLap=0.25):
 
     else:
         beep()
-        log(currentLapRecord)
         sannisLivisa.lookDir(90, asyncBool=False)
         sannisLivisa.drive(1150, 500, 900, heading=0, decelerate=True)
 
@@ -334,14 +332,10 @@ def recordQuarterLap(sannisLivisa: FE, initalDetection: tuple, currentLap=0.25):
         else:
             redEnding(sannisLivisa)
 
-    # sannisLivisa.driveUntilStalled(100, 600, 300, heading=0)
-
     currentLapRecord = [e for e in currentLapRecord if e != 'None']
     log(currentLapRecord)
 
     sannisLivisa.record(str(currentLap)[1::], currentLapRecord)
-    # sannisLivisa.drive(50, 500, 600, heading=0)
-    # sannisLivisa.eBrake(100)
 
 
 

@@ -358,7 +358,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Furtehrmore, in accordance with the Future Engineers Rulebook, which specifies that the robot must utilize only one main power button for activation, the system was designed so that the SPIKE™ Prime Hub’s power button simultaneously powers the UPS-18650 module and the LMS-ESP32. This combined power management approach ensures a synchronized startup and shutdown across all electronic subsystems, preventing inconsistent power status or data transmission errors. Discussed at Section 7. Engineering Factor is the wiring diagram, detailing how the UPS-18650, LMS-ESP32, and SPIKE™ Prime Hub are interconnected, showing the power delivery path and serial communication interface integrated into the robot’s electrical architecture.</p>
 
 ### 2.2.. Microcontroller Management
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The microcontroller management system ensures that there is seamless coordination between the robot’s controllers and connected electronic components to enable efficient prcoessing of data and real-time decision-making. Specifically, the SPIKE™ Prime Hub serves as the main controller that handles decision-making within the robot and commands for movements it should perform, while the LMS-ESP32 module functions as an interface for external sensors through serial communication. Powered by the UPS-18650 module and SPIKE™ Prime Hub Rechargeable Battery, this setup is tested to provide stable regulation of voltage and uninterrupted operation. Together, these critical controllers manage data flow and maintain synchronization, ensuring that the robot operates smoothly and responds accurately in coordination to the environment it sees.
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The microcontroller management system ensures that there is seamless coordination between the robot’s controllers and connected electronic components to enable efficient prcoessing of data and real-time decision-making. Specifically, the <b>SPIKE™ Prime Hub</b> serves as the main controller that handles decision-making within the robot and commands for movements it should perform, while the <b>LMS-ESP32</b> module functions as an interface for external sensors through serial communication. Powered by the <b>UPS-18650</b> module and <b>SPIKE™ Prime Hub Rechargeable Battery</b>, this setup is tested to provide stable regulation of voltage and uninterrupted operation. Together, these critical controllers manage data flow and maintain synchronization, ensuring that the robot operates smoothly and responds accurately in coordination to the environment it sees.
 
 <center>
 
@@ -366,7 +366,105 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 |:---------------------:|
 | Figure 9. <br> Microcontroller Management
 
-</center>
+</center> 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On the LMS-ESP 32 side, the microcontroller continuously gathers distance data from the three (3) HC-SR04 ultrasonic sensors and transmits that data to the SPIKE™ Prime Hub using the same process used in [Traffic Sign Detection.](#41-traffic-sign-detection) This setup enables the ESP32 to function as a dedicated processing unit for the ultrasonic sensors. Since the SPIKE™ Prime Hub cannot directly interface with standard ultrasonic modules like the HC-SR04, the ESP32 handles the timing, signal processing, and distance calculation. It then transmits the processed data to the hub in a readable format, effectively bridging the sensors and the main controller.
+
+```py
+from machine import Pin, time_pulse_us
+from pupremote import PUPRemoteSensor
+import time
+
+pr = PUPRemoteSensor(power=False)
+pr.add_channel('line', 'hhh')
+pr.process()
+
+# --- Setup Ultrasonic Sensors ---
+trig1 = Pin(21, Pin.OUT)
+echo1 = Pin(22, Pin.IN)
+
+trig2 = Pin(32, Pin.OUT)
+echo2 = Pin(33, Pin.IN)
+
+trig3 = Pin(26, Pin.OUT)
+echo3 = Pin(27, Pin.IN)
+
+# --- Distance Measurement Function (returns mm) ---
+def getDistance(trig, echo):
+    trig.value(0)
+    time.sleep_us(2)
+    trig.value(1)
+    time.sleep_us(10)
+    trig.value(0)
+
+    try:
+        duration = time_pulse_us(echo, 1, 800000)
+        
+        distanceMm = (duration / 2) / 2.91
+        return int(distanceMm)
+    except OSError:
+        return -1
+
+while True:
+    distance1 = getDistance(trig1, echo1)
+    distance2 = getDistance(trig2, echo2)
+    distance3 = getDistance(trig3, echo3)
+
+    print("Sensor1:", distance1, "mm | Sensor2:", distance2, "mm", "| Sensor3:", distance2, "mm")
+
+    # Send data to SPIKE hub
+    pr.update_channel('line', distance1, distance2, distance3)
+    pr.process()
+
+    time.sleep(0.05)
+```
+
+In this implementation, the program first initializes a PUPRemoteSensor instance, which serves as the communication interface between the LMS-ESP32 and the SPIKE™ Prime Hub. The line 
+```py
+pr.add_channel('line', 'hhh')
+``` 
+defines a communication channel named line that transmits three 16-bit integer values corresponding to the three ultrasonic distance readings.
+
+Each sensor pair, consisting of a trigger (`trig`) and echo (`echo`) pin, is configured using the ```machine.Pin``` class. The trigger pin sends a short 10-microsecond pulse, while the echo pin measures the time taken for the reflected ultrasonic signal to return. This duration, obtained through the ```time_pulse_us()``` function, is then converted to distance in millimeters using the formula ```(duration / 2) / 2.91```, where **2.91** represents the approximate microseconds per millimeter for sound in air.
+
+The main loop continuously measures the distances from all three sensors, prints the values for debugging purposes, and updates the communication channel using ```pr.update_channel()```. The ```pr.process()``` call ensures that the new data is transmitted immediately to the SPIKE™ Prime Hub. A short delay of **0.05 seconds** maintains a consistent update rate while preventing excessive CPU usage.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On the SPIKE™ Prime Hub side, the robot’s main control program is managed through the custom `FE` class, which handles all drive, steering, sensing, and communication logic. Within the class, the hub communicates with the LMS-ESP32 module through a wired serial connection using the `PUPRemoteHub` interface. This allows the hub to receive the ultrasonic distance data that the LMS-ESP32 gathers and processes.
+
+In the constructor, the line:
+```python
+self.distSensorBack = PUPRemoteHub(distSensorB)
+self.distSensorBack.add_command('line', 'hhh')
+```
+
+initializes a device interface connected to the port where the LMS-ESP32 module is wired. The command 'line' and format string 'hhh' define a structured data packet containing three 16-bit integer values—each corresponding to a distance reading from one of the three ultrasonic sensors connected to the LMS-ESP32. This design allows the hub to access all three distance measurements through a single communication call.
+
+When the robot needs to retrieve the latest distance readings, it does so through the `getDistance()` method.
+
+```python
+def getDistance(self, selection):
+    try:
+        if selection == FRONT:
+            return self.distSensor.distance()
+        elif selection == LEFT:
+            return self.distSensorBack.call("line")[0]
+        elif selection == RIGHT:
+            return self.distSensorBack.call("line")[1]
+        else:
+            return self.distSensorBack.call("line")[2]
+    except:
+        return 0
+```
+
+The `getDistance()` method retrieves distance readings from both the SPIKE™ Prime ultrasonic sensor and the external HC-SR04 ultrasonic modules.
+It uses the selection argument to determine which sensor’s distance should be returned.
+
+```python
+elif selection == LEFT:
+    return self.distSensorBack.call("line")[0]
+```
+
+Here, the call to `self.distSensorBack.call("line")` triggers a serial request to the ESP32, which responds with the most recent ultrasonic measurements. The hub then interprets the data and assigns each value to its corresponding directional reading.
 
 ### 2.2.1. Technic™ Prime Large Hub
 
@@ -545,7 +643,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Open Challenge Round of the Future Engineers category requires the self-driving robot to autonomously travel and complete three full laps around the game field with random placements of the inside track walls while ensuring that the robot will not make any contact with the outer boundary wall. The goals that we have established for our robot to accomplish in this round is to be able to accurately determine its driving direction at the beginning, maintain a stable motion and control across the entire loop, consistently avoid collisions with both the inner and outer walls, and successfully complete three full laps by making the turns, movement, and counter precise. Thus, we have considered various techniques and movement strategies for determining driving direction, wall detection and avoidance, and lap counting.</p> 
 
 <center>
-
+<!--Need to update-->
 | ![Figure 13](./docu-photos/FE-Flowchart.jpg) |
 |:---------------------:|
 | Figure 13 <br> Open Challenge Flowchart
@@ -751,71 +849,95 @@ _You may refer to the accompanying illustration for a clearer understanding; the
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the first lap, the robot focuses on data collection. It scans the environment using a camera, detects the colors of the traffic sign, and stores them in memory along with the corresponding lap segment, for example, lap `0.25`: `["Red", "Green"]`. During this phase, the robot essentially gathers input-output pairs: the detected traffic sign colors (inputs) determine the chosen path or movement (outputs). These mappings such as `"red = right"` or `"green = left"` are stored in memory for future reference.</p>
 
 ```py
-# Recording Pseudocode
-def record():
-    pillarColor = detectFirstPillar()
+# Record Straight Section Pillars
+def recordQuarterLap(sannisLivisa: FE, initalDetection: tuple, currentLap=0.25):
+    pillarColor = wallingTurnAndRecord(sannisLivisa, initalDetection)
+    
     currentLapRecord = []
+    prevTurn = ""
 
-    # turn based on first pillar
+    log("1.", pillarColor)
+    
     if pillarColor == "Green":
-        goToGreenSide()
+        greenFirst(sannisLivisa, brake=True)
         prevTurn = "LEFT"
-    else:
-        goToRedSide()
+    elif pillarColor == "Red":
+        redFirst(sannisLivisa, brake=True)
         prevTurn = "RIGHT"
-
-    currentLapRecord.append(pillarColor)
-
-    # look for second pillar after turning
-    if pillarColor == "Green":
-        pillarColor = lookAround(RIGHT to LEFT)
     else:
-        pillarColor = lookAround(LEFT to RIGHT)
-
-    # second turn if needed
-    if pillarColor == "Green" and prevTurn != "LEFT":
-        adjustToGreenSide()
-    elif pillarColor == "Red" and prevTurn != "RIGHT":
-        adjustToRedSide()
-    else:
-        doNeutralAction()
-        if currentLapRecord[0] == "Green":
-            greenEnding()
+        if DEFAULT == "Red":
+            redFirst(sannisLivisa, brake=True)
+            prevTurn = "RIGHT"
+            pillarColor = "Red"
         else:
-            redEnding()
+            greenFirst(sannisLivisa, brake=True)
+            prevTurn = "LEFT"
+            pillarColor = "Green"
 
-    finalDrive()
-    # save lap data
-    recordLap(currentLap, currentLapRecord)
+    currentLapRecord.append((pillarColor))
+
+    if pillarColor == "Green":
+        pillarColor = scanOnce(sannisLivisa,  70, -15, minThreshold=400)
+    else:
+        pillarColor = scanOnce(sannisLivisa, -15, -70, minThreshold=400)
+
+    log("2.", pillarColor)
+
+    try:
+        if currentLapRecord[0] != pillarColor:
+            currentLapRecord.append((pillarColor))
+    except:
+        currentLapRecord.append((pillarColor))
+
+    sannisLivisa.center()
+
+    if pillarColor == "Green" and prevTurn != "LEFT":
+        greenLast(sannisLivisa, recording=True)
+
+    elif pillarColor == "Red" and prevTurn != "RIGHT":
+        redLast(sannisLivisa, recording=True)
+
+    else:
+        beep()
+        sannisLivisa.lookDir(90, asyncBool=False)
+        sannisLivisa.drive(1150, 500, 900, heading=0, decelerate=True)
+
+        if currentLapRecord[0] == "Green":
+            greenEnding(sannisLivisa)
+        else:
+            redEnding(sannisLivisa)
+
+    currentLapRecord = [e for e in currentLapRecord if e != 'None']
+    log(currentLapRecord)
+
+    sannisLivisa.record(str(currentLap)[1::], currentLapRecord)
 ```
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the second and third laps, the robot no longer performs scans. Instead, it relies on the stored data and executes the corresponding pre-programmed movement routines. It calls a function named runRecord(), which loads the recorded memory of the previously detected pillar colors and directs the robot to follow the appropriate path. The logic is straightforward: if the stored data is "Red", the robot uses the right-side obstacle path; if it's "Green", it uses the left-side obstacle path; and if both "Red" and "Green" are stored for the same lap, it follows a more advanced route designed to navigate around both obstacles.</p>
 
 ```py
-def runRecord(currentLap):
-    # align at wall
-    doWallTurn()
+def runRecord(sannisLivisa: FE, currentLap):
+    wallingTurn(sannisLivisa)
+    beep()
+    formattedCurrent = str(currentLap)[1::]
+    currentObstacles = sannisLivisa.remember(formattedCurrent)
 
-    lapID = getLapID()
-    currentObstacles = remember(lapID)
+    parking = formattedCurrent == PARKINGLAP
+    log(f"Lap {currentLap} Obstacles:", currentObstacles)
 
-    isParkingLap = lapID == PARKINGLAP
+    if list(set(currentObstacles)) == GREEN:
+        greenOnly(sannisLivisa, parking)
 
-    # decide path based on obstacles
-    if onlyGreen(currentObstacles):
-        doGreenPath(isParkingLap)
+    elif list(set(currentObstacles)) == RED:
+        redOnly(sannisLivisa)
 
-    elif onlyRed(currentObstacles):
-        doRedPath(isParkingLap)
+    elif currentObstacles == GREEN + RED:
+        greenRed(sannisLivisa, False, parking)
 
-    elif greenThenRed(currentObstacles):
-        doGreenRedPath(isParkingLap)
-
-    elif redThenGreen(currentObstacles):
-        doRedGreenPath(isParkingLap)
-
-    # finish by driving to wall
-    finalDrive()
+    elif currentObstacles ==  RED + GREEN:
+        redGreen(sannisLivisa, False, parking)
+    
+    sannisLivisa.driveUntilStalled(150, 600, 300, heading=0)
 ```
 
 ---
