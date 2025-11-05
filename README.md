@@ -1052,7 +1052,7 @@ def runRecord(currentLap):
   
 <center>
 
-| ![Figure 28.1](./docu-photos/.png) | ![Figure 28.2](./docu-photos/.png) |
+| ![Figure 28.1](./docu-photos/wiring.png) | ![Figure 28.2](./docu-photos/schemdia.png) |
 |:---------------------:| :---------------------:|
 | <center> Figure 28.1 <br> Actual Appearance </center> | <center> Figure 28.2 <br> Schematic Diagram </center> |
 
