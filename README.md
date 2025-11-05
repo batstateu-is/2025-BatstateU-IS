@@ -890,20 +890,19 @@ def runRecord(currentLap):
 
 ### 6.1. 3D Modeling
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To design our 3D-printed parts, we used Blender, an open-source 3D modeling software known for its powerful tools for creating animation, visual effects, and accurate models suitable for 3D printing. We chose Blender because it allowed us to build detailed and customized components that were not possible using standard LEGO parts alone. The parts we created were carefully dimensioned to fit securely with existing LEGO Technic elements.</p> 
-
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To design our 3D-printed parts, we used <b>Blender</b>, an open-source 3D modeling software known for its versatility in creating animations, visual effects, and accurate 3D models suitable for printing. We chose Blender because it allowed us to design detailed and customized components that were not possible using standard LEGO® parts alone. In particular, we used Blender to model the <b>electronic component cases</b> such as the camera mount, sensor housings, and the initial version of our robot’s chassis. These parts were dimensioned carefully to fit securely with existing LEGO Technic™ elements while maintaining proper alignment and stability.</p> 
 
 <center>
 
-| ![Figure 19.](./docu-photos/image84.png) |
-|:---------------------:|
-| Figure 19. <br> 3D Modelling in Blender
+| ![Figure 19.1](./docu-photos/model1.jpg) | ![Figure 19.2](./docu-photos/model2.jpg) |
+|:---------------------:| :---------------------:|
+| <center> Figure 19.1 <br> 3D Modeling </center> | <center> Figure 19.2 <br> 3D Modeling </center>|  
 
 </center>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In our workflow, we started by sketching the design based on the robot’s needs, then used Blender’s modeling tools to build the 3D geometry. We paid close attention to scale and alignment especially for parts that needed tight fits or moving mechanisms. Blender’s precise measurement tools and modifier system helped us refine each model before exporting them as STL files for slicing and 3D printing.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our workflow started by sketching each design based on the robot’s requirements and physical constraints. Using Blender’s modeling tools, we created precise 3D geometries and paid close attention to scale and alignment, especially for components that required tight fits. Blender’s measurement tools and modifier system helped us refine every model before exporting them as STL files for slicing and printing. Later in the design process, we transitioned to <b>Fusion 360</b> for the <b>final chassis modeling</b>. Fusion 360’s parametric features allowed for more accurate measurements and better integration between parts, resulting in a more professional and reliable final model.</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overall, Blender was a great tool for us to quickly iterate, visualize, and finalize our parts with control and creativity. It played a crucial role in enhancing the robot’s functionality and design, making our build more advanced and innovative.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overall, combining Blender’s flexibility with Fusion 360’s precision helped us iterate faster and achieve better results. These tools played a crucial role in enhancing both the functionality and aesthetic and engineering quality of our robot.</p>
 
 ### 6.2. Material Selection 
 
