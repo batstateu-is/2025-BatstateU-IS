@@ -428,7 +428,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| <img src="./docu-photos/lmslayout.png" alt="Figure 11.1" width="1090" height="566"> | <img src="./docu-photos/espplate.png" alt="Figure 11.2" width="1080" height="566"> | 
+| <img src="./docu-photos/lmslayout.png" alt="Figure 11.1" width="1090" height="566"> | <img src="./docu-photos/.png" alt="Figure 11.2" width="1080" height="566"> | 
 |:---------------------:|:---------------------:|
 | Figure 11.1 <br> LMS-ESP32  | Figure 11.2 <br> LMS-ESP32  <br> Dimensions |
 
@@ -1549,7 +1549,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 | ![Figure 25.1](./docu-photos/.png) | ![Figure 25.2](./docu-photos/upscaseplate2.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 25.1. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 25.2 <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+| <center> Figure 25.1. <br> 3D-Printed UPS-18650 Case </center> | <center> Figure 25.2 <br> 3D-Printed UPS-18650 Case <br> Dimesions </center> |
 
 </center>
 
