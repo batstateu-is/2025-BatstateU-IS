@@ -1566,9 +1566,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 25.1](./docu-photos/.png) | ![Figure 25.2](./docu-photos/upscaseplate2.png) |
+| ![Figure 25.1](./docu-photos/.png) | ![Figure 25.2](./docu-photos/upscaseplate1.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 25.1. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 25.2 <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+| <center> Figure 25.1. <br> 3D-Printed UPS-18650 Case </center> | <center> Figure 25.2 <br> 3D-Printed UPS-18650 Case <br> Dimesions </center> |
 
 </center>
 
