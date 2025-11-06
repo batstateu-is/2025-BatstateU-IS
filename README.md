@@ -87,7 +87,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
    6.3. [3D Printing Settings](#63-3d-printing-settings)  
    6.4. [Printing](#64-printing)  
 
-7. 📐 [**Engineering Factor**](#5--problems-encountered)
+7. 📐 [**Engineering Factor**](#7--engineering-factor)
 
     7.1. [3D-Printed Camera Case](#71-3d-printed-camera-case)  
     7.2. [Rotating Camera and Distance Sensor](#72-rotating-camera-and-distance-sensor)  
@@ -139,16 +139,16 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Engineering is the heart of innovation that gives life to initiatives. It bridges science, technology, and creativity to provide solutions for real-world problems. In the field of robotics, engineering allows everyone to think and design beyond the current possibilities, highlighting that a future with numerous solutions can be made. Thus, through this, the team were able to challenge themselves to integrate various engineering concepts in autonomous navigation. As a team of student innovators and future engineers, the team embraced this opportunity to create a self-driving robot that exemplifies the spirit of modern engineering.</p>  
 
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This engineering documentation provides a comprehensive record of J.E.E.P. BatStateU-IS’s design process, program construction,  problem-solving strategies, and technical decisions throughout the development of the team's self-driving robot. This provides insight into the robot’s architecture, programming approach, strategies, and the challenges encountered. Intended for the Future Engineers Category in the 25th World Robot Olympiad, this documentation reflects the dedication and initiative of the team to produce an innovation that goes beyond the boundaries of autonomous technology.</p> 
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This engineering documentation provides a comprehensive record of J.E.E.P. BatStateU-IS’s design process, program construction,  problem-solving strategies, and technical decisions throughout the development of J.E.E.P's self-driving robot. This provides insight into the robot’s architecture, programming approach, strategies, and the challenges encountered. Intended for the Future Engineers Category in the 25th World Robot Olympiad, this documentation reflects the dedication and initiative of the team to produce an innovation that goes beyond the boundaries of autonomous technology.</p> 
 
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team featured key aspects involved in the development of the robot such as the <b>Robot Specifications</b> which provides information about the architecture of the robot, and selection of sensors, motors, and mechanical com2ponents with consideration to aspects like speed, power, and specifications; <b>Mobility Management</b> that focuses on the specific movements that the robot can do; <b>Power, Microcontroller, and Sense Management</b> that is responsible for the description of the programming language and libraries utilized, algorithm explanations, and program logic flow; <b>Challenge Strategies</b> which features code snippets with explanations of its purpose, and the strategies we came up for the Open Challenge, Obstacle Challenge, traffic sign avoidance, and parking; and performance testings which includes setup conditions, observed issues, and video demonstrations. In addition, the <b>engineering innovations</b> integrated into the robot and a <b>guide for its construction</b> were added. To further support the technical information, the team added <b>visual documentation</b> that features actual and 3D model images of the robot. With these, the team aimed and continuously aims to demonstrate engineering discipline rooted in teamwork, determination, rigorous testing, and excellence with a purpose of being able to think of and design an innovative and modern solution as future engineers.</p> 
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team featured key aspects involved in the development of the robot such as the <b>Robot Specifications</b> which provides information about the architecture of the robot, and selection of sensors, motors, and mechanical components with consideration to aspects like speed, power, and specifications; <b>Mobility Management</b> that focuses on the specific movements that the robot can do; <b>Power, Microcontroller, and Sense Management</b> that is responsible for the description of the programming language and libraries utilized, algorithm explanations, and program logic flow; <b>Challenge Strategies</b> which features code snippets with explanations of its purpose, and the strategies we came up for the Open Challenge, Obstacle Challenge, traffic sign avoidance, and parking; and performance testings which includes setup conditions, observed issues, and video demonstrations. In addition, the <b>engineering innovations</b> integrated into the robot and a <b>guide for its construction</b> were added. To further support the technical information, the team added <b>visual documentation</b> that features actual and 3D model images of the robot. With these, J.E.E.P. continuously aims to demonstrate engineering discipline rooted in teamwork, determination, rigorous testing, and excellence with a purpose of being able to think of and design an innovative and modern solution as future engineers.</p> 
 
 ***
 
 ## 👥 Team Profile
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;J.E.E.P. is a group of passionate and curious young engineers from Batangas State Univeristy, The National Engineering Univeristy - Integrated School. They are driven by a shared goal: to innovate through robotics. Each member believes that learning through doing, as well as failing, has shaped them into better innovators, thinkers, and collaborators. Together, the team have combined their skills and passion for robotics, engineering, and programming to create their own innovation of a self-driving robot for the Future Engineers category.</p>
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;J.E.E.P. is a group of passionate and curious young engineers from Batangas State Univeristy, The National Engineering Univeristy - Integrated School driven by a shared goal: to innovate through robotics. Each believes that learning through doing, as well as failing, has shaped the members into better innovators, thinkers, and collaborators. Together, the team have combined their skills and passion for robotics, engineering, and programming to create an innovation of a self-driving robot for the Future Engineers category.</p>
 
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team came up with the name J.E.E.P. (BatStateU-IS), which stands for Junior Engineers Exploring Possibilities, as it symbolizes their journey during the preparation for one of the most prestigious robotics competitions, World Robot Olympiad International Finals 2025. It is inspired by the Filipino term “biyahe” as well as the traditional Filipino vehicle, Jeepney, which emphasizes the members’ path as they innovate and forge onward, excelling in engineering. Throughout, they held on to the belief that every route and stopover lets them grow and learn.</p>
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team came up with the name J.E.E.P. (BatStateU-IS), which stands for Junior Engineers Exploring Possibilities, as it symbolizes the members' journey during the preparation for one of the most prestigious robotics competitions, World Robot Olympiad International Finals 2025. It is inspired by the Filipino term “biyahe” as well as the traditional Filipino vehicle, Jeepney, which emphasizes the members’ path as they innovate and forge onward, excelling in engineering. Throughout, J.E.E.P. held on to the belief that every route and stopover is an opportunity to grow and learn.</p>
 
 <center>
 
@@ -181,7 +181,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 ## 🤖 Robot Specifications
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team, J.E.E.P., introduces a self-driving robot that is developed for the 2025 World Robot Olympiad International Finals, under the Future Engineers category. This robot represents the team's vision of combining creativity and technical skill to design a robot capable of autonomous navigation and real-time decision-making. Through teamwork, perseverance, and continuous improvement that has shaped its development, they have ensured that this is carefully engineered to meet the demands of the competition.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team, J.E.E.P., introduces a self-driving robot that is developed for the 2025 World Robot Olympiad International Finals, under the Future Engineers category. This robot represents the team's vision of combining creativity and technical skill to design a robot capable of autonomous navigation and real-time decision-making. Through teamwork, perseverance, and continuous improvement that has shaped the robot's development, it was ensured that this was carefully engineered to meet the demands of the competition.</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following specifications provide a detailed overview of the key physical and mechanical characteristics of the team’s self-driving robot. This was designed while giving importance to precision, agility, and durability, so the features of the robot have been carefully optimized to balance speed and stability during runs.</p>
 
@@ -234,11 +234,11 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 ## 1. ⚙️ Mobility Management
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section will highlight the important aspects of the hardware system that constitutes the mobility and movement specifications of the self-driving robot that the team have developed. This includes the reasons behind the selection of the drive system, steering mechanism, wheels, motor, and their respective placements, which all play a vital role in ensuring the robot moves smoothly, accurately, and reliably throughout the challenges.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section will highlight the important aspects of the hardware system that constitutes the mobility and movement specifications of the self-driving robot developed. This includes the reasons behind the selection of the drive system, steering mechanism, wheels, motor, and their respective placements, which all play a vital role in ensuring the robot moves smoothly, accurately, and reliably throughout the challenges.</p>
 
 ### 1.1. Motor Selection
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the most important things that the team have considered to enhance the maneuverability of the self-driving robot is to properly select motors that meet the requirements needed for the Open Challenge and Obstacle Challenge. Within the LEGO® Education SPIKE™ Prime Set, there are two primary motor options to choose from: the Medium Angular Motor and the Large Angular Motor. To determine the most suitable motor, key specifications such as speed (RPM), torque (rotational force), connectivity, and the intended application in the design were evaluated.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the most important things considered to enhance the maneuverability of the self-driving robot is to properly select motors that meet the requirements needed for the Open Challenge and Obstacle Challenge. Within the LEGO® Education SPIKE™ Prime Set, there are two primary motor options to choose from: the Medium Angular Motor and the Large Angular Motor. To determine the most suitable motor, key specifications such as speed (RPM), torque (rotational force), connectivity, and the intended application in the design were evaluated.</p>
 
 <center>
 
@@ -263,7 +263,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After comparing both options, the team decided to integrate the Technic™ Large Angular Motor for the robot’s driving and steering system. This features a built-in advanced Rotation Sensor that can report speed, angle changes, and absolute position within a range of -180° to +180°. It can also sense direct user input or manual rotation which allows responsive input during calibration or testing. While powered by a 7.2V system, the motor can achieve a torque of 25 Ncm at stall, and performs most efficiently at 8 Ncm with 135 RPM. Its speed with no load reaches up to 175 RPM. Its sensor offers a resolution of 360 counts per revolution, an accuracy that is less than or equal to ±3 degrees, and a fast update rate of 100 Hz for real-time feedback. In terms of design, the motor has a Technic build geometry and includes a 250 mm LEGO® Power Functions 2.0 (LPF2) cable and dual crosshole outputs, making it easy to integrate securely into complex builds.</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overall, it provides higher torque which is essential for maintaining a consistent speed while carrying the weight of the hub, sensors, camera, LEGO, and 3D-printed components. This motor also offers smoother acceleration and deceleration, and more responsive driving system, helping the robot to maintain its stability when turning. Thus, three Technic™ Large Angular Motor was utilized in the self-driving robot, with the first one being connected to the steering wheel, second for the drive system, and the third motor for the rotating camera and distance sensor.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overall, it provides higher torque which is essential for maintaining a consistent speed while carrying the weight of the hub, sensors, camera, LEGO, and 3D-printed components. This motor also offers smoother acceleration and deceleration, and more responsive driving system, helping the robot to maintain its stability when turning. Thus, three Technic™ Large Angular Motor were utilized in the self-driving robot, with the first one being connected to the steering wheel, second for the drive system, and the third motor for the rotating camera and distance sensor.</p>
 
 ### 1.2. Steering and Driving Mechanism
 
@@ -271,11 +271,11 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 1.1](./docu-photos/paralleliso1.png) | ![Figure 1.2](./docu-photos/parallelbot1.png) |
+| ![Figure 1.](./docu-photos/paralleliso1.png) | ![Figure 2.](./docu-photos/parallelbot1.png) |
 |:---------------------:|:---------------------:|
 | Figure 1. Robot's Steering Mechanism <br> Isometric View | Figure 2. Robot's Steering Mechanism <br> Bottom View |
 
-| ![Figure 2.1](./docu-photos/rwdiso1.png) | ![Figure 2.2](./docu-photos/rwdrear1.png) |
+| ![Figure 3.](./docu-photos/rwdiso1.png) | ![Figure 4.](./docu-photos/rwdrear1.png) |
 |:---------------------:|:---------------------:|
 | Figure 3. Robot's Driving Mechanism <br> Isometric View | Figure 4. Robot's Driving Mechanism <br> Rear View |
 
@@ -283,9 +283,9 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the robot’s steering mechanism, one Technic™ Large Angular Motor is integrated at the front of the self-driving robot to steer the front wheels, where they turn in the same direction at the same angle. This method is referred to as parallel steering and is similar to how steering works in real cars. The steering geometry selected was the <b>Parallel Steering</b>, rather than Differential Steering, where one wheel moves faster than the other in order to turn; Ackermann, in which the inner wheel turns at a greater angle than the outer wheel, as well as the counterpart of Ackermann, Anti-Ackermann. It offers simplicity compared to other options that are more complex to build and control. Furthermore, both the Open and Obstacle Challenge requires maneuverability; thus, the smaller turning radius offered by parallel steering is advantageous especially for tight spaces like parking. This steering geometry also solves the problem with an uneven and irregular field as it improves the stability and handling of movement and turns of the self-driving robot.</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consequently, rear-wheel drive (RWD) was selected because it provides better traction, especially when the robot needs to travel consistently. The team also believes that RWD is better than front-wheel drive (FWD), which can make the robot harder to balance, especially when it needs to carry sensors and components at the front.</p> 
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consequently, <b>rear-wheel drive (RWD)</b> was selected because it provides better traction, especially when the robot needs to travel consistently. The team also believes that RWD is better than front-wheel drive (FWD), which can make the robot harder to balance, especially when it needs to carry sensors and components at the front.</p> 
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the drive system, differential gear was intially considered since it helps balance wheel speed during turns and provides smoother movement. However, the team decided not to include it because of the uneven surface problem of the practice field. Consequently, a differential requires flat, consistent traction to function properly, and on an uneven ground, it could cause one wheel to lose contact and reduce stability. Instead, a direct drive setup was used where each wheel is powered by its own motor. This made the robot more stable and easier to control, especially when turning or driving over small bumps. It also simplified the design and reduced weight, making the robot more reliable during runs. </p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the drive system, differential gear was intially considered since it helps balance wheel speed during turns and provides smoother movement. However, the team decided not to include it because of the uneven surface problem of the practice field. Consequently, a differential requires flat, consistent traction to function properly.  And on an uneven ground, it could cause one wheel to lose contact and reduce stability. Instead, a direct drive setup was used where each wheel is powered by its own motor. This made the robot more stable and easier to control, especially when turning or driving over small bumps. It also simplified the design and reduced weight, making the robot more reliable during runs. </p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By combining RWD and parallel steering, the team achieved a movement system that was both stable and precise. The rear wheels provided consistent driving force, while the front wheels helped for smooth turning without affecting the robot's balance. This setup made it easier for the robot to navigate around tight corners and spaces, maintain alignment, and avoid obstacles effectively.</p>
 
@@ -293,33 +293,33 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The structure of the self-driving robot is made mostly out of PLA Filament that were 3D-printed based on the teams own preference, with a combination of LEGO® Technic™ elements. The mechanical design, as shown resembles the well-known and traditional vehicle used by commuters in the Philippines on a daily basis, which is the Jeepney. Aside from being just a vehicle, it's also the country's identity, serving a huge part in preserving the essential traditions and culture of the Philippines. The reason behind using this as the team's inspiration lies in the team's triumph in the national stage, which lead to an opportunity to represent the Philippines in the global stage. Additionally, this vehicle also holds an immense value as it plays a big part in the team's journey; the vehicle that drove the members back and forth from home to training grounds.</p> 
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Building on our previous year’s experience, where the robot was constructed solely from LEGO® Technic™ parts, we recognized the importance of integrating engineering principles with creativity and innovation. For the international stage of the competition, we enhanced our design by incorporating custom 3D-printed components that extend beyond the chassis, resulting in a more functional and distinctive build. For example, instead of using LEGO-based camera and sensor enclosures, we designed and printed custom cases that allows secure yet removable mounting of these modules, which offers something new, but still efficient, functional, and reliable for our team’s robot.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Building on previous year’s experience, where the robot was constructed solely from LEGO® Technic™ parts, it was recognized to give importance on integrating engineering principles with creativity and innovation. For the international stage of the competition, the design was enhanced by incorporating custom 3D-printed components that extend beyond the chassis, resulting in a more functional and distinctive build. For example, instead of using LEGO-based camera and sensor enclosures, custom cases were designed and printed, which allows secure yet removable mounting of these modules, and offers something new, but still efficient, functional, and reliable for the robot.</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;These design choices highlight the team’s growing proficiency in applying mechanical design concepts and engineering problem-solving to create practical yet original solutions. Further discussions and technical details about the 3D-printed components and engineering factors are provided in <b>Chapter 5: Engineering Factor.</b></p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;These design choices highlight the team’s growing proficiency in applying mechanical design concepts and engineering problem-solving to create practical yet original solutions. Further discussions and technical details about the 3D-printed components and engineering factors are provided in Chapter 5. [Engineering Factor.](#7--engineering-factor) </p>
 
-| ![Figure 3.1](./docu-photos/chassis.png) | ![Figure 3.2](./docu-photos/chassis1.png) |
+| ![Figure 3.](./docu-photos/chassis.png) | ![Figure 4.](./docu-photos/chassis1.png) |
 |:---------------------:|:---------------------:|
-| Figure 3.1 <br> Robot Chassis <br> Left Side View | Figure 3.2 <br> Robot Chassis with LEGO® Components <br> Left Side View |
+| Figure 3. <br> Robot Chassis <br> Left Side View | Figure 4. <br> Robot Chassis with LEGO® Components <br> Left Side View |
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the length of the robot is built to be longer, given that while the length of the robot increases, the larger the space will be intended for the parking area. We have utilized two different materials for the robot's wheels: the LEGO® Wheel 75 mm x 17 mm with Motorcycle Tire 94.2 mm x 20 mm and LEGO® Wheel 30.4 mm D. x 20 mm with Black Tire 43.2 mm x 22 mm, which handles the driving and steering mechanism, respectively. The large wheels were used for the rear-wheel drive system since a larger wheel possesses a larger circumference, and thus, having the ability to travel longer distances per rotation. It also increases the maximum speed limit a robot can travel per unit of time. Consequently, smaller wheels were utilized for the steering mechanism since they have a smaller turning radius, which makes it easier for the robot to handle tight turns in navigating obstacles, corners, and small spaces. Moreover, larger wheels cannot be used at the front part of the robot as these can block the view of the distance sensor, disabling the sensor to detect objects properly and accurately. The LEGO® Wheel with Black Tire also offer larger surface contact with more precision and finer control, preventing slips that makes the robot’s movement smooth and quick.</p> 
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the length of the robot is built to be longer, given that while the length of the robot increases, the larger the space will be intended for the parking area. Two different materials for the robot's wheels were utilized: the LEGO® Wheel 75 mm x 17 mm with Motorcycle Tire 94.2 mm x 20 mm and LEGO® Wheel 30.4 mm D. x 20 mm with Black Tire 43.2 mm x 22 mm, which handles the driving and steering mechanism, respectively. The large wheels were used for the rear-wheel drive system since a larger wheel has a larger circumference, and thus, have the ability to travel longer distances per rotation. It also increases the maximum speed limit a robot can travel per unit of time. Consequently, smaller wheels were utilized for the steering mechanism since they have a smaller turning radius, which makes it easier for the robot to handle tight turns in navigating obstacles, corners, and small spaces. Moreover, larger wheels cannot be used at the front part of the robot as these can block the view of the distance sensor, disabling the sensor to detect objects properly and accurately. The LEGO® Wheel with Black Tire also offer larger surface contact with more precision and finer control, preventing slips that makes the robot’s movement smooth and quick.</p> 
 
 <center>
 
-| ![Figure 4](./docu-photos/rwheels.png) |
+| ![Figure 5.](./docu-photos/rwheels.png) |
 |:---------------------:|
-| Figure 4. <br> Robot's Wheels <br> Front View and Rear View
+| Figure 5. <br> Robot's Wheels <br> Front View and Rear View
 
 </center>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In designing our robot, we paid close attention to weight distribution, since it directly affects stability, traction, and turning accuracy. Early in our testing, we noticed that uneven weight, especially when heavier components were placed toward the back, made the robot tilt slightly during acceleration. To address this, we carefully rearranged the internal components to achieve a more balanced setup.
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In designing the robot, close attention was paid to weight distribution, since it directly affects stability, traction, and turning accuracy. During the early testing, noable problems were recognized, such as uneven weight, especially when heavier components were placed toward the back. This made the robot tilt slightly during acceleration. To address this, we carefully rearranged the internal components to achieve a more balanced setup.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The UPS-18650 power module and Technic™ Large Hub were positioned near the center of the chassis to lower the robot’s center of gravity, improving balance and reducing unstability when moving or turning. The Technic™ Distance Sensor and OpenMV Cam H7 were mounted at the front, while the LMS-ESP32 and motors provided counterweight at the rear. This distribution helped maintain equal traction between the front and back wheels, making the robot more stable during sharp turns and obstacle navigation.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The UPS-18650 power module and Technic™ Large Hub were positioned near the center of the chassis to lower the robot’s center of gravity, improving balance and reducing unstability when moving or turning. The Technic™ Distance Sensor and OpenMV Cam H7 Plus were mounted at the front, while the LMS-ESP32 and motors provided counterweight at the rear. This distribution helped maintain equal traction between the front and back wheels, making the robot more stable during sharp turns and obstacle navigation.
 
 <center>
 
-| ![Figure 5](./docu-photos/wdistrib.png) |
+| ![Figure 6.](./docu-photos/wdistrib.png) |
 |:---------------------:|
-| Figure 5. <br> Robot's Weight Distribution <br>
+| Figure 6. <br> Robot's Weight Distribution <br>
 
 </center>
 
@@ -329,17 +329,17 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 ## 2. 🔋 Power, Microcontroller, and Sense Management
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The performance of our self-driving robot relies heavily on the integration of electrical components and the development of programs. Mainly developed with Python programming language, the robot was structured to carry out specific tasks for both the Open Challenge and Obstacle Challenge of the Future Engineers category. This section will discuss the elements that power and control the robot, including the power source, sensors, and its vision system. Each component that constitutes the robot was carefully selected and evaluated based on the specifications that meets the demand for ensuring real-time responsiveness, accuracy, and reliability during autonomous navigation and handling of obstacles.</p> 
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The performance of the self-driving robot relies heavily on the integration of electrical components and the development of programs. Mainly developed with Python programming language, the robot was structured to carry out specific tasks for both the Open Challenge and Obstacle Challenge of the Future Engineers category. This section will discuss the elements that power, store data, and control the robot, including the power source, sensors, microcontrollers, and its vision system. Each component that constitutes the robot was carefully selected and evaluated based on the specifications that meets the demand for ensuring real-time responsiveness, accuracy, and reliability during autonomous navigation and handling of obstacles.</p> 
 
 ### 2.1. Power Management
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A reliable power source is essential for the consistent and uninterrupted performance of the robot. In managing and choosing the right power system, our team ensured that all electrical components, such as the sensors and motors, will receive stable and sufficient energy throughout countless testings.  It is essentially what gives life to the robot. Consequently, this is the most important aspect to consider especially during competition runs, as we don’t want delays or power interruptions that could lead to performance issues. Our robot uses a rechargeable lithium-ion battery specifically designed for the SPIKE™ Prime Large Hub. This battery provides the necessary voltage and current to support motor movements and sensor readings.</p> 
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A reliable power source is essential for the consistent and uninterrupted performance of the robot. In managing and choosing the right power system, it was ensured that all electrical components, such as the sensors and motors, will receive stable and sufficient energy throughout countless testings. It is essentially what gives life to the robot. Consequently, this is the most important aspect to consider especially during competition runs to reduce risks of delays or power interruptions that could lead to performance issues. J.E.E.P.'s robot uses a rechargeable lithium-ion battery specifically designed for the SPIKE™ Prime Large Hub. This battery provides the necessary voltage and current to support motor movements and sensor readings.</p> 
 
 <center>
 
-| ![Figure 6](./docu-photos/powerm.png) |
+| ![Figure 7.](./docu-photos/powerm.png) |
 |:---------------------:|
-| Figure 6. <br> Power Management |
+| Figure 7. <br> Power Management |
 
 </center>
 
@@ -362,17 +362,17 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 7](./docu-photos/battery.png) |
+| ![Figure 8.](./docu-photos/battery.png) |
 |:---------------------:|
-| Figure 7. <br> Installing Technic™ Large Hub Rechargeable Battery
+| Figure 8. <br> Installing Technic™ Large Hub Rechargeable Battery
 
 </center>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shown above are the steps one must follow in order to install the battery to the hub. Consequently, the battery is built for durability, with a minimum lifespan of over 500 charge cycles. After 500 full charge/discharge cycles, it is expected to retain at least 30% of its original capacity, making it reliable for long-term use. This rechargeable battery supports the robot’s need for consistent and portable power, which is essential for the several autonomous tasks that the robot is programmed to do during both the Open and Obstacle Challenge rounds. Its high energy capacity, ease of use, and compatibility with the SPIKE™ system make it a critical component of our robot's electronics and system.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shown above are the steps one must follow in order to install the battery to the hub. Consequently, the battery is built for durability, with a minimum lifespan of over 500 charge cycles. After 500 full charge/discharge cycles, it is expected to retain at least 30% of its original capacity, making it reliable for long-term use. This rechargeable battery supports the robot’s need for consistent and portable power, which is essential for everal autonomous tasks that the robot is programmed to do during both the Open and Obstacle Challenge rounds. Its high energy capacity, ease of use, and compatibility with the SPIKE™ system make it a critical component of the robot's electronics and system.</p>
 
 ### 2.1.2. Raspberry pi UPS-18650 Battery
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Raspberry pi UPS-18650 Battery functions as a regulated power source for the robot’s auxiliary electronic systems, specifically supplying a stable 5 V DC output to the LMS-ESP32 microcontroller. We mounted the module inside a custom 3D-printed case, ensuring it was securely positioned while keeping the wiring organized and easy to access. The module holds two 18650 lithium-ion batteries, which provide a regulated 5 V output through its built-in boost converter. We connected this output to the ESP32 using a USB cable, allowing the microcontroller to receive clean and consistent power even during high motor loads. </p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Raspberry pi UPS-18650 Battery functions as a regulated power source for the robot’s auxiliary electronic systems, specifically supplying a stable 5 V DC output to the LMS-ESP32 microcontroller. The module is mounted inside a custom 3D-printed case, ensuring it is securely positioned while keeping the wiring organized and easy to access. The module holds two 18650 lithium-ion batteries, which provide a regulated 5 V output through its built-in boost converter. This output is connected to the LMS-ESP32 using a USB cable, allowing the microcontroller to receive clean and consistent power even during high motor loads. </p>
 
 <center>
 
@@ -393,7 +393,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 |:---------------------:|:---------------------:|
 | Figure 8.1 <br> Raspberry pi UPS-18650 Battery | Figure 8.2 <br> Raspberry pi UPS-18650 Battery <br> Dimensions |
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During early testing, we noticed that power drops from the main hub caused the ESP32 to reset, disrupting communication. To solve this, we decided to power the ESP32 independently using the UPS-18650. This setup worked effectively—the module automatically switches between external power and battery mode, so the ESP32 remains on at all times. Its built-in protection circuits against over-charge, over-discharge, and short circuits also gave us confidence that the system was safe and reliable.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During early testing, it was noticed that power drops from the main hub caused the ESP32 to reset, disrupting communication. To solve this, the team decided to power the LMS-ESP32 independently using the UPS-18650. This setup worked effectively—the module automatically switches between external power and battery mode, so the ESP32 remains on at all times. Its built-in protection circuits against over-charge, over-discharge, and short circuits also ensured that the system is safe and reliable.</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Furtehrmore, in accordance with the Future Engineers Rulebook, which specifies that the robot must utilize only one main power button for activation, the system was designed so that the SPIKE™ Prime Hub’s power button simultaneously powers the UPS-18650 module and the LMS-ESP32. This combined power management approach ensures a synchronized startup and shutdown across all electronic subsystems, preventing inconsistent power status or data transmission errors. Discussed at Section 7. Engineering Factor is the wiring diagram, detailing how the UPS-18650, LMS-ESP32, and SPIKE™ Prime Hub are interconnected, showing the power delivery path and serial communication interface integrated into the robot’s electrical architecture.</p>
 
@@ -402,7 +402,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 9](./docu-photos/mcm.png) |
+| ![Figure 9.](./docu-photos/mcm.png) |
 |:---------------------:|
 | Figure 9. <br> Microcontroller Management
 
@@ -414,13 +414,13 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| <img src="./docu-photos/hublayout.png" alt="Figure 10.1" width="1080" height="566"> | <img src="./docu-photos/hubplate2.png" alt="Figure 10.2" width="1080" height="566"> |
+| <img src="./docu-photos/hublayout.png" alt="Figure 10." width="1080" height="566"> | <img src="./docu-photos/hubplate2.png" alt="Figure 11." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
-| Figure 10.1 <br> Technic™ Prime Large Hub | Figure 10.2 <br> Technic™ Prime Large Hub <br> Dimensions |
+| Figure 10. <br> Technic™ Prime Large Hub | Figure 11. <br> Technic™ Prime Large Hub <br> Dimensions |
 
 </center>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The hub runs on a MicroPython operating system, allowing us to write and execute advanced programs using Python. It features a built-in 6-axis Gyro Sensor with three-axis accelerometer and three-axis gyroscope that helps the robot detect rotation, orientation, and motion. This is especially useful for tracking turns and maintaining direction during navigation.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The hub runs on a MicroPython operating system, allowing to write and execute advanced programs using Python. It features a built-in 6-axis Gyro Sensor with three-axis accelerometer and three-axis gyroscope that helps the robot detect rotation, orientation, and motion. This is especially useful for tracking turns and maintaining direction during navigation.</p>
 
 <center>
 
@@ -449,9 +449,9 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| <img src="./docu-photos/lmslayout.png" alt="Figure 11.1" width="1090" height="566"> | <img src="./docu-photos/.png" alt="Figure 11.2" width="1080" height="566"> | 
+| <img src="./docu-photos/lmslayout.png" alt="Figure 12." width="1090" height="566"> | <img src="./docu-photos/.png" alt="Figure 13." width="1080" height="566"> | 
 |:---------------------:|:---------------------:|
-| Figure 11.1 <br> LMS-ESP32  | Figure 11.2 <br> LMS-ESP32  <br> Dimensions |
+| Figure 12. <br> LMS-ESP32  | Figure 13. <br> LMS-ESP32  <br> Dimensions |
 
 </center>
 
@@ -473,7 +473,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The board supports MicroPython firmware, which enables flexible programming and faster data handling through lightweight scripts. It features a UART serial interface for communication with the SPIKE™ Prime Hub, allowing bidirectional data transfer for sensor readings and camera inputs. This communication setup allows the ESP32 to act as a co-processor, offloading data processing tasks, such as filtering and processing the values read by the ultrasonic sensor, before sending processed information back to the hub.</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hardware-wise, the LMS-ESP32 includes dedicated LEGO®-compatible connectors for easy integration, a USB-C port for programming and power input, and a regulated 5 V–3.3 V power converter that ensures compatibility with both standard LEGO voltage levels and external components. The board also provides multiple GPIO pins, I²C, and SPI interfaces, allowing connection to third-party sensors or peripherals.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hardware-wise, the LMS-ESP32 includes dedicated LEGO®-compatible connectors for easy integration, a USB-C port for programming and power input, and a regulated 5 V – 3.3 V power converter that ensures compatibility with both standard LEGO voltage levels and external components. The board also provides multiple GPIO pins, I²C, and SPI interfaces, allowing connection to third-party sensors or peripherals.</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the robot’s system, the LMS-ESP32 is powered by the UPS-18650 module through a USB connection, ensuring a stable 5 V supply. The data scanned from connected sensors are processed by the ESP32 and then transmitted to the SPIKE™ Hub via the serial interface and communication, which was configured with transistors and resistors for proper voltage level shifting and protection. This setup also lessened the strain for the SPIKE™ Hub by minimizing the data it needs to load and control.</p>
 
