@@ -1096,107 +1096,11 @@ sannisLivisa.eBrake(1000)
 ### 4.1. Traffic Sign Detection	
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The OpenMV Cam H7 Plus serves as the self-driving robot’s vision to be able to detect and classify traffic signs, represented by Green and Red colored obstacles that are randomly placed around the field. We implemented in our strategy that the obstacle detection process occurs primarily during the first lap, which is treated as a <b><i>learning and recording phase</i></b>. During this lap, the robot pauses at key positions or checkpoints and rotates the camera to identify obstacles that are placed along its path. If a green pillar is detected, the robot is programmed to avoid it by turning left; if a red pillar is detected, it turns right. If no color or obstacle is detected, due to occlusion or lighting issues, a default response (typically treating the obstacle as red) is triggered to ensure the robot still avoids a potential collision.</p>
 
-<p align="justify">
+### Blob Detection
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To detect traffic signs accurately, the OpenMV Cam H7 Plus is programmed to use the [LAB color space](https://en.wikipedia.org/wiki/CIELAB_color_space) instead of the [standard RGB](https://en.wikipedia.org/wiki/RGB_color_spaces). LAB is more effective for color-based object detection under varying lighting conditions because it separates the lightness (L) from the color channels (A and B). This allows for more stable detection of red and green objects even if the lighting changes during the run.
 
 </p>
-
-```python
-import sensor, time
-import pyb
-from micropython import const
-from pupremote import PUPRemoteSensor
-
-contestMode = const(False)
-
-redLed = pyb.LED(1)
-greenLed = pyb.LED(2)
-
-camera = PUPRemoteSensor(power=True)
-camera.add_channel('blob', to_hub_fmt='hhhhhhhh')
-
-# === Sensor Setup ===
-sensor.reset()
-sensor.set_pixformat(sensor.RGB565)
-sensor.set_framesize(sensor.QVGA)
-sensor.set_vflip(True)
-sensor.set_hmirror(True)
-
-screenWidth = sensor.width()
-screenHeight = sensor.height()
-
-roiX = int(0.0 * screenWidth)
-roiY = int(0.3 * screenHeight)
-roiWidth = screenWidth - roiX * 2
-roiHeight = screenHeight - roiY
-roi = (roiX, roiY, roiWidth, roiHeight)
-print(roi)
-
-sensor.set_windowing(roi)
-sensor.set_framerate(1000)
-sensor.skip_frames(time=500)
-# sensor.set_auto_gain(False)
-# sensor.set_auto_whitebal(False)
-# sensor.set_auto_exposure(False)#, exposure_us=16000)
-
-# === Color Thresholds (LAB) ===
-greenThreshold = const((0, 75, -128, -20, -128, 127))
-redThreshold = const((0, 60, 34, 127, 0, 127))
-
-# Target positions (for continuos)
-targetGreen = (int(screenWidth * 0.9), 120)
-targetRed = (int(screenWidth * 0.17), screenHeight * 2 // 3)
-
-# === Custom Functions ===
-def findDominantBlob(blobs, roiHeight):
-    bestBlob = None
-    maxPixels = 0
-    for b in blobs:
-        if (b.h() > b.w() or (b.y() + b.h()) == roiHeight) and b.pixels() > maxPixels:
-            bestBlob = b
-            maxPixels = b.pixels()
-    return bestBlob
-
-def indicateBlob(gPixels, rPixels):
-    if gPixels > rPixels:
-        greenLed.on()
-        redLed.off()
-    elif rPixels > gPixels:
-        redLed.on()
-        greenLed.off()
-    else:
-        redLed.off()
-        greenLed.off()
-
-# === Main Loop ===
-while True:
-    img = sensor.snapshot()
-
-    greenBlobs = img.find_blobs([greenThreshold], pixels_threshold=250)
-    greenBlob = findDominantBlob(greenBlobs, roiHeight)
-    greenCx, greenCy, greenPixels = 0, 0, 0
-    if greenBlob:
-        greenCx = greenBlob.cx()
-        greenCy = greenBlob.cy()
-        greenPixels = greenBlob.pixels()
-        img.draw_rectangle(greenBlob.rect(), color=(218, 66, 44), thickness=1)
-
-    redBlobs = img.find_blobs([redThreshold], pixels_threshold=250)
-    redBlob = findDominantBlob(redBlobs, roiHeight)
-    redCx, redCy, redPixels = 0, 0, 0
-    if redBlob:
-        redCx = redBlob.cx()
-        redCy = redBlob.cy()
-        redPixels = redBlob.pixels()
-        img.draw_rectangle(redBlob.rect(), color=(68, 214, 44), thickness=1)
-
-    indicateBlob(greenPixels, redPixels)
-
-    print(greenCx, greenCy, greenPixels, redCx, redCy, redPixels)
-    camera.update_channel('blob', greenCx, greenCy, greenPixels, redCx, redCy, redPixels)
-    camera.process()
-```
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The camera scans the environment by capturing real-time image frames and applying color blob detection using predefined LAB thresholds for green and red pillars. We determined these thresholds through trial and error, using the OpenMV IDE’s built-in color thresholding tool. Adjusting these values while observing the live feed helps us fine-tune detection until the desired color is consistently recognized without false positives. For example, a snippet of the LAB threshold values used by our team looks like this:</p>
 
@@ -1209,6 +1113,98 @@ redThreshold = const((0, 35, 0, 127, 1, 127))
 ```
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When the camera detects a blob (a region in the image that matches the threshold), it returns the blob’s position and size. The robot then uses this information to classify the obstacle as green or red, and respond accordingly (e.g., turn left for green, right for red).</p>
 
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Within the main loop, the camera continuously captures frames and applies LAB-based color blob detection. Detected blobs are filtered to select the most significant candidate. LED indicators provide real-time feedback about which color is dominant. The robot then sends the blob's position and size to the Hub using the `PUPRemoteSensor` class, allowing the main control program to make navigation decisions such as turning left for green or right for red. This system combines reliable color detection with structured data communication to enable dynamic obstacle avoidance while maintaining a consistent response under variable lighting conditions.</p>
+
+```python
+while True:
+    # Capture current camera frame
+    img = sensor.snapshot()
+
+    # Detect green blobs
+    greenBlobs = img.find_blobs([greenThreshold], pixels_threshold=250)
+    greenBlob = findDominantBlob(greenBlobs, roiHeight)
+    greenCx, greenCy, greenPixels = 0, 0, 0
+    if greenBlob:
+        greenCx = greenBlob.cx()
+        greenCy = greenBlob.cy()
+        greenPixels = greenBlob.pixels()
+        img.draw_rectangle(greenBlob.rect(), color=(218, 66, 44), thickness=1)
+
+    # Detect red blobs
+    redBlobs = img.find_blobs([redThreshold], pixels_threshold=250)
+    redBlob = findDominantBlob(redBlobs, roiHeight)
+    redCx, redCy, redPixels = 0, 0, 0
+    if redBlob:
+        redCx = redBlob.cx()
+        redCy = redBlob.cy()
+        redPixels = redBlob.pixels()
+        img.draw_rectangle(redBlob.rect(), color=(68, 214, 44), thickness=1)
+
+    # LED indicator for dominant color
+    indicateBlob(greenPixels, redPixels)
+
+    # Select target X coordinate based on dominant blob
+    targetX = greenCx if greenPixels > redPixels else redCx
+
+    # Debug output for monitoring blob positions and sizes
+    print(greenCx, greenCy, greenPixels, redCx, redCy, redPixels)
+
+    # Send processed blob data to Hub
+    camera.update_channel('blob', greenCx, greenCy, greenPixels, redCx, redCy, redPixels)
+    camera.process()
+```
+The first step in every iteration of the main loop is **capturing a frame** from the camera sensor. `The sensor.snapshot()` function returns an [`Image`](https://docs.openmv.io/library/omv.image.html#class-image-image-object) object representing the **current camera frame**. This image is then used for color detection and blob analysis.
+
+Afterwards, it then proceeds to get the blobs (connected region of pixels) in the image that falls into the specific LAB threshold.
+
+```python
+greenBlobs = img.find_blobs([greenThreshold], pixels_threshold=250)
+greenBlob = findDominantBlob(greenBlobs, roiHeight)
+```
+
+The first set of blobs it tries to get are all of the green blobs. This is doen throught the line `greenBlobs = img.find_blobs([greenThreshold], pixels_threshold=250)`, where `greenThreshold` is a tuple of LAB min/max value which was defined above, and `pixels_threshold=250` which ignores any small areas below 250 pixels, reducing false positives.
+
+Then it calls the helper function `findDotouchingminantBlob`. 
+```python
+def findDominantBlob(blobs, roiHeight):
+    bestBlob = None
+    maxPixels = 0
+    for b in blobs:
+        if (b.h() > b.w() or (b.y() + b.h()) == roiHeight) and b.pixels() > maxPixels:
+            bestBlob = b
+            maxPixels = b.pixels()
+    return bestBlob
+```
+This helper function selects the most significant green blob. It filters for vertically elongated blobs or blobs touching the bottom of the ROI and selects the one with the largest number of pixels.
+
+```python
+greenCx, greenCy, greenPixels = 0, 0, 0
+if greenBlob:
+    greenCx = greenBlob.cx()
+    greenCy = greenBlob.cy()
+    greenPixels = greenBlob.pixels()
+
+    # Draw a rectangle acound the most significant green blob
+    img.draw_rectangle(greenBlob.rect(), color=(218, 66, 44), thickness=1)
+```
+
+If a dominant green blob exists, extract its center coordinates and pixel count.
+`draw_rectangle()` visually outlines the blob on the image feed for debugging and verification.
+
+The red blob detection works identically:
+```python
+redBlobs = img.find_blobs([redThreshold], pixels_threshold=250)
+redBlob = findDominantBlob(redBlobs, roiHeight)
+redCx, redCy, redPixels = 0, 0, 0
+if redBlob:
+    redCx = redBlob.cx()
+    redCy = redBlob.cy()
+    redPixels = redBlob.pixels()
+    img.draw_rectangle(redBlob.rect(), color=(68, 214, 44), thickness=1)
+```
+It uses redThreshold to detect regions corresponding to red pillars.
+Finds the dominant red blob, extracts center and pixel size, and draws a bounding rectangle.
+
 <!-- Camera's View -->
 
 |<center> ![Raw Image](./docu-photos/camera/CameraVision.png) </center> |
@@ -1218,41 +1214,6 @@ redThreshold = const((0, 35, 0, 127, 1, 127))
 |<center> ![Green Threshold](./docu-photos/camera/GreenThreshold.png) </center> | <center> ![Raw Image](./docu-photos/camera/RedThreshold.png) </center> |
 |:---------------------:|:---------------------:|
 | Green Threshold | Red Threshold |
-
-```python
-# ===========================
-# Custom Helper Functions
-# ===========================
-
-def findDominantBlob(blobs, roiHeight):
-    """
-    Selects the most significant blob based on size and shape.
-    Preference is given to vertically elongated blobs or blobs touching the ROI bottom.
-    """
-    bestBlob = None
-    maxPixels = 0
-    for b in blobs:
-        if (b.h() > b.w() or (b.y() + b.h()) == roiHeight) and b.pixels() > maxPixels:
-            bestBlob = b
-            maxPixels = b.pixels()
-    return bestBlob
-
-def indicateBlob(gPixels, rPixels):
-    """
-    Visual feedback using LEDs.
-    Turns on green LED if green dominates, red LED if red dominates.
-    Both LEDs off if no significant blob is detected.
-    """
-    if gPixels > rPixels:
-        greenLed.on()
-        redLed.off()
-    elif rPixels > gPixels:
-        redLed.on()
-        greenLed.off()
-    else:
-        redLed.off()
-        greenLed.off()
-```
 
 After processing the image and finding the group of pixels or blobs of the image that meets the **certain thresholds** for ***Green*** or ***Red***, the data (the position and size) of these blobs is then transferred onto the Hub.
 
@@ -1326,15 +1287,17 @@ _You may refer to the accompanying illustration for a clearer understanding; the
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the first lap, the robot focuses on data collection. It scans the environment using a camera, detects the colors of the traffic sign, and stores them in memory along with the corresponding lap segment, for example, lap `0.25`: `["Red", "Green"]`. During this phase, the robot essentially gathers input-output pairs: the detected traffic sign colors (inputs) determine the chosen path or movement (outputs). These mappings such as `"red = right"` or `"green = left"` are stored in memory for future reference.</p>
 
 ```py
-# Record Straight Section Pillars
+# Record the robot's action for a quarter lap based on detected pillar color
 def recordQuarterLap(sannisLivisa: FE, initalDetection: tuple, currentLap=0.25):
+    # Detect initial pillar color using wall-following and recording logic
     pillarColor = wallingTurnAndRecord(sannisLivisa, initalDetection)
     
-    currentLapRecord = []
-    prevTurn = ""
+    currentLapRecord = []  # Store the sequence of pillar colors encountered this quarter lap
+    prevTurn = ""          # Keep track of the previous turn direction for decision logic
 
     log("1.", pillarColor)
     
+    # Execute the first turn based on the detected color
     if pillarColor == "Green":
         greenFirst(sannisLivisa, brake=True)
         prevTurn = "LEFT"
@@ -1342,6 +1305,7 @@ def recordQuarterLap(sannisLivisa: FE, initalDetection: tuple, currentLap=0.25):
         redFirst(sannisLivisa, brake=True)
         prevTurn = "RIGHT"
     else:
+        # Fallback in case no color is detected: use DEFAULT strategy
         if DEFAULT == "Red":
             redFirst(sannisLivisa, brake=True)
             prevTurn = "RIGHT"
@@ -1351,8 +1315,10 @@ def recordQuarterLap(sannisLivisa: FE, initalDetection: tuple, currentLap=0.25):
             prevTurn = "LEFT"
             pillarColor = "Green"
 
+    # Record the first detected pillar color
     currentLapRecord.append((pillarColor))
 
+    # Scan again to detect the next pillar or color change in the quarter lap
     if pillarColor == "Green":
         pillarColor = scanOnce(sannisLivisa,  70, -15, minThreshold=400)
     else:
@@ -1360,33 +1326,40 @@ def recordQuarterLap(sannisLivisa: FE, initalDetection: tuple, currentLap=0.25):
 
     log("2.", pillarColor)
 
+    # Record the second color only if it differs from the first
     try:
         if currentLapRecord[0] != pillarColor:
             currentLapRecord.append((pillarColor))
     except:
+        # Fallback: ensure at least one color is recorded
         currentLapRecord.append((pillarColor))
 
+    # Re-center robot before proceeding to the final turn
     sannisLivisa.center()
 
+    # Perform the last maneuver for the quarter lap based on current color and previous turn
     if pillarColor == "Green" and prevTurn != "LEFT":
         greenLast(sannisLivisa, recording=True)
-
     elif pillarColor == "Red" and prevTurn != "RIGHT":
         redLast(sannisLivisa, recording=True)
-
     else:
+        # If color matches previous turn, the robot just continues to move straight
         beep()
         sannisLivisa.lookDir(90, asyncBool=False)
         sannisLivisa.drive(1150, 500, 900, heading=0, decelerate=True)
 
+        # Execute final ending maneuver based on the first pillar color
         if currentLapRecord[0] == "Green":
             greenEnding(sannisLivisa)
         else:
             redEnding(sannisLivisa)
 
+    # Clean up any invalid entries (None) in the record
     currentLapRecord = [e for e in currentLapRecord if e != 'None']
     log(currentLapRecord)
 
+    # Store the quarter lap record in the robot's memory for later playback
+    # Format lap number as string index (e.g., "0.25" -> ".25") for memory retrieval later
     sannisLivisa.record(str(currentLap)[1::], currentLapRecord)
 ```
 
@@ -1394,26 +1367,34 @@ def recordQuarterLap(sannisLivisa: FE, initalDetection: tuple, currentLap=0.25):
 
 ```py
 def runRecord(sannisLivisa: FE, currentLap):
+    # Perform walling to face the next straight section
     wallingTurn(sannisLivisa)
     beep()
+
+    # Format lap number as string index (e.g., "0.25" -> ".25") for memory retrieval
+    # Retrieve previously recorded obstacle sequence for this lap
     formattedCurrent = str(currentLap)[1::]
     currentObstacles = sannisLivisa.remember(formattedCurrent)
 
+    # Check if this lap corresponds to the parking maneuver
     parking = formattedCurrent == PARKINGLAP
+
     log(f"Lap {currentLap} Obstacles:", currentObstacles)
 
+    # Execute appropriate driving routine depending on detected obstacle combination
     if list(set(currentObstacles)) == GREEN:
-        greenOnly(sannisLivisa, parking)
+        greenOnly(sannisLivisa, parking)  # Only green pillars detected
 
     elif list(set(currentObstacles)) == RED:
-        redOnly(sannisLivisa)
+        redOnly(sannisLivisa)  # Only red pillars detected
 
     elif currentObstacles == GREEN + RED:
-        greenRed(sannisLivisa, False, parking)
+        greenRed(sannisLivisa, False, parking)  # Green pillars first, then red pillars
 
-    elif currentObstacles ==  RED + GREEN:
-        redGreen(sannisLivisa, False, parking)
-    
+    elif currentObstacles == RED + GREEN:
+        redGreen(sannisLivisa, False, parking)  # Red pillars first, then green pillars
+
+    # Final straight drive until the robot detects stall (end of lap or obstacle)
     sannisLivisa.driveUntilStalled(150, 600, 300, heading=0)
 ```
 
