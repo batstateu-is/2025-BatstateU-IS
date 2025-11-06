@@ -20,14 +20,15 @@ WALLINGREVERSEANGLE = -49
 WALLING_ANGLE_RIGHT = 45
 WALLING_ANGLE_LEFT  = -70
 WALLING_TURN_TOLERANCE = 2
-
 WALLING_ERROR_TOLERANCE = 9.5
+
+RED = ['Red']
+GREEN = ['Green']
 
 # in ms
 TURNDURATION = 600
 SCANDURATION = 100
-RED = ['Red']
-GREEN = ['Green']
+
 
 # Clcokwise
 
@@ -201,7 +202,7 @@ def wallingTurnAndRecord(sannisLivisa: FE, initialDetection: tuple):
     while HUB.imu.heading() < targetHeading - WALLING_TURN_TOLERANCE:
         error =  HUB.imu.heading() - targetHeading
         sannisLivisa.errorSum, sannisLivisa.prevError, correction = pid(WALLING_KP, 0.001, 0.3, error, sannisLivisa.errorSum, sannisLivisa.prevError)
-        correction = WALLINGREVERSEANGLE if correction < WALLINGREVERSEANGLE else correction # -37 if correction < -37 else correction for 800
+        correction = WALLINGREVERSEANGLE if correction < WALLINGREVERSEANGLE else correction
 
         lerror = (targetHeading - HUB.imu.heading())*1.1
         speed = linearMap(error, start, 0, MAXSPEED, MAXSPEED // 1.4)
@@ -267,7 +268,6 @@ def wallingTurn(sannisLivisa: FE):
     sannisLivisa.eBrake(10)
     checkIfFlushWithWall(sannisLivisa, WALLING_ERROR_TOLERANCE, 80, 600, 90, TURNDURATION, 40)
 
-    # sannisLivisa.drive(-50, 500, 600)
     sannisLivisa.driveMotor.reset_angle(0)
     sannisLivisa.eBrake(50)
     HUB.imu.reset_heading(0)

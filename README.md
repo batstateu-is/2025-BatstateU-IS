@@ -32,78 +32,85 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 ***
 
 <!-- Table of Contents -->
-<details>
-<summary>
-📑 Table of Contents (click to expand)
-</summary>
+## 📑 Table of Contents
 
-- [📖 Introduction](#introduction)  X
-- [👥 Team Profile](#team-profile)  
-- [🤖 Robot Specifications](#robot-specifications)  
-- [1. ⚙️ Mobility Management](#1-mobility-management)  
-  - [1.1. Motor Selection](#11-motor-selection)  
-  - [1.2. Steering and Driving Mechanism](#12-steering-and-driving-mechanism)  
-  - [1.3. Mechanical Design](#13-mechanical-design)  
-- [2. 🔋 Power and Sense Management](#2-power-and-sense-management)  
-  - [2.1. Power Management](#21-power-management)  
-    - [2.1.1. Technic™ Prime Large Hub](#211-technic-prime-large-hub)  
-    - [2.1.2. Technic™ Large Hub Rechargeable Battery](#212-technic-large-hub-rechargeable-battery)  
-  - [2.2. Sense Management](#22-sense-management)  
-    - [2.2.1. Technic™ Distance Sensor](#221-technic-distance-sensor)  
-    - [2.2.2. Gyro Sensor](#222-gyro-sensor)  
-    - [2.2.3. OpenMV Cam H7 Plus](#223-openmv-cam-h7-plus)  
-- [3. 🚀 Open Challenge Strategy](#3-open-challenge-strategy)  
-  - [3.1. Determining Drive Direction](#31-determining-drive-direction)  
-  - [3.2. Wall Detection and Avoidance](#32-wall-detection-and-avoidance)  
-- [4. 🚧 Obstacle Challenge Strategy](#4-obstacle-challenge-strategy)  
-  - [4.1. Traffic Sign Detection](#41-traffic-sign-detection)  
-  - [4.2. Traffic Sign Avoidance Strategy](#42-traffic-sign-avoidance-strategy)  
-  - [4.3. Perpendicular Parking Strategy](#43-perpendicular-parking-strategy)
-  - [4.4. Semi-Machine Learning Strategy](#44-semi-machine-learning-strategy)
-- [5. 🐞 Problems Encountered](#5-problems-encountered)  
-  - [5.1. Continuous Detection to Single-Instance Detection](#51-continuous-detection-to-single-instance-detection)  
-  - [5.2. Frequent Disconnection of Camera Wiring](#52-frequent-disconnection-of-camera-wiring)  
-  - [5.3. Uneven and Unclean Field](#53-uneven-and-unclean-field)  
-  - [5.4. Constant Necessity of Cleaning the Wheels](#54-constant-necessity-of-cleaning-the-wheels)  
-- [6. 🖨️ 3D Printing Management](#6-3d-printing-management)  
-  - [6.1. 3D Modeling](#61-3d-modeling)  
-  - [6.2. Material Selection](#62-material-selection)  
-  - [6.3. 3D Printing Settings](#63-3d-printing-settings)  
-  - [6.4. Printing](#64-printing)  
-- [7. 📐 Engineering Factor](#7-engineering-factor)  
-  - [7.1. 3D-Printed Camera Case](#71-3d-printed-camera-case)  
-  - [7.2. Rotating Camera and Distance Sensor](#72-rotating-camera-and-distance-sensor)  
-  - [7.3. Side Free Wheels](#73-side-free-wheels)
-  - [7.4. Rear-Mounted Spoiler](#74-rear-mounted-spoiler)  
-- [8. 🔧 Mechanical Improvements](#8-mechanical-improvements)  
-  - [8.1. Testing of Perfect Size for Parking](#81-testing-of-perfect-size-for-parking)  
-  - [8.2. Alter Differential Gear to Normal Driving](#82-alter-differential-gear-to-normal-driving)  
-  - [8.3. Integrate Gears Around the Robot](#83-integrate-gears-around-the-robot)  
-  - [8.4. Alter the Gears’ Size from Big to Medium](#84-alter-the-gears-size-from-big-to-medium)  
-  - [8.5. Reposition the SPIKE™ Hub and Balance Rear Weight](#85-reposition-the-spike-hub-and-balance-rear-weight)  
-  - [8.6. Testing of Perfect Wheels for Steering](#86-testing-of-perfect-wheels-for-steering)  
-  - [8.7. Use Different Wheels for Steering](#87-use-different-wheels-for-steering)  
-  - [8.8. Replace Color Sensor with Distance Sensor](#88-replace-color-sensor-with-distance-sensor)  
-  - [8.9. Replace Wheels for Driving](#89-replace-wheels-for-driving)  
-- [9. 🛠️  Construction Guide](#9-construction-guide)  
-  - [9.1. Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
-  - [9.2. Guide for Programming the Robot](#92-guide-for-programming-the-robot)  
-    - [9.2.1. Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
-    - [9.2.2. Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)  
-  - [9.3. Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
-- [10. 💡 Recommendations and Future Work](#10-recommendations-and-future-work)  
-  - [10.1. Recommendations for Mobility Management](#101-recommendations-for-mobility-management)
-  - [10.2. Recommendations for Power and Sense Management](#102-recommendations-for-power-and-sense-management)
-  - [10.3. Recommendations for Strategies](#103-recommendations-for-strategies)
-- [11. 📎 Appendices](#11-appendices)
-  - [11.1. Robot Actual Photos](#111-robot-actual-photos)
-  - [11.2. Robot 3D Model](#112-robot-3D-Model)
-  - [11.3. Pictorial Wiring Diagram](#113-pictorial-wiring-diagram)
-  - [11.4. Bills of Materials](#114-bills-of-materials)
-  - [11.5. Timeline](#115-timeline)
-- [12. 📜 Robot Design History](#12-robot-design-history)
+1. [📖 Introduction](#introduction)  
+2. [👥 Team Profile](#team-profile)  
+3. [🤖 Robot Specifications](#robot-specifications)  
 
-</details>
+4. ⚙️ **Mobility Management**  
+   4.1. [Motor Selection](#11-motor-selection)  
+   4.2. [Steering and Driving Mechanism](#12-steering-and-driving-mechanism)  
+   4.3. [Mechanical Design](#13-mechanical-design)  
+
+5. 🔋 **Power and Sense Management**  
+   1. [Power Management](#21-power-management)  
+      - [Technic™ Prime Large Hub](#211-technic-prime-large-hub)  
+      - [Technic™ Large Hub Rechargeable Battery](#212-technic-large-hub-rechargeable-battery)  
+   2. [Sense Management](#22-sense-management)  
+      - [Technic™ Distance Sensor](#221-technic-distance-sensor)  
+      - [Gyro Sensor](#222-gyro-sensor)  
+      - [OpenMV Cam H7 Plus](#223-openmv-cam-h7-plus)  
+
+6. 🚀 **Open Challenge Strategy**  
+   6.1. [Determining Drive Direction](#31-determining-drive-direction)  
+   6.2. [Wall Detection and Avoidance](#32-wall-detection-and-avoidance)  
+
+7. 🚧 **Obstacle Challenge Strategy**  
+   7.1. [Traffic Sign Detection](#41-traffic-sign-detection)  
+   7.2. [Traffic Sign Avoidance Strategy](#42-traffic-sign-avoidance-strategy)  
+   7.3. [Perpendicular Parking Strategy](#43-perpendicular-parking-strategy)  
+   7.4. [Semi-Machine Learning Strategy](#44-semi-machine-learning-strategy)  
+
+8. 🐞 **Problems Encountered**  
+   8.1. [Continuous Detection to Single-Instance Detection](#51-continuous-detection-to-single-instance-detection)  
+   8.2. [Frequent Disconnection of Camera Wiring](#52-frequent-disconnection-of-camera-wiring)  
+   8.3. [Uneven and Unclean Field](#53-uneven-and-unclean-field)  
+   8.4. [Constant Necessity of Cleaning the Wheels](#54-constant-necessity-of-cleaning-the-wheels)  
+
+9. 🖨️ **3D Printing Management**  
+   9.1. [3D Modeling](#61-3d-modeling)  
+   9.2. [Material Selection](#62-material-selection)  
+   9.3. [3D Printing Settings](#63-3d-printing-settings)  
+   9.4. [Printing](#64-printing)  
+
+10. 📐 **Engineering Factor**  
+    9.1. [3D-Printed Camera Case](#71-3d-printed-camera-case)  
+    9.2. [Rotating Camera and Distance Sensor](#72-rotating-camera-and-distance-sensor)  
+    9.3. [Side Free Wheels](#73-side-free-wheels)  
+    9.4. [Rear-Mounted Spoiler](#74-rear-mounted-spoiler)  
+
+11. 🔧 **Mechanical Improvements**  
+    11.1. [Testing of Perfect Size for Parking](#81-testing-of-perfect-size-for-parking)  
+    11.2. [Alter Differential Gear to Normal Driving](#82-alter-differential-gear-to-normal-driving)  
+    11.3. [Integrate Gears Around the Robot](#83-integrate-gears-around-the-robot)  
+    11.4. [Alter the Gears’ Size from Big to Medium](#84-alter-the-gears-size-from-big-to-medium)  
+    11.5. [Reposition the SPIKE™ Hub and Balance Rear Weight](#85-reposition-the-spike-hub-and-balance-rear-weight)  
+    11.6. [Testing of Perfect Wheels for Steering](#86-testing-of-perfect-wheels-for-steering)  
+    11.7. [Use Different Wheels for Steering](#87-use-different-wheels-for-steering)  
+    11.8. [Replace Color Sensor with Distance Sensor](#88-replace-color-sensor-with-distance-sensor)  
+    11.9. [Replace Wheels for Driving](#89-replace-wheels-for-driving)  
+
+12. 🛠️ **Construction Guide**  
+    12.1. [Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
+    12.2. [Guide for Programming the Robot](#92-guide-for-programming-the-robot)  
+       - [Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
+       - [Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)  
+    12.3. [Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
+
+13. 💡 **Recommendations and Future Work**  
+    12.1. [Recommendations for Mobility Management](#101-recommendations-for-mobility-management)  
+    12.2. [Recommendations for Power and Sense Management](#102-recommendations-for-power-and-sense-management)  
+    12.3. [Recommendations for Strategies](#103-recommendations-for-strategies)  
+
+14. 📎 **Appendices**  
+    14.1. [Robot Actual Photos](#111-robot-actual-photos)  
+    14.2. [Robot 3D Model](#112-robot-3d-model)  
+    14.3. [Pictorial Wiring Diagram](#113-pictorial-wiring-diagram)  
+    14.4. [Bills of Materials](#114-bills-of-materials)  
+    14.5. [Timeline](#115-timeline)  
+
+15. 📜 **Robot Design History**
 
 ***
 ## 📖 Introduction
@@ -717,7 +724,23 @@ direction = sannisLivisa.driveDeterminDir(500, 600, 700, decelerate=True, sideTh
 
 ```python
 def determineDir(self, exclude=2000, measureTime=100):
+    """
+    Determines whether the robot should turn clockwise (1) or counterclockwise (-1)
+    based on which side (left or right) has more open space as measured by the
+    rear-facing distance sensor (LMS-ESP32).
+
+    Args:
+        exclude (int): Distance reading to ignore (e.g., invalid or out-of-range value).
+        measureTime (int): Duration in milliseconds to sample distance data.
+
+    Returns:
+        int: 1 for clockwise, -1 for counterclockwise.
+    """
+
+    # Code in try catch block so that if the LMS-ESP32 refuses to connect or has an error
+    # the program will not crash
     try:
+         # Initialize and start a timer to limit measurement duration
         checkTimer = StopWatch()
         checkTimer.pause()
         checkTimer.reset()
@@ -725,13 +748,18 @@ def determineDir(self, exclude=2000, measureTime=100):
         checkTimer.resume()
         largestRight = 0
         largestLeft = 0
+
+        # Measure for a short abount of time
         while checkTimer.time() < measureTime:
+            # Poll distance data from the LMS-ESP32 (returns [left, right])
             dists = self.distSensorBack.call("line")
 
+            # Update the largest right-side distance if it's valid and greater
             dist = dists[1]
             if dist > largestRight and dist != exclude:
                 largestRight = dist
 
+            # Update the largest left-side distance if it's valid and greater
             dist = dists[0]
             if dist > largestLeft and dist != exclude:
                 largestLeft = dist
@@ -739,10 +767,13 @@ def determineDir(self, exclude=2000, measureTime=100):
         checkTimer.pause()
         checkTimer.reset()
 
+        # Debug output for diagnostic purposes
         log("Dist Right:", largestRight, level="DETERMINE DIR")
         log("Dist Left:", largestLeft, level="DETERMINE DIR")
         log("Backup (Front):", largestLeft, level="DETERMINE DIR")
 
+        # Compare the two sides and determine turning direction
+        # (-1 = Counterclockwise, 1 = Clockwise)
         if largestLeft > largestRight:
             direction = -1
         else:
@@ -751,42 +782,158 @@ def determineDir(self, exclude=2000, measureTime=100):
         log(direction, level="DETERMINE DIR")
         return direction
     except:
+
+        # Fallback: If LMS-ESP32 fails to respond, use the legacy method instead
         log("LMS-ESP 32 Refused to connect!", level="ERROR")
         return self.determineDirOld()
 ```
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once positioned at an appropriate distance from the wall, the robot determines its driving direction by comparing the readings from the two side ultrasonic sensors managed by the LMS-ESP32 module. During this process, the robot continuously samples both the left and right distance values for a short duration, ignoring any invalid or excluded readings. It records the largest valid distance detected on each side within this period. After the sampling phase, the robot compares these two maximum values — if the left side has the greater distance, it sets its driving direction to counterclockwise; otherwise, it drives clockwise. This method provides a more reliable and noise-resistant approach by evaluating multiple sensor samples over time rather than relying on a single reading, ensuring a consistent and accurate decision on the robot’s initial driving direction.</p>
 
-### 3.2. Wall Detection and Avoidance
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ensure that the robot can properly avoid collisions with both the randomly placed inner wall and the outer boundary walls of the game field, we implemented a dynamic wall detection strategy using the Technic™ Distance Sensor and the two (2) HC-SR04 Ultrasonic Sensors mounted on either side of the robot. </p>
+<p align="justify">If the above code fails or the LM-ESP32 responds with an error, the code will fallback to our previous code which we had previously used during the nationals</p2>
 
 ```python
+def determineDirOld(self, exclude=2000):
+     """
+    Legacy method for determining the turning direction (clockwise or counterclockwise)
+    using a single rotating distance sensor. The sensor sweeps right and left to find
+    which side has more open space.
 
+    Args:
+        exclude (int): Distance value to ignore (e.g., invalid readings or out-of-range data).
+
+    Returns:
+        int: 1 for clockwise, -1 for counterclockwise.
+    """
+    # Initialize timer for measurement intervals
+    checkTimer = StopWatch()
+    checkTimer.pause()
+    checkTimer.reset()
+
+     # --- Measure Right Side ---
+    # Rotate the distance sensor to the right (~90°)
+    self.lookDir(90, speed=1000)
+    while self.senseMotor.angle() < 88:
+        pass # Wait until the sensor is in position
+    
+    # Move slightly backward to improve right-side visibility
+    start = self.mileage()
+    target = start - 80
+    self.driveMotor.run_target(180, target, wait=False)
+
+    # Measure right-side distance for a short duration
+    checkTimer.resume()
+    largestRight = 0
+    while checkTimer.time() < 800:
+        dist = self.distSensor.distance()
+        if dist > largestRight and dist != exclude:
+            largestRight = dist
+
+    # Stop and reset timer
+    checkTimer.pause()
+    checkTimer.reset()
+    log("Dist Right:", largestRight, level="DETERMINE DIR")
+
+    # --- Measure Left Side ---
+    # Rotate the sensor to the left (~90°)
+    self.lookDir(-90, speed=1000)
+    while self.senseMotor.angle() > -88:
+        pass # Wait until the sensor is in position
+    
+    self.driveMotor.run_target(180, start, wait=False)
+
+    checkTimer.resume()
+
+    # Measure left-side distance for a short duration
+    largestLeft = 0
+    while checkTimer.time() < 800:
+        dist = self.distSensor.distance()
+        if dist > largestLeft and dist != exclude:
+            largestLeft = dist
+
+    checkTimer.pause()
+    checkTimer.reset()
+
+    log("Dist Left:", largestLeft, level="DETERMINE DIR")
+
+     # Compare the largest distances from both sides
+    # (-1 = Counterclockwise / Left side more open, 1 = Clockwise / Right side more open)
+    if largestLeft > largestRight:
+        direction = -1
+    else:
+        direction = 1
+
+    log(direction, level="DETERMINE DIR")
+    self.center()
+    return direction
+```
+
+### Explanation
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The <code>determineDirOld()</code> function is an earlier implementation of the robot’s direction-selection logic. It serves as a fallback method when the <code>LMS-ESP32</code> sensor fails to connect or respond.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During the <b>Philippine Robotics Olympiad (PRO)</b>, the robot used only a single rotating distance sensor for this task, since the side-mounted ultrasonic sensors were not yet attached or utilized at that stage. As a result, this version relies entirely on one sensor mounted on a motor that rotates to scan both sides of the robot.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The procedure operates as follows:</p>
+
+1. **Measure the Right Side**  
+   <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;The robot rotates the distance sensor approximately <b>90° to the right</b> and moves slightly backward to avoid detecting its own body. It samples distance readings for about 800 milliseconds, recording the largest valid distance (representing the most open area on that side).</p>
+
+2. **Measure the Left Side**  
+   <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;The sensor is then turned <b>90° to the left</b>, and the robot returns to its starting position before repeating the same measurement process for another 800 milliseconds to determine the largest distance on the left side.</p>
+
+3. **Compare and Decide**  
+   <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;If the left distance is greater, the robot sets the direction to <code>-1</code> (counterclockwise). Otherwise, it sets it to <code>1</code> (clockwise).</p>
+
+4. **Recentering**  
+   <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;After determining the turning direction, the sensor is recentered using <code>self.center()</code> to prepare for the next navigation phase.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While slower than the dual-sensor method implemented later in <code>determineDir()</code>, this legacy approach provided a robust and reliable solution during the PRO, effectively compensating for the absence of other sensors.</p>
+
+
+### 3.2. Wall Detection and Avoidance
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ensure that the robot can properly avoid collisions with both the randomly placed inner wall and the outer boundary walls of the game field, a dynamic wall detection strategy was implemented using the Technic™ Distance Sensor and two (2) HC-SR04 Ultrasonic Sensors mounted on either side of the robot.</p>
+
+```python
+# Main Lap Control Loop
 while currentLap < 3:
     correction = 0
+
+    # This takes place right after detecting direction
+    # No need to drive forwards, directly turn after determining direction
     if currentLap == 0:
+        # Update the target heading based on the detected direction
         targetHeading += 90 * direction
         if direction < 0:
-            targetHeading -= 0.9
+            targetHeading -= 0.9  # Small correction for counterclockwise turns
 
+        # Reset internal parameters and execute the turn
         sannisLivisa.resetParams()
         turnFunc(sannisLivisa, targetHeading, turnErrorKp, KI, turnErrorKd, MAXSPEED, turnTolerance)
+
+        # Mark progress and proceed
         currentLap += 0.25
         continue
 
+    # ------------------------------- #
+    # Lap 1: Wall Following & Mapping #
+    # ------------------------------- #
     elif currentLap <= 1:
         lastRot = sannisLivisa.driveMotor.angle()
         distTraveled = 0
 
+        # Continue driving while maintaining safe distance from walls
         while sannisLivisa.getDistance(FRONT) < safetyDistance or distTraveled < otherSafetyDistance:
             leftAdjust = 0
             rightAdjust = 0
 
+            # Check proximity to walls on either side and compute lateral adjustment
             if sannisLivisa.getDistance(LEFT) < leftThreshold or sannisLivisa.getDistance(RIGHT) < rightThreshold:
                 leftAdjust = sannisLivisa.getDistance(LEFT)
                 rightAdjust = sannisLivisa.getDistance(RIGHT)
 
+            # Compute heading correction using PID
             error = rightAdjust + targetHeading - HUB.imu.heading() - leftAdjust
             KP = baseKP
             KD = linearMap(sannisLivisa.driveMotor.speed(), 0, 1000, 0, KDdrive)
@@ -796,103 +943,79 @@ while currentLap < 3:
                 maxSum=355, minSum=-355
             )
 
-            correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
-            correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+            # Clamp correction values for stability
+            correction = min(max(correction, MINCORRECTION_DRIVE), MAXCORRECTION_DRIVE)
 
+            # Apply movement correction
             sannisLivisa.move(MAXSPEED, correction)
             distTraveled = sannisLivisa.driveMotor.angle() - lastRot
 
-        while sannisLivisa.getDistance(distSensor) < targetProximity and sannisLivisa.getDistance("front") > targetProximityFront:
-            leftAdjust = 0
-            rightAdjust = 0
-
-            if sannisLivisa.getDistance(LEFT) < leftThreshold or sannisLivisa.getDistance(RIGHT) < rightThreshold:
-                leftAdjust = sannisLivisa.getDistance(LEFT)
-                rightAdjust = sannisLivisa.getDistance(RIGHT)
-
-            error = rightAdjust + targetHeading - HUB.imu.heading() - leftAdjust
-            KP = baseKP
-            KD = linearMap(sannisLivisa.driveMotor.speed(), 0, 1000, 0, KDdrive)
-
-            sannisLivisa.errorSum, sannisLivisa.prevError, correction = pid(
-                KP, KI, KD, error, sannisLivisa.errorSum, sannisLivisa.prevError,
-                maxSum=355, minSum=-355
-            )
-
-            correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
-            correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
-            sannisLivisa.move(MAXSPEED, correction)
-
+        # Record the distance traveled before turning
         distTraveled = sannisLivisa.driveMotor.angle() - lastRot
         roundedDist = distTraveled
-
         sannisLivisa.record(str(currentLap)[1::], roundedDist + 30)
 ```
 
-<p> During the <b>first lap</b>, it operates in an exploratory mode: it follows the detected wall, turning 90° at each corner while recording the distances it travels between turns. This is done using the <code>record()</code> function, which saves the measured distance traveled before each turn into memory. These stored distances will later guide the robot in subsequent laps, allowing it to “remember” the most successful path even when the field’s inner walls are rearranged.</p>
+)
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During the <b>first lap</b>, the robot operates in an exploratory mode. It follows the detected wall, turning 90° at each corner while recording the distances traveled between turns. This process uses the <code>record()</code> function, which stores the measured distance before each turn. These recorded values guide the robot in subsequent laps, allowing it to remember and repeat the most efficient route even if the inner walls are rearranged.</p>
 
 ```python
+# PID Wall-Following Logic
 while sannisLivisa.getDistance(distSensor) < targetProximity and sannisLivisa.getDistance("front") > targetProximityFront:
     leftAdjust = 0
     rightAdjust = 0
 
+    # Detect proximity to left or right walls
     if sannisLivisa.getDistance(LEFT) < leftThreshold or sannisLivisa.getDistance(RIGHT) < rightThreshold:
         leftAdjust = sannisLivisa.getDistance(LEFT)
         rightAdjust = sannisLivisa.getDistance(RIGHT)
 
+    # Calculate heading error with lateral offset correction
     error = rightAdjust + targetHeading - HUB.imu.heading() - leftAdjust
     KP = baseKP
     KD = linearMap(sannisLivisa.driveMotor.speed(), 0, 1000, 0, KDdrive)
 
+    # Update PID and apply correction
     sannisLivisa.errorSum, sannisLivisa.prevError, correction = pid(
         KP, KI, KD, error, sannisLivisa.errorSum, sannisLivisa.prevError,
         maxSum=355, minSum=-355
     )
 
-    correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
-    correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+    correction = min(max(correction, MINCORRECTION_DRIVE), MAXCORRECTION_DRIVE)
     sannisLivisa.move(MAXSPEED, correction)
 ```
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wall following is maintained through a continuous PID feedback loop. The robot measures its current heading using the IMU and its distance from the side wall using the active distance sensor. If the robot drifts too close to either wall, it calculates a composite correction by combining the left and right readings, effectively re-centering itself between them. The PID control uses the heading error — <code>error = targetHeading - HUB.imu.heading()</code> — adjusted by these lateral offsets</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wall following is maintained through a continuous PID feedback loop. The robot measures its heading using the IMU and its distance from the side walls using the sensors. If it drifts too close to either side, it calculates a combined correction based on both lateral distances to re-center itself. The derivative term <code>KD</code> scales dynamically with the driving speed to maintain stable and responsive control at varying velocities.</p>
 
 ```python
-leftAdjust = 0
-rightAdjust = 0
 
-if sannisLivisa.getDistance(LEFT) < leftThreshold or sannisLivisa.getDistance(RIGHT) < rightThreshold:
-    leftAdjust = sannisLivisa.getDistance(LEFT)
-    rightAdjust = sannisLivisa.getDistance(RIGHT)
-
-error = rightAdjust + targetHeading - HUB.imu.heading() - leftAdjust
-KP = baseKP
-KD = linearMap(sannisLivisa.driveMotor.speed(), 0, 1000, 0, KDdrive)
-```
-
-<p> to apply smooth steering corrections through <code>sannisLivisa.move()</code>. The derivative term <code>KD</code> is dynamically mapped to the robot’s current driving speed to maintain stability at varying velocities.</p>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After completing the first lap, the robot transitions to playback mode. </p>
-
-```python
 while currentLap < 3:
     correction = 0
+
+    # First Lap
     if currentLap == 0:
         ...
-
     elif currentLap <= 1:
-        ...
+        ... 
 
+    # 2nd & 3rd Laps
     else:
-        # Remember recorded distances
+        # --- Laps 2 and 3: Playback Using Recorded Data ---
+        # Retrieve recorded distance from memory
         lastRot = sannisLivisa.driveMotor.angle()
         distTraveled = 0
         distToTravel = sannisLivisa.remember(str(currentLap)[1::])
+
+        # Drive based on remembered distances while applying real-time correction
         while distTraveled < distToTravel and \
-                sannisLivisa.getDistance("front") > minimumDistance and \
-                sannisLivisa.getDistance(distSensor) < targetProximity:
+              sannisLivisa.getDistance("front") > minimumDistance and \
+              sannisLivisa.getDistance(distSensor) < targetProximity:
+            
             leftAdjust = 0
             rightAdjust = 0
             distTraveled = sannisLivisa.driveMotor.angle() - lastRot
+
             if sannisLivisa.getDistance(LEFT) < leftThreshold or sannisLivisa.getDistance(RIGHT) < rightThreshold:
                 leftAdjust = sannisLivisa.getDistance(LEFT)
                 rightAdjust = sannisLivisa.getDistance(RIGHT)
@@ -908,36 +1031,39 @@ while currentLap < 3:
 
             correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
             correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
-            # print(MAXSPEED, correction)
+
             sannisLivisa.move(MAXSPEED, correction)
 ```
-
-<p>In the following laps, it recalls previously recorded distances using <code>remember()</code> and repeats those driving segments while still maintaining real-time heading correction. This hybrid strategy combines memory-based navigation with continuous feedback, allowing the robot to drive more efficiently while still reacting dynamically to minor deviations or sensor noise.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After completing the first lap, the robot transitions to playback mode. In this phase, it recalls the previously recorded distances using the <code>remember()</code> method and repeats those driving segments while still maintaining real-time heading correction. This approach combines memory-based navigation with live feedback, enabling the robot to move efficiently while adapting to small positional errors or sensor noise.</p>
 
 ```python
+# Heading Adjustment After Each Turn
 targetHeading += 90 * direction
 if direction < 0:
-    targetHeading -= 0.12
+    targetHeading -= 0.12  # Counterclockwise correction
 else:
-    targetHeading += 0.25
+    targetHeading += 0.25  # Clockwise correction
+
+# Execute precise 90° turn
 turnFunc(sannisLivisa, targetHeading, turnErrorKp, KI, turnErrorKd, MAXSPEED, turnTolerance)
 ```
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After each straight section, the robot performs a 90° turn using the IMU as reference. A small offset (−0.12° for counterclockwise and +0.25° for clockwise) compensates for observed drift and sensor rounding errors, ensuring that the robot’s orientation remains aligned with the course across multiple laps.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After each straight section, the robot performs a 90° turn based on IMU feedback. A small offset (−0.12° for counterclockwise and +0.25° for clockwise) compensates for observed drift and minor rounding errors, ensuring that the robot maintains consistent orientation across all laps.</p>
 
 ```python
+# Final Alignment and Finish
 while sannisLivisa.getDistance("front") > endTarget:
     error = targetHeading - HUB.imu.heading()
     sannisLivisa.errorSum, sannisLivisa.prevError, correction = pid(KP, KI, KD, error, ...)
     sannisLivisa.move(MAXSPEED, correction)
+
+# Controlled stop after finish line detection
 sannisLivisa.eBrake(1000)
 ```
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finally, once the robot completes the 3 laps, it aligns itself with the center of the track and drives forward until the front distance sensor detects the finishing wall. The PID controller continues to fine-tune the heading throughout this segment to ensure a straight and stable final approach before executing a controlled stop using <code>eBrake()</code>.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finally, after completing all three laps, the robot aligns itself toward the center of the track and drives forward until the front distance sensor detects the finishing wall. The PID controller continuously corrects the heading during this approach to ensure a smooth, stable final run before executing a controlled stop using <code>eBrake()</code>.</p>
 
 <!-- ![Distance Sensor](./docu-photos/distSensorFront.png) -->
-
-
 
 ## 4. 🚧 Obstacle Challenge Strategy
 
@@ -968,9 +1094,109 @@ sannisLivisa.eBrake(1000)
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finally, when the recording phase ends, the robot uses the stored movement patterns to replay its actions. It now proceeds to perform the laps based on pre-recorded data instead of re-scanning.</p> 
 
 ### 4.1. Traffic Sign Detection	
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The OpenMV Cam H7 Plus serves as the self-driving robot’s vision to be able to detect and classify traffic signs, represented by Green and Red colored obstacles that are randomly placed around the field. We implemented in our strategy that the obstacle detection process occurs primarily during the first lap, which is treated as a learning and recording phase. During this lap, the robot pauses at key positions or checkpoints and rotates the camera to identify obstacles that are placed along its path. If a green pillar is detected, the robot is programmed to avoid it by turning left; if a red pillar is detected, it turns right. If no color or obstacle is detected, due to occlusion or lighting issues, a default response (typically treating the obstacle as red) is triggered to ensure the robot still avoids a potential collision.</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The OpenMV Cam H7 Plus serves as the self-driving robot’s vision to be able to detect and classify traffic signs, represented by Green and Red colored obstacles that are randomly placed around the field. We implemented in our strategy that the obstacle detection process occurs primarily during the first lap, which is treated as a <b><i>learning and recording phase</i></b>. During this lap, the robot pauses at key positions or checkpoints and rotates the camera to identify obstacles that are placed along its path. If a green pillar is detected, the robot is programmed to avoid it by turning left; if a red pillar is detected, it turns right. If no color or obstacle is detected, due to occlusion or lighting issues, a default response (typically treating the obstacle as red) is triggered to ensure the robot still avoids a potential collision.</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To detect traffic signs accurately, the OpenMV Cam H7 Plus is programmed to use the LAB color space instead of the standard RGB. LAB is more effective for color-based object detection under varying lighting conditions because it separates the lightness (L) from the color channels (A and B). This allows for more stable detection of red and green objects even if the lighting changes during the run.</p>
+<p align="justify">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To detect traffic signs accurately, the OpenMV Cam H7 Plus is programmed to use the [LAB color space](https://en.wikipedia.org/wiki/CIELAB_color_space) instead of the [standard RGB](https://en.wikipedia.org/wiki/RGB_color_spaces). LAB is more effective for color-based object detection under varying lighting conditions because it separates the lightness (L) from the color channels (A and B). This allows for more stable detection of red and green objects even if the lighting changes during the run.
+
+</p>
+
+```python
+import sensor, time
+import pyb
+from micropython import const
+from pupremote import PUPRemoteSensor
+
+contestMode = const(False)
+
+redLed = pyb.LED(1)
+greenLed = pyb.LED(2)
+
+camera = PUPRemoteSensor(power=True)
+camera.add_channel('blob', to_hub_fmt='hhhhhhhh')
+
+# === Sensor Setup ===
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.set_vflip(True)
+sensor.set_hmirror(True)
+
+screenWidth = sensor.width()
+screenHeight = sensor.height()
+
+roiX = int(0.0 * screenWidth)
+roiY = int(0.3 * screenHeight)
+roiWidth = screenWidth - roiX * 2
+roiHeight = screenHeight - roiY
+roi = (roiX, roiY, roiWidth, roiHeight)
+print(roi)
+
+sensor.set_windowing(roi)
+sensor.set_framerate(1000)
+sensor.skip_frames(time=500)
+# sensor.set_auto_gain(False)
+# sensor.set_auto_whitebal(False)
+# sensor.set_auto_exposure(False)#, exposure_us=16000)
+
+# === Color Thresholds (LAB) ===
+greenThreshold = const((0, 75, -128, -20, -128, 127))
+redThreshold = const((0, 60, 34, 127, 0, 127))
+
+# Target positions (for continuos)
+targetGreen = (int(screenWidth * 0.9), 120)
+targetRed = (int(screenWidth * 0.17), screenHeight * 2 // 3)
+
+# === Custom Functions ===
+def findDominantBlob(blobs, roiHeight):
+    bestBlob = None
+    maxPixels = 0
+    for b in blobs:
+        if (b.h() > b.w() or (b.y() + b.h()) == roiHeight) and b.pixels() > maxPixels:
+            bestBlob = b
+            maxPixels = b.pixels()
+    return bestBlob
+
+def indicateBlob(gPixels, rPixels):
+    if gPixels > rPixels:
+        greenLed.on()
+        redLed.off()
+    elif rPixels > gPixels:
+        redLed.on()
+        greenLed.off()
+    else:
+        redLed.off()
+        greenLed.off()
+
+# === Main Loop ===
+while True:
+    img = sensor.snapshot()
+
+    greenBlobs = img.find_blobs([greenThreshold], pixels_threshold=250)
+    greenBlob = findDominantBlob(greenBlobs, roiHeight)
+    greenCx, greenCy, greenPixels = 0, 0, 0
+    if greenBlob:
+        greenCx = greenBlob.cx()
+        greenCy = greenBlob.cy()
+        greenPixels = greenBlob.pixels()
+        img.draw_rectangle(greenBlob.rect(), color=(218, 66, 44), thickness=1)
+
+    redBlobs = img.find_blobs([redThreshold], pixels_threshold=250)
+    redBlob = findDominantBlob(redBlobs, roiHeight)
+    redCx, redCy, redPixels = 0, 0, 0
+    if redBlob:
+        redCx = redBlob.cx()
+        redCy = redBlob.cy()
+        redPixels = redBlob.pixels()
+        img.draw_rectangle(redBlob.rect(), color=(68, 214, 44), thickness=1)
+
+    indicateBlob(greenPixels, redPixels)
+
+    print(greenCx, greenCy, greenPixels, redCx, redCy, redPixels)
+    camera.update_channel('blob', greenCx, greenCy, greenPixels, redCx, redCy, redPixels)
+    camera.process()
+```
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The camera scans the environment by capturing real-time image frames and applying color blob detection using predefined LAB thresholds for green and red pillars. We determined these thresholds through trial and error, using the OpenMV IDE’s built-in color thresholding tool. Adjusting these values while observing the live feed helps us fine-tune detection until the desired color is consistently recognized without false positives. For example, a snippet of the LAB threshold values used by our team looks like this:</p>
 
@@ -981,7 +1207,6 @@ redThreshold = const((0, 35, 0, 127, 1, 127))
 
 # Format: (L Min, L Max, A Min, A Max, B Min, B Max)
 ```
-
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When the camera detects a blob (a region in the image that matches the threshold), it returns the blob’s position and size. The robot then uses this information to classify the obstacle as green or red, and respond accordingly (e.g., turn left for green, right for red).</p>
 
 <!-- Camera's View -->
@@ -993,6 +1218,41 @@ redThreshold = const((0, 35, 0, 127, 1, 127))
 |<center> ![Green Threshold](./docu-photos/camera/GreenThreshold.png) </center> | <center> ![Raw Image](./docu-photos/camera/RedThreshold.png) </center> |
 |:---------------------:|:---------------------:|
 | Green Threshold | Red Threshold |
+
+```python
+# ===========================
+# Custom Helper Functions
+# ===========================
+
+def findDominantBlob(blobs, roiHeight):
+    """
+    Selects the most significant blob based on size and shape.
+    Preference is given to vertically elongated blobs or blobs touching the ROI bottom.
+    """
+    bestBlob = None
+    maxPixels = 0
+    for b in blobs:
+        if (b.h() > b.w() or (b.y() + b.h()) == roiHeight) and b.pixels() > maxPixels:
+            bestBlob = b
+            maxPixels = b.pixels()
+    return bestBlob
+
+def indicateBlob(gPixels, rPixels):
+    """
+    Visual feedback using LEDs.
+    Turns on green LED if green dominates, red LED if red dominates.
+    Both LEDs off if no significant blob is detected.
+    """
+    if gPixels > rPixels:
+        greenLed.on()
+        redLed.off()
+    elif rPixels > gPixels:
+        redLed.on()
+        greenLed.off()
+    else:
+        redLed.off()
+        greenLed.off()
+```
 
 After processing the image and finding the group of pixels or blobs of the image that meets the **certain thresholds** for ***Green*** or ***Red***, the data (the position and size) of these blobs is then transferred onto the Hub.
 
