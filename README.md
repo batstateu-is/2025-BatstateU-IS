@@ -1,4 +1,4 @@
-# ![J.E.E.P. (BatStateU-IS)](./docu-photos/updbanner.png)
+# ![J.E.E.P. (BatStateU-IS)](./docu-photos/new banner.png)
 
 <center>
 
