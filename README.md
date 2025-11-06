@@ -34,83 +34,105 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 <!-- Table of Contents -->
 ## 📑 Table of Contents
 
-1. [📖 Introduction](#introduction)  
-2. [👥 Team Profile](#team-profile)  
-3. [🤖 Robot Specifications](#robot-specifications)  
+[📖 Introduction](#introduction)  
+[👥 Team Profile](#team-profile)  
+[🤖 Robot Specifications](#robot-specifications)  
 
-4. ⚙️ **Mobility Management**  
-   4.1. [Motor Selection](#11-motor-selection)  
-   4.2. [Steering and Driving Mechanism](#12-steering-and-driving-mechanism)  
-   4.3. [Mechanical Design](#13-mechanical-design)  
+1. ⚙️ [**Mobility Management**](#1-️-mobility-management)
+   
+   1.1. [Motor Selection](#11-motor-selection)  
+   1.2. [Steering and Driving Mechanism](#12-steering-and-driving-mechanism)  
+   1.3. [Mechanical Design](#13-mechanical-design)  
 
-5. 🔋 **Power and Sense Management**  
-   1. [Power Management](#21-power-management)  
+2. 🔋 [**Power, Microcontroller, and Sense Management**](#2--power-microcontroller-and-sense-management)
+
+   2.1. [Power Management](#21-power-management)  
       - [Technic™ Prime Large Hub](#211-technic-prime-large-hub)  
-      - [Technic™ Large Hub Rechargeable Battery](#212-technic-large-hub-rechargeable-battery)  
-   2. [Sense Management](#22-sense-management)  
-      - [Technic™ Distance Sensor](#221-technic-distance-sensor)  
-      - [Gyro Sensor](#222-gyro-sensor)  
-      - [OpenMV Cam H7 Plus](#223-openmv-cam-h7-plus)  
+      - [Technic™ Large Hub Rechargeable Battery](#212-technic-large-hub-rechargeable-battery)
 
-6. 🚀 **Open Challenge Strategy**  
-   6.1. [Determining Drive Direction](#31-determining-drive-direction)  
-   6.2. [Wall Detection and Avoidance](#32-wall-detection-and-avoidance)  
+   2.3  [Microcontroller Management](#22-microcontroller-management)
+      - [Technic™ Prime Large Hub](#221-technic-prime-large-hub)
+      - [LMS-ESP32](#222-lms-esp32)
 
-7. 🚧 **Obstacle Challenge Strategy**  
-   7.1. [Traffic Sign Detection](#41-traffic-sign-detection)  
-   7.2. [Traffic Sign Avoidance Strategy](#42-traffic-sign-avoidance-strategy)  
+   2.3. [Sense Management](#23-sense-management)  
+      - [Technic™ Distance Sensor](#231-technic-distance-sensor)  
+      - [HC-SR04 Ultrasonic Sensor](#232-hc-sr04-ultrasonic-sensor)
+      - [Gyro Sensor](#233-gyro-sensor)  
+      - [OpenMV Cam H7 Plus](#234-openmv-cam-h7-plus)  
+
+3. 🚀 [**Open Challenge Strategy**](#3--open-challenge-strategy)
+
+   3.1. [Determining Drive Direction](#31-determining-drive-direction)  
+   3.2. [Wall Detection and Avoidance](#32-wall-detection-and-avoidance)  
+
+4. 🚧 [**Obstacle Challenge Strategy**](#4--obstacle-challenge-strategy)
+
+   4.1. [Traffic Sign Detection](#41-traffic-sign-detection)  
+   4.2. [Traffic Sign Avoidance Strategy](#42-traffic-sign-avoidance-strategy)  
    7.3. [Perpendicular Parking Strategy](#43-perpendicular-parking-strategy)  
    7.4. [Semi-Machine Learning Strategy](#44-semi-machine-learning-strategy)  
 
-8. 🐞 **Problems Encountered**  
-   8.1. [Continuous Detection to Single-Instance Detection](#51-continuous-detection-to-single-instance-detection)  
-   8.2. [Frequent Disconnection of Camera Wiring](#52-frequent-disconnection-of-camera-wiring)  
-   8.3. [Uneven and Unclean Field](#53-uneven-and-unclean-field)  
-   8.4. [Constant Necessity of Cleaning the Wheels](#54-constant-necessity-of-cleaning-the-wheels)  
+<!-- NOT UPDATED -->
+5. 🐞 [**Problems Encountered**](#5--problems-encountered)
 
-9. 🖨️ **3D Printing Management**  
-   9.1. [3D Modeling](#61-3d-modeling)  
-   9.2. [Material Selection](#62-material-selection)  
-   9.3. [3D Printing Settings](#63-3d-printing-settings)  
-   9.4. [Printing](#64-printing)  
+   5.1. [Continuous Detection to Single-Instance Detection](#51-continuous-detection-to-single-instance-detection)  
+   5.2. [Frequent Disconnection of Camera Wiring](#52-frequent-disconnection-of-camera-wiring)  
+   5.3. [Uneven and Unclean Field](#53-uneven-and-unclean-field)  
+   5.4. [Constant Necessity of Cleaning the Wheels](#54-constant-necessity-of-cleaning-the-wheels)  
 
-10. 📐 **Engineering Factor**  
-    9.1. [3D-Printed Camera Case](#71-3d-printed-camera-case)  
-    9.2. [Rotating Camera and Distance Sensor](#72-rotating-camera-and-distance-sensor)  
-    9.3. [Side Free Wheels](#73-side-free-wheels)  
-    9.4. [Rear-Mounted Spoiler](#74-rear-mounted-spoiler)  
+6. 🖨️ [**3D Printing Management**](#6-️-3d-printing-management)
 
-11. 🔧 **Mechanical Improvements**  
-    11.1. [Testing of Perfect Size for Parking](#81-testing-of-perfect-size-for-parking)  
-    11.2. [Alter Differential Gear to Normal Driving](#82-alter-differential-gear-to-normal-driving)  
-    11.3. [Integrate Gears Around the Robot](#83-integrate-gears-around-the-robot)  
-    11.4. [Alter the Gears’ Size from Big to Medium](#84-alter-the-gears-size-from-big-to-medium)  
-    11.5. [Reposition the SPIKE™ Hub and Balance Rear Weight](#85-reposition-the-spike-hub-and-balance-rear-weight)  
-    11.6. [Testing of Perfect Wheels for Steering](#86-testing-of-perfect-wheels-for-steering)  
-    11.7. [Use Different Wheels for Steering](#87-use-different-wheels-for-steering)  
-    11.8. [Replace Color Sensor with Distance Sensor](#88-replace-color-sensor-with-distance-sensor)  
-    11.9. [Replace Wheels for Driving](#89-replace-wheels-for-driving)  
+   6.1. [3D Modeling](#61-3d-modeling)  
+   6.2. [Material Selection](#62-material-selection)  
+   6.3. [3D Printing Settings](#63-3d-printing-settings)  
+   6.4. [Printing](#64-printing)  
 
-12. 🛠️ **Construction Guide**  
-    12.1. [Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
-    12.2. [Guide for Programming the Robot](#92-guide-for-programming-the-robot)  
+7. 📐 [**Engineering Factor**](#5--problems-encountered)
+
+    7.1. [3D-Printed Camera Case](#71-3d-printed-camera-case)  
+    7.2. [Rotating Camera and Distance Sensor](#72-rotating-camera-and-distance-sensor)  
+    7.3. [Side Free Wheels](#73-side-free-wheels)  
+    7.4. [Rear-Mounted Spoiler](#74-rear-mounted-spoiler)  
+
+<!-- NOT UPDATED -->
+8. 🔧 [**Mechanical Improvements**](#8--mechanical-improvements)
+
+    8.1. [Testing of Perfect Size for Parking](#81-testing-of-perfect-size-for-parking)  
+    8.2. [Alter Differential Gear to Normal Driving](#82-alter-differential-gear-to-normal-driving)  
+    8.3. [Integrate Gears Around the Robot](#83-integrate-gears-around-the-robot)  
+    8.4. [Alter the Gears’ Size from Big to Medium](#84-alter-the-gears-size-from-big-to-medium)  
+    8.5. [Reposition the SPIKE™ Hub and Balance Rear Weight](#85-reposition-the-spike-hub-and-balance-rear-weight)  
+    8.6. [Testing of Perfect Wheels for Steering](#86-testing-of-perfect-wheels-for-steering)  
+    8.7. [Use Different Wheels for Steering](#87-use-different-wheels-for-steering)  
+    8.8. [Replace Color Sensor with Distance Sensor](#88-replace-color-sensor-with-distance-sensor)  
+    8.9. [Replace Wheels for Driving](#89-replace-wheels-for-driving)  
+
+<!-- NOT UPDATED -->
+9. 🛠️ [**Construction Guide**](#9-️-construction-guide) 
+
+    9.1. [Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
+    9.2. [Guide for Programming the Robot](#92-guide-for-programming-the-robot)  
        - [Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
        - [Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)  
-    12.3. [Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
+    9.3. [Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
 
-13. 💡 **Recommendations and Future Work**  
-    12.1. [Recommendations for Mobility Management](#101-recommendations-for-mobility-management)  
+<!-- NOT UPDATED -->
+10. 💡 [**Recommendations and Future Work**](#10--recommendations-and-future-work)
+
+    10.1. [Recommendations for Mobility Management](#101-recommendations-for-mobility-management)  
     12.2. [Recommendations for Power and Sense Management](#102-recommendations-for-power-and-sense-management)  
     12.3. [Recommendations for Strategies](#103-recommendations-for-strategies)  
 
-14. 📎 **Appendices**  
-    14.1. [Robot Actual Photos](#111-robot-actual-photos)  
-    14.2. [Robot 3D Model](#112-robot-3d-model)  
-    14.3. [Pictorial Wiring Diagram](#113-pictorial-wiring-diagram)  
-    14.4. [Bills of Materials](#114-bills-of-materials)  
-    14.5. [Timeline](#115-timeline)  
+<!-- NOT UPDATED -->
+11. 📎 [**Appendices**](#11--appendices)
 
-15. 📜 **Robot Design History**
+    11.1. [Robot Actual Photos](#111-robot-actual-photos)  
+    11.2. [Robot 3D Model](#112-robot-3d-model)  
+    11.3. [Pictorial Wiring Diagram](#113-pictorial-wiring-diagram)  
+    11.4. [Bills of Materials](#114-bills-of-materials)  
+    11.5. [Timeline](#115-timeline)  
+
+12. 📜 [**Robot Design History**](#12--robot-design-history)
 
 ***
 ## 📖 Introduction
@@ -210,7 +232,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 ---
 
-## ⚙️ 1. Mobility Management
+## 1. ⚙️ Mobility Management
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This section will highlight the important aspects of the hardware system that constitutes the mobility and movement specifications of the self-driving robot that we have developed. This includes the reasons behind the selection of the drive system, steering mechanism, wheels, motor, and their respective placements, which all play a vital role in ensuring our robot moves smoothly, accurately, and reliably throughout the challenges.</p>
 
