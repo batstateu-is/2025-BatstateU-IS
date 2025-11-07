@@ -590,7 +590,7 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| <img src="./docu-photos/dclayout.png" alt="Figure 19" width="1080" height="566"> | <img src="./docu-photos/dsplate2.png" alt="Figure 20." width="1080" height="566"> |
+| <img src="./docu-photos/dslayout.png" alt="Figure 19" width="1080" height="566"> | <img src="./docu-photos/dsplate2.png" alt="Figure 20." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 19. <br> Robot’s Technic™ Distance Sensor | Figure 20. <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
 
