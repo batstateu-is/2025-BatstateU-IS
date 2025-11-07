@@ -72,7 +72,7 @@ This repository documents the complete engineering development of a **self-drivi
  5.2 [Faulty Power Source](#52-faulty-power-source)  
  5.3 [Spray Painting](#53-spray-painting)  
  5.4 [Uneven and Unclean Field](#54-uneven-and-unclean-field)  
- 5.5 [Constant Necessity of Cleaning the Wheels](#55-constant-necessity-of-cleaning-the-field)  
+ 5.5 [Constant Necessity of Cleaning the Wheels](#55-constant-necessity-of-cleaning-the-wheels)  
 
 🖨️ **[6. 3D Printing Management](#6-️-3d-printing-management)**  
  6.1 [3D Modeling](#61-3d-modeling)  
@@ -1423,7 +1423,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We also noticed that some paint didn’t adhere well to the 3D-printed PLA surfaces. To improve this, we tried light sanding before painting and applied thinner coats to avoid drips and pooling. Despite these minor setbacks, the experience taught us the importance of patience and timing when applying finishing touches. In the end, we were proud of how the paint brought our robot to life, giving it both a clean professional and well-engineered look.
 
-### 5.4.Uneven and Unclean Field
+### 5.4. Uneven and Unclean Field
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As previously mentioned, the Obstacle and Open Challenge requires extreme focus in improving the robot’s precision in movement, obstacle detection, and turning. However, one of the problems we encountered during testing was the uneven, unclean, and unstable surface of the game field.  Certain areas, especially near the corners, had noticeable bumps, accumulated dust, gaps, or slight inclines that affected the robot’s movement. These surface irregularities caused unexpected tilting, loss of balance, and occasional slipping, particularly when the robot was executing tight turns or moving in a straight path.</p>
 
