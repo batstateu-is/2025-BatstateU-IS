@@ -1917,7 +1917,7 @@ To run your script on the hub, click the “Run this program” button or press 
 
 | BILLS OF MATERIALS | | |
 | ----- | ----- | ----- |
-| **Material**  | **Quantity** | **Price (1pc)** | 
+| **Material**  | **Quantity** | **Price** | 
 | LEGO® Education SPIKE™ Prime Set | 1 pc | Php. 65,000.00 | 
 | LEGO® Education SPIKE™ Prime Expansion Set | 1 pc | Php. 25,000.00 | 
 | LEGO® Education SPIKE™ Essential Set | 1 pc | Php. 30,175.46 | 
@@ -1927,10 +1927,10 @@ To run your script on the hub, click the “Run this program” button or press 
 | OpenMV Cam H7 Plus | 1 pc | Php. 6,784.15 | 
 | LMS-ESP32 | 1 pc | Php. 3000.00 | 
 | UPS-18650 | 1 pc | Php. 1768.51 | 
-| HC-SR04 Ultrasonic Sensor | 3 pc | Php. 49.00 | 
+| HC-SR04 Ultrasonic Sensor | 3 pcs | Php. 147.00 | 
 | PLA Filament | 1 pc | Php. 750.00 | 
 | FlashForge 3D Printer Adventurer 4 | 1 pc | Php. 65,000.00 | 
-| **Total Amount** |   | Php. 268,209.61 | 
+| **Total Amount** |   | Php. 273,125.12 | 
 
 ---
 
