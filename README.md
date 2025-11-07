@@ -35,9 +35,9 @@ This repository documents the complete engineering development of a **self-drivi
 <!-- Table of Contents -->
 ## 📑 Table of Contents
 
-[📖 Introduction](#introduction)  
-[👥 Team Profile](#team-profile)  
-[🤖 Robot Specifications](#robot-specifications)  
+[📖 Introduction](#-introduction)  
+[👥 Team Profile](#-team-profile)  
+[🤖 Robot Specifications](#-robot-specifications)  
 
 ⚙️ **[1. Mobility Management](#1-️-mobility-management)**  
  1.1 [Motor Selection](#11-motor-selection)  
