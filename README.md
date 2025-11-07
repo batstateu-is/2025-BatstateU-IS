@@ -81,13 +81,13 @@ This repository documents the complete engineering development of a **self-drivi
  6.4 [Printing](#64-printing)  
 
 📐 **[7. Engineering Factor](#7--engineering-factor)**  
- 7.1 [3D-Printed OpenMV Cam H7 Plus Case](#71-3d-printed-openmv-cam-h7-plus-case)  
- 7.2 [3D-Printed LMS-ESP32 Case](#72-3d-printed-lms-esp32-case)  
- 7.3 [3D-Printed UPS-18650 Case](#73-3d-printed-ups-18650-case)  
- 7.4 [3D-Printed HC-SR04 Ultrasonic Sensor Case](#74-3d-printed-hc-sr04-ultrasonic-sensor-case)  
- 7.5 [3D-Printed Robot Chassis](#75-3d-printed-robot-chassis)  
- 7.6 [Rotating Camera and Distance Sensor](#76-rotating-camera-and-distance-sensor)  
- 7.7 [One-Button Power Mechanism](#77-one-button-power-mechanism)  
+ 7.1 [One-Button Power Mechanism](#71-one-button-power-mechanism) 
+ 7.2 [3D-Printed OpenMV Cam H7 Plus Case](#72-3d-printed-openmv-cam-h7-plus-case)  
+ 7.3 [3D-Printed LMS-ESP32 Case](#73-3d-printed-lms-esp32-case)  
+ 7.4 [3D-Printed UPS-18650 Case](#74-3d-printed-ups-18650-case)  
+ 7.5 [3D-Printed HC-SR04 Ultrasonic Sensor Case](#75-3d-printed-hc-sr04-ultrasonic-sensor-case)  
+ 7.6 [3D-Printed Robot Chassis](#76-3d-printed-robot-chassis)  
+ 7.7 [Rotating Camera and Distance Sensor](#77-rotating-camera-and-distance-sensor)  
 
 🔧 **[8. Mechanical Improvements](#8--mechanical-improvements)**  
  8.1 [Weight Reduction through 3D Printing](#81-weight-reduction-through-3d-printing)  
@@ -1509,99 +1509,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Behind every successful robot lies a process of challenges, decisions, creative problem-solving, and innovative engineering. The design process focused not only on building a functional robot but on developing one that operates intelligently and efficiently. Each engineering aspect described in this section represents a purposeful solution aimed at enhancing the robot’s efficiency, consistency, reliability, and adaptability—embodying the principles of effective engineering.</p>
 
-### 7.1. 3D-Printed OpenMV Cam H7 Plus Case 
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the key engineering features developed was a custom 3D-printed case for the OpenMV Cam H7, serving as one of the robot’s primary vision systems. The concept for this component originated entirely from the team’s own ideas, combining creativity and practical engineering to address both functionality and convenience. The case was designed to hold the camera securely while allowing easy access and removal when needed. Rather than relying on a traditional fixed mount—which would require time-consuming disassembly—the team engineered a unique slide-lock mechanism. This original design allows the camera to be attached or detached quickly, greatly improving efficiency during testing, troubleshooting, and rewiring. The slide-lock also stabilizes the camera during operation, preventing unwanted movement or vibration and ensuring consistent performance throughout each challenge.</p>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The development process went through several design iterations to ensure that the camera case was both secure and user-friendly. The initial concept began with a simple case design intended to hold the camera using a screw-fastened cover. However, finding a screw size that fit the camera case precisely proved challenging. To overcome this issue, the design was reimagined to incorporate a slide-lock mechanism, eliminating the need for mechanical fasteners or tools. This redesign allowed for easier camera installation and removal while maintaining a firm hold. The second attempy featuring the slide-lock system was then printed, but minor dimensional inaccuracies emerged when compared to the actual size of the OpenMV Cam H7, prompting further refinement of the model.</p> 
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the third iteration, precise measurements of the OpenMV Cam H7 were taken to refine the slide-lock design and achieve a more accurate fit. This version marked a major improvement as it securely held the camera in place, provided quick and effortless access, and kept the wiring neatly organized and protected. What made this design truly original was the team’s creative approach to solving a practical problem through a fully custom mechanism. The slide-lock concept was entirely self-engineered—born from experimentation, hands-on testing, and the team’s commitment to creating a unique, efficient, and tool-free solution tailored specifically to the robot’s needs. </p>
-
-<center>
-
-| ![Figure 39.](./docu-photos/.png) | ![Figure 40.](./docu-photos/camcaseplate2.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 39. <br> 3D-Printed OpenMV Cam H7 Plus Case  </center> | <center> Figure 40. <br> 3D-Printed OpenMV Cam H7 Plus Case  <br> Dimesions </center> |
-
-</center>
-
-### 7.2. 3D-Printed LMS-ESP32 Case
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 3D-printed LMS-ESP32 case was developed as a key engineering innovation aimed at improving the functionality and reliability of the robot’s electronic system. During initial testing, it was observed that the ESP32 board was vulnerable to movement and potential disconnections when mounted openly on the chassis. To resolve this issue, a fully custom enclosure was conceptualized and modeled in Blender based on the team’s original design approach. Fabricated using PLA filament, the case provided a secure and organized housing that protected the ESP32 from physical disturbances while maintaining accessibility for wiring and maintenance. This original solution not only strengthened the robot’s structural integrity but also reflected the team’s hands-on problem-solving and design creativity.</p>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The case was precisely dimensioned to accommodate the LMS-ESP32 board and its USB connection to the UPS-18650 power module, while providing sufficient clearance for signal and power cables. The design incorporated strategically placed ventilation slots to promote passive heat dissipation, keeping the board within safe operating temperatures during extended operation. Rather than mounting directly onto LEGO® Technic™ elements, the enclosure featured a custom structural design created entirely by the team to fit seamlessly within the robot’s framework. This original configuration demonstrated a creative engineering approach—balancing protection, accessibility, and functionality through a self-designed structure tailored specifically to the robot’s layout and performance needs.</p>
-
-<center>
-
-| ![Figure 41.](./docu-photos/.png) | ![Figure 42.](./docu-photos/espcaseplate2.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 41. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 42. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
-
-</center>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Several iterations were printed to achieve proper alignment of holes and connectors, as initial prototypes showed minor mismatches between the ESP32’s pin layout and the robot’s structural frame. Adjustments to thickness and hole diameter were made after each test print, improving both the mechanical strength and ease of access for maintenance. The final version of the case achieved a balance between rigidity and light weight.</p>
-
-### 7.3. 3D-Printed UPS-18650 Case
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Similarly, the 3D-printed case for the UPS-18650 module represented another key engineering enhancement in the robot’s design. Building upon the experience gained from modeling and printing earlier components such as the camera and sensor enclosures, the development of this case became a more streamlined and efficient process. With a clear understanding of dimensional requirements and alignment considerations for securely fitting electronic components, the team was able to design a custom, form-fitting enclosure for the UPS module. This thoughtful design ensured stable mounting, effective protection, and easy accessibility, reflecting the team’s growing expertise and creative problem-solving in 3D-printed component fabrication. </p>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using Blender for 3D modeling, the case was designed to provide precise spacing for the module’s ports, indicators, and wiring while maintaining a compact structure that fit neatly within the robot’s overall framework. Once fabricated, the enclosure proved easy to assemble and install, offering reliable protection and stability for the UPS-18650 module. The thoughtful design also enhanced cable management by minimizing clutter and improving accessibility, which made maintenance and adjustments more efficient.</p>
-
-<center>
-
-| ![Figure 43.](./docu-photos/upscaselayout.png) | ![Figure 44.](./docu-photos/upscaseplate2.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 43. <br> 3D-Printed UPS-18650 Case </center> | <center> Figure 44. <br> 3D-Printed UPS-18650 Case <br> Dimesions </center> |
-
-</center>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This part reflected how the team’s progressive learning in 3D modeling and fabrication directly contributed to faster, more precise design iterations.</p>
-
-### 7.4. 3D-Printed HC-SR04 Ultrasonic Sensor Case
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 3D-printed case for the HC-SR04 Ultrasonic Sensor served as another key engineering innovation that enhanced both functionality and integration within the robot. Designed entirely from the team’s original concept, the enclosure featured a custom slide-lock mechanism that allowed it to lock directly into the robot’s chassis. This design provided a secure and stable mount for the sensor, ensuring precise alignment and consistent distance measurement during operation while showcasing the team’s creativity and engineering ingenuity.</p>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Precise measurements of the sensor’s transducers, PCB layout, and mounting dimensions were taken to achieve a snug and accurate fit while keeping the pins and wiring fully accessible. The final 3D-printed design enhanced the sensor’s protection and durability, ensuring secure placement within the chassis and maintaining proper alignment for consistent and reliable distance readings.</p>
-
-<center>
-
-| ![Figure 45.](./docu-photos/uscaselayout.png) | ![Figure 46.](./docu-photos/uscaseplate2.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 45. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 46. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
-
-</center>
-
-### 7.5. 3D-Printed Robot Chassis
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 3D-printed chassis was one of the most original and defining engineering achievements in the robot’s development, entirely conceptualized and created by the team. Drawing inspiration from the iconic jeepney, the design was carefully modeled from scratch to capture its recognizable form while adapting it to function as the robot’s main structural framework. Every contour, panel, and mounting point was crafted with the use of the team’s own creativity and technical skill, balancing cultural expression with engineering practicality. This hands-on approach showcased how the team transformed an idea into a fully functional, 3D-printed structure that united aesthetic originality with mechanical strength and precision.</p>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As the central frame supporting every major subsystem, achieving accuracy and strength was crucial. During the early stages, several trial-and-error iterations were produced using the FlashForge Adventurer 4 printer. These initial attempts faced challenges such as incomplete prints, misalignments, and dimensional inaccuracies, which are issues often caused by minor modeling errors or printer calibration inconsistencies. Despite these obstacles, each iteration provided valuable learning experiences that guided refinements in modeling, structural reinforcement, and overall print quality, ultimately leading to a stronger and more precise final chassis.</p>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After several iterations, a functional prototype was successfully produced that met the initial design goals. For the final version, the Bambu Lab 3D printer was used, which provided higher resolution, better print stability, and smoother surface finish. In the end, the result was a strong, lightweight, and accurately fitted chassis that perfectly supported the robot’s electronic and mechanical components.</p>
-
-<center>
-
-| ![Figure 47.](./docu-photos/.png) | ![Figure 48.](./docu-photos/chassisplate2.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 47. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 48. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
-
-</center>
-
-### 7.6. Rotating Camera and Distance Sensor
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The creation of the rotating sensor system stands as one of the team’s most inventive and technically clever engineering solutions. It originated from the idea of maximizing the robot’s sensing capability without adding extra hardware or ports. Through brainstorming and experimentation, the team designed a custom rotating platform that combined both the OpenMV Cam H7 and the Technic™ Distance Sensor into a single, coordinated system.</p>
-
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To maximize the functionality of both the camera and the distance sensor, the robot is equipped with a Technic™ Large Angular Motor that enables these sensors to rotate approximately 90° in both directions from a central starting position. This rotational mechanism significantly expands the sensors' field of view, allowing the robot to better observe its surroundings, detect walls and obstacles from multiple angles, and respond more accurately to changes in the environment. This feature was developed in response to the limited number of available ports on the Technic™ Large Hub, which restricted the number of sensors that could be connected at once. By mounting both the OpenMV Cam H7 and the Technic™ Distance Sensor on a rotating platform powered by a single motor, the team were able to simulate the presence of multiple sensors while conserving ports. The rotating sensor system plays a key role in obstacle detection, wall tracking, and situational awareness across both the Open and Obstacle Challenge rounds.</p>
-
-<center>
-
-| ![Figure 49.](./docu-photos/smfront.png) | ![Figure 50.](./docu-photos/smiso.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 49. <br> Robot's Rotating Mechanism <br> Front View </center> | <center> Figure 50. <br> Robot's Rotating Mechanism <br> Side View </center> |
-
-</center>
-
-### 7.7. One-Button Power Mechanism
+### 7.1. One-Button Power Mechanism
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the most innovative and team-engineered features of the robot is the one-button power mechanism—a design that stands out as both a creative and functional breakthrough. Inspired by the Future Engineers competition rule, which requires the robot to be powered on using only one button and one motion, the team set out to create a unified power system that could activate all components simultaneously.</p>
 
@@ -1637,6 +1545,98 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <b> 3. LPF2 Connector Reference Table </b>
 - This small reference table defines the pinout of the LPF2 communication connector used by the SPIKE™ Hub, specifying the lines for GND, 3.3V, and serial communication pins (ID1–ID2). This helps align the correct wiring for signal and power integration between the LEGO hub and the ESP32.
+
+### 7.2. 3D-Printed OpenMV Cam H7 Plus Case 
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the key engineering features developed was a custom 3D-printed case for the OpenMV Cam H7, serving as one of the robot’s primary vision systems. The concept for this component originated entirely from the team’s own ideas, combining creativity and practical engineering to address both functionality and convenience. The case was designed to hold the camera securely while allowing easy access and removal when needed. Rather than relying on a traditional fixed mount—which would require time-consuming disassembly—the team engineered a unique slide-lock mechanism. This original design allows the camera to be attached or detached quickly, greatly improving efficiency during testing, troubleshooting, and rewiring. The slide-lock also stabilizes the camera during operation, preventing unwanted movement or vibration and ensuring consistent performance throughout each challenge.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The development process went through several design iterations to ensure that the camera case was both secure and user-friendly. The initial concept began with a simple case design intended to hold the camera using a screw-fastened cover. However, finding a screw size that fit the camera case precisely proved challenging. To overcome this issue, the design was reimagined to incorporate a slide-lock mechanism, eliminating the need for mechanical fasteners or tools. This redesign allowed for easier camera installation and removal while maintaining a firm hold. The second attempy featuring the slide-lock system was then printed, but minor dimensional inaccuracies emerged when compared to the actual size of the OpenMV Cam H7, prompting further refinement of the model.</p> 
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the third iteration, precise measurements of the OpenMV Cam H7 were taken to refine the slide-lock design and achieve a more accurate fit. This version marked a major improvement as it securely held the camera in place, provided quick and effortless access, and kept the wiring neatly organized and protected. What made this design truly original was the team’s creative approach to solving a practical problem through a fully custom mechanism. The slide-lock concept was entirely self-engineered—born from experimentation, hands-on testing, and the team’s commitment to creating a unique, efficient, and tool-free solution tailored specifically to the robot’s needs. </p>
+
+<center>
+
+| ![Figure 39.](./docu-photos/.png) | ![Figure 40.](./docu-photos/camcaseplate2.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 39. <br> 3D-Printed OpenMV Cam H7 Plus Case  </center> | <center> Figure 40. <br> 3D-Printed OpenMV Cam H7 Plus Case  <br> Dimesions </center> |
+
+</center>
+
+### 7.3. 3D-Printed LMS-ESP32 Case
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 3D-printed LMS-ESP32 case was developed as a key engineering innovation aimed at improving the functionality and reliability of the robot’s electronic system. During initial testing, it was observed that the ESP32 board was vulnerable to movement and potential disconnections when mounted openly on the chassis. To resolve this issue, a fully custom enclosure was conceptualized and modeled in Blender based on the team’s original design approach. Fabricated using PLA filament, the case provided a secure and organized housing that protected the ESP32 from physical disturbances while maintaining accessibility for wiring and maintenance. This original solution not only strengthened the robot’s structural integrity but also reflected the team’s hands-on problem-solving and design creativity.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The case was precisely dimensioned to accommodate the LMS-ESP32 board and its USB connection to the UPS-18650 power module, while providing sufficient clearance for signal and power cables. The design incorporated strategically placed ventilation slots to promote passive heat dissipation, keeping the board within safe operating temperatures during extended operation. Rather than mounting directly onto LEGO® Technic™ elements, the enclosure featured a custom structural design created entirely by the team to fit seamlessly within the robot’s framework. This original configuration demonstrated a creative engineering approach—balancing protection, accessibility, and functionality through a self-designed structure tailored specifically to the robot’s layout and performance needs.</p>
+
+<center>
+
+| ![Figure 41.](./docu-photos/.png) | ![Figure 42.](./docu-photos/espcaseplate2.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 41. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 42. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+
+</center>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Several iterations were printed to achieve proper alignment of holes and connectors, as initial prototypes showed minor mismatches between the ESP32’s pin layout and the robot’s structural frame. Adjustments to thickness and hole diameter were made after each test print, improving both the mechanical strength and ease of access for maintenance. The final version of the case achieved a balance between rigidity and light weight.</p>
+
+### 7.4. 3D-Printed UPS-18650 Case
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Similarly, the 3D-printed case for the UPS-18650 module represented another key engineering enhancement in the robot’s design. Building upon the experience gained from modeling and printing earlier components such as the camera and sensor enclosures, the development of this case became a more streamlined and efficient process. With a clear understanding of dimensional requirements and alignment considerations for securely fitting electronic components, the team was able to design a custom, form-fitting enclosure for the UPS module. This thoughtful design ensured stable mounting, effective protection, and easy accessibility, reflecting the team’s growing expertise and creative problem-solving in 3D-printed component fabrication. </p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using Blender for 3D modeling, the case was designed to provide precise spacing for the module’s ports, indicators, and wiring while maintaining a compact structure that fit neatly within the robot’s overall framework. Once fabricated, the enclosure proved easy to assemble and install, offering reliable protection and stability for the UPS-18650 module. The thoughtful design also enhanced cable management by minimizing clutter and improving accessibility, which made maintenance and adjustments more efficient.</p>
+
+<center>
+
+| ![Figure 43.](./docu-photos/upscaselayout.png) | ![Figure 44.](./docu-photos/upscaseplate2.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 43. <br> 3D-Printed UPS-18650 Case </center> | <center> Figure 44. <br> 3D-Printed UPS-18650 Case <br> Dimesions </center> |
+
+</center>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This part reflected how the team’s progressive learning in 3D modeling and fabrication directly contributed to faster, more precise design iterations.</p>
+
+### 7.5. 3D-Printed HC-SR04 Ultrasonic Sensor Case
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 3D-printed case for the HC-SR04 Ultrasonic Sensor served as another key engineering innovation that enhanced both functionality and integration within the robot. Designed entirely from the team’s original concept, the enclosure featured a custom slide-lock mechanism that allowed it to lock directly into the robot’s chassis. This design provided a secure and stable mount for the sensor, ensuring precise alignment and consistent distance measurement during operation while showcasing the team’s creativity and engineering ingenuity.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Precise measurements of the sensor’s transducers, PCB layout, and mounting dimensions were taken to achieve a snug and accurate fit while keeping the pins and wiring fully accessible. The final 3D-printed design enhanced the sensor’s protection and durability, ensuring secure placement within the chassis and maintaining proper alignment for consistent and reliable distance readings.</p>
+
+<center>
+
+| ![Figure 45.](./docu-photos/uscaselayout.png) | ![Figure 46.](./docu-photos/uscaseplate2.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 45. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 46. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+
+</center>
+
+### 7.6. 3D-Printed Robot Chassis
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 3D-printed chassis was one of the most original and defining engineering achievements in the robot’s development, entirely conceptualized and created by the team. Drawing inspiration from the iconic jeepney, the design was carefully modeled from scratch to capture its recognizable form while adapting it to function as the robot’s main structural framework. Every contour, panel, and mounting point was crafted with the use of the team’s own creativity and technical skill, balancing cultural expression with engineering practicality. This hands-on approach showcased how the team transformed an idea into a fully functional, 3D-printed structure that united aesthetic originality with mechanical strength and precision.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As the central frame supporting every major subsystem, achieving accuracy and strength was crucial. During the early stages, several trial-and-error iterations were produced using the FlashForge Adventurer 4 printer. These initial attempts faced challenges such as incomplete prints, misalignments, and dimensional inaccuracies, which are issues often caused by minor modeling errors or printer calibration inconsistencies. Despite these obstacles, each iteration provided valuable learning experiences that guided refinements in modeling, structural reinforcement, and overall print quality, ultimately leading to a stronger and more precise final chassis.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After several iterations, a functional prototype was successfully produced that met the initial design goals. For the final version, the Bambu Lab 3D printer was used, which provided higher resolution, better print stability, and smoother surface finish. In the end, the result was a strong, lightweight, and accurately fitted chassis that perfectly supported the robot’s electronic and mechanical components.</p>
+
+<center>
+
+| ![Figure 47.](./docu-photos/.png) | ![Figure 48.](./docu-photos/chassisplate2.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 47. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 48. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+
+</center>
+
+### 7.7. Rotating Camera and Distance Sensor
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The creation of the rotating sensor system stands as one of the team’s most inventive and technically clever engineering solutions. It originated from the idea of maximizing the robot’s sensing capability without adding extra hardware or ports. Through brainstorming and experimentation, the team designed a custom rotating platform that combined both the OpenMV Cam H7 and the Technic™ Distance Sensor into a single, coordinated system.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To maximize the functionality of both the camera and the distance sensor, the robot is equipped with a Technic™ Large Angular Motor that enables these sensors to rotate approximately 90° in both directions from a central starting position. This rotational mechanism significantly expands the sensors' field of view, allowing the robot to better observe its surroundings, detect walls and obstacles from multiple angles, and respond more accurately to changes in the environment. This feature was developed in response to the limited number of available ports on the Technic™ Large Hub, which restricted the number of sensors that could be connected at once. By mounting both the OpenMV Cam H7 and the Technic™ Distance Sensor on a rotating platform powered by a single motor, the team were able to simulate the presence of multiple sensors while conserving ports. The rotating sensor system plays a key role in obstacle detection, wall tracking, and situational awareness across both the Open and Obstacle Challenge rounds.</p>
+
+<center>
+
+| ![Figure 49.](./docu-photos/smfront.png) | ![Figure 50.](./docu-photos/smiso.png) |
+|:---------------------:| :---------------------:|
+| <center> Figure 49. <br> Robot's Rotating Mechanism <br> Front View </center> | <center> Figure 50. <br> Robot's Rotating Mechanism <br> Side View </center> |
+
+</center>
 
 ---
 
@@ -1833,7 +1833,7 @@ To run your script on the hub, click the “Run this program” button or press 
 
 - **Improving the Selection of Wheels**  
   - One of the identified limitations in the robot’s design was the inconsistency of its wheels. Due to limited accessibility to different wheel types, the team had restricted options, which prevented further evaluation of alternatives that could deliver better performance. It is recommended to explore a wider range of wheels with suitable dimensions and tire materials to achieve improved traction and stability during movement and steering. Wheel grip plays a crucial role in how the robot accelerates, turns, and stops. Utilizing wheels with rubberized surfaces or custom 3D-printed tread patterns could enhance traction and minimize slipping, particularly on uneven or dusty surfaces.
-  - 
+    
 ### 10.2. Recommendations for Power and Sense Management
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before presenting the recommendations, it is important to note that several limitations were observed in the robot’s power and sense management system. During operation, inconsistent power distribution occasionally caused minor delays in sensor response and communication between modules, particularly when multiple sensors were active simultaneously. Additionally, wiring congestion and restricted connection ports limited the flexibility of component placement and expansion. These issues, while manageable, highlighted opportunities to enhance efficiency, stability, and scalability in future iterations. </p>
