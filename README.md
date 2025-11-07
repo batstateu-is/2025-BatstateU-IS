@@ -39,96 +39,81 @@ This repository documents the complete engineering development of a **self-drivi
 [👥 Team Profile](#team-profile)  
 [🤖 Robot Specifications](#robot-specifications)  
 
-1. ⚙️ [**Mobility Management**](#1-️-mobility-management)
-   
-   1.1. [Motor Selection](#11-motor-selection)  
-   1.2. [Steering and Driving Mechanism](#12-steering-and-driving-mechanism)  
-   1.3. [Mechanical Design](#13-mechanical-design)  
+⚙️ **[1. Mobility Management](#1-️-mobility-management)**  
+ 1.1 [Motor Selection](#11-motor-selection)  
+ 1.2 [Steering and Driving Mechanism](#12-steering-and-driving-mechanism)  
+ 1.3 [Mechanical Design](#13-mechanical-design)  
 
-2. 🔋 [**Power, Microcontroller, and Sense Management**](#2--power-microcontroller-and-sense-management)
+🔋 **[2. Power, Microcontroller, and Sense Management](#2--power-microcontroller-and-sense-management)**  
+ 2.1 [Power Management](#21-power-management)  
+  2.1.1 [Technic™ Large Hub Rechargeable Battery](#211-technic-large-hub-rechargeable-battery)  
+  2.1.2 [Raspberry Pi UPS-18650 Battery](#212-raspberry-pi-ups-18650-battery)  
+ 2.2 [Microcontroller Management](#22-microcontroller-management)  
+  2.2.1 [Technic™ Prime Large Hub](#221-technic-prime-large-hub)  
+  2.2.2 [LMS-ESP32](#222-lms-esp32)  
+ 2.3 [Sense Management](#23-sense-management)  
+  2.3.1 [Technic™ Distance Sensor](#231-technic-distance-sensor)  
+  2.3.2 [HC-SR04 Ultrasonic Sensor](#232-hc-sr04-ultrasonic-sensor)  
+  2.3.3 [Gyro Sensor](#233-gyro-sensor)  
+  2.3.4 [OpenMV Cam H7 Plus](#234-openmv-cam-h7-plus)  
 
-   2.1. [Power Management](#21-power-management)  
-   &nbsp;&nbsp;&nbsp;&nbsp;2.1.1. [Technic™ Large Hub Recchargeable Battery](#211-technic-large-hub-rechargeable-battery)  
-   &nbsp;&nbsp;&nbsp;&nbsp;2.1.2. [Raspberry pi UPS-18650 Battery](#212-raspberry-pi-ups-18650-battery)
+🚀 **[3. Open Challenge Strategy](#3--open-challenge-strategy)**  
+ 3.1 [Determining Drive Direction](#31-determining-drive-direction)  
+ 3.2 [Wall Detection and Avoidance](#32-wall-detection-and-avoidance)  
 
-   2.2. [Microcontroller Management](#22-microcontroller-management)
-   &nbsp;&nbsp;&nbsp;&nbsp;2.2.1.[Technic™ Prime Large Hub](#221-technic-prime-large-hub)
-   &nbsp;&nbsp;&nbsp;&nbsp;2.2.2.[LMS-ESP32](#222-lms-esp32)
+🚧 **[4. Obstacle Challenge Strategy](#4--obstacle-challenge-strategy)**  
+ 4.1 [Traffic Sign Detection](#41-traffic-sign-detection)  
+ 4.2 [Traffic Sign Avoidance Strategy](#42-traffic-sign-avoidance-strategy)  
+ 4.3 [Perpendicular Parking Strategy](#43-perpendicular-parking-strategy)  
+ 4.4 [Semi-Machine Learning Strategy](#44-semi-machine-learning-strategy)  
 
-   2.3. [Sense Management](#23-sense-management)  
-   &nbsp;&nbsp;&nbsp;&nbsp;2.3.1.[Technic™ Distance Sensor](#231-technic-distance-sensor)  
-   &nbsp;&nbsp;&nbsp;&nbsp;2.3.2.[HC-SR04 Ultrasonic Sensor](#232-hc-sr04-ultrasonic-sensor)
-   &nbsp;&nbsp;&nbsp;&nbsp;2.3.3.[Gyro Sensor](#233-gyro-sensor)  
-   &nbsp;&nbsp;&nbsp;&nbsp;2.3.4.[OpenMV Cam H7 Plus](#234-openmv-cam-h7-plus)  
+🐞 **[5. Problems Encountered](#5--problems-encountered)**  
+ 5.1 [Improper Printing](#51-improper-printing)  
+ 5.2 [Faulty Power Source](#52-faulty-power-source)  
+ 5.3 [Spray Painting](#53-spray-painting)  
+ 5.4 [Uneven and Unclean Field](#54-uneven-and-unclean-field)  
+ 5.5 [Constant Necessity of Cleaning the Wheels](#55-constant-necessity-of-cleaning-the-field)  
 
-3. 🚀 [**Open Challenge Strategy**](#3--open-challenge-strategy)
-   
-   3.1. [Determining Drive Direction](#31-determining-drive-direction)  
-   3.2. [Wall Detection and Avoidance](#32-wall-detection-and-avoidance)  
+🖨️ **[6. 3D Printing Management](#6-️-3d-printing-management)**  
+ 6.1 [3D Modeling](#61-3d-modeling)  
+ 6.2 [Material Selection](#62-material-selection)  
+ 6.3 [3D Printing Settings](#63-3d-printing-settings)  
+ 6.4 [Printing](#64-printing)  
 
-4. 🚧 [**Obstacle Challenge Strategy**](#4--obstacle-challenge-strategy)
+📐 **[7. Engineering Factor](#7--engineering-factor)**  
+ 7.1 [3D-Printed OpenMV Cam H7 Plus Case](#71-3d-printed-openmv-cam-h7-plus-case)  
+ 7.2 [3D-Printed LMS-ESP32 Case](#72-3d-printed-lms-esp32-case)  
+ 7.3 [3D-Printed UPS-18650 Case](#73-3d-printed-ups-18650-case)  
+ 7.4 [3D-Printed HC-SR04 Ultrasonic Sensor Case](#74-3d-printed-hc-sr04-ultrasonic-sensor-case)  
+ 7.5 [3D-Printed Robot Chassis](#75-3d-printed-robot-chassis)  
+ 7.6 [Rotating Camera and Distance Sensor](#76-rotating-camera-and-distance-sensor)  
+ 7.7 [One-Button Power Mechanism](#77-one-button-power-mechanism)  
 
-   4.1. [Traffic Sign Detection](#41-traffic-sign-detection)  
-   4.2. [Traffic Sign Avoidance Strategy](#42-traffic-sign-avoidance-strategy)  
-   4.3. [Perpendicular Parking Strategy](#43-perpendicular-parking-strategy)  
-   4.4. [Semi-Machine Learning Strategy](#44-semi-machine-learning-strategy)  
+🔧 **[8. Mechanical Improvements](#8--mechanical-improvements)**  
+ 8.1 [Weight Reduction through 3D Printing](#81-weight-reduction-through-3d-printing)  
 
-<!-- NOT UPDATED -->
-5. 🐞 [**Problems Encountered**](#5--problems-encountered)
+🛠️ **[9. Construction Guide](#9-️-construction-guide)**  
+ 9.1 [Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
+ 9.2 [Guide for Programming the Robot](#92-guide-for-programming-the-robot)  
+  9.2.1 [Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
+  9.2.2 [Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)  
+  9.2.3 [Programming the LMS-ESP32](#923-programming-the-lms-esp32)  
+  9.2.4 [Programming the UPS-18650 Battery](#924-programming-the-ups-18650-battery)  
+ 9.3 [Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
 
-   5.1. [Improper Printing](#51-improper-printing)  
-   5.2. [Faulty Power Source](#52-faulty-power-source)  
-   5.3. [Spray Painting](#53-spray-painting)  
-   5.4. [Uneven and Unclean Field](#54-uneven-and-unclean-field)
-   5.5. [Constant Necessity of Cleaning the Wheels](#55-constant-necessity-of-cleaning-the-field)
+💡 **[10. Recommendations and Future Work](#10--recommendations-and-future-work)**  
+ 10.1 [Recommendations for Mobility Management](#101-recommendations-for-mobility-management)  
+ 10.2 [Recommendations for Power and Sense Management](#102-recommendations-for-power-and-sense-management)  
+ 10.3 [Recommendations for Strategies](#103-recommendations-for-strategies)  
 
-6. 🖨️ [**3D Printing Management**](#6-️-3d-printing-management)
+📎 **[11. Appendices](#11--appendices)**  
+ 11.1 [Robot Actual Photos](#111-robot-actual-photos)  
+ 11.2 [Robot 3D Model](#112-robot-3d-model)  
+ 11.3 [Pictorial Wiring Diagram](#113-pictorial-wiring-diagram)  
+ 11.4 [Bills of Materials](#114-bills-of-materials)  
+ 11.5 [Timeline](#115-timeline)  
 
-   6.1. [3D Modeling](#61-3d-modeling)  
-   6.2. [Material Selection](#62-material-selection)  
-   6.3. [3D Printing Settings](#63-3d-printing-settings)  
-   6.4. [Printing](#64-printing)  
-
-7. 📐 [**Engineering Factor**](#7--engineering-factor)
-
-    7.1. [3D-Printed OpenMV Cam H7 Plus Case](#71-3d-printed-openmv-cam-h7-plus-case)  
-    7.2. [3D-Printed LMS-ESP32 Case](#72-3d-printed-lms-esp32-case)  
-    7.3. [3D-Printed UPS-18650 Case](#73-3d-printed-ups-18650-case)  
-    7.4. [3D-Printed HC-SR04 Ultrasonic Sensor Case](#74-3d-printed-hc-sr04-ultrasonic-sensor-case)
-    7.5. [3D-Printed Robot Chassis](#75-3d-printed-robot-chassis)
-    7.6. [Rotating Camera and Distance Sensor](#76-rotating-camera-and-distance-sensor)
-    7.7. [One-Button Power Mechanism](#77-one-button-power-mechanism) 
-
-8. 🔧 [**Mechanical Improvements**](#8--mechanical-improvements)
-
-    8.1. [Weight Reduction through 3D Printing](#81-weight-reduction-through-3d-printing)
-
-9. 🛠️ [**Construction Guide**](#9-️-construction-guide) 
-
-    9.1. [Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
-    9.2. [Guide for Programming the Robot](#92-guide-for-programming-the-robot)  
-    &nbsp;&nbsp;&nbsp;&nbsp;9.2.1.[Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
-    &nbsp;&nbsp;&nbsp;&nbsp;9.2.2.[Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)
-    &nbsp;&nbsp;&nbsp;&nbsp;9.2.3.[Programming the LMS-ESP32](#923-programming-the-lms-esp32)
-    &nbsp;&nbsp;&nbsp;&nbsp;9.2.4.[Programming the UPS-18650 Battery](#924-programming-the-ups-18650-battery)
-    9.3. [Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
-
-10. 💡 [**Recommendations and Future Work**](#10--recommendations-and-future-work)
-
-    10.1. [Recommendations for Mobility Management](#101-recommendations-for-mobility-management)  
-    10.2. [Recommendations for Power and Sense Management](#102-recommendations-for-power-and-sense-management)  
-    10.3. [Recommendations for Strategies](#103-recommendations-for-strategies)  
-
-<!-- NOT UPDATED -->
-11. 📎 [**Appendices**](#11--appendices)
-
-    11.1. [Robot Actual Photos](#111-robot-actual-photos)  
-    11.2. [Robot 3D Model](#112-robot-3d-model)  
-    11.3. [Pictorial Wiring Diagram](#113-pictorial-wiring-diagram)  
-    11.4. [Bills of Materials](#114-bills-of-materials)  
-    11.5. [Timeline](#115-timeline)  
-
-12. 📜 [**Robot Design History**](#12--robot-design-history)
+📜 **[12. Robot Design History](#12--robot-design-history)**
 
 ***
 ## 📖 Introduction
