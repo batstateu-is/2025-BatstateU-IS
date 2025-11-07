@@ -17,10 +17,11 @@
 ## 🧭 Abstract
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-This repository contains the comprehensive development of a **self-driving robot** engineered by 
-**Junior Engineers Exploring Possibilities (J.E.E.P.)** from Batangas State University - Integrated School, representing **Philippines** for the [**2025 World Robot Olympiad**](https://wro-association.org/competition/2025-season/), 
-under the **Future Engineers category**. Designed for **_autonomous navigation_**, 
-**_obstacle avoidance_**, and **_traffic sign detection_**, the robot integrates [**LMS-ESP32**](https://www.antonsmindstorms.com/product/wifi-python-esp32-board-for-mindstorms/?srsltid=AfmBOopfdoKXv4-t9PTAc_VNohW6cx7w24SMns8QDY4nlufSxlDntJdL) as its microcontroller, allowing the **LEGO® SPIKE™ Prime** and **Arduino** electronics to communicate with one another. In addition, the robot ensures high precision detection with a vision system powered by the [**OpenMV Cam H7 Plus**](https://openmv.io/products/openmv-cam-h7-plus). Custom 3D-printed components were used to develop the chassis, serving as the main body of the self-driving robot, which better improved its mechanical structure, secured sensors, and optimized its internal space. Through iterative testing, the team enhanced its performance with innovated mechanism and steering geometry. Overall, this project showcases practical engineering, strategic design, and reliable performance under dynamic conditions.
+This repository documents the complete engineering development of a **self-driving robot** created by the **Junior Engineers Exploring Possibilities (J.E.E.P.)** team of Batangas State University – Integrated School, representing the **Philippines** in the 2025 World Robot Olympiad – Future Engineers category. The robot is designed for **autonomous navigation**, **obstacle avoidance**, and **traffic sign detection**, integrating an [**LMS-ESP32**](https://www.antonsmindstorms.com/product/wifi-python-esp32-board-for-mindstorms/?srsltid=AfmBOopfdoKXv4-t9PTAc_VNohW6cx7w24SMns8QDY4nlufSxlDntJdL) to enable seamless communication between LEGO® SPIKE™ Prime components and custom Arduino-based electronics. High-accuracy vision detection is achieved using the [**OpenMV Cam H7 Plus**](https://openmv.io/products/openmv-cam-h7-plus), supported by a reliable system of sensors and control modules.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The project incorporates several notable engineering factors that strengthened performance, mechanical reliability, and system efficiency. Multiple **custom 3D-printed** components were developed, beginning with a **slide-lock OpenMV camera case** that ensures secure mounting while allowing rapid removal during testing and rewiring. A dedicated **3D-printed case for the LMS-ESP32** was designed to prevent movement and disconnection, featuring precise dimensions, ventilation slots, and Technic-compatible mounting points. A **compact enclosure for the UPS-18650 module** was also produced to improve cable management and component stability. To adapt third-party hardware to LEGO® systems, a **3D-printed HC-SR04 ultrasonic sensor case** was designed with side-mount holes for accurate alignment and consistent distance readings. At the system level, a **fully 3D-printed chassis** was engineered through multiple iterations across different CAD platforms and printers, resulting in a lightweight, structurally accurate frame capable of supporting all electronic and mechanical assemblies.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beyond structural enhancements, the robot features a **rotating sensor mechanism** powered by a Technic™ Large Angular Motor, allowing both the OpenMV camera and Technic™ Distance Sensor to sweep in both directions for expanded field coverage, wall detection, and situational awareness. A **one-button power mechanism** was implemented to meet Future Engineers competition requirements, allowing the SPIKE™ Prime Hub, LMS-ESP32, and UPS-18650 power module to activate simultaneously with a single input through a regulated serial connection.
 
 <p align="justify"> You may view the full performance of the team's robot through the link provided below. Watching the complete run will offer a clear understanding of how the mechanical design, sensor integration, and code execution come together in real-time to accomplish each task.</p>  
 
@@ -297,17 +298,17 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;These design choices highlight the team’s growing proficiency in applying mechanical design concepts and engineering problem-solving to create practical yet original solutions. Further discussions and technical details about the 3D-printed components and engineering factors are provided in Chapter 5. [Engineering Factor](#7--engineering-factor)
 
-| ![Figure 3.](./docu-photos/chassis.png) | ![Figure 4.](./docu-photos/chassis1.png) |
+| ![Figure 5.](./docu-photos/chassis.png) | ![Figure 6.](./docu-photos/chassis1.png) |
 |:---------------------:|:---------------------:|
-| Figure 3. <br> Robot Chassis <br> Left Side View | Figure 4. <br> Robot Chassis with LEGO® Components <br> Left Side View |
+| Figure 5. <br> Robot Chassis <br> Left Side View | Figure 6. <br> Robot Chassis with LEGO® Components <br> Left Side View |
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the length of the robot is built to be longer, given that while the length of the robot increases, the larger the space will be intended for the parking area. Two different materials for the robot's wheels were utilized: the LEGO® Wheel 75 mm x 17 mm with Motorcycle Tire 94.2 mm x 20 mm and LEGO® Wheel 30.4 mm D. x 20 mm with Black Tire 43.2 mm x 22 mm, which handles the driving and steering mechanism, respectively. The large wheels were used for the rear-wheel drive system since a larger wheel has a larger circumference, and thus, have the ability to travel longer distances per rotation. It also increases the maximum speed limit a robot can travel per unit of time. Consequently, smaller wheels were utilized for the steering mechanism since they have a smaller turning radius, which makes it easier for the robot to handle tight turns in navigating obstacles, corners, and small spaces. Moreover, larger wheels cannot be used at the front part of the robot as these can block the view of the distance sensor, disabling the sensor to detect objects properly and accurately. The LEGO® Wheel with Black Tire also offer larger surface contact with more precision and finer control, preventing slips that makes the robot’s movement smooth and quick.</p> 
 
 <center>
 
-| ![Figure 5.](./docu-photos/rwheels.png) |
+| ![Figure 7.](./docu-photos/rwheels.png) |
 |:---------------------:|
-| Figure 5. <br> Robot's Wheels <br> Front View and Rear View
+| Figure 7. <br> Robot's Wheels <br> Front View and Rear View
 
 </center>
 
@@ -317,9 +318,9 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 6.](./docu-photos/wdistrib.png) |
+| ![Figure 8.](./docu-photos/wdistrib.png) |
 |:---------------------:|
-| Figure 6. <br> Robot's Weight Distribution <br>
+| Figure 8. <br> Robot's Weight Distribution <br>
 
 </center>
 
@@ -337,9 +338,9 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 7.](./docu-photos/powerm.png) |
+| ![Figure 9.](./docu-photos/powerm.png) |
 |:---------------------:|
-| Figure 7. <br> Power Management |
+| Figure 9. <br> Power Management |
 
 </center>
 
@@ -362,9 +363,9 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| ![Figure 8.](./docu-photos/battery.png) |
+| ![Figure 10.](./docu-photos/battery.png) |
 |:---------------------:|
-| Figure 8. <br> Installing Technic™ Large Hub Rechargeable Battery
+| Figure 10. <br> Installing Technic™ Large Hub Rechargeable Battery
 
 </center>
 
@@ -389,7 +390,7 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 </center>
 
-| <img src="./docu-photos/upslayout.png" alt="Figure 9." width="1080" height="566"> | <img src="./docu-photos/upsplate2.png" alt="Figure 10." width="1080" height="566"> |
+| <img src="./docu-photos/upslayout.png" alt="Figure 11." width="1080" height="566"> | <img src="./docu-photos/upsplate2.png" alt="Figure 10." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 9. <br> Raspberry pi UPS-18650 Battery | Figure 10. <br> Raspberry pi UPS-18650 Battery <br> Dimensions |
 
@@ -414,9 +415,9 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| <img src="./docu-photos/hublayout.png" alt="Figure 10." width="1080" height="566"> | <img src="./docu-photos/hubplate2.png" alt="Figure 11." width="1080" height="566"> |
+| <img src="./docu-photos/hublayout.png" alt="Figure 11." width="1080" height="566"> | <img src="./docu-photos/hubplate2.png" alt="Figure 12." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
-| Figure 10. <br> Technic™ Prime Large Hub | Figure 11. <br> Technic™ Prime Large Hub <br> Dimensions |
+| Figure 10. <br> Technic™ Prime Large Hub | Figure 12. <br> Technic™ Prime Large Hub <br> Dimensions |
 
 </center>
 
@@ -449,9 +450,9 @@ under the **Future Engineers category**. Designed for **_autonomous navigation_*
 
 <center>
 
-| <img src="./docu-photos/lmslayout.png" alt="Figure 12." width="1090" height="566"> | <img src="./docu-photos/.png" alt="Figure 13." width="1080" height="566"> | 
+| <img src="./docu-photos/lmslayout.png" alt="Figure 13." width="1090" height="566"> | <img src="./docu-photos/.png" alt="Figure 14." width="1080" height="566"> | 
 |:---------------------:|:---------------------:|
-| Figure 12. <br> LMS-ESP32  | Figure 13. <br> LMS-ESP32  <br> Dimensions |
+| Figure 13. <br> LMS-ESP32  | Figure 14. <br> LMS-ESP32  <br> Dimensions |
 
 </center>
 
@@ -581,9 +582,9 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| ![Figure 12](./docu-photos/sensemm.png) |
+| ![Figure 15](./docu-photos/sensemm.png) |
 |:---------------------:|
-| Figure 12. <br> Robot’s Sensors and Vision System
+| Figure 15. <br> Robot’s Sensors and Vision System
 
 
 </center>
@@ -594,9 +595,9 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| <img src="./docu-photos/dclayout.png" alt="Figure 13.1" width="1080" height="566"> | <img src="./docu-photos/dsplate2.png" alt="Figure 13.2" width="1080" height="566"> |
+| <img src="./docu-photos/dclayout.png" alt="Figure 16" width="1080" height="566"> | <img src="./docu-photos/dsplate2.png" alt="Figure 17." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
-| Figure 13.1 <br> Robot’s Technic™ Distance Sensor | Figure 13.2 <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
+| Figure 16. <br> Robot’s Technic™ Distance Sensor | Figure 17. <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
 
 </center>
 
@@ -623,9 +624,9 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| <img src="./docu-photos/hclayout.png" alt="Figure 14.1" width="1080" height="566"> | <img src="./docu-photos/hcplate2.png" alt="Figure 14.2" width="1080" height="566"> |
+| <img src="./docu-photos/hclayout.png" alt="Figure 18." width="1080" height="566"> | <img src="./docu-photos/hcplate2.png" alt="Figure 19." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
-| Figure 14.1 <br> HC-SR04 Ultrasonic Sensor | Figure 14.2 <br> HC-SR04 Ultrasonic Sensor <br> Dimensions |
+| Figure 18. <br> HC-SR04 Ultrasonic Sensor | Figure 19. <br> HC-SR04 Ultrasonic Sensor <br> Dimensions |
 
 </center>
 
@@ -655,9 +656,9 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| ![Figure 15](./docu-photos/gyros.png) |
+| ![Figure 20](./docu-photos/gyros.png) |
 |:---------------------:|
-| Figure 15. <br> Robot’s Gyro Sensor
+| Figure 20. <br> Robot’s Gyro Sensor
 
 </center>
 
@@ -669,9 +670,9 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| <img src="./docu-photos/mvlayout.png" alt="Figure 16.1" width="1080" height="566"> | <img src="./docu-photos/mvplate2.png" alt="Figure 16.2" width="1080" height="566"> |
+| <img src="./docu-photos/mvlayout.png" alt="Figure 21" width="1080" height="566"> | <img src="./docu-photos/mvplate2.png" alt="Figure 22" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
-| Figure 16.1 <br> Robot’s OpenMV Cam H7 Plus | Figure 16.2 <br> Robot’s OpenMV Cam H7 Plus <br> Dimensions |
+| Figure 21. <br> Robot’s OpenMV Cam H7 Plus | Figure 22. <br> Robot’s OpenMV Cam H7 Plus <br> Dimensions |
 
 </center>
 
@@ -707,9 +708,9 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <!--Need to update-->
 
-| ![Figure 13](./docu-photos/FE-Flowchart.jpg) |
+| ![Figure 23.](./docu-photos/FE-Flowchart.jpg) |
 |:---------------------:|
-| Figure 17. <br> Open Challenge Flowchart
+| Figure 23. <br> Open Challenge Flowchart
 
 </center>
 
@@ -1092,25 +1093,25 @@ sannisLivisa.eBrake(1000)
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Based on the strategy we have implemented in the Obstacle Challenge which is outlined in the flowchart below, our robot begins by initializing its sensors. After that, the robot rotates its distance sensor to the left to measure the distance and stores the value in a variable called left. It then does the same to the right and stores that value in right. Consequently, the robot compares the two distances; if the left side has more space, it sets the direction clockwise; if the right side has more, it sets the direction counterclockwise. And this is significantly similar to how we begin and determine the drive direction in the Open Challenge.</p> 
 
-| ![Figure 18.1](./docu-photos/ObstacleFlowcharts/Obstacle-Direction.jpg) |
+| ![Figure 24.](./docu-photos/ObstacleFlowcharts/Obstacle-Direction.jpg) |
 |:---------------------:|
-| Figure 18.1 <br> Obstacle Challenge Flowchart <br> Start |
+| Figure 24. <br> Obstacle Challenge Flowchart <br> Start |
 
-| ![Figure 18.2](./docu-photos/ObstacleFlowcharts/Obstacle-ExitParking.jpg) |
+| ![Figure 25.](./docu-photos/ObstacleFlowcharts/Obstacle-ExitParking.jpg) |
 |:---------------------:|
-| Figure 18.2 <br> Obstacle Challenge Flowchart <br> From Start |
+| Figure 25. <br> Obstacle Challenge Flowchart <br> From Start |
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After deciding the direction, the robot proceeds to exit the parking area by turning 90 degrees based on the chosen direction and reverses until it stalls against the wall. Once in position, the robot begins scanning the lap to detect obstacles and stores them based on the direction of movement. Then, it identifies the first obstacle it needs to avoid and uses this to decide the proper avoidance function or decision as it leaves the parking area. Depending on whether the obstacle is red or green, it runs a specific function to safely pass it.</p>
 
-| ![Figure 18.3](./docu-photos/ObstacleFlowcharts/obstacle-recording.jpg) |
+| ![Figure 26.](./docu-photos/ObstacleFlowcharts/obstacle-recording.jpg) |
 |:---------------------:|
-| Figure 18.3 <br> Obstacle Challenge Flowchart <br> From Exit Parking |
+| Figure 26. <br> Obstacle Challenge Flowchart <br> From Exit Parking |
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once it’s out of the parking lap, the robot enters the recording phase, where it scans and avoids obstacles section by section. It rotates the sensor motor to face the straight section, records the color of the first obstacle, avoids it accordingly, then continues to detect and respond to the next one. After passing each obstacle, it updates the recorded information and continues this loop up to three times. Finally, when the recording phase ends, the robot uses the stored movement patterns to replay its actions. It now proceeds to perform the laps based on pre-recorded data instead of re-scanning.</p>
 
-| ![Figure 18.4](./docu-photos/ObstacleFlowcharts/Obstacle-recorded.jpg) |
+| ![Figure 27.](./docu-photos/ObstacleFlowcharts/Obstacle-recorded.jpg) |
 |:---------------------:|
-| Figure 18.4 <br> Obstacle Challenge Flowchart <br> From Recording |
+| Figure 27. <br> Obstacle Challenge Flowchart <br> From Recording |
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finally, when the recording phase ends, the robot uses the stored movement patterns to replay its actions. It now proceeds to perform the laps based on pre-recorded data instead of re-scanning.</p> 
 
@@ -1464,9 +1465,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 19.1](./docu-photos/model1.png) | ![Figure 19.2](./docu-photos/model2.png) |
+| ![Figure 28.](./docu-photos/model1.png) | ![Figure 29.](./docu-photos/model2.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 19.1 <br> 3D Modeling </center> | <center> Figure 19.2 <br> 3D Modeling </center>|  
+| <center> Figure 28. <br> 3D Modeling </center> | <center> Figure 29. <br> 3D Modeling </center>|  
 
 </center>
 
@@ -1486,9 +1487,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 20.1](./docu-photos/model1.png) | ![Figure 20.2](./docu-photos/model2.png) |
+| ![Figure 30.](./docu-photos/model1.png) | ![Figure 31.](./docu-photos/model2.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 20.1 <br> FlashForge Print Settings </center> | <center> Figure 20.2 <br> Bambu Lab Print Settings </center>|  
+| <center> Figure 30. <br> FlashForge Print Settings </center> | <center> Figure 31. <br> Bambu Lab Print Settings </center>|  
 
 </center>
 
@@ -1502,9 +1503,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 21.1](./docu-photos/fprinter.png) | ![Figure 21.2](./docu-photos/bprinter.png) |
+| ![Figure 32.](./docu-photos/fprinter.png) | ![Figure 21.2](./docu-photos/bprinter.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 21.1 <br> Flashforge Printer </center> | <center> Figure 21.2 <br> Bambu Lab Printer </center>| 
+| <center> Figure 32. <br> Flashforge Printer </center> | <center> Figure 33. <br> Bambu Lab Printer </center>| 
 
 </center>
 
@@ -1516,9 +1517,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 22.1](./docu-photos/ff.png) | ![Figure 22.2](./docu-photos/bl.png) |
+| ![Figure 34.](./docu-photos/ff.png) | ![Figure 35.](./docu-photos/bl.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 22.1 <br> 3D Printing in FlashForge </center> | <center> Figure 22.2 <br> 3D Printing n Bambu Lab </center>|  
+| <center> Figure 34. <br> 3D Printing in FlashForge </center> | <center> Figure 35. <br> 3D Printing n Bambu Lab </center>|  
 
 </center>
 
@@ -1538,9 +1539,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 23.1](./docu-photos/.png) | ![Figure 23.2](./docu-photos/camcaseplate2.png) |
+| ![Figure 36.](./docu-photos/.png) | ![Figure 37.](./docu-photos/camcaseplate2.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 23.1. <br> 3D-Printed OpenMV Cam H7 Plus Case  </center> | <center> Figure 23.2 <br> 3D-Printed OpenMV Cam H7 Plus Case  <br> Dimesions </center> |
+| <center> Figure 36. <br> 3D-Printed OpenMV Cam H7 Plus Case  </center> | <center> Figure 37. <br> 3D-Printed OpenMV Cam H7 Plus Case  <br> Dimesions </center> |
 
 </center>
 
@@ -1552,9 +1553,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 24.1](./docu-photos/.png) | ![Figure 24.2](./docu-photos/espcaseplate2.png) |
+| ![Figure 38.](./docu-photos/.png) | ![Figure 39.](./docu-photos/espcaseplate2.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 24.1. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 24.2 <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+| <center> Figure 38. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 39. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
 
 </center>
 
@@ -1568,9 +1569,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 25.1](./docu-photos/upscaselayout.png) | ![Figure 25.2](./docu-photos/upscaseplate2.png) |
+| ![Figure 40.](./docu-photos/upscaselayout.png) | ![Figure 41.](./docu-photos/upscaseplate2.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 25.1. <br> 3D-Printed UPS-18650 Case </center> | <center> Figure 25.2 <br> 3D-Printed UPS-18650 Case <br> Dimesions </center> |
+| <center> Figure 40. <br> 3D-Printed UPS-18650 Case </center> | <center> Figure 42 <br> 3D-Printed UPS-18650 Case <br> Dimesions </center> |
 
 </center>
 
@@ -1584,9 +1585,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 26.1](./docu-photos/uscaselayout.png) | ![Figure 26.2](./docu-photos/uscaseplate2.png) |
+| ![Figure 43.](./docu-photos/uscaselayout.png) | ![Figure 44.](./docu-photos/uscaseplate2.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 26.1. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 26.2 <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+| <center> Figure 43. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 44. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
 
 </center>
 
@@ -1600,9 +1601,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 27.1](./docu-photos/.png) | ![Figure 27.2](./docu-photos/chassisplate2.png) |
+| ![Figure 45.](./docu-photos/.png) | ![Figure 46.](./docu-photos/chassisplate2.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 27.1. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 27.2 <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+| <center> Figure 45. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 46. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
 
 </center>
 
@@ -1612,9 +1613,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 27.1](./docu-photos/smfront.png) | ![Figure 27.2](./docu-photos/smiso.png) |
+| ![Figure 47.](./docu-photos/smfront.png) | ![Figure 48.](./docu-photos/smiso.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 27.1 <br> Robot's Rotating Mechanism <br> Front View </center> | <center> Figure 27.2 <br> Robot's Rotating Mechanism <br> Side View </center> |
+| <center> Figure 47. <br> Robot's Rotating Mechanism <br> Front View </center> | <center> Figure 48. <br> Robot's Rotating Mechanism <br> Side View </center> |
 
 </center>
 
@@ -1626,9 +1627,9 @@ def runRecord(sannisLivisa: FE, currentLap):
   
 <center>
 
-| ![Figure 28.1](./docu-photos/wiring.png) | ![Figure 28.2](./docu-photos/schemdia.png) |
+| ![Figure 49.](./docu-photos/wiring.png) | ![Figure 50.](./docu-photos/schemdia.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 28.1 <br> Actual Appearance </center> | <center> Figure 28.2 <br> Schematic Diagram </center> |
+| <center> Figure 49. <br> Actual Appearance </center> | <center> Figure 50. <br> Schematic Diagram </center> |
 
 </center>
 
@@ -1697,7 +1698,7 @@ A specific and detailed list of parts and step-by-step instructions of construct
 
 <center>
 
-![Figure .](./docu-photos/image39.png)
+![Figure.](./docu-photos/image39.png)
 
 </center>
 
@@ -1706,9 +1707,9 @@ You may use these pictorial diagrams as reference for connecting the ***OpenMV C
 
 </center>
 
-| ![Figure ](./docu-photos/connection.png) |
+| ![Figure 51.](./docu-photos/connection.png) |
 |:---------------------:|
-| Figure . <br> Connection Pictorial Diagram
+| Figure 51. <br> Connection Pictorial Diagram
 
 ---
 
@@ -1782,7 +1783,7 @@ Turn on your SPIKE™ Hub and open the Pybricks Editor. Click the Bluetooth icon
 
 ![Pybricks Bluetooth](./docu-photos/pyble.png)
 |:---------------------:|
-| Figure . <br> Bluetooth Connection
+| Figure 52. <br> Bluetooth Connection
 
 ### **_Step 6. Run and Upload the Program._** 
 To run your script on the hub, click the “Run this program” button or press `F5`. To stop the program, click “Stop everything” or press `F6`. Pybricks automatically saves the program to the hub once it is run, so there's no need for a separate upload step.
@@ -1909,15 +1910,15 @@ To run your script on the hub, click the “Run this program” button or press 
 
 <center>
 
-| ![Figure ](./docu-photos/Cam.png) |
+| ![Figure 53](./docu-photos/Cam.png) |
 |:---------------------:|
-| Figure . <br> Camera Connection Wiring Diagram
+| Figure 53. <br> Camera Connection Wiring Diagram
 
 <center>
 
-| ![Figure ](./docu-photos/spikehub.png) |
+| ![Figure 54](./docu-photos/spikehub.png) |
 |:---------------------:|
-| Figure . <br> SPIKE™ Prime Hub Wiring Diagram
+| Figure 54. <br> SPIKE™ Prime Hub Wiring Diagram
 
 </center>
 
