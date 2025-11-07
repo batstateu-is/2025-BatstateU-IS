@@ -48,21 +48,21 @@ This repository documents the complete engineering development of a **self-drivi
 2. 🔋 [**Power, Microcontroller, and Sense Management**](#2--power-microcontroller-and-sense-management)
 
    2.1. [Power Management](#21-power-management)  
-      - [Technic™ Prime Large Hub](#211-technic-prime-large-hub)  
-      - [Technic™ Large Hub Rechargeable Battery](#212-technic-large-hub-rechargeable-battery)
+   &nbsp;&nbsp;&nbsp;&nbsp;2.1.1. [Technic™ Large Hub Recchargeable Battery](#211-technic-large-hub-rechargeable-battery)  
+   &nbsp;&nbsp;&nbsp;&nbsp;2.1.2. [Raspberry pi UPS-18650 Battery](#212-raspberry-pi-ups-18650-battery)
 
-   2.3  [Microcontroller Management](#22-microcontroller-management)
-      - [Technic™ Prime Large Hub](#221-technic-prime-large-hub)
-      - [LMS-ESP32](#222-lms-esp32)
+   2.2. [Microcontroller Management](#22-microcontroller-management)
+   &nbsp;&nbsp;&nbsp;&nbsp;2.2.1.[Technic™ Prime Large Hub](#221-technic-prime-large-hub)
+   &nbsp;&nbsp;&nbsp;&nbsp;2.2.2.[LMS-ESP32](#222-lms-esp32)
 
    2.3. [Sense Management](#23-sense-management)  
-      - [Technic™ Distance Sensor](#231-technic-distance-sensor)  
-      - [HC-SR04 Ultrasonic Sensor](#232-hc-sr04-ultrasonic-sensor)
-      - [Gyro Sensor](#233-gyro-sensor)  
-      - [OpenMV Cam H7 Plus](#234-openmv-cam-h7-plus)  
+   &nbsp;&nbsp;&nbsp;&nbsp;2.3.1.[Technic™ Distance Sensor](#231-technic-distance-sensor)  
+   &nbsp;&nbsp;&nbsp;&nbsp;2.3.2.[HC-SR04 Ultrasonic Sensor](#232-hc-sr04-ultrasonic-sensor)
+   &nbsp;&nbsp;&nbsp;&nbsp;2.3.3.[Gyro Sensor](#233-gyro-sensor)  
+   &nbsp;&nbsp;&nbsp;&nbsp;2.3.4.[OpenMV Cam H7 Plus](#234-openmv-cam-h7-plus)  
 
 3. 🚀 [**Open Challenge Strategy**](#3--open-challenge-strategy)
-
+   
    3.1. [Determining Drive Direction](#31-determining-drive-direction)  
    3.2. [Wall Detection and Avoidance](#32-wall-detection-and-avoidance)  
 
@@ -70,16 +70,17 @@ This repository documents the complete engineering development of a **self-drivi
 
    4.1. [Traffic Sign Detection](#41-traffic-sign-detection)  
    4.2. [Traffic Sign Avoidance Strategy](#42-traffic-sign-avoidance-strategy)  
-   7.3. [Perpendicular Parking Strategy](#43-perpendicular-parking-strategy)  
-   7.4. [Semi-Machine Learning Strategy](#44-semi-machine-learning-strategy)  
+   4.3. [Perpendicular Parking Strategy](#43-perpendicular-parking-strategy)  
+   4.4. [Semi-Machine Learning Strategy](#44-semi-machine-learning-strategy)  
 
 <!-- NOT UPDATED -->
 5. 🐞 [**Problems Encountered**](#5--problems-encountered)
 
-   5.1. [Continuous Detection to Single-Instance Detection](#51-continuous-detection-to-single-instance-detection)  
-   5.2. [Frequent Disconnection of Camera Wiring](#52-frequent-disconnection-of-camera-wiring)  
-   5.3. [Uneven and Unclean Field](#53-uneven-and-unclean-field)  
-   5.4. [Constant Necessity of Cleaning the Wheels](#54-constant-necessity-of-cleaning-the-wheels)  
+   5.1. [Improper Printing](#51-improper-printing)  
+   5.2. [Faulty Power Source](#52-faulty-power-source)  
+   5.3. [Spray Painting](#53-spray-painting)  
+   5.4. [Uneven and Unclean Field](#54-uneven-and-unclean-field)
+   5.5. [Constant Necessity of Cleaning the Wheels](#55-constant-necessity-of-cleaning-the-field)
 
 6. 🖨️ [**3D Printing Management**](#6-️-3d-printing-management)
 
@@ -90,39 +91,33 @@ This repository documents the complete engineering development of a **self-drivi
 
 7. 📐 [**Engineering Factor**](#7--engineering-factor)
 
-    7.1. [3D-Printed Camera Case](#71-3d-printed-camera-case)  
-    7.2. [Rotating Camera and Distance Sensor](#72-rotating-camera-and-distance-sensor)  
-    7.3. [Side Free Wheels](#73-side-free-wheels)  
-    7.4. [Rear-Mounted Spoiler](#74-rear-mounted-spoiler)  
+    7.1. [3D-Printed OpenMV Cam H7 Plus Case](#71-3d-printed-openmv-cam-h7-plus-case)  
+    7.2. [3D-Printed LMS-ESP32 Case](#72-3d-printed-lms-esp32-case)  
+    7.3. [3D-Printed UPS-18650 Case](#73-3d-printed-ups-18650-case)  
+    7.4. [3D-Printed HC-SR04 Ultrasonic Sensor Case](#74-3d-printed-hc-sr04-ultrasonic-sensor-case)
+    7.5. [3D-Printed Robot Chassis](#75-3d-printed-robot-chassis)
+    7.6. [Rotating Camera and Distance Sensor](#76-rotating-camera-and-distance-sensor)
+    7.7. [One-Button Power Mechanism](#77-one-button-power-mechanism) 
 
-<!-- NOT UPDATED -->
 8. 🔧 [**Mechanical Improvements**](#8--mechanical-improvements)
 
-    8.1. [Testing of Perfect Size for Parking](#81-testing-of-perfect-size-for-parking)  
-    8.2. [Alter Differential Gear to Normal Driving](#82-alter-differential-gear-to-normal-driving)  
-    8.3. [Integrate Gears Around the Robot](#83-integrate-gears-around-the-robot)  
-    8.4. [Alter the Gears’ Size from Big to Medium](#84-alter-the-gears-size-from-big-to-medium)  
-    8.5. [Reposition the SPIKE™ Hub and Balance Rear Weight](#85-reposition-the-spike-hub-and-balance-rear-weight)  
-    8.6. [Testing of Perfect Wheels for Steering](#86-testing-of-perfect-wheels-for-steering)  
-    8.7. [Use Different Wheels for Steering](#87-use-different-wheels-for-steering)  
-    8.8. [Replace Color Sensor with Distance Sensor](#88-replace-color-sensor-with-distance-sensor)  
-    8.9. [Replace Wheels for Driving](#89-replace-wheels-for-driving)  
+    8.1. [Weight Reduction through 3D Printing](#81-weight-reduction-through-3d-printing)
 
-<!-- NOT UPDATED -->
 9. 🛠️ [**Construction Guide**](#9-️-construction-guide) 
 
     9.1. [Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
     9.2. [Guide for Programming the Robot](#92-guide-for-programming-the-robot)  
-       - [Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
-       - [Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)  
+    &nbsp;&nbsp;&nbsp;&nbsp;9.2.1.[Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
+    &nbsp;&nbsp;&nbsp;&nbsp;9.2.2.[Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)
+    &nbsp;&nbsp;&nbsp;&nbsp;9.2.3.[Programming the LMS-ESP32](#923-programming-the-lms-esp32)
+    &nbsp;&nbsp;&nbsp;&nbsp;9.2.4.[Programming the UPS-18650 Battery](#924-programming-the-ups-18650-battery)
     9.3. [Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
 
-<!-- NOT UPDATED -->
 10. 💡 [**Recommendations and Future Work**](#10--recommendations-and-future-work)
 
     10.1. [Recommendations for Mobility Management](#101-recommendations-for-mobility-management)  
-    12.2. [Recommendations for Power and Sense Management](#102-recommendations-for-power-and-sense-management)  
-    12.3. [Recommendations for Strategies](#103-recommendations-for-strategies)  
+    10.2. [Recommendations for Power and Sense Management](#102-recommendations-for-power-and-sense-management)  
+    10.3. [Recommendations for Strategies](#103-recommendations-for-strategies)  
 
 <!-- NOT UPDATED -->
 11. 📎 [**Appendices**](#11--appendices)
@@ -1449,7 +1444,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This issue made it difficult for the robot to follow a consistent path and it occasionally interfered with the camera’s sensing and reading accuracy. To solve this issue, we performed several troubleshooting and adjustments in the values of our program and we also made structural modifications to improve the robot’s stability and ground contact, such as choosing the best wheels for both the steering and driving mechanism of the robot. These changes helped reduce the impact of the uneven field and allowed the robot to maintain smoother, more stable movement during its run.</p>
 
-### 5.4. Constant Necessity of Cleaning the Wheels
+### 5.5. Constant Necessity of Cleaning the Wheels
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During the whole process, our team observed how the performance of the robot varied significantly on how clean and how dirty the wheels are. When the wheels accumulated dirt, the robot became more prone to drifting, especially during sharp or narrow turns. However, when the wheels were too clean, they caused slipping due to reduced friction which led to less reliable movement and poorer traction. We considered this as an issue since it is difficult to maintain the robot’s state where it performs well. Additionally, with continuous runs, the wheels naturally picked up dust and debris from the surface of the field, gradually affecting the robot’s ground contact and stability. This made it harder to maintain smooth and consistent movement throughout each test. As a result, we had to frequently check and clean the wheels to reduce the impact of this issue and ensure the robot could perform accurately and reliably.</p>
 
@@ -1545,7 +1540,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 </center>
 
-### 7.2. 3D-Printed LMS-ESP 32 Case
+### 7.2. 3D-Printed LMS-ESP32 Case
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 3D-printed LMS-ESP32 case was designed as a key engineering improvement that enhances the functionality and reliability of the robot’s electronic system. During early testing, the team observed that the ESP32 board was prone to movement and potential disconnections when mounted openly on the chassis. To address this, a custom enclosure was modeled in Blender and fabricated using PLA filament, which provided a secure structure that both protects and organizes the component within the robot.</p>
 
