@@ -1936,10 +1936,11 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ### 11.5. Timeline
 
-![Timeline Aufgust](./docu-photos/.png)
-![Timeline September](./docu-photos/.png)
-![Timeline October](./docu-photos/.png)
-![Timeline November](./docu-photos/.png)
+| ![Figure 57.](./docu-photos/august.png) | ![Figure 58.](./docu-photos/september.png) |
+|:---------------------:| :---------------------:|
+
+| ![Figure 59.](./docu-photos/october.png) | ![Figure 60.](./docu-photos/november.png) |
+|:---------------------:| :---------------------:|
 
 ---
 
