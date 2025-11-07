@@ -1952,7 +1952,7 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ![Version 1](./docu-photos/.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our first version of the robot was where everything started. We built the chassis entirely out of LEGO® Technic™ parts, which gave us a strong and reliable base to begin testing our ideas. On top of the structure, we mounted the UPS-18650 power module and the LMS-ESP32, and we added our very first 3D-printed camera case—our first move toward combining LEGO with custom-designed parts.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our first version of the robot was where everything started. We built the chassis entirely out of LEGO® Technic™ parts, which gave us a strong and reliable base to begin testing our ideas. On top of the structure, we mounted the LMS-ESP32, and we added our very first 3D-printed camera case, our first move toward combining LEGO with custom-designed parts.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At this stage, our goal was simply to bring all components together and see how they worked as one system. It was our starting point for testing movement, wiring, and basic power connections. This version helped us understand the layout and interaction between parts, and while it wasn’t yet optimized, it gave us the direction we needed for our next builds.
 
