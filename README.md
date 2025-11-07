@@ -1973,6 +1973,8 @@ To run your script on the hub, click the “Run this program” button or press 
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our third version of the robot marked a big step forward in both design and identity. After finalizing most of the mechanical and electronic components, we decided to give our robot a distinct look inspired by the Filipino Jeepney—a cultural icon and symbol of creativity and resilience in the Philippines. Though the robot will still be subjected for some changes in the color and design, intially, we used a metallic gray spray paint and acrylic paints to apply a combination of yellow, blue, and red, representing the colors of the Philippine flag. This gave our robot not only a more striking appearance but also a deeper meaning, as it carried the same pride and character that Jeepneys symbolize in Filipino culture.</p>
 
+![Spray Painting](./docu-photos/spraypainting.png)
+
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this version, we retained all the core components from our previous builds, which are the LMS-ESP32, UPS-18650 power module, Technic™ Distance Sensor, and OpenMV Cam H7, but we arranged them more neatly for better organization and maintenance. The 3D-printed camera case and other printed mounts were also refined and repainted to match the new color scheme.</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For us, Version 3 became more than just a technical upgrade; it was a reflection of who we are as a team. By combining functionality with our pride, we created a robot that not only performs well but also represents our identity as Filipinos competing on the global stage.</p>
