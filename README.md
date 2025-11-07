@@ -28,7 +28,7 @@ This repository documents the complete engineering development of a **self-drivi
 <p align="justify"> The video showcases the inspiring journey of the Future Engineers team as they prepare for the upcoming 2025 World Robot Olympiad. It highlights the team members, the self-driving robot they built, and provides an in-depth look into its design, functionality, and programming. Featured segments include the Open Challenge and Obstacle Challenge, where the team's strategies and technical innovations are put to the test.</p>  
 
 > [!IMPORTANT]
-> ***[BSU-IS World Robot Olympiad - 2025 Future Engineers](https://youtu.be/03gVkXfrZpo)***
+> ***[BatStateU-IS World Robot Olympiad 2025 - Future Engineers](https://youtu.be/03gVkXfrZpo)***
 
 ***
 
