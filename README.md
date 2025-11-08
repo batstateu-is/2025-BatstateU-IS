@@ -40,45 +40,45 @@ This repository documents the complete engineering development of a **self-drivi
 [🤖 Robot Specifications](#-robot-specifications)  
 
 ⚙️ **[1. Mobility Management](#1-️-mobility-management)**  
- 1.1 [Motor Selection](#11-motor-selection)  
- 1.2 [Steering and Driving Mechanism](#12-steering-and-driving-mechanism)  
- 1.3 [Mechanical Design](#13-mechanical-design)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Motor Selection](#11-motor-selection)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Steering and Driving Mechanism](#12-steering-and-driving-mechanism)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Mechanical Design](#13-mechanical-design)  
 
 🔋 **[2. Power, Microcontroller, and Sense Management](#2--power-microcontroller-and-sense-management)**  
- 2.1 [Power Management](#21-power-management)  
-  2.1.1 [Technic™ Large Hub Rechargeable Battery](#211-technic-large-hub-rechargeable-battery)  
-  2.1.2 [Raspberry Pi UPS-18650 Battery](#212-raspberry-pi-ups-18650-battery)  
- 2.2 [Microcontroller Management](#22-microcontroller-management)  
-  2.2.1 [Technic™ Prime Large Hub](#221-technic-prime-large-hub)  
-  2.2.2 [LMS-ESP32](#222-lms-esp32)  
- 2.3 [Sense Management](#23-sense-management)  
-  2.3.1 [Technic™ Distance Sensor](#231-technic-distance-sensor)  
-  2.3.2 [HC-SR04 Ultrasonic Sensor](#232-hc-sr04-ultrasonic-sensor)  
-  2.3.3 [Gyro Sensor](#233-gyro-sensor)  
-  2.3.4 [OpenMV Cam H7 Plus](#234-openmv-cam-h7-plus)  
+&nbsp;&nbsp;&nbsp;&nbsp;2.1 [Power Management](#21-power-management)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.1 [Technic™ Large Hub Rechargeable Battery](#211-technic-large-hub-rechargeable-battery)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.2 [Raspberry Pi UPS-18650 Battery](#212-raspberry-pi-ups-18650-battery)  
+&nbsp;&nbsp;&nbsp;&nbsp;2.2 [Microcontroller Management](#22-microcontroller-management)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.1 [Technic™ Prime Large Hub](#221-technic-prime-large-hub)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.2 [LMS-ESP32](#222-lms-esp32)  
+&nbsp;&nbsp;&nbsp;&nbsp;2.3 [Sense Management](#23-sense-management)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3.1 [Technic™ Distance Sensor](#231-technic-distance-sensor)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3.2 [HC-SR04 Ultrasonic Sensor](#232-hc-sr04-ultrasonic-sensor)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3.3 [Gyro Sensor](#233-gyro-sensor)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3.4 [OpenMV Cam H7 Plus](#234-openmv-cam-h7-plus)  
 
 🚀 **[3. Open Challenge Strategy](#3--open-challenge-strategy)**  
- 3.1 [Determining Drive Direction](#31-determining-drive-direction)  
- 3.2 [Wall Detection and Avoidance](#32-wall-detection-and-avoidance)  
+&nbsp;&nbsp;&nbsp;&nbsp;3.1 [Determining Drive Direction](#31-determining-drive-direction)  
+&nbsp;&nbsp;&nbsp;&nbsp;3.2 [Wall Detection and Avoidance](#32-wall-detection-and-avoidance)  
 
 🚧 **[4. Obstacle Challenge Strategy](#4--obstacle-challenge-strategy)**  
- 4.1 [Traffic Sign Detection](#41-traffic-sign-detection)  
- 4.2 [Traffic Sign Avoidance Strategy](#42-traffic-sign-avoidance-strategy)  
- 4.3 [Perpendicular Parking Strategy](#43-perpendicular-parking-strategy)  
- 4.4 [Semi-Machine Learning Strategy](#44-semi-machine-learning-strategy)  
+&nbsp;&nbsp;&nbsp;&nbsp;4.1 [Traffic Sign Detection](#41-traffic-sign-detection)  
+&nbsp;&nbsp;&nbsp;&nbsp;4.2 [Traffic Sign Avoidance Strategy](#42-traffic-sign-avoidance-strategy)  
+&nbsp;&nbsp;&nbsp;&nbsp;4.3 [Perpendicular Parking Strategy](#43-perpendicular-parking-strategy)  
+&nbsp;&nbsp;&nbsp;&nbsp;4.4 [Semi-Machine Learning Strategy](#44-semi-machine-learning-strategy)  
 
 🐞 **[5. Problems Encountered](#5--problems-encountered)**  
- 5.1 [Improper Printing](#51-improper-printing)  
- 5.2 [Faulty Power Source](#52-faulty-power-source)  
- 5.3 [Spray Painting](#53-spray-painting)  
- 5.4 [Uneven and Unclean Field](#54-uneven-and-unclean-field)  
- 5.5 [Constant Necessity of Cleaning the Wheels](#55-constant-necessity-of-cleaning-the-wheels)  
+&nbsp;&nbsp;&nbsp;&nbsp;5.1 [Improper Printing](#51-improper-printing)  
+&nbsp;&nbsp;&nbsp;&nbsp;5.2 [Faulty Power Source](#52-faulty-power-source)  
+&nbsp;&nbsp;&nbsp;&nbsp;5.3 [Spray Painting](#53-spray-painting)  
+&nbsp;&nbsp;&nbsp;&nbsp;5.4 [Uneven and Unclean Field](#54-uneven-and-unclean-field)  
+&nbsp;&nbsp;&nbsp;&nbsp;5.5 [Constant Necessity of Cleaning the Wheels](#55-constant-necessity-of-cleaning-the-wheels)  
 
 🖨️ **[6. 3D Printing Management](#6-️-3d-printing-management)**  
- 6.1 [3D Modeling](#61-3d-modeling)  
- 6.2 [Material Selection](#62-material-selection)  
- 6.3 [3D Printing Settings](#63-3d-printing-settings)  
- 6.4 [Printing](#64-printing)  
+&nbsp;&nbsp;&nbsp;&nbsp;6.1 [3D Modeling](#61-3d-modeling)  
+&nbsp;&nbsp;&nbsp;&nbsp;6.2 [Material Selection](#62-material-selection)  
+&nbsp;&nbsp;&nbsp;&nbsp;6.3 [3D Printing Settings](#63-3d-printing-settings)  
+&nbsp;&nbsp;&nbsp;&nbsp;6.4 [Printing](#64-printing)  
 
 📐 **[7. Engineering Factor](#7--engineering-factor)**  
 &nbsp;&nbsp;&nbsp;&nbsp;7.1 [One-Button Power Mechanism](#71-one-button-power-mechanism)  
