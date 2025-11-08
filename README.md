@@ -81,13 +81,13 @@ This repository documents the complete engineering development of a **self-drivi
  6.4 [Printing](#64-printing)  
 
 📐 **[7. Engineering Factor](#7--engineering-factor)**  
- 7.1 [One-Button Power Mechanism](#71-one-button-power-mechanism) 
- 7.2 [3D-Printed OpenMV Cam H7 Plus Case](#72-3d-printed-openmv-cam-h7-plus-case)  
- 7.3 [3D-Printed LMS-ESP32 Case](#73-3d-printed-lms-esp32-case)  
- 7.4 [3D-Printed UPS-18650 Case](#74-3d-printed-ups-18650-case)  
- 7.5 [3D-Printed HC-SR04 Ultrasonic Sensor Case](#75-3d-printed-hc-sr04-ultrasonic-sensor-case)  
- 7.6 [3D-Printed Robot Chassis](#76-3d-printed-robot-chassis)  
- 7.7 [Rotating Camera and Distance Sensor](#77-rotating-camera-and-distance-sensor)  
+&nbsp;&nbsp;&nbsp;&nbsp;7.1 [One-Button Power Mechanism](#71-one-button-power-mechanism)  
+&nbsp;&nbsp;&nbsp;&nbsp;7.2 [3D-Printed OpenMV Cam H7 Plus Case](#72-3d-printed-openmv-cam-h7-plus-case)  
+&nbsp;&nbsp;&nbsp;&nbsp;7.3 [3D-Printed LMS-ESP32 Case](#73-3d-printed-lms-esp32-case)  
+&nbsp;&nbsp;&nbsp;&nbsp;7.4 [3D-Printed UPS-18650 Case](#74-3d-printed-ups-18650-case)  
+&nbsp;&nbsp;&nbsp;&nbsp;7.5 [3D-Printed HC-SR04 Ultrasonic Sensor Case](#75-3d-printed-hc-sr04-ultrasonic-sensor-case)  
+&nbsp;&nbsp;&nbsp;&nbsp;7.6 [3D-Printed Robot Chassis](#76-3d-printed-robot-chassis)  
+&nbsp;&nbsp;&nbsp;&nbsp;7.7 [Rotating Camera and Distance Sensor](#77-rotating-camera-and-distance-sensor)  
 
 🔧 **[8. Mechanical Improvements](#8--mechanical-improvements)**  
  8.1 [Weight Reduction through 3D Printing](#81-weight-reduction-through-3d-printing)  
@@ -114,6 +114,8 @@ This repository documents the complete engineering development of a **self-drivi
  11.5 [Timeline](#115-timeline)  
 
 📜 **[12. Robot Design History](#12--robot-design-history)**
+
+📑 **[13. References](#13--references)**
 
 ***
 ## 📖 Introduction
@@ -196,7 +198,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 | <center> Components </center> | <center>Quantity</center> | <center>Description</center> |
 | :---: | :---: | ----- |
-| ![alt](./docu-photos/image53.png) | 1 | The **Technic™ Large Hub** was chosen as the main controller because it can connect to multiple sensors and motors. Its support for Python-based programming made it easier to create accurate and flexible control systems for navigation and obstacle avoidance. |
+| ![alt](./docu-photos/image53.png) | 1 | The **Technic™ Large Hub** was chosen as the main controller because it can connect to multiple sensors and motors. Its support for Python-based programming made it easier to create accurate and flexible control systems for navigation and obstacle avoidance [[1]](#ref1). |
 | ![alt](./docu-photos/ups.png) | 1 | The **Raspberry pi UPS-18650 Battery** provides a stable 5 V regulated power supply for the LMS-ESP32, ensuring continuous operation during power fluctuations. It includes built-in protections against over-charge, over-discharge, over-current, and short circuits, making it a reliable and safe power source for the system. |
 | ![alt](./docu-photos/image66.png) | 1 | The **Technic™ Distance Sensors** were used to measure how far the robot is from nearby walls. It helped the robot avoid collisions by detecting obstacles in front and behind the path of the robot and triggering turning or straight movements based on the distance detected. |
 | ![alt](./docu-photos/hc-sr04.png)| 3 | The **HC-SR04 Ultrasonic Distance Sensors** were added around the robot to allow for navigation in handling wall obstacles around the game field in the Open Challenge round. Meanwhile, it was used to provide vision for the robot to efficiently perform parallel parking without collisions with the parking walls in the Obstacle Challenge round. |
@@ -1979,4 +1981,11 @@ To run your script on the hub, click the “Run this program” button or press 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this version, we retained all the core components from our previous builds, which are the LMS-ESP32, UPS-18650 power module, Technic™ Distance Sensor, and OpenMV Cam H7, but we arranged them more neatly for better organization and maintenance. The 3D-printed camera case and other printed mounts were also refined and repainted to match the new color scheme.</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For us, Version 3 became more than just a technical upgrade; it was a reflection of who we are as a team. By combining functionality with our pride, we created a robot that not only performs well but also represents our identity as Filipinos competing on the global stage.</p>
+
+---
+
+## 13. 📑 References
+
+<a id="ref1"></a> [1] “LEGO® TechnicTM Large Hub for SPIKETM Prime by LEGO Education,” LEGO® Education. https://education.lego.com/en-us/products/lego-technic-large-hub-for-spike-prime-/45601/
+
 
