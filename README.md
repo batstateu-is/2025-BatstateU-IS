@@ -1950,7 +1950,7 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ---
 
-![Version 1](./docu-photos/.png)
+![Version 1](./docu-photos/version1.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our first version of the robot was where everything started. We built the chassis entirely out of LEGO® Technic™ parts, which gave us a strong and reliable base to begin testing our ideas. On top of the structure, we mounted the LMS-ESP32, and we added our very first 3D-printed camera case, our first move toward combining LEGO with custom-designed parts.
 
@@ -1964,7 +1964,7 @@ To run your script on the hub, click the “Run this program” button or press 
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While integrating these new features, Version 2 retained key elements from Version 1, such as the parallel front-wheel steering, rear-wheel drive (RWD) system, rotating vision sensor, LMS-ESP32, and UPS 18650 Raspberry pi power supply. These systems worked together to support smooth and precise movements across the field. Additionally, this version incorporated structural improvements to increase balance and accommodate the added weight from the battery and added microcontroller.</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As specified in the visual aid, the previous Technic White Wheels attached in the parallel front-wheel steering mechanism were replaced with the EV3 Small Wheels with a thicker tire to increase surface contact and enhance the grip on the surface of the field. This setup aimed to improve the robot's steering control and movement stability.</p> 
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As specified in the visual aid, the previous LEGO Wheel Ø43 with Medium Azure Tire attached in the parallel front-wheel steering mechanism were replaced with the LEGO® Wheel 30.4 mm D. x 20 mm with Black Tire 43.2 mm x 22 mm with a thicker tire to increase surface contact and enhance the grip on the surface of the field. This setup aimed to improve the robot's steering control and movement stability.</p> 
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consequently, Version 2 became our first complete prototype that fully met the requirements of both the Open Challenge and Obstacle Challenge in the Future Engineers category. It established the foundation for the design we aimed to achieve.</p> 
 
