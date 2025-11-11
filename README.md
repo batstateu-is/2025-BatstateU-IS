@@ -1436,6 +1436,14 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throughout the development process, the team observed that the robot’s performance was highly sensitive to the condition of its wheels. When the wheels accumulated dirt, the robot was more prone to drifting, particularly during sharp or narrow turns. Conversely, overly clean wheels caused slipping due to reduced friction, resulting in less reliable movement and diminished traction. This posed a significant challenge, as maintaining the optimal wheel condition for consistent performance was difficult. Furthermore, continuous runs caused the wheels to naturally collect dust and debris from the field, gradually affecting ground contact and stability. To mitigate this issue, the team frequently inspected and cleaned the wheels, ensuring the robot could maintain accurate and reliable movement during testing. 
 
+### 5.5. Postponed Training Due to Sudden Calamities
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another problem encountered by the team is the consequent occurrence of storms and other calamities in the Philippines, particularly in the northern and southern portions of Luzon, which significantly affected the province where the members reside. Unfortunately, while others in different areas may have experienced even worse conditions, the team still faced multiple and continuous suspensions of classes and activities. In addition, campuses within Batangas, as well as Batangas State University - The National Engineering University have experienced and received mutltiple bomb threats which suspended classes and works for faculty and students' safety. These interruptions hindered the members from maximizing their time and productivity in preparation for their scheduled tasks and training. Moreover, the planned timeline had to be adjusted several times, causing delays in processes that were initially set to be completed within specific periods.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Despite these setbacks, the team remained understanding and empathetic toward the broader situation. The team's hearts go out to those who have lost family members, friends, pets, homes, and sources of livelihood due to these calamities. The experience also reminded the team of the importance of resilience and patience during difficult times. Although the delays posed challenges in maintaining momentum, the group used the time to reassess priorities, reorganize schedules, and strengthen coordination to ensure that the set goals would continue once circumstances improved. 
+
+![Suspensions](./docu-photos/problem5.png)
+
 ---
 
 ## 6. 🖨️ 3D Printing Management
