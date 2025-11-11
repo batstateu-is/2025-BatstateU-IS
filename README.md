@@ -40,9 +40,9 @@ This repository documents the complete engineering development of a **self-drivi
 [🤖 Robot Specifications](#-robot-specifications)  
 
 ⚙️ **[1. Mobility Management](#1-️-mobility-management)**  
-&nbsp;&nbsp;&nbsp;&nbsp;[Motor Selection](#11-motor-selection)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Steering and Driving Mechanism](#12-steering-and-driving-mechanism)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Mechanical Design](#13-mechanical-design)  
+&nbsp;&nbsp;&nbsp;&nbsp;1.1 [Motor Selection](#11-motor-selection)  
+&nbsp;&nbsp;&nbsp;&nbsp;1.2 [Steering and Driving Mechanism](#12-steering-and-driving-mechanism)  
+&nbsp;&nbsp;&nbsp;&nbsp;1.3 [Mechanical Design](#13-mechanical-design)  
 
 🔋 **[2. Power, Microcontroller, and Sense Management](#2--power-microcontroller-and-sense-management)**  
 &nbsp;&nbsp;&nbsp;&nbsp;2.1 [Power Management](#21-power-management)  
