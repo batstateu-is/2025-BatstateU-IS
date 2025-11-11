@@ -1598,7 +1598,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 45.](./docu-photos/ups-3dmodel.png) | ![Figure 46.](./docu-photos/ups.png) | ![Figure 47.](./docu-photos/upscaseplate2.png) |
+| ![Figure 45.](./docu-photos/ups-3dmodel.png) | ![Figure 46.](./docu-photos/.png) | ![Figure 47.](./docu-photos/upscaseplate2.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 45. <br> 3D Model of UPS-18650 Case </center> | <center> Figure 46. <br> 3D-Printed UPS-18650 Case </center> | <center> Figure 47. <br> 3D-Printed UPS-18650 Case <br> Dimesions </center> |
 
