@@ -1582,7 +1582,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 42.](./docu-photos/lms3dmodel.png) | ![Figure 43.](./docu-photos/lms.png) | ![Figure 44.](./docu-photos/espcaseplate2.png) |
+| ![Figure 42.](./docu-photos/lms-3dmodel.png) | ![Figure 43.](./docu-photos/lms.png) | ![Figure 44.](./docu-photos/espcaseplate2.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 42. <br> 3D Model of LMS-ESP 32 Case </center> | <center> Figure 43. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 44. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
 
@@ -1598,7 +1598,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 45.](./docu-photos/ups3dmodel.png) | ![Figure 46.](./docu-photos/ups.png) | ![Figure 47.](./docu-photos/upscaseplate2.png) |
+| ![Figure 45.](./docu-photos/ups-3dmodel.png) | ![Figure 46.](./docu-photos/ups.png) | ![Figure 47.](./docu-photos/upscaseplate2.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 45. <br> 3D Model of UPS-18650 Case </center> | <center> Figure 46. <br> 3D-Printed UPS-18650 Case </center> | <center> Figure 47. <br> 3D-Printed UPS-18650 Case <br> Dimesions </center> |
 
