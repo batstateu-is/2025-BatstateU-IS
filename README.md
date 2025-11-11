@@ -73,6 +73,7 @@ This repository documents the complete engineering development of a **self-drivi
 &nbsp;&nbsp;&nbsp;&nbsp;5.3 [Spray Painting](#53-spray-painting)  
 &nbsp;&nbsp;&nbsp;&nbsp;5.4 [Uneven and Unclean Field](#54-uneven-and-unclean-field)  
 &nbsp;&nbsp;&nbsp;&nbsp;5.5 [Constant Necessity of Cleaning the Wheels](#55-constant-necessity-of-cleaning-the-wheels)  
+&nbsp;&nbsp;&nbsp;&nbsp;5.6 [Postponed Training Due to Sudden Calamities](#56-postponed-training-due-to-sudden-calamities)
 
 🖨️ **[6. 3D Printing Management](#6-️-3d-printing-management)**  
 &nbsp;&nbsp;&nbsp;&nbsp;6.1 [3D Modeling](#61-3d-modeling)  
@@ -1436,9 +1437,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throughout the development process, the team observed that the robot’s performance was highly sensitive to the condition of its wheels. When the wheels accumulated dirt, the robot was more prone to drifting, particularly during sharp or narrow turns. Conversely, overly clean wheels caused slipping due to reduced friction, resulting in less reliable movement and diminished traction. This posed a significant challenge, as maintaining the optimal wheel condition for consistent performance was difficult. Furthermore, continuous runs caused the wheels to naturally collect dust and debris from the field, gradually affecting ground contact and stability. To mitigate this issue, the team frequently inspected and cleaned the wheels, ensuring the robot could maintain accurate and reliable movement during testing. 
 
-### 5.5. Postponed Training Due to Sudden Calamities
+### 5.6. Postponed Training Due to Sudden Calamities
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another problem encountered by the team is the consequent occurrence of storms and other calamities in the Philippines, particularly in the northern and southern portions of Luzon, which significantly affected the province where the members reside. Unfortunately, while others in different areas may have experienced even worse conditions, the team still faced multiple and continuous suspensions of classes and activities. In addition, campuses within Batangas, as well as Batangas State University - The National Engineering University have experienced and received mutltiple bomb threats which suspended classes and works for faculty and students' safety. These interruptions hindered the members from maximizing their time and productivity in preparation for their scheduled tasks and training. Moreover, the planned timeline had to be adjusted several times, causing delays in processes that were initially set to be completed within specific periods.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another problem encountered by the team is the consequent occurrence of storms and other calamities in the Philippines, particularly in the northern and southern portions of Luzon, which significantly affected the province where the members reside. Unfortunately, while others in different areas may have experienced even worse conditions, the team still faced multiple and continuous suspensions of classes and activities. These interruptions hindered the members from maximizing their time and productivity in preparation for their scheduled tasks and training. Moreover, the planned timeline had to be adjusted several times, causing delays in processes that were initially set to be completed within specific periods.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Despite these setbacks, the team remained understanding and empathetic toward the broader situation. The team's hearts go out to those who have lost family members, friends, pets, homes, and sources of livelihood due to these calamities. The experience also reminded the team of the importance of resilience and patience during difficult times. Although the delays posed challenges in maintaining momentum, the group used the time to reassess priorities, reorganize schedules, and strengthen coordination to ensure that the set goals would continue once circumstances improved. 
 
@@ -1581,9 +1582,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 41.](./docu-photos/.png) | ![Figure 42.](./docu-photos/espcaseplate2.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 41. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 42. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+| ![Figure 42.](./docu-photos/lms3dmodel.png) | ![Figure 43.](./docu-photos/lms.png) | ![Figure 44.](./docu-photos/espcaseplate2.png) |
+|:---------------------:| :---------------------:| :---------------------:|
+| <center> Figure 42. <br> 3D Model of LMS-ESP 32 Case </center> | <center> Figure 43. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 44. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
 
 </center>
 
@@ -1597,9 +1598,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 43.](./docu-photos/upscaselayout.png) | ![Figure 44.](./docu-photos/upscaseplate2.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 43. <br> 3D-Printed UPS-18650 Case </center> | <center> Figure 44. <br> 3D-Printed UPS-18650 Case <br> Dimesions </center> |
+| ![Figure 45.](./docu-photos/ups3dmodel.png) | ![Figure 46.](./docu-photos/ups.png) | ![Figure 47.](./docu-photos/upscaseplate2.png) |
+|:---------------------:| :---------------------:| :---------------------:|
+| <center> Figure 45. <br> 3D Model of UPS-18650 Case </center> | <center> Figure 46. <br> 3D-Printed UPS-18650 Case </center> | <center> Figure 47. <br> 3D-Printed UPS-18650 Case <br> Dimesions </center> |
 
 </center>
 
@@ -1613,9 +1614,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 45.](./docu-photos/uscaselayout.png) | ![Figure 46.](./docu-photos/uscaseplate2.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 45. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 46. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+| ![Figure 48.](./docu-photos/sr04-3dmodel.png) | ![Figure 49.](./docu-photos/hc.png) | ![Figure 50.](./docu-photos/uscaseplate2.png) |
+|:---------------------:| :---------------------:| :---------------------:|
+| <center> Figure 48. <br> 3D Model of HC-SR04 Ultrasonic Sensor Case </center> | <center> Figure 49. <br> 3D-Printed HC-SR04 Ultrasonic Sensor Case </center> | <center> Figure 50. <br> 3D-Printed HC-SR04 Ultrasonic Sensor Case <br> Dimesions </center> |
 
 </center>
 
@@ -1628,10 +1629,10 @@ def runRecord(sannisLivisa: FE, currentLap):
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After several iterations, a functional prototype was successfully produced that met the initial design goals. For the final version, the Bambu Lab 3D printer was used, which provided higher resolution, better print stability, and smoother surface finish. In the end, the result was a strong, lightweight, and accurately fitted chassis that perfectly supported the robot’s electronic and mechanical components. 
 
 <center>
-
-| ![Figure 47.](./docu-photos/.png) | ![Figure 48.](./docu-photos/chassisplate2.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 47. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 48. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
+ 
+| ![Figure 51.](./docu-photos/.png) | ![Figure 52.](./docu-photos/.png) | ![Figure 53.](./docu-photos/.png) |
+|:---------------------:| :---------------------:| :---------------------:|
+| <center> Figure 51. <br> 3D Model of Robot Chassis </center> | <center> Figure 49. <br> 3D-Printed Robot Chassis </center> | <center> Figure 50. <br> 3D-Printed Robot Chassis <br> Dimesions </center> |
 
 </center>
 
