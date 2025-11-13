@@ -187,7 +187,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 </center>
 
- ![Specification](./docu-photos/.png)
+ ![Specification](./docu-photos/Specification.png)
 
 </center>
 
