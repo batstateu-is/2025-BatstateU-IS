@@ -29,6 +29,8 @@ FRONT = "front"
 LEFT = "left"
 RIGHT = "right"
 BACK = "back"
+FORWARD = "forward"
+BACKWARD = "backward"
 
 DEBUG = False
 SCREENWIDTH = 320
@@ -42,7 +44,7 @@ MIN_TURN_ANGLE = -42
 ANGLE_KP_THRESHOLD = 60
 MINTHRESHOLD = 110
 
-COMPE = True
+COMPE = False
 
 logs = []
 
@@ -161,82 +163,80 @@ def printInfo():
     log("Current Bat:", HUB.battery.voltage())
 
 # Pre-programmed Movements
+def scanList(sannisLivisa: FE, startAngle, endAngle, delayTime=10, minThreshold=MINTHRESHOLD):
+    # Default outputs
+    pillarColor, trafficSignData = "None", (0, 0, 0, "None")
+    detected = []  # [(color, (x, y, pix), angle)]
 
-def scanList(sannisLivisa, startAngle, endAngle, delayTime=10, minThreshold=MINTHRESHOLD):
-    # Final return values
-    pillarColor, trafficSignData = "None", (0, 0, 0)
-
-    # List of all valid detections: [("Red", (x, y, pix), angle), ...]
-    detected = []
-
-    lastSeenColor = None
-    lastSeenData = (0, 0, 0)
-    lastSeenAngle = None
-
-    _ = startAngle
     angleStep = 1 if startAngle < endAngle else -1
+    _ = startAngle
+    sannisLivisa.senseMotor.run_target(1000, startAngle)
 
-    def tryAppend():
-        nonlocal pillarColor, trafficSignData, lastSeenColor, lastSeenData, lastSeenAngle
-        if lastSeenColor is not None:
-            detected.append((lastSeenColor, lastSeenData, lastSeenAngle))
-            pillarColor = lastSeenColor
-            trafficSignData = lastSeenData
-            lastSeenColor = None
-            lastSeenData = (0, 0, 0)
-            lastSeenAngle = None
-
-    while (startAngle < endAngle and sannisLivisa.senseMotor.angle() < endAngle) or \
-          (startAngle > endAngle and sannisLivisa.senseMotor.angle() > endAngle):
-
-        sannisLivisa.lookDir(_, asyncBool=False)
-        tempColor, tempData = sannisLivisa.determineTrafficSignBlob()
-
-        if tempColor != "None" and tempData[-1] > minThreshold:
-            lastSeenColor = tempColor
-            lastSeenData = tempData
-            lastSeenAngle = _
+    # --- Scan loop ---
+    if startAngle < endAngle:
+        while sannisLivisa.senseMotor.angle() < endAngle:
+            sannisLivisa.lookDir(_, asyncBool=False)
+            color, data = sannisLivisa.determineTrafficSignBlob()
+            if color != "None" and data[-1] > minThreshold:
+                detected.append((color, data, _))
             wait(delayTime)
-        else:
-            tryAppend()
-            wait(delayTime)
-        _ += angleStep
-
-    tryAppend()  # Finalize last detection if loop ended with one in view
-
-    def merge(detections, angleThreshold):
-        merged = []
-        used = [False] * len(detections)
-
-        for i in range(len(detections)):
-            if used[i]:
-                continue
-                
-            color_i, data_i, angle_i = detections[i]
-            best = detections[i]
-
-            for j in range(i + 1, len(detections)):
-                if used[j]:
-                    continue
-                color_j, data_j, angle_j = detections[j]
-                if color_i == color_j and abs(angle_i - angle_j) <= angleThreshold:
-                    # Choose the one with more pixels (data[2])
-                    if data_j[2] > best[1][2]:
-                        best = detections[j]
-                    used[j] = True
-
-            used[i] = True
-            merged.append(best)
-
-        return merged
-
-    log(detected)
-    merged = merge(detected, 55)
-    if len(merged) > 0:
-        pillarColor, trafficSignData = merged[-1][0:2]
-        return pillarColor, trafficSignData, merged[0:2]
+            _ += angleStep
     else:
-        return "None", (0, 0, 0), [("None", (0, 0, 0), 0)]
+        while sannisLivisa.senseMotor.angle() > endAngle:
+            sannisLivisa.lookDir(_, asyncBool=False)
+            color, data = sannisLivisa.determineTrafficSignBlob()
+            if color != "None" and data[-1] > minThreshold:
+                detected.append((color, data, _))
+            wait(delayTime)
+            _ += angleStep
+
+    # --- Nothing seen ---
+    if not detected:
+        return "None", (0, 0, 0, "None"), [("None", (0, 0, 0, "None"), 0)]
+
+    # --- Group detections by color ---
+    grouped = {}
+    for color, data, angle in detected:
+        grouped.setdefault(color, []).append((data, angle))
+
+    # --- Keep max 2 distinct colors (based on largest blob seen overall) ---
+    color_order = sorted(
+        grouped.keys(),
+        key=lambda c: max([d[0][2] for d in grouped[c]]),  # sort by biggest blob
+        reverse=True
+    )[:2]
+
+    final_detections = []
+
+    # --- Pick the largest blob per color, classify, and store ---
+    for color in color_order:
+        blobs = grouped[color]
+        biggest_data, biggest_angle = max(blobs, key=lambda d: d[0][2])
+
+        # categorize by position for context
+        span = endAngle - startAngle
+        if biggest_angle < startAngle + span / 3:
+            zone = "Left"
+        elif biggest_angle > startAngle + 2 * span / 3:
+            zone = "Right"
+        else:
+            zone = "Middle"
+
+        data_with_zone = (biggest_data[0], biggest_data[1], biggest_data[2], zone)
+        final_detections.append((color, data_with_zone, biggest_angle))
+
+    # --- Sort detections left-to-right (or reversed) ---
+    reverse = False if startAngle < endAngle else True
+    final_detections.sort(key=lambda d: d[2], reverse=reverse)
+
+    # --- Select pillar color (default: leftmost / reverse: rightmost) ---
+    # if reverse:
+    #     pillarColor, trafficSignData = final_detections[0][0], final_detections[0][1]
+    # else:
+    pillarColor, trafficSignData = final_detections[-1][0], final_detections[-1][1]
+
+
+    return pillarColor, trafficSignData, final_detections
 
 def scanOnce(sannisLivisa: FE, startAngle: int, endAngle: int, delayTime: int=10, minThreshold: int=MINTHRESHOLD):
     pillarColor = "None"
@@ -271,38 +271,37 @@ def scanOnce(sannisLivisa: FE, startAngle: int, endAngle: int, delayTime: int=10
         return "None"
 
 def sharedParking(sannisLivisa: FE):
-    sannisLivisa.drive(200, 500, 600)
+    sannisLivisa.driveUntilStalled(50, 500, 600, heading=-90)
     sannisLivisa.eBrake(200)
-    HUB.imu.reset_heading(-90)
-    sannisLivisa.lookDir(-50)
-    sannisLivisa.turn(300, 7, True)
-    # sannisLivisa.drive(300, 200, 300, heading=0)
-    sannisLivisa.drive(90, 200, 300, heading=0)
-    sannisLivisa.drive(-50, 200, 300, heading=0)
-    sannisLivisa.turn(300, 60, True)
+    HUB.imu.reset_heading(0)
+    sannisLivisa.turn(600,55, True)
 
+    sannisLivisa.drive(400, 400, 600, heading=90)
+    sannisLivisa.eBrake(200)
+    # sannisLivisa.drive(-540, 400, 500, heading=90, decelerate=True)
+    sannisLivisa.driveUntilProximity(-400, 1080, heading=90, lookHeading=90, reverseCondition=True)
+    sannisLivisa.eBrake(200)
+    
+    sannisLivisa.turn(300, 155, True)
+    # sannisLivisa.driveUntilProximity(-250, 150, heading=145, selection=BACK)
+    # sannisLivisa.drive(-50, 250, 300, heading=154)
+    sannisLivisa.driveUntilStalled(-300, 400, 500, heading=155)
     beep()
-    sannisLivisa.driveUntilProximity(-210, 50, selection="back", heading=60, lookHeading=-40)
-    # sannisLivisa.drive(-360, 200, 300, heading=60)
-    sannisLivisa.reverseUntilAngleOrWall(300, 0, 50)
-    # sannisLivisa.driveUntilProximity(-160, 54, selection="back", heading=0, lookHeading=0)
-    # i = 0
-    # while abs(0 - HUB.imu.heading()) > 6 and i < 2:
-    #     print(i)
-    sannisLivisa.driveUntilProximity(110, 40, selection="front", heading=-11, lookHeading=0)
-    sannisLivisa.driveUntilProximity(-110, 53, selection="back", heading=2, lookHeading=0)
-        # log(abs(0 - HUB.imu.heading()))
-        # i += 1
+    sannisLivisa.drive(80, 300, 400, stopBool=True)
+    sannisLivisa.turn(200, 130, True)
+    sannisLivisa.reverseUntilAngleOrWall(200, 90, 60)
 
-    sannisLivisa.driveUntilProximity(110, 40, selection="front", heading=-3, lookHeading=0)
-
-    sannisLivisa.eBrake(200)
+    i = 0
+    while abs(90 - HUB.imu.heading()) > 4 and i < 2:
+        # print(i)
+        sannisLivisa.driveUntilProximity(200, 50, heading=90, lookHeading=90)
+        sannisLivisa.driveUntilProximity(-200, 55, heading=90, lookHeading=90, selection=BACK)
 
 def checkIfFlushWithWall(sannisLivisa, errorTolerance, forwardAmount, backwardSpeed, targetHeading, turnDuration, steerAngle):
-    log("Error in walling:", abs(HUB.imu.heading() - targetHeading))
+    # log("Error in walling:", abs(HUB.imu.heading() - targetHeading))
     error = HUB.imu.heading() - targetHeading
     if abs(error) > errorTolerance:
-        sannisLivisa.drive(forwardAmount, 500, 600)
+        sannisLivisa.drive(forwardAmount, 300, 400)
         sannisLivisa.eBrake(10)
 
         turntimer = StopWatch()
@@ -349,7 +348,7 @@ class FE():
         # TODO try except which sets global flag
         self.distSensorBack = PUPRemoteHub(distSensorB)
         self.distSensorBack.add_command('line', 'hhh') 
-        print("goods")
+        # print(self.distSensorBack.call("line")[-1])
 
         # -- PID Constants - Forward Direction -- #
         self.KPdriveFCT = 4.8
@@ -376,9 +375,12 @@ class FE():
         self.KDturn     = 0.48
         self.KITurn     = 0
 
-        self.forwardMinTorque = 390
-        self.backwardMinTorque = 320
-        self.stalledTime = 1500
+        self.forwardMinTorque = 392
+        self.backwardMinTorque = 315
+        self.stalledTime = 1200
+        self.globalStallTimer = StopWatch()
+        self.globalStallTimer.reset()
+        self.isTimerRunning = False
 
         self.forwardTurnLeftTolerance = 13
         self.forwardTurnRightTolerance = 15
@@ -392,6 +394,7 @@ class FE():
         HUB.imu.reset_heading(0)
         self.memory = {}
         self.resetParams()
+        # beep()
 
         if camEnabled:
             self.camSensor = PUPRemoteHub(camSensor)
@@ -423,6 +426,7 @@ class FE():
     def getDistance(self, selection):
         try:
             if selection == FRONT:
+                # beep()
                 return self.distSensor.distance()
             elif selection == LEFT:
                 return self.distSensorBack.call("line")[0]
@@ -494,7 +498,47 @@ class FE():
 
     def move(self, speed, angle):
         self.steeringMotor.run_target(1000, angle, wait=False)
+        # self.steeringMotor.track_target(angle)
         self.driveMotor.run(speed)
+
+    def isStalled(self, currentSpeed, direction=FORWARD):
+        """
+        Check once if the drive motor is stalled, using a timer to confirm.
+        Does not drive or loop — just detects.
+        """
+
+        
+
+        # --- 1. Start or resume stall timer if not running --- #
+        if not self.isTimerRunning:
+            self.globalStallTimer.reset()
+            self.globalStallTimer.resume()
+            self.isTimerRunning = True
+
+        # --- 2. Check speed thresholds based on direction --- #
+        if direction == FORWARD:
+            stallSpeed = currentSpeed // 1.8
+            isBelowThreshold = self.driveMotor.speed() < stallSpeed
+        else:
+            stallSpeed = -(currentSpeed // 2)
+            isBelowThreshold = self.driveMotor.speed() > stallSpeed
+
+        # --- 3. Evaluate stall condition --- #
+        if isBelowThreshold:
+            # If motor stays below threshold long enough, it’s stalled
+            if stallClock.time() > self.stalledTime:
+                self.globalStallTimer.pause()
+                self.globalStallTimer.reset()
+                self.isTimerRunning = False
+                return True
+        else:
+            # If motor recovered, reset the timer
+            self.globalStallTimer.reset()
+            self.globalStallTimer.pause()
+            self.isTimerRunning = False
+
+        return False
+
 
     def determineDirOld(self, exclude=2000):
         checkTimer = StopWatch()
@@ -544,6 +588,7 @@ class FE():
 
         log(direction, level="DETERMINE DIR")
         self.center()
+        self.driveUntilProximity(-200, 150, reverseCondition=True, heading=30)
         return direction
 
     def determineDir(self, exclude=2000, measureTime=100):
@@ -740,12 +785,33 @@ class FE():
         stallClock.pause()
         stallClock.reset()
             
-    def driveUntilProximity(self, speed, proximity, heading="", lookHeading=0, selection="front", brake=True):
+    def driveUntilProximity(self, speed, proximity, heading="", lookHeading=0, selection="front", brake=True, reverseCondition=False):
         heading = HUB.imu.heading() if heading == "" else heading
         self.resetParams()
 
         baseKP, KI = self._selectPIDConstants(heading, forward=(speed > 0))
-        
+
+        if selection != FRONT:            
+            if not reverseCondition:
+                def condition(): return self.getDistance(selection) > proximity
+            else:
+                def condition(): return self.getDistance(selection) < proximity
+            # condition = lambda: self.getDistance(selection) > proximity if not reverseCondition else self.getDistance(selection) < proximity
+        else:
+            if not reverseCondition:
+                def condition(): return self.getDistance(selection) > proximity
+            else:
+                def condition(): 
+                    dist = self.getDistance(selection)
+                    print(dist, selection)
+                    if dist != 2000:
+                        return dist < proximity # or dist != 2000
+                    return True
+            # condition = (
+            #     lambda: self.getDistance(selection) > proximity
+            #     if not reverseCondition
+            #     else lambda: (self.getDistance(selection) != 2000 and self.getDistance(selection) < proximity)
+            # )        
         if (speed > 0):
             while self.getDistance(selection) > proximity:
                 error = heading - HUB.imu.heading()
@@ -761,9 +827,11 @@ class FE():
                 self.move(speed, correction)
 
         else:
-            if selection == "front":
-                while self.getDistance(selection) > proximity:
-                    # log(self.getDistance(selection))
+            if selection == FRONT:
+                log(condition(), condition)
+                while condition():
+                    # if 
+                        # log(self.getDistance(selection))
                     error = HUB.imu.heading() - heading
                     KP = linearMap(self.driveMotor.speed(), -1000, 0, 0, baseKP)
                     KD = linearMap(self.driveMotor.speed(), -1000, 0, self.KDdrive, 0)
@@ -773,6 +841,7 @@ class FE():
                     correction = 30 if correction > 30 else correction
                     correction = -35 if correction < -35 else correction
                     # print(error, HUB.imu.heading(), correction)
+                    self.lookDir(lookHeading - HUB.imu.heading(), False)
                     self.move(speed, correction)
             else:
                 while self.getDistance(selection) > proximity:
@@ -1103,7 +1172,7 @@ class FE():
                     self.eBrake(400)
                     break
 
-                print(self.getDistance(BACK))
+                # print(self.getDistance(BACK))
                 error = HUB.imu.heading() - targetAngle
                 self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
                 correction = 45 if correction > 45 else correction
