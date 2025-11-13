@@ -153,7 +153,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 > The following pictures feature the members of J.E.E.P. (BatStateU-IS) participating in the Future Engineers category along with their robot.
 
-| ![Formal Picture](./t-photos/formal.picpng) | ![Funny Picture](./t-photos/Funny_Final.png) |
+| ![Formal Picture](./t-photos/formalpicpng) | ![Funny Picture](./t-photos/funnypic.png) |
 |:---------------------:|:---------------------:|
 
 **Team Members (Left to Right):**  
