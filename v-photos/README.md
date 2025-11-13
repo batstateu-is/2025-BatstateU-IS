@@ -3,15 +3,15 @@ Vehicle's photos
 
 ### Robot Actual Photos
 
-| ![Front](./front.png) | ![Figure .](./rear.png) |
+| ![Front](./front-actual.png) | ![Figure .](./rear-actual.png) |
 |:---------------------:| :---------------------:|
 | <center> Front View </center> | <center> Rear View </center>|  
 
-| ![Left](./left.png) | ![Right](./right.png) |
+| ![Left](./left-actual.png) | ![Right](./right-actual.png) |
 |:---------------------:| :---------------------:|
 | <center> Left View </center> | <center> Right View </center>| 
 
-| ![Top](./top.png) | ![Bottom](./bottom.png) |
+| ![Top](./top-actual.png) | ![Bottom](./bottom-actual.png) |
 |:---------------------:| :---------------------:|
 | <center> Top View </center> | <center> Bottom View </center>| 
 
