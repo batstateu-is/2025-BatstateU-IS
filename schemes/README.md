@@ -35,6 +35,8 @@ Additional Power Lines
 
 </center>
 
+---
+
 ## 🔌 One-Button Power Mechanism Switching Circuit
 
 <center>
@@ -55,6 +57,7 @@ Wire Connection is as follows:
 
 </center>
 
+---
 
 ## 🔌 UART via SPIKE Port
 
