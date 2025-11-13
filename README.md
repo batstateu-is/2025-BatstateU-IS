@@ -289,7 +289,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 <center>
 
-| ![Figure 7.](./docu-photos/rwheels.png) |
+| ![Figure 7.](./docu-photos/rw.png) |
 |:---------------------:|
 | Figure 7. <br> Robot's Wheels <br> Front View and Rear View
 
