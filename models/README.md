@@ -10,7 +10,7 @@ This directory contains the **3D models** we used for designing, printing, and s
 | `PRO 2025_Main Robot_New Version.stl`    | Complete 3D model of the main robot chassis used for PRO 2025, including updated design improvements. |
 
 > [!Note]
-> The basis of our `Camera Case.stl` was based of [this](https://thangs.com/designer/logicalplanet/3d-model/Pocket%20Boxes%20-%20with%20Locking%20Sliding%20Lids-1263156)
+> The basis of the team's `Camera Case.stl` was based of [this](https://thangs.com/designer/logicalplanet/3d-model/Pocket%20Boxes%20-%20with%20Locking%20Sliding%20Lids-1263156)
 
 ### 🛠️ Usage
 
