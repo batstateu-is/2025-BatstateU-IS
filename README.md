@@ -691,7 +691,7 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <!--Need to update-->
 
-| ![Figure 26.](./docu-photos/FE-Flowchart.jpg) |
+| ![Figure 26.](./docu-photos/open-flowchart.png) |
 |:---------------------:|
 | Figure 26. <br> Open Challenge Flowchart
 
