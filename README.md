@@ -1414,6 +1414,8 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team also encountered failed and halted prints, particularly during longer print jobs. In some instances, prints detached from the build plate or the filament jammed mid-process, resulting in wasted materials—which were costly—and lost time. These interruptions necessitated rechecking the printer’s settings and, in some cases, restarting the print from the beginning. 
 
+![Improper Printing](./docu-photos/problem1.png)
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another recurring problem was the wrong alignment of holes and connectors. A few designs had holes that did not perfectly match the sizes of LEGO Technic connectors, which forced us to manually adjust the parts using a file or reprint them after correcting the CAD model. In other instances, improper dimensions led to overly tight or loose fits—some mounts couldn’t hold sensors securely, while others had excessive gaps that affected the stability of the integration. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Despite these setbacks, the challenges highlighted the importance of careful calibration and iterative design. Each failed print provided an opportunity to refine the process and improve the accuracy of the models before attempting another print. These experiences enhanced the team’s problem-solving skills and patience, making successful prints all the more rewarding. 
