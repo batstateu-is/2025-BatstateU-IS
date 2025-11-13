@@ -386,7 +386,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 <center>
 
-| ![Figure 13.](./docu-photos/mm].png) |
+| ![Figure 13.](./docu-photos/mm.png) |
 |:---------------------:|
 | Figure 13. <br> Microcontroller Management
 
