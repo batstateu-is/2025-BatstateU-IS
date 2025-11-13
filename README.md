@@ -153,9 +153,8 @@ This repository documents the complete engineering development of a **self-drivi
 
 > The following pictures feature the members of J.E.E.P. (BatStateU-IS) participating in the Future Engineers category along with their robot.
 
-| ![Formal Picture](./t-photos/formal.png) | ![Funny Picture](./t-photos/Funny_Final.png) |
+| ![Formal Picture](./t-photos/formal.picpng) | ![Funny Picture](./t-photos/Funny_Final.png) |
 |:---------------------:|:---------------------:|
-| Formal Picture | Funny Picture |
 
 **Team Members (Left to Right):**  
 - **Airvin James L. Medina**, 15  
@@ -302,7 +301,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 <center>
 
-| ![Figure 8.](./docu-photos/wdistrib.png) |
+| ![Figure 8.](./docu-photos/wd.png) |
 |:---------------------:|
 | Figure 8. <br> Robot's Weight Distribution <br>
 
@@ -322,7 +321,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 <center>
 
-| ![Figure 9.](./docu-photos/powerm.png) |
+| ![Figure 9.](./docu-photos/pm.png) |
 |:---------------------:|
 | Figure 9. <br> Power Management |
 
@@ -387,7 +386,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 <center>
 
-| ![Figure 13.](./docu-photos/mcm.png) |
+| ![Figure 13.](./docu-photos/mm].png) |
 |:---------------------:|
 | Figure 13. <br> Microcontroller Management
 
@@ -566,7 +565,7 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| ![Figure 18](./docu-photos/sensemm.png) |
+| ![Figure 18](./docu-photos/sm.png) |
 |:---------------------:|
 | Figure 18. <br> Robot’s Sensors and Vision System
 
