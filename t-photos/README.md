@@ -5,7 +5,7 @@ Team's photos
 
 > The following pictures feature the members of Batangas State University - Integrated School (BatStateU-IS) participating in the Future Engineers category along with their robot.
 
-| ![Formal Picture](./formal.png) | ![Funny Picture](./Funny_Final.png) |
+| ![Formal Picture](./formalpic.png) | ![Funny Picture](./funnypic.png) |
 |:---------------------:|:---------------------:|
 | Formal Picture | Funny Picture |
 
