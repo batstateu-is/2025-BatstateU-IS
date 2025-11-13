@@ -39,14 +39,14 @@ def Obstacle(sannisLivisa):
     # print(HUB.imu.heading())
     # sannisLivisa.turn(400, 30*direction, reverse=True)
     sannisLivisa.eBrake(200)
-    sannisLivisa.driveUntilStalled(-410, 400, 500, heading=92*direction)
+    sannisLivisa.driveUntilStalled(-410, 500, 400, heading=92*direction)
 
     # -- Correct if not flush with wall -- #
     checkIfFlushWithWall(sannisLivisa, WALLING_ERROR_TOLERANCE, 10, 600, 90 * direction, TURNDURATION, 40 * direction)
 
     
     sannisLivisa.eBrake(200)
-    sannisLivisa.driveUntilStalled(-410, 400, 500, heading=92*direction)
+    sannisLivisa.driveUntilStalled(-20, 400, 500, heading=92*direction)
     HUB.imu.reset_heading(0)
 
     # sannisLivisa.kc()

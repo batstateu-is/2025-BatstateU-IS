@@ -378,6 +378,7 @@ class FE():
         self.forwardMinTorque = 392
         self.backwardMinTorque = 315
         self.stalledTime = 1200
+        self.maxStalledTime = 900
         self.globalStallTimer = StopWatch()
         self.globalStallTimer.reset()
         self.isTimerRunning = False
@@ -390,6 +391,8 @@ class FE():
         self.driveSpeedMin = 500
         self.driveSpeedMax = 1000
         self.lookSpeed     = 1000
+
+        self.moving = False
 
         HUB.imu.reset_heading(0)
         self.memory = {}
@@ -506,33 +509,29 @@ class FE():
         Check once if the drive motor is stalled, using a timer to confirm.
         Does not drive or loop — just detects.
         """
-
-        
-
         # --- 1. Start or resume stall timer if not running --- #
+
         if not self.isTimerRunning:
             self.globalStallTimer.reset()
             self.globalStallTimer.resume()
             self.isTimerRunning = True
+        
 
         # --- 2. Check speed thresholds based on direction --- #
         if direction == FORWARD:
-            stallSpeed = currentSpeed // 1.8
+            stallSpeed = currentSpeed // 1.7
             isBelowThreshold = self.driveMotor.speed() < stallSpeed
         else:
-            stallSpeed = -(currentSpeed // 2)
+            stallSpeed = -(currentSpeed // 1.2)
             isBelowThreshold = self.driveMotor.speed() > stallSpeed
 
         # --- 3. Evaluate stall condition --- #
         if isBelowThreshold:
+            # print("ahjsdg", self.moving)
             # If motor stays below threshold long enough, it’s stalled
-            if stallClock.time() > self.stalledTime:
-                self.globalStallTimer.pause()
-                self.globalStallTimer.reset()
-                self.isTimerRunning = False
+            if self.globalStallTimer.time() > self.maxStalledTime:
                 return True
         else:
-            # If motor recovered, reset the timer
             self.globalStallTimer.reset()
             self.globalStallTimer.pause()
             self.isTimerRunning = False
@@ -676,7 +675,8 @@ class FE():
         self.steeringMotor.close()
         self.driveMotor.close()
 
-    def drive(self, dist, initialSpeed, finalSpeed, heading="", stopBool=False, stopDuration=100, decelerate=False):
+    def drive(self, dist, initialSpeed, finalSpeed, heading="", stopBool=False, 
+                stopDuration=100, decelerate=False, stopIfStalled=False):
         heading = HUB.imu.heading() if heading == "" else heading
         start = self.driveMotor.angle()
         target = start + dist
@@ -688,6 +688,52 @@ class FE():
         else:
             mappingFunc = tLinearMap
         # print(start, target, heading, HUB.imu.heading(), baseKP, KI)
+        self.moving = True
+        if stopIfStalled:
+            if (dist > 0):
+                while self.driveMotor.angle() < target:
+                    if self.isStalled(initialSpeed, direction=FORWARD):
+                        break
+                    # print(self.isStalled(finalSpeed))
+                    error = heading - HUB.imu.heading()
+                    speed = mappingFunc(self.driveMotor.angle(), start, target, initialSpeed, finalSpeed)
+                    KP = linearMap(self.driveMotor.speed(), 0, 1000, 0, baseKP)
+                    KD = linearMap(self.driveMotor.speed(), 0, 1000, 0, self.KDdrive)
+                    
+                    self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+                    correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
+                    correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+                    # print(correction)
+
+                    self.move(speed, correction)
+
+                # print(i)
+            else:
+                while self.driveMotor.angle() > target:
+                    if self.isStalled(initialSpeed, direction=BACKWARD):
+                        break
+                    # print(self.isStalled(finalSpeed, BACKWARD))
+                    error = HUB.imu.heading() - heading
+
+                    speed = mappingFunc(self.driveMotor.angle(), start, target, -initialSpeed, -finalSpeed)
+                    KP = linearMap(self.driveMotor.speed(), -1000, 0, 0, baseKP)
+                    KD = linearMap(self.driveMotor.speed(), -1000, 0, self.KDdrive, 0)
+                    
+                    self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
+                    correction = MAXCORRECTION_DRIVE if correction > MAXCORRECTION_DRIVE else correction
+                    correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
+
+                    self.move(speed, correction)
+
+                self.globalStallTimer.pause()
+                self.globalStallTimer.reset()
+                self.isTimerRunning = False
+
+            if stopBool:
+                self.eBrake(stopDuration)
+            self.resetParams()
+            return
+
         if (dist > 0):
             while self.driveMotor.angle() < target:
                 error = heading - HUB.imu.heading()
@@ -720,6 +766,7 @@ class FE():
         if stopBool:
             self.eBrake(stopDuration)
         self.resetParams()
+        self.moving = False
 
     def driveUntilStalled(self, accelDist, initialSpeed, finalSpeed, heading="", decelerate=False):
         heading = HUB.imu.heading() if heading == "" else heading
@@ -727,7 +774,7 @@ class FE():
         target = start + accelDist
         self.resetParams()
 
-        self.drive(accelDist, initialSpeed, finalSpeed, heading=heading)
+        self.drive(accelDist, initialSpeed, finalSpeed, heading=heading, stopIfStalled=True)
 
         # Select PID constants once based on initial heading
         baseKP, KI = self._selectPIDConstants(heading, forward=(accelDist > 0))
@@ -882,6 +929,7 @@ class FE():
                     (self.getDistance(RIGHT) - self.getDistance(LEFT) > sideThreshold) or \
                     (self.getDistance(FRONT) < frontThreshold):
                     ctr += 1
+                    print(self.getDistance(FRONT))
                 error = heading - HUB.imu.heading()
                 speed = mappingFunc(self.driveMotor.angle(), start, target, initialSpeed, finalSpeed)
                 KP = linearMap(self.driveMotor.speed(), 0, 1000, 0, baseKP)
