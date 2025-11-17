@@ -433,9 +433,9 @@ This repository documents the complete engineering development of a **self-drivi
 
 <center>
 
-| <img src="./docu-photos/lmslayout.png" alt="Figure 16." width="1090" height="566"> | <img src="./docu-photos/.png" alt="Figure 17." width="1080" height="566"> | 
-|:---------------------:|:---------------------:|
-| Figure 16. <br> LMS-ESP32  | Figure 17. <br> LMS-ESP32  <br> Dimensions |
+| <img src="./docu-photos/lmslayout.png" alt="Figure 16." width="1090" height="566"> | 
+|:---------------------:|
+| Figure 16. <br> LMS-ESP32  | 
 
 </center>
 
