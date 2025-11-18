@@ -1275,17 +1275,21 @@ Refer to the illustration below._
 
 <p align="center"><img src="./docu-photos/Strat/startClockwise.gif" width="600" height="395"/>
 
-### 4.3. Perpendicular Parking Strategy
+### 4.3. Parallel Parking Strategy 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the Perpendicular Parking scenario, the illustration will be based again on the clockwise direction. If the first detected obstacle is red, the robot will move to the right of the traffic sign, make a 90-degree turn going to the left, and continue moving forward until it reaches the outer wall, where it will come to a stop. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This strategy is designed for parallel parking using ultrasonic sensors around the robot. The robot continuously adjusts its movements based on sensor readings to safely enter the parking space. This method may be used as a backup strategy if the primary approach fails.
 
-_You may refer to the accompanying illustration for a clearer understanding; the arrows indicate the robot’s route for red first and green second perpendicular parking scenarios._
+- Red-first obstacle:
+If the first detected obstacle is red, the robot will move to the right of the obstacle while approaching the parking space. It will then begin reversing into the space while continuously monitoring the rear and side ultrasonic sensors. Steering adjustments are made to maintain a safe distance from surrounding obstacles until the robot is fully inside the parking space.
+
+_Refer to the accompanying illustration; arrows indicate the robot’s path for the red-first obstacle scenario._
 
 <p align="center"><img src="./docu-photos/Strat/stratParkingRed.gif" width="600" height="395"/>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However, if the first detected obstacle is green, the robot will pass to the left of the traffic sign, then make a 90-degree right turn and move forward until it reaches the inner wall. Once it detects this, the robot will reverse until it reaches the outer wall, where it will come to a complete stop. 
+- Green-first obstacle:
+If the first detected obstacle is green, the robot will move to the left of the obstacle, then start reversing into the parking space. During this maneuver, the robot continuously checks the rear and side sensors and adjusts steering to ensure proper alignment within the space. Once fully positioned, the robot stops completely.
 
-_You may refer to the accompanying illustration for a clearer understanding; the arrows indicate the robot’s route for the green-first and red-second perpendicular parking scenarios._
+_Refer to the accompanying illustration; arrows indicate the robot’s path for the green-first obstacle scenario._
 
 <p align="center"><img src="./docu-photos/Strat/stratParkingGreen.gif" width="600" height="395"/>
 
@@ -2012,7 +2016,25 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ---
 
-## 13. 📑 References
+## 13. ⏳ Programming Strategy History
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This strategy was previously employed in the Philippine Robotics Olympiad (PRO) and demonstrated effectiveness in executing perpendicular parking tasks. Although a new parallel parking strategy has been developed, this previous approach remains available as a backup for the World Robot Olympiad (WRO) in the event that the current strategy fails. Maintaining this contingency ensures that the robot can complete the parking task successfully under varying obstacle conditions.
+
+- Red-first obstacle: If the first detected obstacle is red, the robot will move to the right of the traffic sign, make a 90-degree left turn, and continue moving forward until it reaches the outer wall, where it will come to a complete stop.
+
+_Refer to the accompanying illustration for a clearer understanding; the arrows indicate the robot’s route for the red-first and green-second perpendicular parking scenarios._
+
+<p align="center"><img src="./docu-photos/Strat/stratParkingRed.gif" width="600" height="395"/>
+
+- Green-first obstacle: If the first detected obstacle is green, the robot will pass to the left of the traffic sign, make a 90-degree right turn, and move forward until it reaches the inner wall. Upon detecting the wall, the robot will reverse until it reaches the outer wall, where it will stop completely.
+
+_Refer to the accompanying illustration for clarity; the arrows indicate the robot’s route for the green-first and red-second perpendicular parking scenarios._
+
+<p align="center"><img src="./docu-photos/Strat/stratParkingGreen.gif" width="600" height="395"/>
+
+---
+
+## 14. 📑 References
 
 <br><a id="ref1"></a> [1] “LEGO® TechnicTM Large Hub for SPIKETM Prime by LEGO Education,” LEGO® Education. https://education.lego.com/en-us/products/lego-technic-large-hub-for-spike-prime-/45601/
 <br><a id="ref2"></a> [2] “Raspberry Pi UPS - 18650 HAT with RTC 5V Output for Raspberry Pi 4B, 3B+, 3B,” Arduitronics.com, 2025. https://www.arduitronics.com/product/2490/raspberry-pi-ups-18650-hat-with-rtc-5v-output-for-raspberry-pi-4b-3b-3b (accessed Nov. 08, 2025).
