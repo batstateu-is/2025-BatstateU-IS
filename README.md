@@ -175,15 +175,15 @@ This repository documents the complete engineering development of a **self-drivi
   
 | <center>Specification</center> | <center> Details </center> |
 | ----- | ----- |
-| Dimensions | 300 mm (L) x 150 mm (W) x 193 mm (H)  |
-| Weight | 913.79 g |
-| Maximum Speed | 837.6 mm/s |
-| Maximum Steering Angle | + 45° and -49° |
-| Steering Torque | 100 Ncm |
-| Operating Voltage | 8.3V – 7.6V |
-| Drive System | Rear-Wheel Drive (RWD) |
+| Dimensions | 300 mm (L) x 155 mm (W) x 200 mm (H)  |
+| Weight | 1.2 kg |
+| Maximum Steering Angle | +45° and –49° |
+| Steering Torque | 100 N·cm |
+| Drive System | Rear-Wheel Drive |
 | Steering Geometry | Parallel Steering |
 | Material | LEGO® Technic™ and PLA Filament |
+| Operating Voltage (UPS-18650) | 5V |
+| Operating Voltage (SPIKE Hub) | 8V |
 
 </center>
 
