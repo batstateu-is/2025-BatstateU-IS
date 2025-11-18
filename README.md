@@ -1258,7 +1258,11 @@ Which reads from the channel that we created earlier.
 
 _You may refer to the accompanying illustration for better visualization; the arrows indicate the route the robot takes in each possible scenario._
 
-![Obstacle Challenge Route](./docu-photos/Strat/startStraight.gif)
+<center>
+
+<p align="center"><img src="./docu-photos/Strat/startStraight.gif" width="600" height="395"/>
+
+</center>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another route, also in a clockwise direction, is shown in the illustration below. In this path, the robot begins by scanning the nearby traffic sign to detect their colors. If it detects a green traffic sign, it turns left to go around it; if it detects red, it turns right. If no color is detected, the robot defaults to a pre-set color, usually red. After maneuvering around the first obstacle, the robot stops and scans for a second one. Based on the color of the traffic sign it detects, it proceeds in the corresponding direction. However, if the section contains a parking lot, it uses a different route. The robot follows an alternate route, moving between the parking area and the traffic sign, depending on the color it previously recorded. 
 
