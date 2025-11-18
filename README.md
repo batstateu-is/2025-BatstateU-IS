@@ -1273,7 +1273,7 @@ _You may refer to the accompanying illustration for a clearer understanding; the
 _Here is another path the robot takes in a clockwise direction when the first detected color is green and a parking lot is present.
 Refer to the illustration below._
 
-![Obstacle Challenge Route](./docu-photos/Strat/startClockwise.png)
+<p align="center"><img src="./docu-photos/Strat/startClockwise.gif" width="600" height="395"/>
 
 ### 4.3. Perpendicular Parking Strategy
 
@@ -1281,7 +1281,7 @@ Refer to the illustration below._
 
 _You may refer to the accompanying illustration for a clearer understanding; the arrows indicate the robot’s route for red first and green second perpendicular parking scenarios._
 
-![Obstacle Challenge Route](./docu-photos/Strat/stratParkingRed.png)
+<p align="center"><img src="./docu-photos/Strat/stratParkingRed.gif" width="600" height="395"/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However, if the first detected obstacle is green, the robot will pass to the left of the traffic sign, then make a 90-degree right turn and move forward until it reaches the inner wall. Once it detects this, the robot will reverse until it reaches the outer wall, where it will come to a complete stop. 
 
