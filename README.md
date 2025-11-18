@@ -1287,7 +1287,7 @@ _You may refer to the accompanying illustration for a clearer understanding; the
 
 _You may refer to the accompanying illustration for a clearer understanding; the arrows indicate the robot’s route for the green-first and red-second perpendicular parking scenarios._
 
-![Obstacle Challenge Route](./docu-photos/Strat/startParkingGreen.png)
+<p align="center"><img src="./docu-photos/Strat/stratParkingGreen.gif" width="600" height="395"/>
 
 ### 4.4. Semi-Machine Learning Strategy
 
