@@ -117,7 +117,10 @@ This repository documents the complete engineering development of a **self-drivi
 
 📜 **[12. Robot Design History](#12--robot-design-history)**
 
-📑 **[13. References](#13--references)**
+⏳ **[13. Programming Strategy History](#13--programming-strategy-history)**
+&nbsp;&nbsp;&nbsp;&nbsp;13.1 [Perpendicular Parking Strategy](#71-perpendicular-parking-strategy)  
+
+📑 **[14. References](#14--references)**
 
 ***
 ## 📖 Introduction
@@ -1704,22 +1707,45 @@ The checklist below may serve as your guide for preparing the materials. *To che
 | 3D Printer  | <center>  1 pc |
 
 ### **_Step 2. Start Building the Robot._** 
-A specific and detailed list of parts and step-by-step instructions of constructing it can be found by scanning the ***QR code*** below or by clicking this [link](https://drive.google.com/file/d/1no6-Ziz5b2zDsR3MFzkWGNEyoSrwSkGQ/view).
+#### **2.1 3D Modeling and Printing** (add pictures)
+1. Design the front chassis, rear chassis, and all component cases using a 3D modeling software, Blender.  
+2. 3D print the components:
+   - Front chassis
+   - Rear chassis
+   - Component cases for electronics and sensors
+3. Smoothen all printed parts to remove rough edges.  
+4. Apply spray paint to visible surfaces.  
+5. Allow the paint to dry for at least 3 days before assembly.  
+6. Assemble the front and rear chassis along with all printed cases once dry.
 
-<center>
+### **_Step 3. Build the Steering System_** (add pictures0
+1. Assemble the steering mechanism using LEGO beams, gears, and connectors.  
+2. Attach the steering motor or servo to the designated mount.  
+3. Connect the steering linkages to the front wheels.  
+4. Test the steering by rotating the wheels; adjust linkages to ensure smooth turning.  
+5. Secure all loose pieces to prevent movement during operation.
 
-![Figure.](./docu-photos/image39.png)
+### **_Step 4. Build the Drive System_** (add pictures)
+1. Assemble the drive motor mounts using LEGO beams and connectors.  
+2. Attach the drive motors to the mounts.  
+3. Connect the wheels to the drive motors.  
+4. Test the drive system manually to ensure wheels spin correctly and freely.  
+5. Connect LEGO parts to secure the motor and wheel assembly to the chassis.  
 
-</center>
+*After these steps, the robot is mechanically ready for sensor installation and programming.*
 
-### **_Step 3. Ensure that electrical connections are properly wired and connected._** 
+### **_Step 5. Ensure that electrical connections are properly wired and connected._** 
 You may use these pictorial diagrams as reference for connecting the ***OpenMV Cam H7 Plus*** and the ***Spike™ Prime Sensors*** to the ***Technic™ Large Hub.***
 
 </center>
 
-| ![Figure 53.](./docu-photos/connection.png) |
-|:---------------------:|
-| Figure 53. <br> Connection Pictorial Diagram
+<center>
+
+| ![Figure 53.](./docu-photos/switchingcircuit.png) | ![Figure 54.](./docu-photos/schematic.png) | ![Figure 55.](./docu-photos/connection.png) |
+|:---------------------:| :---------------------:| :---------------------:|
+| <center> Figure 53. <br> Switching Circuit </center> | <center> Figure 54. <br> Schematic Diagram </center> | Figure 55. <br> Connection Pictorial Diagram
+
+</center>
 
 ---
 
@@ -1793,7 +1819,7 @@ Turn on your SPIKE™ Hub and open the Pybricks Editor. Click the Bluetooth icon
 
 ![Pybricks Bluetooth](./docu-photos/pyble.png)
 |:---------------------:|
-| Figure 54. <br> Bluetooth Connection
+| Figure 56. <br> Bluetooth Connection
 
 ### **_Step 6. Run and Upload the Program._** 
 To run your script on the hub, click the “Run this program” button or press `F5`. To stop the program, click “Stop everything” or press `F6`. Pybricks automatically saves the program to the hub once it is run, so there's no need for a separate upload step.
@@ -1933,15 +1959,15 @@ To run your script on the hub, click the “Run this program” button or press 
 
 <center>
 
-| ![Figure 55](./docu-photos/Cam.png) |
+| ![Figure 57](./docu-photos/Cam.png) |
 |:---------------------:|
-| Figure 55. <br> Camera Connection Wiring Diagram
+| Figure 57. <br> Camera Connection Wiring Diagram
 
 <center>
 
-| ![Figure 56](./docu-photos/spikehub.png) |
+| ![Figure 58](./docu-photos/spikehub.png) |
 |:---------------------:|
-| Figure 56. <br> SPIKE™ Prime Hub Wiring Diagram
+| Figure 58. <br> SPIKE™ Prime Hub Wiring Diagram
 
 </center>
 
