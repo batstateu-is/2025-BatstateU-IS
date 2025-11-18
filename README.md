@@ -1268,7 +1268,7 @@ _You may refer to the accompanying illustration for better visualization; the ar
 
 _You may refer to the accompanying illustration for a clearer understanding; the arrows indicate the robot’s route in each scenario._
 
-![Obstacle Challenge Route](./docu-photos/Strat/strat1.png)
+<p align="center"><img src="./docu-photos/Strat/strat1.gif" width="600" height="395"/>
 
 _Here is another path the robot takes in a clockwise direction when the first detected color is green and a parking lot is present.
 Refer to the illustration below._
