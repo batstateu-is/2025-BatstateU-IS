@@ -2,9 +2,16 @@
 ====
 
 ## 👥 Overall Video
-You may view and access the overall performance of our self-driving robot by clicking the link provided below. Watching the full performance will give you a clear understanding of how our mechanical design, sensor integration, and programming all work together in real-time to complete each task. 
+You may view and access the overall performance of our self-driving robot by clicking the image preview provided below. Watching the full performance will give you a clear understanding of how our mechanical design, sensor integration, and programming all work together in real-time to complete each task. 
 
-https://youtu.be/03gVkXfrZpo
+<div align="center">
+  <a href="https://youtu.be/03gVkXfrZpo">
+    <img src="https://github.com/user-attachments/assets/fc90c6d5-8256-4599-aade-789bdb32b835" 
+         alt="open-preview" 
+         width="600" 
+         height="400" />
+  </a>
+</div>
 
 ---
 ## 🚀 Open Challenge
@@ -33,9 +40,3 @@ You may access and view the test run of our robot in the Obstacle Challenge roun
 </div>
 
 ---
-
-Below are the videos showcasing the team’s practice sessions, including trials conducted on different inner wall configurations.
-
-### Narrow Wide Narrow Wide
-
-[![Video Preview](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
