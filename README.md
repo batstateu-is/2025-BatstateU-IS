@@ -1,4 +1,4 @@
-<img width="902" height="716" alt="image" src="https://github.com/user-attachments/assets/c5176f1d-4794-4921-8166-6a782563c716" /># ![J.E.E.P. (BatStateU-IS)](./docu-photos/newbanner.png)
+# ![J.E.E.P. (BatStateU-IS)](./docu-photos/newbanner.png)
 
 <center>
 
