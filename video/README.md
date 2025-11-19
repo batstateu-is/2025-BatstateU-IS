@@ -10,11 +10,19 @@ https://youtu.be/03gVkXfrZpo
 ## 🚀 Open Challenge
 You may access and view the test run of our robot in the Open Challenge round by clicking the link provided below. This will help you gain a better understanding of how our robot performs.
 
-[![Video Preview](./docu-photos/open-preview.png)](https://www.youtube.com/watch?v=z2x9yxSop0M)
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=z2x9yxSop0M">
+    <img src="https://github.com/user-attachments/assets/99f5c6d1-bbcc-43c7-b42d-ad268d8fc1d1" 
+         alt="open-preview" 
+         width="600" 
+         height="400" />
+  </a>
+</div>
 
 ---
 ## 🚧 Obstacle Challenge
 You may access and view the test run of our robot in the Obstacle Challenge round by clicking the link provided below. This will help you gain a better understanding of how our robot performs.
+<img width="2245" height="1587" alt="open-preview" src="https://github.com/user-attachments/assets/2883b31b-96d2-40f8-be0e-8928e896d4b8" />
 
 https://youtu.be/pkR1IfX47qg?si=EehAe6aIw_VjTK65
 
