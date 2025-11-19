@@ -83,7 +83,7 @@ In these videos, the self-driving robot is tested in a field following the **Ful
       </td>
       <td align="center" width="40%">
         <a href="https://youtu.be/dWxdiLgjRWk?si=Xwr398RDwAYSj_mt">
-          <img src="https://github.com/user-attachments/assets/b2b53231-26d0-4753-8c71-47881ca4e73b" 
+          <img src="https://github.com/user-attachments/assets/b70f4279-1ffd-4e2c-a683-6df7213a2405" 
                alt="Counterclockwise Preview" 
                width="800" 
                height="450" />
