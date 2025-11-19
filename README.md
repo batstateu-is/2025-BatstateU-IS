@@ -2044,6 +2044,8 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ## 13. ⏳ Programming Strategy History
 
+### 13.1 Perpendicular Parking Strategy
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This strategy was previously employed in the Philippine Robotics Olympiad (PRO) and demonstrated effectiveness in executing perpendicular parking tasks. Although a new parallel parking strategy has been developed, this previous approach remains available as a backup for the World Robot Olympiad (WRO) in the event that the current strategy fails. Maintaining this contingency ensures that the robot can complete the parking task successfully under varying obstacle conditions.
 
 - Red-first obstacle: If the first detected obstacle is red, the robot will move to the right of the traffic sign, make a 90-degree left turn, and continue moving forward until it reaches the outer wall, where it will come to a complete stop.
