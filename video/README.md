@@ -10,12 +10,20 @@ https://youtu.be/03gVkXfrZpo
 ## 🚀 Open Challenge
 You may access and view the test run of our robot in the Open Challenge round by clicking the link provided below. This will help you gain a better understanding of how our robot performs.
 
-https://youtu.be/sFFOtyM4Csk
+https://youtu.be/z2x9yxSop0M?si=tY3ITzcF3cDkKvhm
+
+Below are the videos showcasing the team’s practice sessions, including trials conducted on different inner wall configurations.
+
+### Narrow Wide Narrow Wide
+
+| Clockwise | Counterclockwise |
+|---------|---------|
+| <video src="nwnw-cl.mov" controls></video> | <video src="nwnw-co.mov" controls></video> |
 
 ---
 ## 🚧 Obstacle Challenge
 You may access and view the test run of our robot in the Obstacle Challenge round by clicking the link provided below. This will help you gain a better understanding of how our robot performs.
 
-https://youtu.be/ECOkZw3vB8I
+https://youtu.be/pkR1IfX47qg?si=EehAe6aIw_VjTK65
 
 ---
