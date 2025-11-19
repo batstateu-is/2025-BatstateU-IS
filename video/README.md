@@ -6,7 +6,7 @@ You may view and access the overall performance of our self-driving robot by cli
 
 <div align="center">
   <a href="https://youtu.be/03gVkXfrZpo">
-    <img src="https://github.com/user-attachments/assets/fc90c6d5-8256-4599-aade-789bdb32b835" 
+    <img src="https://github.com/user-attachments/assets/9a884416-2882-4998-bca5-e703e74f590b" 
          alt="open-preview" 
          width="600" 
          height="400" />
@@ -20,7 +20,7 @@ You may access and view the test run of our robot in the Open Challenge round by
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=z2x9yxSop0M">
-    <img src="https://github.com/user-attachments/assets/99f5c6d1-bbcc-43c7-b42d-ad268d8fc1d1" 
+    <img src="https://github.com/user-attachments/assets/75053c50-fe42-4264-83d7-979ecd73d81a" 
          alt="open-preview" 
          width="600" 
          height="400" />
@@ -99,7 +99,7 @@ You may access and view the test run of our robot in the Obstacle Challenge roun
 
 <div align="center">
   <a href="https://youtu.be/pkR1IfX47qg?si=-gXOWHXgb0aAcCO7">
-    <img src="https://github.com/user-attachments/assets/d881b4e7-dbf2-409b-ab45-321895bc5e67" 
+    <img src="https://github.com/user-attachments/assets/a08841ac-0fe5-47a2-ad0e-36510591e93a" 
          alt="obstacle-preview" 
          width="600" 
          height="400" />
