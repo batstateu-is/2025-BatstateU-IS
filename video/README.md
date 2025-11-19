@@ -18,7 +18,7 @@ Below are the videos showcasing the team’s practice sessions, including trials
 
 | Clockwise | Counterclockwise |
 |---------|---------|
-| <video src="nwnw-cl.mov" controls></video> | <video src="nwnw-co.mov" controls></video> |
+| <video src="nwnw-cl.mov" controls></video> | <video src="video/nwnw-co.mp4" controls></video> |
 
 ---
 ## 🚧 Obstacle Challenge
