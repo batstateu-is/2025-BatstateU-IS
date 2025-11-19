@@ -31,7 +31,7 @@ You may access and view the test run of our robot in the Open Challenge round by
 You may access and view the test run of our robot in the Obstacle Challenge round by clicking the image preview provided below. This will help you gain a better understanding of how our robot performs.
 
 <div align="center">
-  <a href="https://www.youtube.com/watch?v=z2x9yxSop0M">
+  <a href="https://youtu.be/pkR1IfX47qg?si=-gXOWHXgb0aAcCO7">
     <img src="https://github.com/user-attachments/assets/d881b4e7-dbf2-409b-ab45-321895bc5e67" 
          alt="obstacle-preview" 
          width="600" 
