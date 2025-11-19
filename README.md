@@ -1,4 +1,4 @@
-# ![J.E.E.P. (BatStateU-IS)](./docu-photos/newbanner.png)
+<img width="902" height="716" alt="image" src="https://github.com/user-attachments/assets/c5176f1d-4794-4921-8166-6a782563c716" /># ![J.E.E.P. (BatStateU-IS)](./docu-photos/newbanner.png)
 
 <center>
 
@@ -240,7 +240,7 @@ This repository documents the complete engineering development of a **self-drivi
 | Applications | High-power, high-torque applications | Lower-load, fast-response applications |
 
 <sup>1</sup> ***RPM*** = rotations per minute  
-<sup>2</sup> ***Ncm*** = newton centimeter&nbsp;&nbsp;&nbsp;
+<sup>2</sup> ***Ncm*** = newton centimeter
 
 ---
 
@@ -284,7 +284,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;These design choices highlight the team’s growing proficiency in applying mechanical design concepts and engineering problem-solving to create practical yet original solutions. Further discussions and technical details about the 3D-printed components and engineering factors are provided in Chapter 5. [Engineering Factor](#7--engineering-factor)
 
-| ![Figure 5.](./docu-photos/chassis.png) | ![Figure 6.](./docu-photos/chassis1.png) |
+| ![Figure 5.](./docu-photos/chassis.png) | ![Figure 6.](./docu-photos/3dchassis.png) |
 |:---------------------:|:---------------------:|
 | Figure 5. <br> Robot Chassis <br> Left Side View | Figure 6. <br> Robot Chassis with LEGO® Components <br> Left Side View |
 
