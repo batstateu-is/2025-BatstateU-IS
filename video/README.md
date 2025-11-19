@@ -44,7 +44,7 @@ In these videos, the self-driving robot is tested in a field following the **Nar
     <tr>
       <td align="center" width="40%">
         <a href="https://youtu.be/LPGmj80C5aE?si=Ck85JafQms-jQsMm">
-          <img src="https://github.com/user-attachments/assets/0132b3c1-b93a-408f-a445-04c6de62821c" 
+          <img src="https://github.com/user-attachments/assets/70692dd1-bf6a-4350-9b9b-fe7b2966ac11" 
                alt="Clockwise Preview" 
                width="800" 
                height="450" />
@@ -52,7 +52,7 @@ In these videos, the self-driving robot is tested in a field following the **Nar
       </td>
       <td align="center" width="40%">
         <a href="https://youtu.be/s5Za8ZliyCo?si=8c5tlJv_ubtmO5kW">
-          <img src="https://github.com/user-attachments/assets/5da26b89-f792-4965-bb42-72e690d1fa03" 
+          <img src="https://github.com/user-attachments/assets/08e0cb4b-e16a-42e4-94ec-3a5131b280b1" 
                alt="Counterclockwise Preview" 
                width="800" 
                height="450" />
@@ -75,7 +75,7 @@ In these videos, the self-driving robot is tested in a field following the **Ful
     <tr>
       <td align="center" width="40%">
         <a href="https://youtu.be/JVEZEjT8APU">
-          <img src="https://github.com/user-attachments/assets/2876a4d6-f6b3-45ef-a0fd-ce736efaa5d5" 
+          <img src="https://github.com/user-attachments/assets/88ce8ec4-c77c-4bd0-8aa1-e5a4febb2ebd" 
                alt="Clockwise Preview" 
                width="800" 
                height="450" />
