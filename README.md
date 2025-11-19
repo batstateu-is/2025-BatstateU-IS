@@ -91,33 +91,33 @@ This repository documents the complete engineering development of a **self-drivi
 &nbsp;&nbsp;&nbsp;&nbsp;7.7 [Rotating Camera and Distance Sensor](#77-rotating-camera-and-distance-sensor)  
 
 🔧 **[8. Mechanical Improvements](#8--mechanical-improvements)**  
- 8.1 [Weight Reduction through 3D Printing](#81-weight-reduction-through-3d-printing)  
+ &nbsp;&nbsp;&nbsp;&nbsp;8.1 [Weight Reduction through 3D Printing](#81-weight-reduction-through-3d-printing)  
 
 🛠️ **[9. Construction Guide](#9-️-construction-guide)**  
- 9.1 [Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
- 9.2 [Guide for Programming the Robot](#92-guide-for-programming-the-robot)  
-  9.2.1 [Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
-  9.2.2 [Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)  
-  9.2.3 [Programming the LMS-ESP32](#923-programming-the-lms-esp32)  
-  9.2.4 [Programming the UPS-18650 Battery](#924-programming-the-ups-18650-battery)  
- 9.3 [Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
+&nbsp;&nbsp;&nbsp;&nbsp;9.1 [Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
+&nbsp;&nbsp;&nbsp;&nbsp;9.2 [Guide for Programming the Robot](#92-guide-for-programming-the-robot)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.1 [Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.2 [Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.3 [Programming the LMS-ESP32](#923-programming-the-lms-esp32)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.4 [Programming the UPS-18650 Battery](#924-programming-the-ups-18650-battery)  
+&nbsp;&nbsp;&nbsp;&nbsp;9.3 [Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
 
 💡 **[10. Recommendations and Future Work](#10--recommendations-and-future-work)**  
- 10.1 [Recommendations for Mobility Management](#101-recommendations-for-mobility-management)  
- 10.2 [Recommendations for Power and Sense Management](#102-recommendations-for-power-and-sense-management)  
- 10.3 [Recommendations for Strategies](#103-recommendations-for-strategies)  
- 10.4.[Recommendations for Mechanical Design](#104-recommendations-for-mechanical-design)
+&nbsp;&nbsp;&nbsp;&nbsp;10.1 [Recommendations for Mobility Management](#101-recommendations-for-mobility-management)  
+&nbsp;&nbsp;&nbsp;&nbsp;10.2 [Recommendations for Power and Sense Management](#102-recommendations-for-power-and-sense-management)  
+&nbsp;&nbsp;&nbsp;&nbsp;10.3 [Recommendations for Strategies](#103-recommendations-for-strategies)  
+&nbsp;&nbsp;&nbsp;&nbsp;10.4.[Recommendations for Mechanical Design](#104-recommendations-for-mechanical-design)
 
 📎 **[11. Appendices](#11--appendices)**  
- 11.1 [Robot Actual Photos](#111-robot-actual-photos)  
- 11.2 [Robot 3D Model](#112-robot-3d-model)  
- 11.3 [Pictorial Wiring Diagram](#113-pictorial-wiring-diagram)  
- 11.4 [Bills of Materials](#114-bills-of-materials)  
- 11.5 [Timeline](#115-timeline)  
+&nbsp;&nbsp;&nbsp;&nbsp;11.1 [Robot Actual Photos](#111-robot-actual-photos)  
+&nbsp;&nbsp;&nbsp;&nbsp;11.2 [Robot 3D Model](#112-robot-3d-model)  
+&nbsp;&nbsp;&nbsp;&nbsp;11.3 [Pictorial Wiring Diagram](#113-pictorial-wiring-diagram)  
+&nbsp;&nbsp;&nbsp;&nbsp;11.4 [Bills of Materials](#114-bills-of-materials)  
+&nbsp;&nbsp;&nbsp;&nbsp;11.5 [Timeline](#115-timeline)  
 
 📜 **[12. Robot Design History](#12--robot-design-history)**
 
-⏳ **[13. Programming Strategy History](#13--programming-strategy-history)**
+ ⏳ **[13. Programming Strategy History](#13--programming-strategy-history)** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;13.1 [Perpendicular Parking Strategy](#71-perpendicular-parking-strategy)  
 
 📑 **[14. References](#14--references)**
