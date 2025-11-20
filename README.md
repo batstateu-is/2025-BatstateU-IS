@@ -47,7 +47,7 @@ This repository documents the complete engineering development of a **self-drivi
 🔋 **[2. Power, Microcontroller, and Sense Management](#2--power-microcontroller-and-sense-management)**  
 &nbsp;&nbsp;&nbsp;&nbsp;2.1 [Power Management](#21-power-management)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.1 [Technic™ Large Hub Rechargeable Battery](#211-technic-large-hub-rechargeable-battery)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.2 [Raspberry Pi UPS-18650 Battery - Power Extension](#212-raspberry-pi-ups-18650-battery-power-extension)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.2 [Raspberry Pi UPS-18650 Battery - Power Extension](#212-raspberry-pi-ups-18650-battery--power-extension)  
 &nbsp;&nbsp;&nbsp;&nbsp;2.2 [Microcontroller Management](#22-microcontroller-management)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.1 [Technic™ Prime Large Hub](#221-technic-prime-large-hub)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.2 [LMS-ESP32](#222-lms-esp32)  
