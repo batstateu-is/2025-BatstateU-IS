@@ -1503,27 +1503,23 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 ### 6.4. Printing
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The FlashForge Adventurer 4 was utilized for printing the sensor housings and the initial version of the chassis, while the Bambu Lab printer was employed for the final chassis and other refined components. These printers were selected for their reliability, ease of operation, and compatibility with PLA filament. Both systems feature fully enclosed printing chambers that maintain consistent temperatures during printing, minimizing warping and ensuring dimensional accuracy. This setup provided flexibility for rapid prototyping while also delivering high-quality results for the final model. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The FlashForge Adventurer 4 was utilized for printing the sensor housings and the initial and final versions of the chassis. This printer was selected for its reliability, ease of operation, and compatibility with PLA filament. Its system feature fully enclosed printing chambers that maintain consistent temperatures during printing, minimizing warping and ensuring dimensional accuracy. This setup provided flexibility for rapid prototyping while also delivering high-quality results for the final model. 
 
 <center>
 
-| ![Figure 35.](./docu-photos/fprinter.png) | ![Figure 36](./docu-photos/bprinter.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 35. <br> Flashforge Printer </center> | <center> Figure 36. <br> Bambu Lab Printer </center>| 
+| ![Figure 35.](./docu-photos/fprinter.png) | 
+|:---------------------:|
+| <center> Figure 35. <br> Flashforge Printer </center> | 
 
 </center>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The FlashForge Adventurer 4 has a build volume of 220 × 200 × 250 mm, a layer resolution range of 0.1–0.4 mm, and a nozzle temperature capacity of up to 265 °C [[18]](#ref18). Its removable flexible build plate allows for easy part removal, while the built-in camera and touchscreen interface enable efficient monitoring and control of the printing process. With a print speed of up to 100 mm/s, the printer served as the primary prototyping machine for evaluating fits, tolerances, and mechanical functionality. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the final chassis, the Bambu Lab X1 Carbon Combo printer was utilized. This printer offers a build volume of 256 × 256 × 256 mm and supports a maximum print speed of up to 500 mm/s with an acceleration of up to 20,000 mm/s² [[19]](#ref19). It operates within a 0.1–0.4 mm layer height range and reaches nozzle temperatures of up to 300 °C, making it suitable for various materials, including PLA, PETG, ABS, ASA, and carbon fiber-reinforced filaments [[19]](#ref19). Advanced features such as automatic bed leveling, dual auto bed calibration, active vibration compensation, and a carbon HEPA filtration system ensure clean, precise, and reliable prints. The Automatic Material System (AMS) further enables efficient multi-filament management  [[19]](#ref19). With its high-speed performance and consistent accuracy, the X1 Carbon Combo produced a strong, dimensionally accurate, and professional-quality final chassis that matched the robot’s design and structural requirements. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Together, the two printers complemented each other within the workflow: the FlashForge Adventurer 4 provided reliable prototyping capabilities, while the Bambu Lab X1 Carbon Combo delivered high-quality fabrication for the final components. 
-
 <center>
 
-| ![Figure 37.](./docu-photos/ff.png) | ![Figure 38.](./docu-photos/bl.png) |
+| ![Figure 37.](./docu-photos/ff.png) | ![Figure 38.](./docu-photos/settings.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 37. <br> 3D Printing in FlashForge </center> | <center> Figure 38. <br> 3D Printing n Bambu Lab </center>|  
+| <center> Figure 37. <br> 3D Printing in FlashForge </center> | <center> Figure 38. <br> 3D Printing Settings </center>|  
 
 </center>
 
@@ -2083,7 +2079,6 @@ Symposium on Intelligent Manufacturing and Automation*, Oct. 2019, pp. 526–531
 <br><a id="ref16"></a> [16] “OpenMV Cam H7,” OpenMV, 2019. https://openmv.io/products/openmv-cam-h7?srsltid=AfmBOoo-gqtJ-Gy0xcJN3nz5UpxkGV2UsYwQVHN4q6NJd6Xx5jU9V2vo (accessed Nov. 08, 2025).
 <br><a id="ref17"></a> [17] A. Chillingworth, “The Pros & Cons of Using Blender Software | Epidemic Sound,” This is the Epidemic Sound blog | Epidemic Sound, Mar. 30, 2023. https://www.epidemicsound.com/blog/blender-software/
 <br><a id="ref18"></a> [18] FLASHFORGE Corporation, “User Guide – Software,” FLASHFORGE, [Online]. Available: https://en.fss.flashforge.com/10000/software/635e457a8071d9ccc1c37d1371145d02.pdf. [Accessed: 08‑Nov‑2025]. 
-<br><a id="ref19"></a> [19] Bambu Lab, “X1‑Carbon – Technical Specifications,” Bambu Lab, [Online]. Available: https://public-cdn.bambulab.com/store/bambulab-X1-carbon-tech-specs.pdf. [Accessed: 08‑Nov‑2025].  
 
 
 ‌
