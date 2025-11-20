@@ -1642,9 +1642,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
  
-| ![Figure 51.](./docu-photos/.png) | ![Figure 52.](./docu-photos/.png) | ![Figure 53.](./docu-photos/.png) |
-|:---------------------:| :---------------------:| :---------------------:|
-| <center> Figure 51. <br> 3D Model of Robot Chassis </center> | <center> Figure 49. <br> 3D-Printed Robot Chassis </center> | <center> Figure 50. <br> 3D-Printed Robot Chassis <br> Dimesions </center> |
+| ![Figure 51.](./docu-photos/3drobotchassis.png) | ![Figure 52.](./docu-photos/.png) | 
+|:---------------------:| :---------------------:|
+| <center> Figure 51. <br> 3D Model of Robot Chassis </center> | <center> Figure 52. <br> 3D-Printed Robot Chassis </center> |
 
 </center>
 
