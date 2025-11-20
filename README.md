@@ -357,7 +357,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shown above are the steps one must follow in order to install the battery to the hub. Consequently, the battery is built for durability, with a minimum lifespan of over 500 charge cycles. After 500 full charge/discharge cycles, it is expected to retain at least 30% of its original capacity, making it reliable for long-term use [[10]](#ref10). This rechargeable battery supports the robot’s need for consistent and portable power, which is essential for everal autonomous tasks that the robot is programmed to do during both the Open and Obstacle Challenge rounds. Its high energy capacity, ease of use, and compatibility with the SPIKE™ system make it a critical component of the robot's electronics and system. 
 
-### 2.1.2. Raspberry pi UPS-18650 Battery
+### 2.1.2. Raspberry pi UPS-18650 Battery - Power Extension
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Raspberry pi UPS-18650 Battery functions as a regulated power source for the robot’s auxiliary electronic systems, specifically supplying a stable 5 V DC output to the LMS-ESP32 microcontroller. The module is mounted inside a custom 3D-printed case, ensuring it is securely positioned while keeping the wiring organized and easy to access. The module holds two 18650 lithium-ion batteries, which provide a regulated 5 V output through its built-in boost converter [[2]](#ref2). This output is connected to the LMS-ESP32 using a USB cable, allowing the microcontroller to receive clean and consistent power even during high motor loads.  
 
