@@ -1491,9 +1491,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 33.](./docu-photos/model1.png) | ![Figure 34.](./docu-photos/model2.png) |
+| ![Figure 33.](./docu-photos/settings.png) | ![Figure 34.](./docu-photos/interface.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 33. <br> FlashForge Print Settings </center> | <center> Figure 34. <br> Bambu Lab Print Settings </center>|  
+| <center> Figure 33. <br> FlashForge Print Settings </center> | <center> Figure 34. <br> FlashForge Print Interface </center>|  
 
 </center>
 
@@ -1517,9 +1517,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 37.](./docu-photos/ff.png) | ![Figure 38.](./docu-photos/settings.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 37. <br> 3D Printing in FlashForge </center> | <center> Figure 38. <br> 3D Printing Settings </center>|  
+| ![Figure 37.](./docu-photos/ff.png) | 
+|:---------------------:| 
+| <center> Figure 37. <br> 3D Printing in FlashForge </center> |  
 
 </center>
 
