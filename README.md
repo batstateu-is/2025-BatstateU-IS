@@ -376,7 +376,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 </center>
 
-| <img src="./docu-photos/upslayout.png" alt="Figure 11." width="1080" height="566"> | <img src="./docu-photos/upsplate2.png" alt="Figure 12." width="1080" height="566"> |
+| <img src="./docu-photos/upslayout.png" alt="Figure 11." width="1080" height="566"> | <img src="./docu-photos/plate1.png" alt="Figure 12." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 11. <br> Raspberry pi UPS-18650 Battery | Figure 12. <br> Raspberry pi UPS-18650 Battery <br> Dimensions |
 
@@ -401,7 +401,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 <center>
 
-| <img src="./docu-photos/hublayout.png" alt="Figure 14." width="1080" height="566"> | <img src="./docu-photos/hubplate2.png" alt="Figure 15." width="1080" height="566"> |
+| <img src="./docu-photos/hublayout.png" alt="Figure 14." width="1080" height="566"> | <img src="./docu-photos/plate2.png" alt="Figure 15." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 14. <br> Technic™ Prime Large Hub | Figure 15. <br> Technic™ Prime Large Hub <br> Dimensions |
 
@@ -581,7 +581,7 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| <img src="./docu-photos/dslayout.png" alt="Figure 19" width="1080" height="566"> | <img src="./docu-photos/dsplate2.png" alt="Figure 20." width="1080" height="566"> |
+| <img src="./docu-photos/dslayout.png" alt="Figure 19" width="1080" height="566"> | <img src="./docu-photos/plate3.png" alt="Figure 20." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 19. <br> Robot’s Technic™ Distance Sensor | Figure 20. <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
 
@@ -610,7 +610,7 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| <img src="./docu-photos/hclayout.png" alt="Figure 21." width="1080" height="566"> | <img src="./docu-photos/hcplate2.png" alt="Figure 22." width="1080" height="566"> |
+| <img src="./docu-photos/hclayout.png" alt="Figure 21." width="1080" height="566"> | <img src="./docu-photos/plate4.png" alt="Figure 22." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 21. <br> HC-SR04 Ultrasonic Sensor | Figure 22. <br> HC-SR04 Ultrasonic Sensor <br> Dimensions |
 
@@ -656,7 +656,7 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| <img src="./docu-photos/mvlayout.png" alt="Figure 24" width="1080" height="566"> | <img src="./docu-photos/mvplate2.png" alt="Figure 25" width="1080" height="566"> |
+| <img src="./docu-photos/mvlayout.png" alt="Figure 24" width="1080" height="566"> | <img src="./docu-photos/plate5.png" alt="Figure 25" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 24. <br> Robot’s OpenMV Cam H7 Plus | Figure 25. <br> Robot’s OpenMV Cam H7 Plus <br> Dimensions |
 
@@ -1580,7 +1580,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 39.](./docu-photos/3dopenmv.png) | ![Figure 43.](./docu-photos/lms.png) | ![Figure 44.](./docu-photos/espcaseplate2.png) |
+| ![Figure 39.](./docu-photos/3dopenmv.png) | ![Figure 43.](./docu-photos/lms.png) | ![Figure 44.](./docu-photos/plate6.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 39. <br> 3D Model of OpenMV H7 Plus Case </center> | <center> Figure 40. <br> 3D-Printed OpenMV Cam H7 Plus </center> | <center> Figure 41. <br> 3D-Printed OpenMV Cam H7 Plus Case <br> Dimesions </center> |
 
@@ -1594,7 +1594,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 42.](./docu-photos/lms-3dmodel.png) | ![Figure 43.](./docu-photos/lms.png) | ![Figure 44.](./docu-photos/espcaseplate2.png) |
+| ![Figure 42.](./docu-photos/lms-3dmodel.png) | ![Figure 43.](./docu-photos/lms.png) | ![Figure 44.](./docu-photos/plate7.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 42. <br> 3D Model of LMS-ESP 32 Case </center> | <center> Figure 43. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 44. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
 
@@ -1610,7 +1610,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 45.](./docu-photos/ups-3dmodel.png) | ![Figure 46.](./docu-photos/.png) | ![Figure 47.](./docu-photos/upscaseplate2.png) |
+| ![Figure 45.](./docu-photos/ups-3dmodel.png) | ![Figure 46.](./docu-photos/.png) | ![Figure 47.](./docu-photos/plate8.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 45. <br> 3D Model of UPS-18650 Case </center> | <center> Figure 46. <br> 3D-Printed UPS-18650 Case </center> | <center> Figure 47. <br> 3D-Printed UPS-18650 Case <br> Dimesions </center> |
 
@@ -1626,7 +1626,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 48.](./docu-photos/sr04-3dmodel.png) | ![Figure 49.](./docu-photos/hc.png) | ![Figure 50.](./docu-photos/uscaseplate2.png) |
+| ![Figure 48.](./docu-photos/sr04-3dmodel.png) | ![Figure 49.](./docu-photos/hc.png) | ![Figure 50.](./docu-photos/plate9.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 48. <br> 3D Model of HC-SR04 Ultrasonic Sensor Case </center> | <center> Figure 49. <br> 3D-Printed HC-SR04 Ultrasonic Sensor Case </center> | <center> Figure 50. <br> 3D-Printed HC-SR04 Ultrasonic Sensor Case <br> Dimesions </center> |
 
