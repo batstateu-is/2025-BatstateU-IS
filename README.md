@@ -1580,9 +1580,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 39.](./docu-photos/.png) | ![Figure 40.](./docu-photos/camcaseplate2.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 39. <br> 3D-Printed OpenMV Cam H7 Plus Case  </center> | <center> Figure 40. <br> 3D-Printed OpenMV Cam H7 Plus Case  <br> Dimesions </center> |
+| ![Figure 39.](./docu-photos/3dopenmv.png) | ![Figure 43.](./docu-photos/lms.png) | ![Figure 44.](./docu-photos/espcaseplate2.png) |
+|:---------------------:| :---------------------:| :---------------------:|
+| <center> Figure 39. <br> 3D Model of OpenMV H7 Plus Case </center> | <center> Figure 40. <br> 3D-Printed OpenMV Cam H7 Plus </center> | <center> Figure 41. <br> 3D-Printed OpenMV Cam H7 Plus Case <br> Dimesions </center> |
 
 </center>
 
