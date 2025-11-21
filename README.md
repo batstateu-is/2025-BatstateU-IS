@@ -1703,16 +1703,33 @@ The checklist below may serve as your guide for preparing the materials. *To che
 | 3D Printer  | <center>  1 pc |
 
 ### **_Step 2. Start Building the Robot._** 
-#### **2.1 3D Modeling and Printing** (add pictures)
-1. Design the front chassis, rear chassis, and all component cases using a 3D modeling software, Blender.  
-2. 3D print the components:
+#### **2.1 3D Modeling and Printing** 
+1. Design the front chassis, rear chassis, and all component cases using a 3D modeling software, Blender.
+
+![Designing](./docu-photos/designing.png)
+
+3. 3D print the components:
    - Front chassis
    - Rear chassis
    - Component cases for electronics and sensors
-3. Smoothen all printed parts to remove rough edges.  
-4. Apply spray paint to visible surfaces.  
-5. Allow the paint to dry for at least 3 days before assembly.  
-6. Assemble the front and rear chassis along with all printed cases once dry.
+
+![3D Printing](./docu-photos/3dprinting.png)
+
+4. Sand all printed parts to remove rough edges.
+
+![Sanding](./docu-photos/sanding.png)
+
+5. Apply spray paint to visible surfaces.
+
+![Spray Painting](./docu-photos/spray.png)
+
+6. Allow the paint to dry for at least 3 days before assembly.
+
+![Drying](./docu-photos/drying.png)
+   
+7. Assemble the front and rear chassis along with all printed cases once dry.
+
+![Constructing](./docu-photos/constructing.png)
 
 ### **_Step 3. Build the Steering System_** (add pictures0
 1. Assemble the steering mechanism using LEGO beams, gears, and connectors.  
