@@ -1576,7 +1576,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 39.](./docu-photos/3dopenmv.png) | ![Figure 43.](./docu-photos/lms.png) | ![Figure 44.](./docu-photos/plate6.png) |
+| ![Figure 39.](./docu-photos/3dopenmv.png) | ![Figure 43.](./docu-photos/3dprintmv.png) | ![Figure 44.](./docu-photos/plate6.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 39. <br> 3D Model of OpenMV H7 Plus Case </center> | <center> Figure 40. <br> 3D-Printed OpenMV Cam H7 Plus </center> | <center> Figure 41. <br> 3D-Printed OpenMV Cam H7 Plus Case <br> Dimesions </center> |
 
@@ -1590,7 +1590,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 42.](./docu-photos/lms-3dmodel.png) | ![Figure 43.](./docu-photos/lms.png) | ![Figure 44.](./docu-photos/plate7.png) |
+| ![Figure 42.](./docu-photos/lms-3dmodel.png) | ![Figure 43.](./docu-photos/3dprintlms.png) | ![Figure 44.](./docu-photos/plate7.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 42. <br> 3D Model of LMS-ESP 32 Case </center> | <center> Figure 43. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 44. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
 
@@ -1606,7 +1606,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 45.](./docu-photos/ups-3dmodel.png) | ![Figure 46.](./docu-photos/.png) | ![Figure 47.](./docu-photos/plate8.png) |
+| ![Figure 45.](./docu-photos/ups-3dmodel.png) | ![Figure 46.](./docu-photos/3dprintups.png) | ![Figure 47.](./docu-photos/plate8.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 45. <br> 3D Model of UPS-18650 Case </center> | <center> Figure 46. <br> 3D-Printed UPS-18650 Case </center> | <center> Figure 47. <br> 3D-Printed UPS-18650 Case <br> Dimesions </center> |
 
@@ -1622,7 +1622,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 48.](./docu-photos/sr04-3dmodel.png) | ![Figure 49.](./docu-photos/hc.png) | ![Figure 50.](./docu-photos/plate9.png) |
+| ![Figure 48.](./docu-photos/sr04-3dmodel.png) | ![Figure 49.](./docu-photos/3dprinthc.png) | ![Figure 50.](./docu-photos/plate9.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 48. <br> 3D Model of HC-SR04 Ultrasonic Sensor Case </center> | <center> Figure 49. <br> 3D-Printed HC-SR04 Ultrasonic Sensor Case </center> | <center> Figure 50. <br> 3D-Printed HC-SR04 Ultrasonic Sensor Case <br> Dimesions </center> |
 
@@ -1638,7 +1638,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
  
-| ![Figure 51.](./docu-photos/3drobotchassis.png) | ![Figure 52.](./docu-photos/.png) | 
+| ![Figure 51.](./docu-photos/3drobotchassis.png) | ![Figure 52.](./docu-photos/3dprintchassis.png) | 
 |:---------------------:| :---------------------:|
 | <center> Figure 51. <br> 3D Model of Robot Chassis </center> | <center> Figure 52. <br> 3D-Printed Robot Chassis </center> |
 
