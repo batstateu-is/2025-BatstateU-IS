@@ -32,6 +32,6 @@ Distance measurement from all three sensors
 
 Data filtering and communication with the SPIKE™ Prime Hub
 
-Efficient serial or Bluetooth data transmission for obstacle proximity awareness
+Efficient serial data transmission for obstacle proximity awareness
 
 > 📁 Each script has been customized or wrapped to fit the specific needs of this project, especially for real-time response, efficiency, and compatibility across both Open and Obstacle Challenges.

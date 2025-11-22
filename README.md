@@ -99,7 +99,7 @@ This repository documents the complete engineering development of a **self-drivi
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.1 [Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.2 [Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.3 [Programming the LMS-ESP32](#923-programming-the-lms-esp32)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.4 [Programming the UPS-18650 Battery](#924-programming-the-ups-18650-battery)  
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.4 [Programming the UPS-18650 Battery](#924-programming-the-ups-18650-battery)   -->
 &nbsp;&nbsp;&nbsp;&nbsp;9.3 [Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
 
 💡 **[10. Recommendations and Future Work](#10--recommendations-and-future-work)**  
@@ -1765,15 +1765,16 @@ You may use these pictorial diagrams as reference for connecting the ***OpenMV C
 
 ## 9.2. Guide for Programming the Robot
 
-## 💻 Software and Tools Used
+### 💻 Software and Tools Used
 
 | Tool / Program                              | Purpose                                          |
 |---------------------------------------------|--------------------------------------------------|
 | [Pybricks](https://pybricks.com/)           | Custom MicroPython firmware for SPIKE™ Prime     |
 | [Pybricks App](https://code.pybricks.com/)           | Used to program and upload code to the Hub wirelessly via browser  |
+| [Thonny](https://thonny.org/)                       | Used to program and upload micropython code onto the LMS-ESP 32 |
 | [OpenMV IDE](https://openmv.io/pages/download) | Programming and debugging OpenMV Cam             |
 | [Blender](https://www.blender.org/)         | 3D modeling of mechanical components             |
-| [FlashPrint](https://www.flashforge.com/download-center) | Slicing and exporting 3D print models           |
+| [FlashPrint](https://www.flashforge.com/download-center) | Slicing and exporting 3D print models          |
 | [Git](https://git-scm.com/) / [GitHub](https://github.com/) | Version control and collaboration              |
 | [Markdown](https://www.markdownguide.org/)  | Formatting this documentation |
 
@@ -1789,7 +1790,7 @@ Ensure that any external libraries needed for the communication of the hub and c
 
 * [antonvh/PUPRemote](https://github.com/antonvh/PUPRemote)
 
-Copy `lpf2.py` and `pupremote.py` from the `src` folder into the camera
+Copy `lpf2.py` and `pupremote.py` from the `src` folder onto the camera
 
 ### **_Step 3. Connect the Camera to the Computer._** 
 Use a *USB A to USB Micro* cable to connect the OpenMV camera. The LED indicators on the camera will blink green and flash white when successfully connected. In the IDE, click the “Connect” button (or press `Ctrl+E`) to connect.
@@ -1824,7 +1825,7 @@ To get started, it is recommended to read the [Pybricks Documentation](https://d
 ### **_Step 4. Use our Team’s Code for Reference._**
 The team has provided sample programs under the folder `src/hub`, which can serve as a reference for obstacle handling, walling, and parking logic. 
 
-We also used the library [PUPRemote](https://github.com/antonvh/PUPRemote) by antonvh for the hub to be able to recieve the data from the camera.
+We also used the library [PUPRemote](https://github.com/antonvh/PUPRemote) by [antonvh](https://github.com/antonvh/) for the hub to be able to recieve the data from the camera.
 
 To use it with our code, create new files named `lpf2.py` and `pupremote.py` and copy the contents of the same files from the `src` folder, or alternatively, download said files and just import them in the IDE.
 
@@ -1840,6 +1841,107 @@ To run your script on the hub, click the “Run this program” button or press 
 
 > [!Note]
 > We recommend to ***regularly backup*** your code in the event that your code dissappears or if you wish to revert your code to a previous version
+
+---
+### 9.2.3 Programming the LMS-ESP32
+
+The LMS-ESP32 was programmed using [MicroPython](https://micropython.org/), with development carried out in the [Thonny IDE](thonny.prg). Thonny was selected for its reliable device-level file management, integrated REPL, and native MicroPython support, which simplified flashing, testing, and debugging on the LMS-ESP32. However, other MicroPython-compatible editors such as [VS Code with Pymakr](https://alepycom.gitbooks.io/pycom-docs/content/chapter/pymakr/installation/vscode.html?utm_source=chatgpt.com), [MPY Workbench](https://marketplace.visualstudio.com/items?itemName=DanielBucam.mpy-workbench), or [uPyCraft](https://dfrobot.gitbooks.io/upycraft_en/) may also be used if more advanced features—such as workspace management, linting, or git integration—are desired. Any of these editors can upload the same `.py` files to the ESP32, provided that the serial port and interpreter settings are correctly configured.
+
+The code leverages MicroPython’s `machine` module for direct GPIO control and the pupremote library for transmitting sensor data to the SPIKE Prime hub. Three HC-SR04-type ultrasonic sensors are configured by assigning GPIO pins for their `TRIG` and `ECHO` lines. The code includes a custom measurement routine using `time_pulse_us()`, which allows precise capture of echo timings without requiring hardware timers. The returned value is converted to millimeters based on the acoustic travel time in air.
+
+The ESP32 runs an infinite loop where all three sensors are sampled sequentially. Results are transmitted to the hub through a `PUPRemoteSensor` channel configured with the format descriptor `"hhh"`, indicating the transmission of three 16-bit signed integers. The `process()` call ensures that each batch of distance data is packetized and delivered over the remote-sensor protocol.
+
+Developers modifying this script may adjust the following:
+
+* GPIO assignments: Change TRIG/ECHO pin numbers to match a different wiring layout.
+
+* Sensor count: Additional sensors can be supported by adding more channels or expanding the message format.
+
+* Sampling rate: The time.sleep(0.05) delay can be reduced for faster updates, at the cost of higher CPU load.
+
+* Range calibration: The conversion constant `2.91` may be replaced with a different constant depending on the required unit of measurement or the required level of accuracy.
+
+* Communication format: The `add_channel()` descriptor can be changed to transmit bytes, integers, floats, or raw values depending on the hub-side implementation.
+
+The code firmware used on the LMS-ESP32 is shown below:
+```python
+from machine import Pin, time_pulse_us
+from pupremote import PUPRemoteSensor
+import time
+
+pr = PUPRemoteSensor(power=False)
+pr.add_channel('line', 'hhh')
+pr.process()
+
+# --- Setup Ultrasonic Sensors ---
+trig1 = Pin(21, Pin.OUT)
+echo1 = Pin(22, Pin.IN)
+
+trig2 = Pin(32, Pin.OUT)
+echo2 = Pin(33, Pin.IN)
+
+trig3 = Pin(26, Pin.OUT)
+echo3 = Pin(27, Pin.IN)
+
+# --- Distance Measurement Function (returns mm) ---
+def getDistance(trig, echo):
+    trig.value(0)
+    time.sleep_us(2)
+    trig.value(1)
+    time.sleep_us(10)
+    trig.value(0)
+
+    try:
+        duration = time_pulse_us(echo, 1, 800000)
+        distanceMm = (duration / 2) / 2.91
+        return int(distanceMm)
+    except OSError:
+        return -1
+
+while True:
+    distance1 = getDistance(trig1, echo1)
+    distance2 = getDistance(trig2, echo2)
+    distance3 = getDistance(trig3, echo3)
+
+    pr.update_channel('line', distance1, distance2, distance3)
+    pr.process()
+
+    time.sleep(0.05)
+```
+
+Additional Explanation of the code implementation and the LMS-ESP 32 itself can be found in [2.2.2. LMS-ESP32](#222-lms-esp32)
+
+During development, several connectivity and runtime issues were encountered when interfacing the LMS-ESP32 with the ultrasonic sensors and the SPIKE Prime hub. The most common causes and their corresponding resolutions are summarized below:
+
+#### 1. ESP32 Not Connecting to Thonny or Failing to Run the Script
+
+* Loose USB or power connection: The ESP32 may appear to reset repeatedly or fail to mount if the USB cable is loose or damaged.
+
+* Insufficient voltage from the battery pack: A degraded or low-quality cable can drop voltage below the ESP32’s required input level, causing intermittent disconnects. Replacing the cable typically resolves this issue.
+
+* Unstable power source: If the board is powered through the hub or through a split power line, fluctuations may cause MicroPython to reboot. Ensuring a stable 5V supply prevents unexpected resets.
+
+#### 2. Remote Sensor Channel Not Updating on the Hub
+
+* Disconnected or poorly seated wires: Any interruption between the ESP32 and the SPIKE Prime hub will prevent PUPRemoteSensor packets from being received. All connectors should be firmly inserted and strain-relieved.
+
+* Incorrect or mismatched channel formatting: The expected format string (e.g., "hhh") must match the number and type of transmitted values. A mismatch will result in missing or invalid readings on the hub.
+
+#### 3. Ultrasonic Sensor Returning -1 or No Readings
+
+* Loose TRIG/ECHO wiring or reversed pins: The HC-SR04 sensors require correct polarity and firm connections. Reversed pins or unstable wiring commonly produce OSError timeouts.
+
+* Damaged sensor or cable: Faulty cables may deliver inconsistent voltage to the transducer, resulting in unreliable echo pulses. Testing with a known-good cable helps identify hardware faults.
+
+* Excessive electrical noise or poor grounding: Using long jumper wires or sharing power lines with high-load actuators can interrupt echo detection. Keeping sensor wiring short and properly grounded improves stability.
+
+#### 4. Inconsistent or Fluctuating Distance Measurements
+
+* Low battery output: As battery voltage drops, trigger pulses may weaken, causing erratic readings. Recharging or replacing the battery stabilizes output.
+
+* Incorrect timeout value: If the sensor is placed too far from obstacles, the echo may exceed the timeout threshold. Adjusting the time_pulse_us() limit may be necessary for long-range use.
+
+By ensuring stable power delivery, secure wiring, and correct sensor configuration, most connectivity and measurement issues can be resolved quickly during operation.
 
 ---
 
