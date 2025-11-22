@@ -56,8 +56,8 @@ def clearOutput():
 def beep(freq=500, dur=10):
     HUB.speaker.beep(freq, dur)
 
-def chopsuey(sannisLivisa: FE):
-    sannisLivisa.eBrake(400)
+def chopsuey(self: FE):
+    self.eBrake(400)
     k
 
 def linearMap(lmInput, lmInputMin, lmInputMax, lmOutputMin, lmOutputMax):
@@ -69,7 +69,8 @@ def linearMap(lmInput, lmInputMin, lmInputMax, lmOutputMin, lmOutputMax):
     if lmInputMin > lmInputMax:
         lmInputMin, lmInputMax = lmInputMax, lmInputMin
         lmOutputMin, lmOutputMax = lmOutputMax, lmOutputMin
-    return ((((lmOutputMax - lmOutputMin) * (lmInput - lmInputMin)) / (lmInputMax - lmInputMin)) + lmOutputMin)
+    # print(lmInputMax, lmInputMin, lmOutputMin)
+    return ((((lmOutputMax - lmOutputMin) * (lmInput - lmInputMin)) / ((lmInputMax - lmInputMin)) + lmOutputMin))
 
 def tLinearMap(lmInput, lmInputMin, lmInputMax, lmOutputMin, lmOutputMax):
 
@@ -166,28 +167,28 @@ def printInfo():
     log("Current Bat:", HUB.battery.voltage())
 
 # Pre-programmed Movements
-def scanList(sannisLivisa: FE, startAngle, endAngle, delayTime=10, minThreshold=MINTHRESHOLD):
+def scanList(self: FE, startAngle, endAngle, delayTime=10, minThreshold=MINTHRESHOLD):
     # Default outputs
     pillarColor, trafficSignData = "None", (0, 0, 0, "None")
     detected = []  # [(color, (x, y, pix), angle)]
 
     angleStep = 1 if startAngle < endAngle else -1
     _ = startAngle
-    sannisLivisa.senseMotor.run_target(1000, startAngle)
+    self.senseMotor.run_target(1000, startAngle)
 
     # --- Scan loop ---
     if startAngle < endAngle:
-        while sannisLivisa.senseMotor.angle() < endAngle:
-            sannisLivisa.lookDir(_, asyncBool=False)
-            color, data = sannisLivisa.determineTrafficSignBlob()
+        while self.senseMotor.angle() < endAngle:
+            self.lookDir(_, asyncBool=False)
+            color, data = self.determineTrafficSignBlob()
             if color != "None" and data[-1] > minThreshold:
                 detected.append((color, data, _))
             wait(delayTime)
             _ += angleStep
     else:
-        while sannisLivisa.senseMotor.angle() > endAngle:
-            sannisLivisa.lookDir(_, asyncBool=False)
-            color, data = sannisLivisa.determineTrafficSignBlob()
+        while self.senseMotor.angle() > endAngle:
+            self.lookDir(_, asyncBool=False)
+            color, data = self.determineTrafficSignBlob()
             if color != "None" and data[-1] > minThreshold:
                 detected.append((color, data, _))
             wait(delayTime)
@@ -242,7 +243,7 @@ def scanList(sannisLivisa: FE, startAngle, endAngle, delayTime=10, minThreshold=
 
     return pillarColor, trafficSignData, final_detections
 
-def scanOnce(sannisLivisa: FE, startAngle: int, endAngle: int, delayTime: int=10, minThreshold: int=MINTHRESHOLD):
+def scanOnce(self: FE, startAngle: int, endAngle: int, delayTime: int=10, minThreshold: int=MINTHRESHOLD):
     pillarColor = "None"
     greenDetections = 0
     redDetections = 0
@@ -250,8 +251,8 @@ def scanOnce(sannisLivisa: FE, startAngle: int, endAngle: int, delayTime: int=10
     angleStep = 1 if startAngle < endAngle else -1
 
     for angle in range(startAngle, endAngle + angleStep, angleStep):
-        sannisLivisa.lookDir(angle, asyncBool=False)
-        tempColor, tempData = sannisLivisa.determineTrafficSignBlob()
+        self.lookDir(angle, asyncBool=False)
+        tempColor, tempData = self.determineTrafficSignBlob()
 
         if tempColor != "None" and tempData[2] > minThreshold:
             pixelWeight = linearMap(tempData[2], minThreshold, 4000, 0.2, 1.0)
@@ -274,40 +275,40 @@ def scanOnce(sannisLivisa: FE, startAngle: int, endAngle: int, delayTime: int=10
     else:
         return "None"
 
-def sharedParking(sannisLivisa: FE):
-    sannisLivisa.driveUntilStalled(50, 500, 600, heading=-90)
-    sannisLivisa.eBrake(200)
+def sharedParking(self: FE):
+    self.driveUntilStalled(50, 500, 600, heading=-90)
+    self.eBrake(200)
     HUB.imu.reset_heading(0)
-    sannisLivisa.turn(600,55, True)
+    self.turn(600,55, True)
 
-    sannisLivisa.drive(400, 400, 600, heading=90)
-    sannisLivisa.eBrake(200)
-    # sannisLivisa.drive(-540, 400, 500, heading=90, decelerate=True)
-    sannisLivisa.driveUntilProximity(-400, 1100, heading=90, lookHeading=90, reverseCondition=True)
-    sannisLivisa.eBrake(200)
+    self.drive(400, 400, 600, heading=90)
+    self.eBrake(200)
+    # self.drive(-540, 400, 500, heading=90, decelerate=True)
+    self.driveUntilProximity(-400, 1110, heading=90, lookHeading=90, reverseCondition=True)
+    self.eBrake(200)
     
-    sannisLivisa.turn(300, 155, True)
-    # sannisLivisa.driveUntilProximity(-250, 150, heading=145, selection=BACK)
-    # sannisLivisa.drive(-50, 250, 300, heading=154)
-    sannisLivisa.driveUntilStalled(-300, 400, 150, heading=155)
-    # sannisLivisa.driveUntilProximity(-300, 130, heading=145, selection=BACK)
+    self.turn(300, 155, True)
+    # self.driveUntilProximity(-250, 150, heading=145, selection=BACK)
+    # self.drive(-50, 250, 300, heading=154)
+    self.driveUntilStalled(-300, 400, 150, heading=155)
+    # self.driveUntilProximity(-300, 130, heading=145, selection=BACK)
     beep()
-    sannisLivisa.drive(80, 300, 400, stopBool=True)
-    sannisLivisa.turn(200, 130, True)
-    sannisLivisa.reverseUntilAngleOrWall(200, 90, 60)
+    self.drive(80, 300, 400, stopBool=True)
+    self.turn(200, 130, True)
+    self.reverseUntilAngleOrWall(200, 90, 60)
 
     i = 0
     while abs(90 - HUB.imu.heading()) > 4 and i < 2:
         # print(i)
-        sannisLivisa.driveUntilProximity(200, 50, heading=90, lookHeading=90)
-        sannisLivisa.driveUntilProximity(-200, 55, heading=90, lookHeading=90, selection=BACK)
+        self.driveUntilProximity(200, 50, heading=90, lookHeading=90)
+        self.driveUntilProximity(-200, 55, heading=90, lookHeading=90, selection=BACK)
 
-def checkIfFlushWithWall(sannisLivisa, errorTolerance, forwardAmount, backwardSpeed, targetHeading, turnDuration, steerAngle):
+def checkIfFlushWithWall(self, errorTolerance, forwardAmount, backwardSpeed, targetHeading, turnDuration, steerAngle):
     # log("Error in walling:", abs(HUB.imu.heading() - targetHeading))
     error = HUB.imu.heading() - targetHeading
     if abs(error) > errorTolerance:
-        sannisLivisa.drive(forwardAmount, 300, 400)
-        sannisLivisa.eBrake(10)
+        self.drive(forwardAmount, 300, 400)
+        self.eBrake(10)
 
         turntimer = StopWatch()
         turntimer.reset()
@@ -316,7 +317,7 @@ def checkIfFlushWithWall(sannisLivisa, errorTolerance, forwardAmount, backwardSp
         direc = -steerAngle if error > 0 else steerAngle
         turntimer.resume()
         while turntimer.time() < turnDuration:
-            sannisLivisa.move(-backwardSpeed, direc)
+            self.move(-backwardSpeed, direc)
         turntimer.reset()
         turntimer.pause()
 
@@ -381,9 +382,9 @@ class FE():
         self.KITurn     = 0
 
         self.forwardMinTorque = 400
-        self.backwardMinTorque = 315
-        self.stalledTime = 1200
-        self.maxStalledTime = 900
+        self.backwardMinTorque = 325
+        self.stalledTime = 900
+        self.maxStalledTime = 1000
         self.globalStallTimer = StopWatch()
         self.globalStallTimer.reset()
         self.isTimerRunning = False
@@ -406,7 +407,7 @@ class FE():
 
         if camEnabled:
             self.camSensor = PUPRemoteHub(camSensor)
-            self.camSensor.add_command("blob", "hhhhhhhh")
+            self.camSensor.add_command("blob", "hhhhhh")
             wait(500)                      # Wait for camera to setUp
         
         
@@ -446,7 +447,8 @@ class FE():
                 if dist > 9000:
                     return 0
                 return dist
-        except:
+        except Exception as e:
+            print(e)
             return 0
 
     def lookDir(self, deg, asyncBool: bool = True, speed = None, delayTimeation: int = 200):
@@ -703,7 +705,7 @@ class FE():
         if stopIfStalled:
             if (dist > 0):
                 while self.driveMotor.angle() < target:
-                    if self.isStalled(initialSpeed, direction=FORWARD):
+                    if self.isStalled(initialSpeed//1.5, direction=FORWARD):
                         break
                     # print(self.isStalled(finalSpeed))
                     error = heading - HUB.imu.heading()
@@ -721,7 +723,7 @@ class FE():
                 # print(i)
             else:
                 while self.driveMotor.angle() > target:
-                    if self.isStalled(initialSpeed, direction=BACKWARD):
+                    if self.isStalled(initialSpeed//1.5, direction=BACKWARD):
                         break
                     # print(self.isStalled(finalSpeed, BACKWARD))
                     error = HUB.imu.heading() - heading
@@ -780,7 +782,7 @@ class FE():
         self.moving = False
 
     # drive
-    def driveDistAdjust(self, dist, initialSpeed, finalSpeed, proximity, selection, heading="", lookHeading=0, brake=True, stopIfStalled=False, tolerance=10):
+    def driveDistAdjust(self, dist, initialSpeed, finalSpeed, proximity, selection, heading="", lookHeading=0, brake=True, stopBool=False, stopIfStalled=False, decelerate=False, tolerance=10):
         """
         Drive with additional adjustment from distance sensor, If (selection) dist closer than proximity, correct until
         at sdesired dist
@@ -792,6 +794,7 @@ class FE():
 
         # Select PID constants once based on initial heading
         baseKP, KI = self._selectPIDConstants(heading, forward=(dist > 0))
+        # baseKP /= 2
         if decelerate == False:
             mappingFunc = linearMap
         else:
@@ -800,14 +803,20 @@ class FE():
         self.moving = True
         if (dist > 0):
             while self.driveMotor.angle() < target:
-                leftAdjust = 0
-                rightAdjust = 0
+                currentDist = 0
+                targetDist = 0
 
-                if (sannisLivisa.getDistance(selection) - proximity) > tolerance or (sannisLivisa.getDistance(selection) - proximity) < -tolerance:
-                    leftAdjust = sannisLivisa.getDistance(LEFT)
-                    rightAdjust = sannisLivisa.getDistance(RIGHT)
+                if (self.getDistance(selection) - proximity) > tolerance or (self.getDistance(selection) - proximity) < -tolerance:
+                    # print((self.getDistance(selection) - proximity) or (self.getDistance(selection) - proximity))
+                    currentDist = self.getDistance(selection)
+                    targetDist = proximity
 
-                error = rightAdjust + targetHeading - HUB.imu.heading() - leftAdjust
+                if selection == LEFT:
+                    error = targetDist + heading - HUB.imu.heading() - currentDist
+                else:
+
+                    error = currentDist + heading - HUB.imu.heading() - targetDist
+                    
                 speed = mappingFunc(self.driveMotor.angle(), start, target, initialSpeed, finalSpeed)
                 KP = linearMap(self.driveMotor.speed(), 0, 1000, 0, baseKP)
                 KD = linearMap(self.driveMotor.speed(), 0, 1000, 0, self.KDdrive)
@@ -820,15 +829,14 @@ class FE():
 
         else:
             while self.driveMotor.angle() > target:
-                while self.driveMotor.angle() < target:
-                leftAdjust = 0
-                rightAdjust = 0
+                currentDist = 0
+                target = 0
 
-                if (sannisLivisa.getDistance(selection) - proximity) > tolerance or (sannisLivisa.getDistance(selection) - proximity) < -tolerance:
-                    leftAdjust = sannisLivisa.getDistance(LEFT)
-                    rightAdjust = sannisLivisa.getDistance(RIGHT)
+                if (self.getDistance(selection) - proximity) > tolerance or (self.getDistance(selection) - proximity) < -tolerance:
+                    currentDist = self.getDistance(LEFT)
+                    target = self.getDistance(RIGHT)
 
-                error = rightAdjust + targetHeading - HUB.imu.heading() - leftAdjust
+                error = target + heading - HUB.imu.heading() - currentDist
                 speed = mappingFunc(self.driveMotor.angle(), start, target, -initialSpeed, -finalSpeed)
                 KP = linearMap(self.driveMotor.speed(), -1000, 0, 0, baseKP)
                 KD = linearMap(self.driveMotor.speed(), -1000, 0, self.KDdrive, 0)
@@ -846,8 +854,6 @@ class FE():
 
     def driveUntilStalled(self, accelDist, initialSpeed, finalSpeed, heading="", decelerate=False):
         heading = HUB.imu.heading() if heading == "" else heading
-        start = self.driveMotor.angle()
-        target = start + accelDist
         self.resetParams()
 
         self.drive(accelDist, initialSpeed, finalSpeed, heading=heading, stopIfStalled=True)
@@ -865,9 +871,11 @@ class FE():
             mappingFunc = tLinearMap
         
 
+        start = self.driveMotor.angle()
+        target = start + accelDist
         if (accelDist > 0):
             self.driveMotor.control.limits(torque=self.forwardMinTorque)
-            self.forwardStallSpeed = finalSpeed // 1.8
+            self.forwardStallSpeed = finalSpeed // 1.8 if not decelerate else initialSpeed // 1.8
 
             while (self.driveMotor.speed() > self.forwardStallSpeed and stallClock.time() < self.stalledTime):
                 error = heading - HUB.imu.heading()
@@ -890,11 +898,11 @@ class FE():
             self.driveMotor.control.limits(torque=self.defaultDriveValues[2])
         else:
             self.driveMotor.control.limits(torque=self.backwardMinTorque)
-            self.backwardStallSpeed = -(finalSpeed // 2)
+            self.backwardStallSpeed = -(finalSpeed // 2) if not decelerate else -(initialSpeed //2)
 
-            while (self.driveMotor.speed() < self.backwardStallSpeed and stallClock.time() < self.stalledTime):
+            while (self.driveMotor.speed() <= self.backwardStallSpeed and stallClock.time() < self.stalledTime):
+                # print(self.driveMotor.speed() < self.backwardStallSpeed, stallClock.time() < self.stalledTime)
                 error = HUB.imu.heading() - heading
-
                 speed = mappingFunc(self.driveMotor.angle(), start, target, -initialSpeed, -finalSpeed)
                 if speed > 300:
                     KP = linearMap(self.driveMotor.speed(), 0, 1000, 0, baseKP)
@@ -908,22 +916,24 @@ class FE():
                 correction = MINCORRECTION_DRIVE if correction < MINCORRECTION_DRIVE else correction
 
                 self.move(speed, correction)
+                # print(speed)
+                # print(self.driveMotor.speed() < self.backwardStallSpeed, stallClock.time() < self.stalledTime)
+                # print(self.driveMotor.speed(), self.backwardStallSpeed, stallClock.time(), self.stalledTime)
 
+            print(self.driveMotor.speed() < self.backwardStallSpeed, stallClock.time() < self.stalledTime)
+            print(self.driveMotor.speed(), self.backwardStallSpeed, stallClock.time(), self.stalledTime)
+            print(initialSpeed, finalSpeed, stallClock.time(), self.stalledTime)
             self.driveMotor.stop()
             self.driveMotor.control.limits(torque=self.defaultDriveValues[2])
             # self.drive(-80, initialSpeed, finalSpeed)
         stallClock.pause()
         stallClock.reset()
             
-    def driveUntilProximity(self, speed, proximity, heading="", lookHeading=0, selection="front", brake=True, reverseCondition=False):
+    def driveUntilProximity(self, speed, proximity, heading="", lookHeading=0, selection="front", brake=True, reverseCondition=False, maxDistance=-1):
         heading = HUB.imu.heading() if heading == "" else heading
         self.resetParams()
 
         baseKP, KI = self._selectPIDConstants(heading, forward=(speed > 0))
-
-        # if speed < 300:
-        #     baseKP *= 3
-
         if selection != FRONT:            
             if not reverseCondition:
                 def condition(): return self.getDistance(selection) > proximity
@@ -945,14 +955,25 @@ class FE():
             #     if not reverseCondition
             #     else lambda: (self.getDistance(selection) != 2000 and self.getDistance(selection) < proximity)
             # )        
+
+        start = self.driveMotor.angle()
+        if maxDistance != -1:
+            target = start+maxDistance
+        else:
+            target = 999999
         if (speed > 0):
+            if speed > 300:
+                lm = lambda: linearMap(self.driveMotor.speed(), 0, 1000, 0, baseKP)
+            else:
+                lm = lambda: linearMap(self.driveMotor.speed(), 0, 1000, baseKP, 0)
+
             while self.getDistance(selection) > proximity:
                 error = heading - HUB.imu.heading()
-                if speed > 300:
-                    KP = linearMap(self.driveMotor.speed(), 0, 1000, 0, baseKP)
-                else:
-                    KP = linearMap(self.driveMotor.speed(), 0, 1000, baseKP, 0)
 
+                if self.driveMotor.angle() >= target:
+                    break
+
+                KP = lm()
                 KD = linearMap(self.driveMotor.speed(), 0, 1000, 0, self.KDdrive)
                 
                 self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
@@ -975,7 +996,7 @@ class FE():
                     else:
                         KP = linearMap(self.driveMotor.speed(), 0, 1000, baseKP, 0)
                     KD = linearMap(self.driveMotor.speed(), -1000, 0, self.KDdrive, 0)
-                    self.lookDir(lookHeading - HUB.imu.heading(), False)
+                    # self.lookDir(lookHeading - HUB.imu.heading(), False)
                     
                     self.errorSum, self.prevError, correction = pid(KP, KI, KD, error, self.errorSum, self.prevError)
                     correction = 30 if correction > 30 else correction
@@ -1002,9 +1023,6 @@ class FE():
             self.eBrake(200)
 
         print(f"Final Distance From Wall: {self.getDistance(selection)}")
-
-
-
 
     def driveDeterminDir(self, dist, initialSpeed, finalSpeed, heading="", stopBool=False, stopDuration=100, decelerate=False, sideThreshold=200, frontThreshold=200):
         heading = HUB.imu.heading() if heading == "" else heading
@@ -1199,6 +1217,10 @@ class FE():
         return (greenDetections, redDetections)
 
     def scanUntilStallled(self, accelDist, initialSpeed, finalSpeed, lookHeading, heading="", decelerate=False):
+        """
+        Scan until the motor is detected as Stalled
+        Returns tuple: (greenDetections, redDetections)
+        """
         heading = HUB.imu.heading() if heading == "" else heading
         start = self.driveMotor.angle()
         target = start + accelDist
