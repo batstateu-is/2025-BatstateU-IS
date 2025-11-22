@@ -3,8 +3,8 @@
 <center>
 
 [![FE RuleBook](https://img.shields.io/badge/FE-RULEBOOK-%230059B3.svg?style=for-the-badge&logo=read-the-docs&logoColor=white)](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf)
-[![YouTube](https://img.shields.io/badge/Open-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/sFFOtyM4Csk)
-[![YouTube](https://img.shields.io/badge/Obstacle-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/ECOkZw3vB8I)
+[![YouTube](https://img.shields.io/badge/Open-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/z2x9yxSop0M?si=Ib4HMVztKw-bswO7)
+[![YouTube](https://img.shields.io/badge/Obstacle-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/pkR1IfX47qg?si=eyRGkLHpUCD-fo3f)
 [![YouTube](https://img.shields.io/badge/BSU_Integrated_School-Future_Engineers-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/03gVkXfrZpo)
 
 </center>
@@ -23,9 +23,9 @@ This repository documents the complete engineering development of a **self-drivi
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beyond structural enhancements, the robot features a **rotating sensor mechanism** powered by a Technic™ Large Angular Motor, allowing both the OpenMV camera and Technic™ Distance Sensor to sweep in both directions for expanded field coverage, wall detection, and situational awareness. A **one-button power mechanism** was implemented to meet Future Engineers competition requirements, allowing the SPIKE™ Prime Hub, LMS-ESP32, and UPS-18650 power module to activate simultaneously with a single input through a regulated serial connection.
 
- You may view the full performance of the team's robot through the link provided below. Watching the complete run will offer a clear understanding of how the mechanical design, sensor integration, and code execution come together in real-time to accomplish each task.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You may view the full performance of the team's robot through the link provided below. Watching the complete run will offer a clear understanding of how the mechanical design, sensor integration, and code execution come together in real-time to accomplish each task.   
 
- The video showcases the inspiring journey of the Future Engineers team as they prepare for the upcoming 2025 World Robot Olympiad. It highlights the team members, the self-driving robot they built, and provides an in-depth look into its design, functionality, and programming. Featured segments include the Open Challenge and Obstacle Challenge, where the team's strategies and technical innovations are put to the test.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The video showcases the inspiring journey of the Future Engineers team as they prepare for the upcoming 2025 World Robot Olympiad. It highlights the team members, the self-driving robot they built, and provides an in-depth look into its design, functionality, and programming. Featured segments include the Open Challenge and Obstacle Challenge, where the team's strategies and technical innovations are put to the test.   
 
 > [!IMPORTANT]
 > ***[BatStateU-IS World Robot Olympiad 2025 - Future Engineers](https://youtu.be/03gVkXfrZpo)***
@@ -91,33 +91,36 @@ This repository documents the complete engineering development of a **self-drivi
 &nbsp;&nbsp;&nbsp;&nbsp;7.7 [Rotating Camera and Distance Sensor](#77-rotating-camera-and-distance-sensor)  
 
 🔧 **[8. Mechanical Improvements](#8--mechanical-improvements)**  
- 8.1 [Weight Reduction through 3D Printing](#81-weight-reduction-through-3d-printing)  
+ &nbsp;&nbsp;&nbsp;&nbsp;8.1 [Weight Reduction through 3D Printing](#81-weight-reduction-through-3d-printing)  
 
 🛠️ **[9. Construction Guide](#9-️-construction-guide)**  
- 9.1 [Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
- 9.2 [Guide for Programming the Robot](#92-guide-for-programming-the-robot)  
-  9.2.1 [Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
-  9.2.2 [Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)  
-  9.2.3 [Programming the LMS-ESP32](#923-programming-the-lms-esp32)  
-  9.2.4 [Programming the UPS-18650 Battery](#924-programming-the-ups-18650-battery)  
- 9.3 [Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
+&nbsp;&nbsp;&nbsp;&nbsp;9.1 [Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
+&nbsp;&nbsp;&nbsp;&nbsp;9.2 [Guide for Programming the Robot](#92-guide-for-programming-the-robot)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.1 [Programming the OpenMV Cam H7 Plus](#921-programming-the-openmv-cam-h7-plus)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.2 [Programming the SPIKE™ Prime Large Hub](#922-programming-the-spike-prime-large-hub)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.3 [Programming the LMS-ESP32](#923-programming-the-lms-esp32)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.4 [Programming the UPS-18650 Battery](#924-programming-the-ups-18650-battery)  
+&nbsp;&nbsp;&nbsp;&nbsp;9.3 [Final Reminders and Optimization Tips](#93-final-reminders-and-optimization-tips)  
 
 💡 **[10. Recommendations and Future Work](#10--recommendations-and-future-work)**  
- 10.1 [Recommendations for Mobility Management](#101-recommendations-for-mobility-management)  
- 10.2 [Recommendations for Power and Sense Management](#102-recommendations-for-power-and-sense-management)  
- 10.3 [Recommendations for Strategies](#103-recommendations-for-strategies)  
- 10.4.[Recommendations for Mechanical Design](#104-recommendations-for-mechanical-design)
+&nbsp;&nbsp;&nbsp;&nbsp;10.1 [Recommendations for Mobility Management](#101-recommendations-for-mobility-management)  
+&nbsp;&nbsp;&nbsp;&nbsp;10.2 [Recommendations for Power and Sense Management](#102-recommendations-for-power-and-sense-management)  
+&nbsp;&nbsp;&nbsp;&nbsp;10.3 [Recommendations for Strategies](#103-recommendations-for-strategies)  
+&nbsp;&nbsp;&nbsp;&nbsp;10.4.[Recommendations for Mechanical Design](#104-recommendations-for-mechanical-design)
 
 📎 **[11. Appendices](#11--appendices)**  
- 11.1 [Robot Actual Photos](#111-robot-actual-photos)  
- 11.2 [Robot 3D Model](#112-robot-3d-model)  
- 11.3 [Pictorial Wiring Diagram](#113-pictorial-wiring-diagram)  
- 11.4 [Bills of Materials](#114-bills-of-materials)  
- 11.5 [Timeline](#115-timeline)  
+&nbsp;&nbsp;&nbsp;&nbsp;11.1 [Robot Actual Photos](#111-robot-actual-photos)  
+&nbsp;&nbsp;&nbsp;&nbsp;11.2 [Robot 3D Model](#112-robot-3d-model)  
+&nbsp;&nbsp;&nbsp;&nbsp;11.3 [Pictorial Wiring Diagram](#113-pictorial-wiring-diagram)  
+&nbsp;&nbsp;&nbsp;&nbsp;11.4 [Bills of Materials](#114-bills-of-materials)  
+&nbsp;&nbsp;&nbsp;&nbsp;11.5 [Timeline](#115-timeline)  
 
 📜 **[12. Robot Design History](#12--robot-design-history)**
 
-📑 **[13. References](#13--references)**
+ ⏳ **[13. Programming Strategy History](#13--programming-strategy-history)** <br>
+&nbsp;&nbsp;&nbsp;&nbsp;13.1 [Perpendicular Parking Strategy](#71-perpendicular-parking-strategy)  
+
+📑 **[14. References](#14--references)**
 
 ***
 ## 📖 Introduction
@@ -175,19 +178,19 @@ This repository documents the complete engineering development of a **self-drivi
   
 | <center>Specification</center> | <center> Details </center> |
 | ----- | ----- |
-| Dimensions | 300 mm (L) x 150 mm (W) x 193 mm (H)  |
-| Weight | 913.79 g |
-| Maximum Speed | 837.6 mm/s |
-| Maximum Steering Angle | + 45° and -49° |
-| Steering Torque | 100 Ncm |
-| Operating Voltage | 8.3V – 7.6V |
-| Drive System | Rear-Wheel Drive (RWD) |
+| Dimensions | 300 mm (L) x 155 mm (W) x 200 mm (H)  |
+| Weight | 1.2 kg |
+| Maximum Steering Angle | +45° and –49° |
+| Steering Torque | 100 N·cm |
+| Drive System | Rear-Wheel Drive |
 | Steering Geometry | Parallel Steering |
 | Material | LEGO® Technic™ and PLA Filament |
+| Operating Voltage (UPS-18650) | 5V |
+| Operating Voltage (SPIKE Hub) | 8V |
 
 </center>
 
- ![Specification](./docu-photos/.png)
+ ![Specification](./docu-photos/Specification.png)
 
 </center>
 
@@ -209,7 +212,7 @@ This repository documents the complete engineering development of a **self-drivi
 | ![alt](./docu-photos/image11.png) | Multiple pieces were used | **LEGO® Technic™ Elements** such as beams, axles, gears, and multiple connectors were utilized to construct the steering and driving mechanism of the robot. Their precision, modularity, and durability makes them ideal for creating mechanically reliable structures while allowing easy integration with other electronic components.  |
 | ![alt](./docu-photos/esp32.png)| 1 | The **LMS-ESP32** serves as an interface module between the Arduino ultrasonic sensors and the SPIKE™ Prime Hub, managing serial communication and data transfer. It ensures synchronized, low-latency transmission of distance readings to the main controller for accurate obstacle detection and responsive movement control. |
 | ![alt](./docu-photos/image50.png)| 1 | The **OpenMV Cam H7 Plus** was used as the robot’s vision system to detect traffic signs and understand its surroundings. It processed images in real time and sent data to the main controller, helping the robot decide when to turn or react to visual cues during the Obstacle Challenge. |
-| ![alt](./docu-photos/jumper.png) | 4 | **Jumper wires** were used to connect the OpenMV Cam H7 to the main controller, the SPIKE™ Prime Hub. They ensured that the data processed by the camera was transmitted to the Python-based program running on the hub.  |
+| ![alt](./docu-photos/jumper.png) | Multiple pieces were used | **Jumper wires** were used to connect the OpenMV Cam H7 to the main controller, the SPIKE™ Prime Hub. They ensured that the data processed by the camera was transmitted to the Python-based program running on the hub.  |
 | ![alt](./docu-photos/image24.png) | Multiple were used | **PLA 3D Printing Filament** was utilized to create the 3D-printed components of the robot, sepcifically the chassis, and the cases for the OpenMV Cam H7 Plus, HC-SR04 Ultrasonic Distance Sensors, UPS-18650 Power Module, and LMS-ESP32. White filaments are said to produce designs with great strength [[3]](#ref3). PLA filament is also popular in 3D printing because of its ease of use, biodegradability, and versatility [[4]](#ref4).  |
 
 </center>
@@ -237,7 +240,7 @@ This repository documents the complete engineering development of a **self-drivi
 | Applications | High-power, high-torque applications | Lower-load, fast-response applications |
 
 <sup>1</sup> ***RPM*** = rotations per minute  
-<sup>2</sup> ***Ncm*** = newton centimeter&nbsp;&nbsp;&nbsp;
+<sup>2</sup> ***Ncm*** = newton centimeter
 
 ---
 
@@ -281,7 +284,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;These design choices highlight the team’s growing proficiency in applying mechanical design concepts and engineering problem-solving to create practical yet original solutions. Further discussions and technical details about the 3D-printed components and engineering factors are provided in Chapter 5. [Engineering Factor](#7--engineering-factor)
 
-| ![Figure 5.](./docu-photos/chassis.png) | ![Figure 6.](./docu-photos/chassis1.png) |
+| ![Figure 5.](./docu-photos/chassis.png) | ![Figure 6.](./docu-photos/3dchassis.png) |
 |:---------------------:|:---------------------:|
 | Figure 5. <br> Robot Chassis <br> Left Side View | Figure 6. <br> Robot Chassis with LEGO® Components <br> Left Side View |
 
@@ -373,7 +376,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 </center>
 
-| <img src="./docu-photos/upslayout.png" alt="Figure 11." width="1080" height="566"> | <img src="./docu-photos/upsplate2.png" alt="Figure 12." width="1080" height="566"> |
+| <img src="./docu-photos/upslayout.png" alt="Figure 11." width="1080" height="566"> | <img src="./docu-photos/plate1.png" alt="Figure 12." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 11. <br> Raspberry pi UPS-18650 Battery | Figure 12. <br> Raspberry pi UPS-18650 Battery <br> Dimensions |
 
@@ -386,7 +389,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 <center>
 
-| ![Figure 13.](./docu-photos/mm].png) |
+| ![Figure 13.](./docu-photos/mm.png) |
 |:---------------------:|
 | Figure 13. <br> Microcontroller Management
 
@@ -398,7 +401,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 <center>
 
-| <img src="./docu-photos/hublayout.png" alt="Figure 14." width="1080" height="566"> | <img src="./docu-photos/hubplate2.png" alt="Figure 15." width="1080" height="566"> |
+| <img src="./docu-photos/hublayout.png" alt="Figure 14." width="1080" height="566"> | <img src="./docu-photos/plate2.png" alt="Figure 15." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 14. <br> Technic™ Prime Large Hub | Figure 15. <br> Technic™ Prime Large Hub <br> Dimensions |
 
@@ -433,9 +436,9 @@ This repository documents the complete engineering development of a **self-drivi
 
 <center>
 
-| <img src="./docu-photos/lmslayout.png" alt="Figure 16." width="1090" height="566"> | <img src="./docu-photos/.png" alt="Figure 17." width="1080" height="566"> | 
-|:---------------------:|:---------------------:|
-| Figure 16. <br> LMS-ESP32  | Figure 17. <br> LMS-ESP32  <br> Dimensions |
+| <img src="./docu-photos/lmslayout.png" alt="Figure 16." width="1090" height="566"> | 
+|:---------------------:|
+| Figure 16. <br> LMS-ESP32  | 
 
 </center>
 
@@ -578,7 +581,7 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| <img src="./docu-photos/dslayout.png" alt="Figure 19" width="1080" height="566"> | <img src="./docu-photos/dsplate2.png" alt="Figure 20." width="1080" height="566"> |
+| <img src="./docu-photos/dslayout.png" alt="Figure 19" width="1080" height="566"> | <img src="./docu-photos/plate3.png" alt="Figure 20." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 19. <br> Robot’s Technic™ Distance Sensor | Figure 20. <br> Robot’s Technic™ Distance Sensor <br> Dimensions |
 
@@ -607,7 +610,7 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| <img src="./docu-photos/hclayout.png" alt="Figure 21." width="1080" height="566"> | <img src="./docu-photos/hcplate2.png" alt="Figure 22." width="1080" height="566"> |
+| <img src="./docu-photos/hclayout.png" alt="Figure 21." width="1080" height="566"> | <img src="./docu-photos/plate4.png" alt="Figure 22." width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 21. <br> HC-SR04 Ultrasonic Sensor | Figure 22. <br> HC-SR04 Ultrasonic Sensor <br> Dimensions |
 
@@ -653,7 +656,7 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <center>
 
-| <img src="./docu-photos/mvlayout.png" alt="Figure 24" width="1080" height="566"> | <img src="./docu-photos/mvplate2.png" alt="Figure 25" width="1080" height="566"> |
+| <img src="./docu-photos/mvlayout.png" alt="Figure 24" width="1080" height="566"> | <img src="./docu-photos/plate5.png" alt="Figure 25" width="1080" height="566"> |
 |:---------------------:|:---------------------:|
 | Figure 24. <br> Robot’s OpenMV Cam H7 Plus | Figure 25. <br> Robot’s OpenMV Cam H7 Plus <br> Dimensions |
 
@@ -691,7 +694,7 @@ Here, the call to `self.distSensorBack.call("line")` triggers a serial request t
 
 <!--Need to update-->
 
-| ![Figure 26.](./docu-photos/FE-Flowchart.jpg) |
+| ![Figure 26.](./docu-photos/OpenChallengeFlowchart.jpg) |
 |:---------------------:|
 | Figure 26. <br> Open Challenge Flowchart
 
@@ -1258,32 +1261,40 @@ Which reads from the channel that we created earlier.
 
 _You may refer to the accompanying illustration for better visualization; the arrows indicate the route the robot takes in each possible scenario._
 
-![Obstacle Challenge Route](./docu-photos/Strat/startStraight.png)
+<center>
+
+<p align="center"><img src="./docu-photos/Strat/startStraight.gif" width="600" height="395"/>
+
+</center>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another route, also in a clockwise direction, is shown in the illustration below. In this path, the robot begins by scanning the nearby traffic sign to detect their colors. If it detects a green traffic sign, it turns left to go around it; if it detects red, it turns right. If no color is detected, the robot defaults to a pre-set color, usually red. After maneuvering around the first obstacle, the robot stops and scans for a second one. Based on the color of the traffic sign it detects, it proceeds in the corresponding direction. However, if the section contains a parking lot, it uses a different route. The robot follows an alternate route, moving between the parking area and the traffic sign, depending on the color it previously recorded. 
 
 _You may refer to the accompanying illustration for a clearer understanding; the arrows indicate the robot’s route in each scenario._
 
-![Obstacle Challenge Route](./docu-photos/Strat/strat1.png)
+<p align="center"><img src="./docu-photos/Strat/strat1.gif" width="600" height="395"/>
 
 _Here is another path the robot takes in a clockwise direction when the first detected color is green and a parking lot is present.
 Refer to the illustration below._
 
-![Obstacle Challenge Route](./docu-photos/Strat/startClockwise.png)
+<p align="center"><img src="./docu-photos/Strat/startClockwise.gif" width="600" height="395"/>
 
-### 4.3. Perpendicular Parking Strategy
+### 4.3. Parallel Parking Strategy 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the Perpendicular Parking scenario, the illustration will be based again on the clockwise direction. If the first detected obstacle is red, the robot will move to the right of the traffic sign, make a 90-degree turn going to the left, and continue moving forward until it reaches the outer wall, where it will come to a stop. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This strategy is designed for parallel parking using ultrasonic sensors around the robot. The robot continuously adjusts its movements based on sensor readings to safely enter the parking space. This method may be used as a backup strategy if the primary approach fails.
 
-_You may refer to the accompanying illustration for a clearer understanding; the arrows indicate the robot’s route for red first and green second perpendicular parking scenarios._
+- Red-first obstacle:
+If the first detected obstacle is red, the robot will move to the right of the obstacle while approaching the parking space. It will then begin reversing into the space while continuously monitoring the rear and side ultrasonic sensors. Steering adjustments are made to maintain a safe distance from surrounding obstacles until the robot is fully inside the parking space.
 
-![Obstacle Challenge Route](./docu-photos/Strat/stratParkingRed.png)
+_Refer to the accompanying illustration; arrows indicate the robot’s path for the red-first obstacle scenario._
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However, if the first detected obstacle is green, the robot will pass to the left of the traffic sign, then make a 90-degree right turn and move forward until it reaches the inner wall. Once it detects this, the robot will reverse until it reaches the outer wall, where it will come to a complete stop. 
+<p align="center"><img src="./docu-photos/Strat/stratParkingRed.gif" width="600" height="395"/>
 
-_You may refer to the accompanying illustration for a clearer understanding; the arrows indicate the robot’s route for the green-first and red-second perpendicular parking scenarios._
+- Green-first obstacle:
+If the first detected obstacle is green, the robot will move to the left of the obstacle, then start reversing into the parking space. During this maneuver, the robot continuously checks the rear and side sensors and adjusts steering to ensure proper alignment within the space. Once fully positioned, the robot stops completely.
 
-![Obstacle Challenge Route](./docu-photos/Strat/startParkingGreen.png)
+_Refer to the accompanying illustration; arrows indicate the robot’s path for the green-first obstacle scenario._
+
+<p align="center"><img src="./docu-photos/Strat/stratParkingGreen.gif" width="600" height="395"/>
 
 ### 4.4. Semi-Machine Learning Strategy
 
@@ -1414,6 +1425,8 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team also encountered failed and halted prints, particularly during longer print jobs. In some instances, prints detached from the build plate or the filament jammed mid-process, resulting in wasted materials—which were costly—and lost time. These interruptions necessitated rechecking the printer’s settings and, in some cases, restarting the print from the beginning. 
 
+![Improper Printing](./docu-photos/problem1.png)
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another recurring problem was the wrong alignment of holes and connectors. A few designs had holes that did not perfectly match the sizes of LEGO Technic connectors, which forced us to manually adjust the parts using a file or reprint them after correcting the CAD model. In other instances, improper dimensions led to overly tight or loose fits—some mounts couldn’t hold sensors securely, while others had excessive gaps that affected the stability of the integration. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Despite these setbacks, the challenges highlighted the importance of careful calibration and iterative design. Each failed print provided an opportunity to refine the process and improve the accuracy of the models before attempting another print. These experiences enhanced the team’s problem-solving skills and patience, making successful prints all the more rewarding. 
@@ -1478,9 +1491,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 33.](./docu-photos/model1.png) | ![Figure 34.](./docu-photos/model2.png) |
+| ![Figure 33.](./docu-photos/settings.png) | ![Figure 34.](./docu-photos/interface.png) |
 |:---------------------:| :---------------------:|
-| <center> Figure 33. <br> FlashForge Print Settings </center> | <center> Figure 34. <br> Bambu Lab Print Settings </center>|  
+| <center> Figure 33. <br> FlashForge Print Settings </center> | <center> Figure 34. <br> FlashForge Print Interface </center>|  
 
 </center>
 
@@ -1490,27 +1503,23 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 ### 6.4. Printing
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The FlashForge Adventurer 4 was utilized for printing the sensor housings and the initial version of the chassis, while the Bambu Lab printer was employed for the final chassis and other refined components. These printers were selected for their reliability, ease of operation, and compatibility with PLA filament. Both systems feature fully enclosed printing chambers that maintain consistent temperatures during printing, minimizing warping and ensuring dimensional accuracy. This setup provided flexibility for rapid prototyping while also delivering high-quality results for the final model. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The FlashForge Adventurer 4 was utilized for printing the sensor housings and the initial and final versions of the chassis. This printer was selected for its reliability, ease of operation, and compatibility with PLA filament. Its system feature fully enclosed printing chambers that maintain consistent temperatures during printing, minimizing warping and ensuring dimensional accuracy. This setup provided flexibility for rapid prototyping while also delivering high-quality results for the final model. 
 
 <center>
 
-| ![Figure 35.](./docu-photos/fprinter.png) | ![Figure 36](./docu-photos/bprinter.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 35. <br> Flashforge Printer </center> | <center> Figure 36. <br> Bambu Lab Printer </center>| 
+| ![Figure 35.](./docu-photos/fprinter.png) | 
+|:---------------------:|
+| <center> Figure 35. <br> Flashforge Printer </center> | 
 
 </center>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The FlashForge Adventurer 4 has a build volume of 220 × 200 × 250 mm, a layer resolution range of 0.1–0.4 mm, and a nozzle temperature capacity of up to 265 °C [[18]](#ref18). Its removable flexible build plate allows for easy part removal, while the built-in camera and touchscreen interface enable efficient monitoring and control of the printing process. With a print speed of up to 100 mm/s, the printer served as the primary prototyping machine for evaluating fits, tolerances, and mechanical functionality. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the final chassis, the Bambu Lab X1 Carbon Combo printer was utilized. This printer offers a build volume of 256 × 256 × 256 mm and supports a maximum print speed of up to 500 mm/s with an acceleration of up to 20,000 mm/s² [[19]](#ref19). It operates within a 0.1–0.4 mm layer height range and reaches nozzle temperatures of up to 300 °C, making it suitable for various materials, including PLA, PETG, ABS, ASA, and carbon fiber-reinforced filaments [[19]](#ref19). Advanced features such as automatic bed leveling, dual auto bed calibration, active vibration compensation, and a carbon HEPA filtration system ensure clean, precise, and reliable prints. The Automatic Material System (AMS) further enables efficient multi-filament management  [[19]](#ref19). With its high-speed performance and consistent accuracy, the X1 Carbon Combo produced a strong, dimensionally accurate, and professional-quality final chassis that matched the robot’s design and structural requirements. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Together, the two printers complemented each other within the workflow: the FlashForge Adventurer 4 provided reliable prototyping capabilities, while the Bambu Lab X1 Carbon Combo delivered high-quality fabrication for the final components. 
-
 <center>
 
-| ![Figure 37.](./docu-photos/ff.png) | ![Figure 38.](./docu-photos/bl.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 37. <br> 3D Printing in FlashForge </center> | <center> Figure 38. <br> 3D Printing n Bambu Lab </center>|  
+| ![Figure 37.](./docu-photos/ff.png) | 
+|:---------------------:| 
+| <center> Figure 37. <br> 3D Printing in FlashForge </center> |  
 
 </center>
 
@@ -1567,9 +1576,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 39.](./docu-photos/.png) | ![Figure 40.](./docu-photos/camcaseplate2.png) |
-|:---------------------:| :---------------------:|
-| <center> Figure 39. <br> 3D-Printed OpenMV Cam H7 Plus Case  </center> | <center> Figure 40. <br> 3D-Printed OpenMV Cam H7 Plus Case  <br> Dimesions </center> |
+| ![Figure 39.](./docu-photos/3dopenmv.png) | ![Figure 43.](./docu-photos/3dprintmv.png) | ![Figure 44.](./docu-photos/plate6.png) |
+|:---------------------:| :---------------------:| :---------------------:|
+| <center> Figure 39. <br> 3D Model of OpenMV H7 Plus Case </center> | <center> Figure 40. <br> 3D-Printed OpenMV Cam H7 Plus </center> | <center> Figure 41. <br> 3D-Printed OpenMV Cam H7 Plus Case <br> Dimesions </center> |
 
 </center>
 
@@ -1581,7 +1590,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 42.](./docu-photos/lms-3dmodel.png) | ![Figure 43.](./docu-photos/lms.png) | ![Figure 44.](./docu-photos/espcaseplate2.png) |
+| ![Figure 42.](./docu-photos/lms-3dmodel.png) | ![Figure 43.](./docu-photos/3dprintlms.png) | ![Figure 44.](./docu-photos/plate7.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 42. <br> 3D Model of LMS-ESP 32 Case </center> | <center> Figure 43. <br> 3D-Printed LMS-ESP 32 Case </center> | <center> Figure 44. <br> 3D-Printed LMS-ESP 32 Case <br> Dimesions </center> |
 
@@ -1597,7 +1606,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 45.](./docu-photos/ups-3dmodel.png) | ![Figure 46.](./docu-photos/.png) | ![Figure 47.](./docu-photos/upscaseplate2.png) |
+| ![Figure 45.](./docu-photos/ups-3dmodel.png) | ![Figure 46.](./docu-photos/3dprintups.png) | ![Figure 47.](./docu-photos/plate8.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 45. <br> 3D Model of UPS-18650 Case </center> | <center> Figure 46. <br> 3D-Printed UPS-18650 Case </center> | <center> Figure 47. <br> 3D-Printed UPS-18650 Case <br> Dimesions </center> |
 
@@ -1613,7 +1622,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 48.](./docu-photos/sr04-3dmodel.png) | ![Figure 49.](./docu-photos/hc.png) | ![Figure 50.](./docu-photos/uscaseplate2.png) |
+| ![Figure 48.](./docu-photos/sr04-3dmodel.png) | ![Figure 49.](./docu-photos/3dprinthc.png) | ![Figure 50.](./docu-photos/plate9.png) |
 |:---------------------:| :---------------------:| :---------------------:|
 | <center> Figure 48. <br> 3D Model of HC-SR04 Ultrasonic Sensor Case </center> | <center> Figure 49. <br> 3D-Printed HC-SR04 Ultrasonic Sensor Case </center> | <center> Figure 50. <br> 3D-Printed HC-SR04 Ultrasonic Sensor Case <br> Dimesions </center> |
 
@@ -1629,9 +1638,9 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
  
-| ![Figure 51.](./docu-photos/.png) | ![Figure 52.](./docu-photos/.png) | ![Figure 53.](./docu-photos/.png) |
-|:---------------------:| :---------------------:| :---------------------:|
-| <center> Figure 51. <br> 3D Model of Robot Chassis </center> | <center> Figure 49. <br> 3D-Printed Robot Chassis </center> | <center> Figure 50. <br> 3D-Printed Robot Chassis <br> Dimesions </center> |
+| ![Figure 51.](./docu-photos/3drobotchassis.png) | ![Figure 52.](./docu-photos/3dprintchassis.png) | 
+|:---------------------:| :---------------------:|
+| <center> Figure 51. <br> 3D Model of Robot Chassis </center> | <center> Figure 52. <br> 3D-Printed Robot Chassis </center> |
 
 </center>
 
@@ -1694,22 +1703,63 @@ The checklist below may serve as your guide for preparing the materials. *To che
 | 3D Printer  | <center>  1 pc |
 
 ### **_Step 2. Start Building the Robot._** 
-A specific and detailed list of parts and step-by-step instructions of constructing it can be found by scanning the ***QR code*** below or by clicking this [link](https://drive.google.com/file/d/1no6-Ziz5b2zDsR3MFzkWGNEyoSrwSkGQ/view).
+#### **2.1 3D Modeling and Printing** 
 
-<center>
+**1. Design the front chassis, rear chassis, and all component cases using a 3D modeling software, Blender.**
 
-![Figure.](./docu-photos/image39.png)
+![Designing](./docu-photos/designing.png)
 
-</center>
+**2. 3D print the components:**
+   - Front chassis
+   - Rear chassis
+   - Component cases for electronics and sensors
 
-### **_Step 3. Ensure that electrical connections are properly wired and connected._** 
+![3D Printing](./docu-photos/3dprinting.png)
+
+**3. Sand all printed parts to remove rough edges.**
+
+![Sanding](./docu-photos/sanding.png)
+
+**4. Apply spray paint to visible surfaces.**
+
+![Spray Painting](./docu-photos/spray.png)
+
+**5. Allow the paint to dry for at least 3 days before assembly.**
+
+![Drying](./docu-photos/drying.png)
+   
+**6. Assemble the front and rear chassis along with all printed cases once dry.**
+
+![Constructing](./docu-photos/constructing.png)
+
+### **_Step 3. Build the Steering System_** (add pictures0
+1. Assemble the steering mechanism using LEGO beams, gears, and connectors.  
+2. Attach the steering motor or servo to the designated mount.  
+3. Connect the steering linkages to the front wheels.  
+4. Test the steering by rotating the wheels; adjust linkages to ensure smooth turning.  
+5. Secure all loose pieces to prevent movement during operation.
+
+### **_Step 4. Build the Drive System_** (add pictures)
+1. Assemble the drive motor mounts using LEGO beams and connectors.  
+2. Attach the drive motors to the mounts.  
+3. Connect the wheels to the drive motors.  
+4. Test the drive system manually to ensure wheels spin correctly and freely.  
+5. Connect LEGO parts to secure the motor and wheel assembly to the chassis.  
+
+*After these steps, the robot is mechanically ready for sensor installation and programming.*
+
+### **_Step 5. Ensure that electrical connections are properly wired and connected._** 
 You may use these pictorial diagrams as reference for connecting the ***OpenMV Cam H7 Plus*** and the ***Spike™ Prime Sensors*** to the ***Technic™ Large Hub.***
 
 </center>
 
-| ![Figure 53.](./docu-photos/connection.png) |
-|:---------------------:|
-| Figure 53. <br> Connection Pictorial Diagram
+<center>
+
+| ![Figure 53.](./docu-photos/switchingcircuit.png) | ![Figure 54.](./docu-photos/schematic.png) | ![Figure 55.](./docu-photos/connection.png) |
+|:---------------------:| :---------------------:| :---------------------:|
+| <center> Figure 53. <br> Switching Circuit </center> | <center> Figure 54. <br> Schematic Diagram </center> | Figure 55. <br> Connection Pictorial Diagram
+
+</center>
 
 ---
 
@@ -1783,7 +1833,7 @@ Turn on your SPIKE™ Hub and open the Pybricks Editor. Click the Bluetooth icon
 
 ![Pybricks Bluetooth](./docu-photos/pyble.png)
 |:---------------------:|
-| Figure 54. <br> Bluetooth Connection
+| Figure 56. <br> Bluetooth Connection
 
 ### **_Step 6. Run and Upload the Program._** 
 To run your script on the hub, click the “Run this program” button or press `F5`. To stop the program, click “Stop everything” or press `F6`. Pybricks automatically saves the program to the hub once it is run, so there's no need for a separate upload step.
@@ -1889,15 +1939,15 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ### 11.1. Robot Actual Photos
 
-| ![Front](./docu-photos/front.png) | ![Figure .](./docu-photos/rear.png) |
+| ![Front](./docu-photos/front-actual.png) | ![Figure .](./docu-photos/rear-actual.png) |
 |:---------------------:| :---------------------:|
 | <center> Front View </center> | <center> Rear View </center>|  
 
-| ![Left](./docu-photos/left.png) | ![Right](./docu-photos/right.png) |
+| ![Left](./docu-photos/left-actual.png) | ![Right](./docu-photos/right-actual.png) |
 |:---------------------:| :---------------------:|
 | <center> Left View </center> | <center> Right View </center>| 
 
-| ![Top](./docu-photos/top.png) | ![Bottom](./docu-photos/bottom.png) |
+| ![Top](./docu-photos/top-actual.png) | ![Bottom](./docu-photos/bottom-actual.png) |
 |:---------------------:| :---------------------:|
 | <center> Top View </center> | <center> Bottom View </center>| 
 
@@ -1923,15 +1973,15 @@ To run your script on the hub, click the “Run this program” button or press 
 
 <center>
 
-| ![Figure 55](./docu-photos/Cam.png) |
+| ![Figure 57](./docu-photos/Cam.png) |
 |:---------------------:|
-| Figure 55. <br> Camera Connection Wiring Diagram
+| Figure 57. <br> Camera Connection Wiring Diagram
 
 <center>
 
-| ![Figure 56](./docu-photos/spikehub.png) |
+| ![Figure 58](./docu-photos/spikehub.png) |
 |:---------------------:|
-| Figure 56. <br> SPIKE™ Prime Hub Wiring Diagram
+| Figure 58. <br> SPIKE™ Prime Hub Wiring Diagram
 
 </center>
 
@@ -2006,7 +2056,27 @@ To run your script on the hub, click the “Run this program” button or press 
 
 ---
 
-## 13. 📑 References
+## 13. ⏳ Programming Strategy History
+
+### 13.1 Perpendicular Parking Strategy
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This strategy was previously employed in the Philippine Robotics Olympiad (PRO) and demonstrated effectiveness in executing perpendicular parking tasks. Although a new parallel parking strategy has been developed, this previous approach remains available as a backup for the World Robot Olympiad (WRO) in the event that the current strategy fails. Maintaining this contingency ensures that the robot can complete the parking task successfully under varying obstacle conditions.
+
+- Red-first obstacle: If the first detected obstacle is red, the robot will move to the right of the traffic sign, make a 90-degree left turn, and continue moving forward until it reaches the outer wall, where it will come to a complete stop.
+
+_Refer to the accompanying illustration for a clearer understanding; the arrows indicate the robot’s route for the red-first and green-second perpendicular parking scenarios._
+
+<p align="center"><img src="./docu-photos/Strat/stratParkingRed.gif" width="600" height="395"/>
+
+- Green-first obstacle: If the first detected obstacle is green, the robot will pass to the left of the traffic sign, make a 90-degree right turn, and move forward until it reaches the inner wall. Upon detecting the wall, the robot will reverse until it reaches the outer wall, where it will stop completely.
+
+_Refer to the accompanying illustration for clarity; the arrows indicate the robot’s route for the green-first and red-second perpendicular parking scenarios._
+
+<p align="center"><img src="./docu-photos/Strat/stratParkingGreen.gif" width="600" height="395"/>
+
+---
+
+## 14. 📑 References
 
 <br><a id="ref1"></a> [1] “LEGO® TechnicTM Large Hub for SPIKETM Prime by LEGO Education,” LEGO® Education. https://education.lego.com/en-us/products/lego-technic-large-hub-for-spike-prime-/45601/
 <br><a id="ref2"></a> [2] “Raspberry Pi UPS - 18650 HAT with RTC 5V Output for Raspberry Pi 4B, 3B+, 3B,” Arduitronics.com, 2025. https://www.arduitronics.com/product/2490/raspberry-pi-ups-18650-hat-with-rtc-5v-output-for-raspberry-pi-4b-3b-3b (accessed Nov. 08, 2025).
@@ -2027,7 +2097,6 @@ Symposium on Intelligent Manufacturing and Automation*, Oct. 2019, pp. 526–531
 <br><a id="ref16"></a> [16] “OpenMV Cam H7,” OpenMV, 2019. https://openmv.io/products/openmv-cam-h7?srsltid=AfmBOoo-gqtJ-Gy0xcJN3nz5UpxkGV2UsYwQVHN4q6NJd6Xx5jU9V2vo (accessed Nov. 08, 2025).
 <br><a id="ref17"></a> [17] A. Chillingworth, “The Pros & Cons of Using Blender Software | Epidemic Sound,” This is the Epidemic Sound blog | Epidemic Sound, Mar. 30, 2023. https://www.epidemicsound.com/blog/blender-software/
 <br><a id="ref18"></a> [18] FLASHFORGE Corporation, “User Guide – Software,” FLASHFORGE, [Online]. Available: https://en.fss.flashforge.com/10000/software/635e457a8071d9ccc1c37d1371145d02.pdf. [Accessed: 08‑Nov‑2025]. 
-<br><a id="ref19"></a> [19] Bambu Lab, “X1‑Carbon – Technical Specifications,” Bambu Lab, [Online]. Available: https://public-cdn.bambulab.com/store/bambulab-X1-carbon-tech-specs.pdf. [Accessed: 08‑Nov‑2025].  
 
 
 ‌
