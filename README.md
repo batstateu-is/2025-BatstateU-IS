@@ -1732,14 +1732,14 @@ The checklist below may serve as your guide for preparing the materials. *To che
 
 ![Constructing](./docu-photos/constructing.png)
 
-### **_Step 3. Build the Steering System_** (add pictures0
+### **_Step 3. Build the Steering System_** 
 1. Assemble the steering mechanism using LEGO beams, gears, and connectors.  
 2. Attach the steering motor or servo to the designated mount.  
 3. Connect the steering linkages to the front wheels.  
 4. Test the steering by rotating the wheels; adjust linkages to ensure smooth turning.  
 5. Secure all loose pieces to prevent movement during operation.
 
-### **_Step 4. Build the Drive System_** (add pictures)
+### **_Step 4. Build the Drive System_** 
 1. Assemble the drive motor mounts using LEGO beams and connectors.  
 2. Attach the drive motors to the mounts.  
 3. Connect the wheels to the drive motors.  
