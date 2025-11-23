@@ -258,11 +258,11 @@ This repository documents the complete engineering development of a **self-drivi
 
 <center>
 
-| ![Figure 1.](./docu-photos/paralleliso1.png) | ![Figure 2.](./docu-photos/parallelbot1.png) |
+| ![Figure 1.](./docu-photos/steeringiso.png) | ![Figure 2.](./docu-photos/steeringbottom.png) |
 |:---------------------:|:---------------------:|
 | Figure 1. Robot's Steering Mechanism <br> Isometric View | Figure 2. Robot's Steering Mechanism <br> Bottom View |
 
-| ![Figure 3.](./docu-photos/rwdiso1.png) | ![Figure 4.](./docu-photos/rwdrear1.png) |
+| ![Figure 3.](./docu-photos/driveiso.png) | ![Figure 4.](./docu-photos/driverear.png) |
 |:---------------------:|:---------------------:|
 | Figure 3. Robot's Driving Mechanism <br> Isometric View | Figure 4. Robot's Driving Mechanism <br> Rear View |
 
@@ -1671,7 +1671,7 @@ def runRecord(sannisLivisa: FE, currentLap):
 
 <center>
 
-| ![Figure 49.](./docu-photos/smfront.png) | ![Figure 50.](./docu-photos/smiso.png) |
+| ![Figure 49.](./docu-photos/sensefront.png) | ![Figure 50.](./docu-photos/senseiso.png) |
 |:---------------------:| :---------------------:|
 | <center> Figure 49. <br> Robot's Rotating Mechanism <br> Front View </center> | <center> Figure 50. <br> Robot's Rotating Mechanism <br> Side View </center> |
 
