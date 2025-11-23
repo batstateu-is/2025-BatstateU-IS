@@ -1291,6 +1291,10 @@ A. Red Obstacle Detected
 - It then moves backward to create clearance.
 - Finally, it enters a reverse maneuver, adjusting its angle as needed, and positions itself parallel within the safe parking space.
 
+_Refer to the accompanying illustration; arrows indicate the robot’s path for the clockwise red-detected parallel parking scenario._
+
+<p align="center"><img src="./docu-photos/Strat/Final_RedParking.gif" width="600" height="395"/>
+
 B. Green Obstacle Detected
 - The robot turns left toward the parking area.
 - It moves forward until it contacts the boundary wall for alignment.
@@ -1298,9 +1302,9 @@ B. Green Obstacle Detected
 - It then moves forward again to correct its orientation.
 - Finally, it reverses into the space, completing the parallel parking maneuver within the safe zone.
 
-_Refer to the accompanying illustration; arrows indicate the robot’s path for the clockwise parallel parking scenario._
+_Refer to the accompanying illustration; arrows indicate the robot’s path for the clockwise green-detected parallel parking scenario._
 
-<p align="center"><img src="./docu-photos/Strat/stratParkingRed.gif" width="600" height="395"/>
+<p align="center"><img src="./docu-photos/Strat/GreenParking_Parallel.gif" width="600" height="395"/>
 
 2. Counterclockwise Approach
 When the robot approaches the parking area in a counterclockwise direction, obstacle color no longer influences maneuvering.
@@ -1313,7 +1317,7 @@ When the robot approaches the parking area in a counterclockwise direction, obst
 
 _Refer to the accompanying illustration; arrows indicate the robot’s path for the counterclockwise parallel parking scenario._
 
-<p align="center"><img src="./docu-photos/Strat/stratParkingGreen.gif" width="600" height="395"/>
+<p align="center"><img src="./docu-photos/Strat/Final_CounterClockwise.gif" width="600" height="395"/>
 
 ### 4.4. Semi-Machine Learning Strategy
 
