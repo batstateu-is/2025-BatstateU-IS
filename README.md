@@ -1280,19 +1280,38 @@ Refer to the illustration below._
 
 ### 4.3. Parallel Parking Strategy 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This strategy is designed for parallel parking using ultrasonic sensors around the robot. The robot continuously adjusts its movements based on sensor readings to safely enter the parking space. This method may be used as a backup strategy if the primary approach fails.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The robot executes a parallel-parking maneuver based on two primary factors: direction of approach (clockwise or counterclockwise) and the detected obstacle color (red or green) within the designated parking area.
 
-- Red-first obstacle:
-If the first detected obstacle is red, the robot will move to the right of the obstacle while approaching the parking space. It will then begin reversing into the space while continuously monitoring the rear and side ultrasonic sensors. Steering adjustments are made to maintain a safe distance from surrounding obstacles until the robot is fully inside the parking space.
+1. Clockwise Approach
+When approaching the parking area in a clockwise direction, the robot first detects the color of any obstacle located inside the parking zone.
 
-_Refer to the accompanying illustration; arrows indicate the robot’s path for the red-first obstacle scenario._
+A. Red Obstacle Detected
+- The robot turns right toward the parking area.
+- It moves forward until it intentionally makes contact with the boundary wall to establish a reference point.
+- It then moves backward to create clearance.
+- Finally, it enters a reverse maneuver, adjusting its angle as needed, and positions itself parallel within the safe parking space.
+
+B. Green Obstacle Detected
+- The robot turns left toward the parking area.
+- It moves forward until it contacts the boundary wall for alignment.
+- It moves backward to reposition.
+- It then moves forward again to correct its orientation.
+- Finally, it reverses into the space, completing the parallel parking maneuver within the safe zone.
+
+_Refer to the accompanying illustration; arrows indicate the robot’s path for the clockwise parallel parking scenario._
 
 <p align="center"><img src="./docu-photos/Strat/stratParkingRed.gif" width="600" height="395"/>
 
-- Green-first obstacle:
-If the first detected obstacle is green, the robot will move to the left of the obstacle, then start reversing into the parking space. During this maneuver, the robot continuously checks the rear and side sensors and adjusts steering to ensure proper alignment within the space. Once fully positioned, the robot stops completely.
+2. Counterclockwise Approach
+When the robot approaches the parking area in a counterclockwise direction, obstacle color no longer influences maneuvering.
 
-_Refer to the accompanying illustration; arrows indicate the robot’s path for the green-first obstacle scenario._
+- The robot turns toward the wall before the parking area.
+- It moves forward until it reaches the wall to establish alignment.
+- It then moves backward to create spacing.
+- It proceeds forward once more to correct its final alignment.
+- Finally, it reverses into the parking area, stopping once it is fully within the safe parking boundary.
+
+_Refer to the accompanying illustration; arrows indicate the robot’s path for the counterclockwise parallel parking scenario._
 
 <p align="center"><img src="./docu-photos/Strat/stratParkingGreen.gif" width="600" height="395"/>
 
