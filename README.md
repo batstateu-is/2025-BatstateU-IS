@@ -64,8 +64,9 @@ This repository documents the complete engineering development of a **self-drivi
 🚧 **[4. Obstacle Challenge Strategy](#4--obstacle-challenge-strategy)**  
 &nbsp;&nbsp;&nbsp;&nbsp;4.1 [Traffic Sign Detection](#41-traffic-sign-detection)  
 &nbsp;&nbsp;&nbsp;&nbsp;4.2 [Traffic Sign Avoidance Strategy](#42-traffic-sign-avoidance-strategy)  
-&nbsp;&nbsp;&nbsp;&nbsp;4.3 [Perpendicular Parking Strategy](#43-perpendicular-parking-strategy)  
-&nbsp;&nbsp;&nbsp;&nbsp;4.4 [Semi-Machine Learning Strategy](#44-semi-machine-learning-strategy)  
+&nbsp;&nbsp;&nbsp;&nbsp;4.3 [Parallel Parking Strategy](#43-parallel-parking-strategy)  
+&nbsp;&nbsp;&nbsp;&nbsp;4.4 [New Route Strategy](#44-new-route-strategy)
+&nbsp;&nbsp;&nbsp;&nbsp;4.5 [Semi-Machine Learning Strategy](#45-semi-machine-learning-strategy)  
 
 🐞 **[5. Problems Encountered](#5--problems-encountered)**  
 &nbsp;&nbsp;&nbsp;&nbsp;5.1 [Improper Printing](#51-improper-printing)  
@@ -1319,7 +1320,19 @@ _Refer to the accompanying illustration; arrows indicate the robot’s path for 
 
 <p align="center"><img src="./docu-photos/Strat/Final_CounterClockwise.gif" width="600" height="395"/>
 
-### 4.4. Semi-Machine Learning Strategy
+### 4.4. New Route Strategy
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In addition to the standard method used in the Obstacle Challenge, the team developed an optimized shortcut approach known as the New Route Strategy. This version focuses on reducing unnecessary repetition across laps while still keeping the robot accurate, stable, and collision-free throughout the round.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Under the previous method, the robot performed full walling turns in all three laps. Every time it entered a turn or approached a corner, it activated its walling routine to re-align itself with the boundary. While this ensured excellent stability and consistent turning angles, it also increased the total run time. Because the robot repeated the same scanning, adjusting, and walling sequence each lap, it often wasted time re-collecting information that it had already encountered.
+
+1. First Lap - Learning Phase
+   - The robot performs the complete original recording process. It reads and stores the colors and positions of all obstacles across the field. This lap still uses standard walling, ensuring the robot gathers accurate data.
+
+2. Optimized Second and Third Lap
+   - The major improvement appears here. With all obstacle data already memorized, the robot no longer performs full walling turns at every turn or section. Instead, it takes a more direct path through the field, reducing the number of alignment checks and speeding up overall movement. However, walling is still active inside the parking path, where precise orientation is critical. The narrow layout requires the robot to maintain a straight line to avoid collisions and enter the parking area smoothly.
+
+### 4.5. Semi-Machine Learning Strategy
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The robot’s semi-machine learning approach follows a record-and-replay strategy, similar to basic imitation learning. It "learns" from the first lap by recording inputs such as the colors of the pillars and associating them with predefined actions or routes. This information is then reused in subsequent laps to navigate the course without needing to scan again. 
 
