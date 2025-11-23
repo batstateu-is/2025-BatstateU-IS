@@ -1780,7 +1780,13 @@ The checklist below may serve as your guide for preparing the materials. *To che
 2. Attach the drive motors to the mounts.  
 3. Connect the wheels to the drive motors.  
 4. Test the drive system manually to ensure wheels spin correctly and freely.  
-5. Connect LEGO parts to secure the motor and wheel assembly to the chassis.  
+5. Connect LEGO parts to secure the motor and wheel assembly to the chassis.
+
+*You may scan these QR Codes to view the step-by-step instructions for building the Steering and Driving System, respectively.*
+
+| ![Figure 31.](./docu-photos/SteeringSystemBuildingInstruction.png) | ![Figure 32.](./docu-photos/DriveSystemBuildingInstruction.png) |
+|:---------------------:| :---------------------:|
+| <center> Steering System Bulding Instruction </center> | <center> Driving System Building Instruction </center>|  
 
 *After these steps, the robot is mechanically ready for sensor installation and programming.*
 
