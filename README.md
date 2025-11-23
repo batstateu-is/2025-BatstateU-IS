@@ -64,8 +64,8 @@ This repository documents the complete engineering development of a **self-drivi
 🚧 **[4. Obstacle Challenge Strategy](#4--obstacle-challenge-strategy)**  
 &nbsp;&nbsp;&nbsp;&nbsp;4.1 [Traffic Sign Detection](#41-traffic-sign-detection)  
 &nbsp;&nbsp;&nbsp;&nbsp;4.2 [Traffic Sign Avoidance Strategy](#42-traffic-sign-avoidance-strategy)  
-&nbsp;&nbsp;&nbsp;&nbsp;4.3 [Parallel Parking Strategy](#43-parallel-parking-strategy)  
-&nbsp;&nbsp;&nbsp;&nbsp;4.4 [New Route Strategy](#44-new-route-strategy)
+&nbsp;&nbsp;&nbsp;&nbsp;4.3 [Parallel Parking Strategy](#43-parallel-parking-strategy)  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.4 [New Route Strategy](#44-new-route-strategy) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;4.5 [Semi-Machine Learning Strategy](#45-semi-machine-learning-strategy)  
 
 🐞 **[5. Problems Encountered](#5--problems-encountered)**  
