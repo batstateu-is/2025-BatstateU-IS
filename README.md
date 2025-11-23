@@ -66,7 +66,8 @@ This repository documents the complete engineering development of a **self-drivi
 &nbsp;&nbsp;&nbsp;&nbsp;4.2 [Traffic Sign Avoidance Strategy](#42-traffic-sign-avoidance-strategy)  
 &nbsp;&nbsp;&nbsp;&nbsp;4.3 [Parallel Parking Strategy](#43-parallel-parking-strategy)  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;4.4 [New Route Strategy](#44-new-route-strategy) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;4.5 [Semi-Machine Learning Strategy](#45-semi-machine-learning-strategy)  
+&nbsp;&nbsp;&nbsp;&nbsp;4.5 [Semi-Machine Learning Strategy](#45-semi-machine-learning-strategy) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.6 [Surprise Rule Strategies](#46-surprise-rule-strategies)
 
 🐞 **[5. Problems Encountered](#5--problems-encountered)**  
 &nbsp;&nbsp;&nbsp;&nbsp;5.1 [Improper Printing](#51-improper-printing)  
@@ -1449,6 +1450,25 @@ def runRecord(sannisLivisa: FE, currentLap):
     # Final straight drive until the robot detects stall (end of lap or obstacle)
     sannisLivisa.driveUntilStalled(150, 600, 300, heading=0)
 ```
+
+### 4.6. Surprise Rule Strategies
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the competition, Surprise Rules are special challenges that are revealed on the spot. Teams do not know these rules beforehand, so the robot must be designed with flexible programming and adaptable behavior. The goal is to quickly analyze the newly introduced rule and apply a fast but reliable solution using the robot’s existing sensors and movement logic. The team were able to practice and strategize with some possible surprise rules that might be given on the day of the competition. The following will discuss the strategies implemented for each possible rules. 
+
+## Introduction of a Surprise Element
+- For this particular surprise challenge, a blue rectangular block is added to the field. This object acts as a new road sign, specifically indicating a roundabout. These are the possible scenarios that may be executed: the robot must pass the sign on the right side, the robot must complete a counter-clockwise loop around the blue block without touching it, and the robot must continue its normal path after exiting the loop.
+
+1. Detection Phase
+   - Our robot is already programmed to detect colors and obstacles for navigation. For this challenge: We classify the blue block as a newly recognized “special object.” Once the camera or color sensor sees blue within a defined boundary box, the robot switches into Surprise Mode.
+
+2. Positioning Phase
+   - Before entering the loop: The robot slows down and approaches the blue block from the correct angle. It positions itself on the right side of the sign, as required by the rule. The robot uses distance sensors to maintain a safe buffer from the object.
+  
+3. Execution Phase
+   - We use a simple, reliable maneuver: The robot performs a controlled arc around the block by combining forward motion on one motor and a slight inward turn on the other. The arc is repeated until the robot completes roughly 300–360 degrees around the object. To maintain stability, the turning radius is fixed and tested beforehand. This ensures a clean, consistent counter-clockwise circle without bumping into the sign.
+  
+4. Exit Phase
+   - After completing the loop: The robot realigns to the forward direction. It resumes its previous navigation logic.
 
 ---
 
