@@ -12,20 +12,20 @@ DEFAULT = "Green"
 PARALLEL = True
 
 # == Consts
-MAXSPEED = 640
+MAXSPEED = 690
 MAXLOOK = -63
 PARKINGLAP = ".0"
 WALLINGREVERSEANGLE = 42
 
 
-WALLING_KP = 2.55
-WALLING_ANGLE_RIGHT = 55
+WALLING_KP = 4.55
+WALLING_ANGLE_RIGHT = 57
 WALLING_ANGLE_LEFT  = -60
 WALLING_TURN_TOLERANCE = 4
 WALLING_ERROR_TOLERANCE = 9.5
 
 TURNDURATION = 1200
-SCANDURATION = 100
+SCANDURATION = 200
 RED = ['Red']
 GREEN = ['Green']
 
@@ -33,22 +33,22 @@ GREEN = ['Green']
 # --        Walling for ending       -- #
 #########################################
 def greenEnding(sannisLivisa: FE, startingAngle=0):
-    sannisLivisa.turn(580, startingAngle+WALLING_ANGLE_RIGHT)
-    sannisLivisa.drive(100, 600, 700, heading=startingAngle+WALLING_ANGLE_RIGHT)
-    sannisLivisa.turn(550, startingAngle)
-    sannisLivisa.drive(150, 600, 600, heading=startingAngle)
+    sannisLivisa.turn(550, startingAngle+WALLING_ANGLE_RIGHT)
+    sannisLivisa.drive(100, 550, 600, heading=startingAngle+WALLING_ANGLE_RIGHT)
+    sannisLivisa.turn(580, startingAngle)
+    sannisLivisa.drive(300, 600, 300, heading=startingAngle)
 
 def redEnding(sannisLivisa: FE, startingAngle=0):
     sannisLivisa.turn(580, startingAngle+WALLING_ANGLE_LEFT)
-    sannisLivisa.drive(80, 600, 700, heading=startingAngle+WALLING_ANGLE_LEFT)
-    sannisLivisa.turn(550, startingAngle)
-    sannisLivisa.drive(150, 600, 500, heading=startingAngle)
+    sannisLivisa.drive(50, 500, 400, heading=startingAngle+WALLING_ANGLE_LEFT)
+    sannisLivisa.turn(580, startingAngle)
+    sannisLivisa.drive(380, 600, 300, heading=startingAngle)
     
 #########################################
 # --      Exiting Parking Area       -- #
 #########################################
 def greenStart(sannisLivisa: FE):
-    sannisLivisa.drive(450, 500, 600, heading=-4)
+    sannisLivisa.drive(500, 500, 600, heading=-6)
     sannisLivisa.turn(500, 90)
     sannisLivisa.drive(20, 500, 600, heading=90)
     sannisLivisa.turn(580, 90+WALLING_ANGLE_RIGHT+5)
@@ -102,30 +102,30 @@ def redParking(sannisLivisa: FE):
 #########################################
 # -- First Obstacle (If there is ONE) --#
 #########################################
-def greenFirst(sannisLivisa: FE, parking=False, brake=True):
+def greenFirst(sannisLivisa: FE, parking=False, brake=True, currentHeading=0):
     # if not parking:
-    sannisLivisa.drive(200, 500, 600, heading=0)
-    sannisLivisa.turn(580, -45)
-    sannisLivisa.drive(130, 400, 600, heading=-45)
-    sannisLivisa.turnDriveAndCheckIfSnag(540, 0, 600, 520, 390)
+    sannisLivisa.drive(200, 500, 600, heading=currentHeading+0)
+    sannisLivisa.turn(580, currentHeading-48)
+    sannisLivisa.drive(120, 500, 600, heading=currentHeading-48, decelerate=True)
+    sannisLivisa.turnDriveAndCheckIfSnag(540, currentHeading+0, 600, 520, 290)
 
     if brake:
         sannisLivisa.eBrake(200)
 
-def redFirst(sannisLivisa: FE, parking=False, brake=True):
+def redFirst(sannisLivisa: FE, parking=False, brake=True, currentHeading=0):
     # log("Red First:",parking)
     if not parking:
-        sannisLivisa.drive(200, 500, 600, heading=0)
-        sannisLivisa.turn(520, 44)
-        sannisLivisa.drive(350, 500, 600, heading=44)
-        sannisLivisa.turn(500, 0)
-        sannisLivisa.drive(150, 600, 400, heading=0)
+        sannisLivisa.drive(200, 500, 600, currentHeading+0)
+        sannisLivisa.turn(580, currentHeading+44)
+        sannisLivisa.drive(320, 500, 600, heading=currentHeading+44)
+        sannisLivisa.turn(520, currentHeading+0)
+        sannisLivisa.drive(200, 600, 400, heading=currentHeading+0)
     else:
-        sannisLivisa.drive(280, 500, 700, heading=0)
-        sannisLivisa.turn(480, 35)
-        sannisLivisa.drive(120, 500, 600, heading=35)
-        sannisLivisa.turn(480, 0)
-        sannisLivisa.drive(280, 600, 400, heading=0)
+        sannisLivisa.drive(250, 500, 700, heading=currentHeading+0)
+        sannisLivisa.turn(480, currentHeading+35)
+        sannisLivisa.drive(120, 500, 600, heading=currentHeading+35)
+        sannisLivisa.turn(480, currentHeading+0)
+        sannisLivisa.drive(280, 600, 400, heading=currentHeading+0)
         
 
     if brake:
@@ -134,64 +134,68 @@ def redFirst(sannisLivisa: FE, parking=False, brake=True):
 #########################################
 # -- Next Obstacle (If there is ONE) -- #
 #########################################
-def greenLast(sannisLivisa: FE, recording=False, parking=False):
+def greenLast(sannisLivisa: FE, recording=False, parking=False, ending=True, currentHeading=0):
     if recording:
         sannisLivisa.lookDir(-90, asyncBool=False)
     if not parking:
-        sannisLivisa.turn(500, -56)
-        sannisLivisa.drive(475, 500, 800, heading=-56, decelerate=True)
-        sannisLivisa.turn(480, -2)
-        sannisLivisa.drive(260, 500, 700, heading=0)
+        sannisLivisa.turn(500, currentHeading-54)
+        sannisLivisa.drive(585, 500, 800, heading=currentHeading-54, decelerate=True)
+        sannisLivisa.turn(580, currentHeading-2)
+        sannisLivisa.drive(200, 500, 700, heading=currentHeading+0)
     else:
-        sannisLivisa.turn(480, -47)
-        sannisLivisa.drive(410, 600, 700, heading=-47, decelerate=True)
-        sannisLivisa.turn(480, 0)
-        sannisLivisa.drive(400, 500, 600, heading=0)
+        sannisLivisa.turn(480, currentHeading-52)
+        sannisLivisa.drive(420, 600, 700, heading=currentHeading-52, decelerate=True)
+        sannisLivisa.turn(480, currentHeading+0)
+        sannisLivisa.drive(400, 500, 600, heading=currentHeading+0)
 
-    greenEnding(sannisLivisa)
+    if ending:
+        greenEnding(sannisLivisa, currentHeading)
 
-def redLast(sannisLivisa: FE, recording=False, parking=False):
+def redLast(sannisLivisa: FE, recording=False, parking=False, ending=True, currentHeading=0):
     if recording:
         sannisLivisa.lookDir(-90, asyncBool=False)
         
     if not parking:
-        sannisLivisa.turn(480, 47)
-        sannisLivisa.drive(750, 500, 800, heading=47, decelerate=True)
-        sannisLivisa.turn(480, 0)
-        sannisLivisa.drive(100, 500, 800, heading=0)
-        redEnding(sannisLivisa)
+        sannisLivisa.turn(510, currentHeading+47)
+        sannisLivisa.drive(750, 500, 800, heading=currentHeading+47, decelerate=True)
+        sannisLivisa.turn(520, currentHeading+0)
+        sannisLivisa.drive(100, 500, 800, heading=currentHeading+0)
+        if ending:
+            redEnding(sannisLivisa, currentHeading)
     else:
-        sannisLivisa.turn(450, 44)
-        sannisLivisa.drive(390, 600, 400, heading=44)
-        sannisLivisa.turn(470, 0)
-        sannisLivisa.drive(950, 500, 600, heading=0)
+        sannisLivisa.turn(450, currentHeading+44)
+        sannisLivisa.drive(390, 600, 400, heading=currentHeading+44)
+        sannisLivisa.turn(470, currentHeading+0)
+        sannisLivisa.drive(250, 500, 600, heading=currentHeading+0)
     
 
 #########################################
 # --      Pre Recorded Movements     -- #
 #########################################
-def greenOnly(sannisLivisa: FE, parking):
-    greenFirst(sannisLivisa, parking, brake=False)
-    sannisLivisa.drive(1050, 500, 950, heading=0, decelerate=True)
-    greenEnding(sannisLivisa)
+def greenOnly(sannisLivisa: FE, parking, currentHeading=0, ending=True):
+    greenFirst(sannisLivisa, parking, brake=False, currentHeading=currentHeading)
+    sannisLivisa.drive(1150, 500, 950, currentHeading+0, decelerate=True)
 
-def redOnly(sannisLivisa: FE, parkingBool):
-    redFirst(sannisLivisa, parking=parkingBool, brake=False)
-    sannisLivisa.drive(1100, 600, 800, heading=0, decelerate=True)
-    if not parkingBool:
-        redEnding(sannisLivisa)
+    if ending:
+        greenEnding(sannisLivisa, currentHeading)
+
+def redOnly(sannisLivisa: FE, parkingBool, currentHeading=0, ending=True):
+    redFirst(sannisLivisa, parking=parkingBool, brake=False, currentHeading=currentHeading)
+    sannisLivisa.drive(1150, 600, 800, currentHeading+0, decelerate=True)
+    if not parkingBool and ending:
+        redEnding(sannisLivisa, currentHeading)
     else:
-        sannisLivisa.drive(800, 500, 950, heading=0, decelerate=True)
+        sannisLivisa.drive(1100, 500, 950, heading=currentHeading-1, decelerate=True)
 
 
 
-def greenRed(sannisLivisa: FE, recording=True, parking=False):
+def greenRed(sannisLivisa: FE, recording=True, parking=False, currentHeading=0, ending=True):
     greenFirst(sannisLivisa, parking, brake=False)
-    redLast(sannisLivisa, recording, parking)
+    redLast(sannisLivisa, recording, parking, currentHeading=currentHeading, ending=ending)
 
-def redGreen(sannisLivisa: FE, recording=True, parking=False):
+def redGreen(sannisLivisa: FE, recording=True, parking=False, currentHeading=0, ending=True):
     redFirst(sannisLivisa, parking, brake=False)
-    greenLast(sannisLivisa, recording, parking)
+    greenLast(sannisLivisa, recording, parking, ending=ending, currentHeading=currentHeading)
 
 def wallingTurnAndRecord(sannisLivisa: FE, initialDetection: tuple):
     pillarColor = "None"
@@ -207,23 +211,23 @@ def wallingTurnAndRecord(sannisLivisa: FE, initialDetection: tuple):
         lerror = (targetHeading - HUB.imu.heading())*1.1
 
         sannisLivisa.lookDir(lerror, asyncBool=False, speed=1000)
-        speed = linearMap(error, start, 0, MAXSPEED, MAXSPEED // 1.6)
+        speed = linearMap(error, start, 0, MAXSPEED//1.5, MAXSPEED // 2)
         sannisLivisa.move(-speed, correction)
 
         tempColor, tempData = sannisLivisa.determineTrafficSignBlob()
         if tempColor != "None" and tempData[2] > MINTHRESHOLD:
-            pixelWeight = linearMap(tempData[2], MINTHRESHOLD, 4000, 0.2, 1.0)
+            pixelWeight = linearMap(tempData[2], MINTHRESHOLD, 4000, 0.05, 1.0)
             if tempColor == "Green":
                 greenDetections += pixelWeight
             elif tempColor == "Red":
                 redDetections += pixelWeight
 
-    sannisLivisa.driveUntilStalled(-40, MAXSPEED//1.1, MAXSPEED//1.5, heading=-90)
-    sannisLivisa.eBrake(30)
-    sannisLivisa.lookDir(0)
-    # -- Correct if not flush with wall -- #
-    checkIfFlushWithWall(sannisLivisa, WALLING_ERROR_TOLERANCE, 50, 600, -90, TURNDURATION, -40)
-    # sannisLivisa.driveUntilStalled(-10, MAXSPEED//1.1, MAXSPEED//1.5, heading=-90)
+    # sannisLivisa.lookDir(90, asyncBool=False)
+    sannisLivisa.driveUntilProximity(-400, 80, heading=-90, lookHeading=targetHeading, selection=BACK)
+    # sannisLivisa.driveUntilStalled(-300, MAXSPEED//2, MAXSPEED//4, heading=-90)
+    temp = sannisLivisa.scanUntilStallled(-30, 400, 500, targetHeading, heading=targetHeading)
+    greenDetections += temp[0]
+    redDetections += temp[1]
     beep()
 
     scanTimer = StopWatch()
@@ -250,27 +254,28 @@ def wallingTurnAndRecord(sannisLivisa: FE, initialDetection: tuple):
     else:
         return "None"
 
-def wallingTurn(sannisLivisa: FE):
+def wallingTurn(sannisLivisa: FE, currentHeading=0):
     sannisLivisa.lookDir(0, asyncBool=False)
     targetHeading = -90
     start = HUB.imu.heading() - targetHeading
     while HUB.imu.heading() > targetHeading + WALLING_TURN_TOLERANCE:
         error =  HUB.imu.heading() - targetHeading
-        speed = linearMap(error, start, 0, MAXSPEED, MAXSPEED // 1.5)
+        speed = linearMap(error, start, 0, MAXSPEED//1.5, MAXSPEED // 2)
         sannisLivisa.errorSum, sannisLivisa.prevError, correction = pid(WALLING_KP, 0.001, 0.3, error, sannisLivisa.errorSum, sannisLivisa.prevError)
         correction = WALLINGREVERSEANGLE if correction > WALLINGREVERSEANGLE else correction # -37 if correction < -37 else correction for 800
         sannisLivisa.move(-speed, correction)
 
-    sannisLivisa.driveUntilStalled(-80, MAXSPEED//1.5, MAXSPEED//2, heading=-90)
+    sannisLivisa.driveUntilProximity(-400, 80, heading=targetHeading, lookHeading=targetHeading, selection=BACK)
     beep()
     log("Error in walling:", abs(HUB.imu.heading() - 90))
     sannisLivisa.eBrake(10)
-    checkIfFlushWithWall(sannisLivisa, WALLING_ERROR_TOLERANCE, 50, 600, -90, TURNDURATION, -40)
-    # sannisLivisa.driveUntilStalled(-10, MAXSPEED//1.5, MAXSPEED//2, heading=-90)
+    # checkIfFlushWithWall(sannisLivisa, WALLING_ERROR_TOLERANCE, 80, 600, 90, TURNDURATION, 40)
+    sannisLivisa.driveUntilStalled(-300, MAXSPEED//2, MAXSPEED//4, heading=targetHeading)
     sannisLivisa.eBrake(10)
 
+    # sannisLivisa.drive(-50, 500, 600)
     # sannisLivisa.driveMotor.reset_angle(0)
-    sannisLivisa.eBrake(50)
+    # sannisLivisa.eBrake(50)
     HUB.imu.reset_heading(0)
 
 #########################################
@@ -280,18 +285,26 @@ def wallingTurn(sannisLivisa: FE):
 def recordQuarterLap(sannisLivisa: FE, initalDetection: tuple, currentLap=0.25):
     # sannisLivisa.center()
     pillarColor = wallingTurnAndRecord(sannisLivisa, initalDetection)
-    
+
+    formattedCurrent = str(currentLap)[1::]
+
     currentLapRecord = []
     prevTurn = ""
+
+    if formattedCurrent == ".0":
+        parking = True
+    else:
+        parking = False
+
 
     log("\n" + str(currentLap))
     log("1.", pillarColor)
     
     if pillarColor == "Green":
-        greenFirst(sannisLivisa, brake=True)
+        greenFirst(sannisLivisa, brake=True, parking=parking)
         prevTurn = "LEFT"
     elif pillarColor == "Red":
-        redFirst(sannisLivisa, brake=True)
+        redFirst(sannisLivisa, brake=True, parking=parking)
         prevTurn = "RIGHT"
     else:
         if DEFAULT == "Red":
@@ -308,7 +321,7 @@ def recordQuarterLap(sannisLivisa: FE, initalDetection: tuple, currentLap=0.25):
     if pillarColor == "Green":
         pillarColor = scanOnce(sannisLivisa,  2, 70, minThreshold=450)
     else:
-        pillarColor = scanOnce(sannisLivisa, -10, -80, minThreshold=450)
+        pillarColor = scanOnce(sannisLivisa, -2, -80, minThreshold=450)
 
     log("2.", pillarColor)
 
@@ -321,16 +334,16 @@ def recordQuarterLap(sannisLivisa: FE, initalDetection: tuple, currentLap=0.25):
     sannisLivisa.center()
 
     if pillarColor == "Green" and prevTurn != "LEFT":
-        greenLast(sannisLivisa, True)
+        greenLast(sannisLivisa, True, parking= parking)
 
     elif pillarColor == "Red" and prevTurn != "RIGHT":
-        redLast(sannisLivisa, True)
+        redLast(sannisLivisa, True, parking= parking)
 
     else:
         beep()
         log(currentLapRecord)
         sannisLivisa.lookDir(-90, asyncBool=False)
-        sannisLivisa.drive(1050, 500, 900, heading=0, decelerate=True)
+        sannisLivisa.drive(1200, 500, 900, heading=0, decelerate=True)
 
         if currentLapRecord[0] == "Green":
             greenEnding(sannisLivisa)
@@ -370,7 +383,7 @@ def runRecord(sannisLivisa: FE, currentLap):
     elif currentObstacles ==  RED + GREEN:
         redGreen(sannisLivisa, False, parking)
     
-    sannisLivisa.driveUntilStalled(150, 600, 300, heading=0)
+    sannisLivisa.driveUntilStalled(150, 400, 300, heading=0)
     # sannisLivisa.drive(50, 500, 600, heading=0)
     # sannisLivisa.eBrake(100)
 
@@ -391,14 +404,24 @@ def Counter(sannisLivisa: FE):
     details=[]
     pillarColor, data = sannisLivisa.determineTrafficSignBlob()
     if pillarColor == 'None' or data[2] < 700:
-        pillarColor, data, details = scanList(sannisLivisa, -90, 45, delayTime=10, minThreshold=270)
-        pillarColor, data, angle = details[-1]
+        # pillarColor, data, details = scanList(sannisLivisa, -90, 45, delayTime=10, minThreshold=270)
+        # pillarColor, data, angle = details[-1]
+        parkingLap = []
+        pillarColor = scanOnce(sannisLivisa,  -85, 0, minThreshold=270)
+        parkingLap.append(pillarColor)
+        pillarColor = scanOnce(sannisLivisa, 0, 90, minThreshold=270)
+        parkingLap.append(pillarColor)
+
+        sannisLivisa.record(".0", parkingLap)
+
     else:
         details = [[pillarColor, data, -30]]
+        sannisLivisa.record(".0", [pillarColor])
 
     log("First Detection:", pillarColor, data, details)
+    log("First Lap:", pillarColor, data, details)
 
-    sannisLivisa.record(".0", [i[0] for i in details])
+    # sannisLivisa.record(".0", [i[0] for i in details])
     sannisLivisa.center()
 
     sannisLivisa.lookDir(-90, asyncBool=False)
@@ -418,16 +441,19 @@ def Counter(sannisLivisa: FE):
 
     currentLap = 0
 
-    detections = sannisLivisa.scanUntilStallled(100, 600, 400, -90, heading=90)
+    detections = sannisLivisa.scanUntilStallled(100, sannisLivisa.speed(), 200, -90, heading=90)
     HUB.imu.reset_heading(0)
 
     for i in range(3):
         currentLap += 0.25
         recordQuarterLap(sannisLivisa, detections, currentLap)
-        detections = sannisLivisa.scanUntilStallled(80, 600, 400, -90, heading=0)
+        detections = sannisLivisa.scanUntilStallled(130, sannisLivisa.speed(), 200, -90, heading=0)
+        sannisLivisa.eBrake(10)
+        HUB.imu.reset_heading(0)
         
     for i in range(8):
         currentLap += 0.25
+        beep(700)
         runRecord(sannisLivisa, currentLap)
 
     runRecordParking(sannisLivisa)
@@ -443,6 +469,6 @@ def testing(sannisLivisa):
 
 
 if __name__ == "__main__":
-    sannisLivisa = FE(Port.B, Port.A, Port.E, Port.C, Port.D, Port.F)
+    sannisLivisa = FE(Port.A, Port.B, Port.E, Port.F, Port.D, Port.C, camEnabled=True)
     # sannisLivisa.record(".0",RED)
-    checkParking(sannisLivisa, GREEN)
+    Counter(sannisLivisa)

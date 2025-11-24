@@ -276,7 +276,7 @@ def scanOnce(self: FE, startAngle: int, endAngle: int, delayTime: int=10, minThr
         return "None"
 
 def sharedParking(self: FE):
-    self.driveUntilStalled(50, 500, 600, heading=-90)
+    self.driveUntilStalled(50, sannisLivisa.speed(), 300, heading=-90)
     self.eBrake(200)
     HUB.imu.reset_heading(0)
     self.turn(600,55, True)
