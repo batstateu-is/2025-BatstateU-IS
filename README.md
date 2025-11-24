@@ -185,14 +185,14 @@ This repository documents the complete engineering development of a **self-drivi
 | Maximum Steering Angle | +45° and –49° |
 | Steering Torque | 100 N·cm |
 | Drive System | Rear-Wheel Drive |
-| Steering Geometry | Parallel Steering |
+| Steering Geometry | Ackermann Steering |
 | Material | LEGO® Technic™ and PLA Filament |
 | Operating Voltage (UPS-18650) | 5V |
 | Operating Voltage (SPIKE Hub) | 8V |
 
 </center>
 
- ![Specification](./docu-photos/Specification.png)
+ ![Specification](./docu-photos/updated-specs.png)
 
 </center>
 
@@ -256,7 +256,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 ### 1.2. Steering and Driving Mechanism
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After carefully evaluating several options, the team decided to use a rear-wheel drive (RWD) system combined with a parallel steering mechanism. This combination closely resembles the movement of a real car, which can provide consistent and reliable results.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After carefully evaluating several options, the team decided to use a rear-wheel drive (RWD) system combined with an ackermann steering mechanism. This combination closely resembles the movement of a real car, which can provide consistent and reliable results.
 
 <center>
 
@@ -270,13 +270,13 @@ This repository documents the complete engineering development of a **self-drivi
 
 </center>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the robot’s steering mechanism, one Technic™ Large Angular Motor is integrated at the front of the self-driving robot to steer the front wheels, where they turn in the same direction at the same angle. This method is referred to as parallel steering and is similar to how steering works in real cars. The steering geometry selected was the <b>Parallel Steering</b>, rather than Differential Steering, where one wheel moves faster than the other in order to turn; Ackermann, in which the inner wheel turns at a greater angle than the outer wheel, as well as the counterpart of Ackermann, Anti-Ackermann [[8]](#ref8). It offers simplicity compared to other options that are more complex to build and control. Furthermore, both the Open and Obstacle Challenge requires maneuverability; thus, the smaller turning radius offered by parallel steering is advantageous especially for tight spaces like parking. This steering geometry also solves the problem with an uneven and irregular field as it improves the stability and handling of movement and turns of the self-driving robot. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the robot’s steering mechanism, a Technic™ Large Angular Motor is mounted at the front to control the two steering wheels. Instead of turning both wheels at the same angle—as in parallel steering—the robot uses an <b>Ackermann steering mechanism</b>, where the inner wheel turns at a larger angle than the outer wheel during a turn. This geometry ensures that both wheels follow arcs that share a common turning center, reducing friction, tire scrub, and energy loss. Ackermann steering was selected over Differential Steering, which relies on speed differences between wheels, and Anti-Ackermann, which angles the wheels outward from the turning center [[8]](#ref8). Compared to these alternatives, Ackermann provides smoother cornering, more predictable handling, and improved traction—qualities that are essential for precise maneuvers in the Open and Obstacle Challenges. It also supports tighter, more controlled turns, which is especially useful in constrained environments such as parking zones or narrow paths, while maintaining stability on uneven or irregular terrain.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consequently, <b>rear-wheel drive (RWD)</b> was selected because it provides better traction, especially when the robot needs to travel consistently [[9]](#ref9). The team also believes that RWD is better than front-wheel drive (FWD), which can make the robot harder to balance, especially when it needs to carry sensors and components at the front.  
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the drive system, differential gear was intially considered since it helps balance wheel speed during turns and provides smoother movement. However, the team decided not to include it because of the uneven surface problem of the practice field. Consequently, a differential requires flat, consistent traction to function properly.  And on an uneven ground, it could cause one wheel to lose contact and reduce stability. Instead, a direct drive setup was used where each wheel is powered by its own motor. This made the robot more stable and easier to control, especially when turning or driving over small bumps. It also simplified the design and reduced weight, making the robot more reliable during runs.  
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By combining RWD and parallel steering, the team achieved a movement system that was both stable and precise. The rear wheels provided consistent driving force, while the front wheels helped for smooth turning without affecting the robot's balance. This setup made it easier for the robot to navigate around tight corners and spaces, maintain alignment, and avoid obstacles effectively. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By combining RWD and ackermann steering, the team achieved a movement system that was both stable and precise. The rear wheels provided consistent driving force, while the front wheels helped for smooth turning without affecting the robot's balance. This setup made it easier for the robot to navigate around tight corners and spaces, maintain alignment, and avoid obstacles effectively. 
 
 ### 1.3. Mechanical Design
 
@@ -2051,7 +2051,7 @@ By ensuring stable power delivery, secure wiring, and correct sensor configurati
   - One key recommendation is to incorporate a differential gear in the driving mechanism, as explored in the initial design. This is significant because, for example, in a right turn, the left wheel must travel a greater distance along the circular path than the right wheel in the same amount of time, since it is farther from the turn's center. In short, it allows the left and right wheels to rotate at different speeds, which is especially beneficial when the robot is turning. Additionally, it performs well in maintaining traction, stability, and reducing wheel slips during sharp or tight turns. Although the differential gear was removed in later versions due to various concerns, a properly tuned, tested, and incorporated differential mechanism could enhance the robot’s turning precision when combined with effective programming and mobility control.
 
 - **Exploring Different Steering Geometry**  
-  - It is also significant to evaluate other steering geometries, specifically the Ackermann steering mechanism. Due to its complexity, as well as time constraints, Parallel steering was utilized in the robot since it was more manageable and controllable within the available preparation time. Consequently, the Ackermann steering mechanism, though not easy to implement, allows for better control when performing critical and sharp turns.
+  - It is also significant to evaluate other steering geometries, specifically the Ackermann steering mechanism. Due to its complexity, as well as time constraints, Ackermann steering was utilized in the robot since it was more manageable and controllable within the available preparation time. Consequently, the Differential steering mechanism, though not easy to implement, allows for better control when performing critical and sharp turns.
 
 - **Exploring Different Driving Mechanism**  
   - Both all-wheel drive (AWD) and rear-wheel drive (RWD) configurations have their respective advantages and drawbacks, and the optimal choice depends on performance priorities and operating conditions. The robot currently utilizes an RWD system due to its simpler construction and easier control. However, incorporating an AWD transmission could potentially enhance speed, acceleration, and overall stability by distributing power across all four wheels, thereby reducing the likelihood of wheel slippage during rapid acceleration. It should be noted, however, that AWD systems generally add weight, which could slightly reduce maximum speed.
@@ -2200,9 +2200,9 @@ By ensuring stable power delivery, secure wiring, and correct sensor configurati
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As our team had planned, Version 2 introduced a significant upgrade as this incorporated a 3D-printed chassis, in replace of the utilization of LEGO Technic™ pieces in constructing and developing the mechanical structure of the self-driving robot. Not only did it reduce the straints with the maintenance, but it also improved the weight distribution within the overall body of the self-driving robot. Consequently, this chassis was 3D-modeled in reference to our team's own preference with the design, while also giving importance in ensuring its compatibility with other electrical and mechanical components, making sure that other significant parts can be easily and efficiently integrated to the robot.  
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While integrating these new features, Version 2 retained key elements from Version 1, such as the parallel front-wheel steering, rear-wheel drive (RWD) system, rotating vision sensor, LMS-ESP32, and UPS 18650 Raspberry pi power supply. These systems worked together to support smooth and precise movements across the field. Additionally, this version incorporated structural improvements to increase balance and accommodate the added weight from the battery and added microcontroller. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While integrating these new features, Version 2 retained key elements from Version 1, such as the ackermann front-wheel steering, rear-wheel drive (RWD) system, rotating vision sensor, LMS-ESP32, and UPS 18650 Raspberry pi power supply. These systems worked together to support smooth and precise movements across the field. Additionally, this version incorporated structural improvements to increase balance and accommodate the added weight from the battery and added microcontroller. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As specified in the visual aid, the previous LEGO Wheel Ø43 with Medium Azure Tire attached in the parallel front-wheel steering mechanism were replaced with the LEGO® Wheel 30.4 mm D. x 20 mm with Black Tire 43.2 mm x 22 mm with a thicker tire to increase surface contact and enhance the grip on the surface of the field. This setup aimed to improve the robot's steering control and movement stability.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As specified in the visual aid, the previous LEGO Wheel Ø43 with Medium Azure Tire attached in the ackermann front-wheel steering mechanism were replaced with the LEGO® Wheel 30.4 mm D. x 20 mm with Black Tire 43.2 mm x 22 mm with a thicker tire to increase surface contact and enhance the grip on the surface of the field. This setup aimed to improve the robot's steering control and movement stability.  
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consequently, Version 2 became our first complete prototype that fully met the requirements of both the Open Challenge and Obstacle Challenge in the Future Engineers category. It established the foundation for the design we aimed to achieve.  
 
