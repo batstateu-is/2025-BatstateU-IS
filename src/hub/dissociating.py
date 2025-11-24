@@ -44,7 +44,8 @@ MIN_TURN_ANGLE = -42
 ANGLE_KP_THRESHOLD = 60
 MINTHRESHOLD = 110
 
-COMPE = False
+COMPE = True
+DEFAULT = "Red"
 
 logs = []
 
@@ -276,7 +277,7 @@ def scanOnce(self: FE, startAngle: int, endAngle: int, delayTime: int=10, minThr
         return "None"
 
 def sharedParking(self: FE):
-    self.driveUntilStalled(50, sannisLivisa.speed(), 300, heading=-90)
+    self.driveUntilStalled(50, self.speed(), 300)
     self.eBrake(200)
     HUB.imu.reset_heading(0)
     self.turn(600,55, True)
@@ -287,10 +288,10 @@ def sharedParking(self: FE):
     self.driveUntilProximity(-400, 1110, heading=90, lookHeading=90, reverseCondition=True)
     self.eBrake(200)
     
-    self.turn(300, 155, True)
+    self.turn(300, 158, True)
     # self.driveUntilProximity(-250, 150, heading=145, selection=BACK)
     # self.drive(-50, 250, 300, heading=154)
-    self.driveUntilStalled(-300, 400, 150, heading=155)
+    self.driveUntilStalled(-300, 400, 150, heading=157)
     # self.driveUntilProximity(-300, 130, heading=145, selection=BACK)
     beep()
     self.drive(80, 300, 400, stopBool=True)
@@ -352,8 +353,6 @@ class FE():
         # print("goods")
 
         # TODO try except which sets global flag
-        self.distSensorBack = PUPRemoteHub(distSensorB)
-        self.distSensorBack.add_command('line', 'hhh') 
         # print(self.distSensorBack.call("line")[-1])
 
         # -- PID Constants - Forward Direction -- #
@@ -404,11 +403,25 @@ class FE():
         self.memory = {}
         self.resetParams()
         # beep()
-
+        try:
+            self.distSensorBack = PUPRemoteHub(distSensorB)
+            self.distSensorBack.add_command('line', 'hhh') 
+        except:
+            self.distSensorBack = PUPRemoteHub(distSensorB)
+            self.distSensorBack.add_command('line', 'hhh') 
+            log("Error Connecting ESP32", level="ERROR")
+            beep(700)
         if camEnabled:
-            self.camSensor = PUPRemoteHub(camSensor)
-            self.camSensor.add_command("blob", "hhhhhh")
-            wait(500)                      # Wait for camera to setUp
+            try:
+                self.camSensor = PUPRemoteHub(camSensor)
+                self.camSensor.add_command("blob", "hhhhhh")
+                wait(500)                      # Wait for camera to setUp
+            except:
+                self.camSensor = PUPRemoteHub(camSensor)
+                self.camSensor.add_command("blob", "hhhhhh")
+                log("Error Connecting Cam", level="ERROR")
+                beep(900)
+        # print(sannisLivisa)
         
         
     def _selectPIDConstants(self, heading, forward=True):
@@ -652,8 +665,11 @@ class FE():
                 return green, red
             except:
                 print("Error! Problem Encountered while attempting to retreive data from camera!\n Maybe connection is loose?")
-                
-                return ((0, 0, 0), (0, 0, 0))
+                if DEFAULT == "Red":
+                    return ((0, 0, 0), (0, 0, 800))
+                else:
+                    return ((0, 0, 800), (0, 0, 0))
+
         else:
             data = self.camSensor.call("blob")
 
@@ -1002,7 +1018,7 @@ class FE():
                     correction = 30 if correction > 30 else correction
                     correction = -35 if correction < -35 else correction
                     # print(error, HUB.imu.heading(), correction)
-                    self.lookDir(lookHeading - HUB.imu.heading(), False)
+                    self.lookDir(HUB.imu.heading() - lookHeading, False)
                     self.move(speed, correction)
             else:
                 while self.getDistance(selection) > proximity:
@@ -1016,7 +1032,7 @@ class FE():
                     correction = 48 if correction > 48 else correction
                     correction = -45 if correction < -45 else correction
 
-                    self.lookDir(lookHeading - HUB.imu.heading(), False)
+                    self.lookDir(HUB.imu.heading() - lookHeading, False)
                     self.move(speed, correction)
 
         if brake:
