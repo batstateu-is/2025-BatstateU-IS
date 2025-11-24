@@ -1081,7 +1081,7 @@ sannisLivisa.eBrake(1000)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Based on the strategy implemented for the Obstacle Challenge, as outlined in the flowchart below, the robot begins by initializing its sensors. It then rotates its distance sensor to the left to measure the distance, storing the value in a variable labeled left. The same process is repeated to the right, with the value stored in right. The robot then compares the two distances: if the left side offers more space, it sets the driving direction to clockwise; if the right side has more space, it sets the direction to counterclockwise. This approach closely mirrors the method used to determine the driving direction at the start of the Open Challenge.  
 
-| ![Figure 27.](./docu-photos/ObstacleFlowcharts/Obstacle-Direction.jpg) |
+| ![Figure 27.](./docu-photos/ObstacleFlowcharts/ObstacleDetermineDir.jpg) |
 |:---------------------:|
 | Figure 27. <br> Obstacle Challenge Flowchart <br> Start |
 
