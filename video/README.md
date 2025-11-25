@@ -5,7 +5,7 @@
 You may view and access the overall performance of our self-driving robot by clicking the image preview provided below. The video serves as the main documentation of Team JEEP — showcasing our journey, progress, and experiences as we competed in the World Robot Olympiad 2025. Additionally, it highlights each component of our robot and how they work together to smoothly complete both the Open and Obstacle Challenge rounds. It also features the Robot Specifications and follows the required format, from Mobility Management to Sense Management.
 
 <div align="center">
-  <a href="https://youtu.be/03gVkXfrZpo">
+  <a href="https://youtu.be/jTfXBWQjAvg?si=lUimNFn7UhtN57w1">
     <img src="https://github.com/user-attachments/assets/9a884416-2882-4998-bca5-e703e74f590b" 
          alt="open-preview" 
          width="600" 
