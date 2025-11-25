@@ -15,7 +15,7 @@ You may view and access the overall performance of our self-driving robot by cli
 
 ---
 
-## 🤖 Performance Video
+## 🤖 Performance Videos
 
 ### 🚀 Open Challenge
 You may access and view the test run of our robot in the Open Challenge round by clicking the image preview provided below. This will help you gain a better understanding of how our robot performs.
