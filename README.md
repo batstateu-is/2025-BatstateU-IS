@@ -156,7 +156,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 </center>
 
-> The following pictures feature the members of J.E.E.P. (BatStateU-IS) participating in the Future Engineers category along with their robot.
+> The following pictures feature the members of J.E.E.P. (BatStateU-IS) participating in the Future Engineers category along with their robot. In the picture, the team is carrying the self-driving robot that they have developed for the Philippine Robtics Olympiad 2025 (national stage).
 
 | ![Formal Picture](./t-photos/formalpic.png) | ![Funny Picture](./t-photos/funnypic.png) |
 |:---------------------:|:---------------------:|
