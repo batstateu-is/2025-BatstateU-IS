@@ -92,7 +92,8 @@ This repository documents the complete engineering development of a **self-drivi
 &nbsp;&nbsp;&nbsp;&nbsp;7.7 [Rotating Camera and Distance Sensor](#77-rotating-camera-and-distance-sensor)  
 
 🔧 **[8. Mechanical Improvements](#8--mechanical-improvements)**  
- &nbsp;&nbsp;&nbsp;&nbsp;8.1 [Weight Reduction through 3D Printing](#81-weight-reduction-through-3d-printing)  
+ &nbsp;&nbsp;&nbsp;&nbsp;8.1 [Weight Reduction through 3D Printing](#81-weight-reduction-through-3d-printing) <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;8.2 [Transition from Glue Attachments to Screw-Mounted Components](#82-transition-from-glue-attachments-to-screw-mounted-components) 
 
 🛠️ **[9. Construction Guide](#9-️-construction-guide)**  
 &nbsp;&nbsp;&nbsp;&nbsp;9.1 [Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
