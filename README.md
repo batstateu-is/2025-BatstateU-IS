@@ -28,7 +28,8 @@ This repository documents the complete engineering development of a **self-drivi
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The video showcases the inspiring journey of the Future Engineers team as they prepare for the upcoming 2025 World Robot Olympiad. It highlights the team members, the self-driving robot they built, and provides an in-depth look into its design, functionality, and programming. Featured segments include the Open Challenge and Obstacle Challenge, where the team's strategies and technical innovations are put to the test.   
 
 > [!IMPORTANT]
-> ***[BatStateU-IS World Robot Olympiad 2025 - Future Engineers](https://youtu.be/03gVkXfrZpo)***
+> This link contains all the videos produced by the team, compiled for everyone’s convenience. These videos showcase the creation of the self-driving robot, demonstrate its performance in various challenges, and explain the strategies implemented throughout the development process. <br>
+<br> ***[BatStateU-IS World Robot Olympiad 2025 – Future Engineers – Documentation and Performance Videos](https://github.com/batstateu-is/2025-BatstateU-IS/tree/main/video)***
 
 ***
 
