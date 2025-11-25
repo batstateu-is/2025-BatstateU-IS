@@ -5,7 +5,7 @@
 [![FE RuleBook](https://img.shields.io/badge/FE-RULEBOOK-%230059B3.svg?style=for-the-badge&logo=read-the-docs&logoColor=white)](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf)
 [![YouTube](https://img.shields.io/badge/Open-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/z2x9yxSop0M?si=Ib4HMVztKw-bswO7)
 [![YouTube](https://img.shields.io/badge/Obstacle-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/pkR1IfX47qg?si=eyRGkLHpUCD-fo3f)
-[![YouTube](https://img.shields.io/badge/BSU_Integrated_School-Future_Engineers-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/03gVkXfrZpo)
+[![YouTube](https://img.shields.io/badge/BatStateU--IS%20Future%20Engineers-Documentation%20Video-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/jTfXBWQjAvg?si=7lu5undLM9C84mBW)
 
 </center>
 
