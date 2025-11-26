@@ -14,6 +14,18 @@
 > [!NOTE]
 > The team highly recommends the readers of this repository to use light default mode when viewing this engineering documentation.
 
+---
+## Recent Updates in the Documentation
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team made this section to provide the viewers the latest updates after multiple iterations and test runs implemented during the practcies performed at the official venue of the World Robot Olympiad 2025.
+
+### November 26, 2025 (Wednesday)
+- Updated the [Source Code](https://github.com/batstateu-is/2025-BatstateU-IS/tree/main/src) to include the latest program following the practice test runs conducted on the official competition field. During these tests, the team observed that the field was noticeably larger and more extended compared to the one typically used in their own training facility. Because of this difference in scale, several adjustments were made to improve the distance calibration, especially for the parallel parking, and the overall movement consistency to ensure that its performance remains accurate and reliable in the actual competition environment.
+- With the available equpiments in the WRO 2025 venue, the team measured the dimensions, as well as the weight of the self-driving robot, and have notcied a slight difference from the specifications listed in the Robot Specifications section. The measured weight was 1.175 kg from a measured weight of 1.2 kg. Additionally, the measured length was 295 mm from 300 mm.
+
+| ![Formal Picture](./t-photos/updatedlength.png) | ![Funny Picture](./t-photos/updatedweight.png) |
+|:---------------------:|:---------------------:|
+
 ## 🧭 Abstract
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
