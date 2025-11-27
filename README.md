@@ -24,13 +24,15 @@
 - With the available equipments in the WRO 2025 venue, the team measured the dimensions, as well as the weight of the self-driving robot, and have noticed a slight difference from the specifications listed in the Robot Specifications section. The measured weight was 1.175 kg from a measured weight of 1.2 kg. Additionally, the measured length was 295 mm from 300 mm.
 
 | ![Updated Length](./docu-photos/updatedlength.png) | ![Updated Weight](./docu-photos/updatedweight.png) |
+|:---------------------:|:---------------------:|
+| Updated Length | Updated Weight |
 
 ### November 27, 2025 (Thursday)
 - Updated the [Source Code](https://github.com/batstateu-is/2025-BatstateU-IS/tree/main/src) with several major changes, including a modification to the parallel parking route due to limitations in the distance sensor’s coverage and detection range.
 - In addition, a threshold value was adjusted to improve the robot’s color-detection accuracy, specifically its detection of red transitioning to green. This update addressed two issues encountered during tests: inconsistent color scanning at the start of the run and unreliable detection of the middle obstacle.
 - Lastly, electrical tape was applied to the camera pins after the team encountered occasional disconnections. The front camera case was also replaced, as the previous design caused the robot’s camera to tilt downward, resulting in an incorrect field of view.
 
-|:---------------------:|:---------------------:|
+
 
 ## 🧭 Abstract
 
