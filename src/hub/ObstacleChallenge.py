@@ -9,7 +9,7 @@ HUB.imu.reset_heading(0)
 printInfo()
 WALLING_ERROR_TOLERANCE = 7.5
 TURNDURATION = 1000
-NOWALLING = True
+NOWALLING = False
 
 def Obstacle(sannisLivisa):
     # sannisLivisa = FE(Port.A, Port.B, Port.C, Port.F, Port.D, Port.E, camEnabled=True)
@@ -24,33 +24,35 @@ def Obstacle(sannisLivisa):
 
     tolerance = 19 if direction > 0 else 20
     if direction > 0:
-        sannisLivisa.reverseUntilAngleOrWall(200, 19, 48)
+        sannisLivisa.reverseUntilAngleOrWall(180, 35, 53, maxDist=90)
+        # sannisLivisa.turn(250, 32, True)
         sannisLivisa.getDistance(BACK)
-        targetHeading = HUB.imu.heading() + 90 - tolerance
+        targetHeading = HUB.imu.heading() + 70 - tolerance
         while HUB.imu.heading() < targetHeading:
             sannisLivisa.move(550, outAngle)
         # sannisLivisa.drive(90, 600, 800, heading=92*direction)
         sannisLivisa.eBrake(200)
-        sannisLivisa.turn(500, 90, True)
+        sannisLivisa.turn(500, 97, True)
     else:
-        sannisLivisa.reverseUntilAngleOrWall(200, -24, 47)
+        sannisLivisa.reverseUntilAngleOrWall(200, -30, 65, maxDist=90)
+        # sannisLivisa.turn(250, -30, True)
         targetHeading = HUB.imu.heading() - 70 + tolerance
         while HUB.imu.heading() > targetHeading:
             sannisLivisa.move(550, outAngle)
-        sannisLivisa.turn(500, -90, True)
+        sannisLivisa.turn(500, -95, True)
 
 
     # print(HUB.imu.heading())
     # sannisLivisa.turn(400, 30*direction, reverse=True)
-    sannisLivisa.driveUntilStalled(-410, 400, 100, heading=90*direction)
+    sannisLivisa.drive(100, 500, 600, heading=90*direction)
+    sannisLivisa.driveUntilStalled(-250, 500, 600, heading=90*direction)
 
+    
     # -- Correct if not flush with wall -- #
     # checkIfFlushWithWall(sannisLivisa, WALLING_ERROR_TOLERANCE, 10, 600, 90 * direction, TURNDURATION, 40 * direction)
 
     
     sannisLivisa.eBrake(200)
-    sannisLivisa.driveUntilStalled(-20, 200, 100, heading=90*direction)
-    HUB.imu.reset_heading(0)
 
     # sannisLivisa.kc()
     if direction > 0:
@@ -67,14 +69,16 @@ def format_ms(ms):
 from ObstacleClockwise import Clockwise
 from ObstacleCounter import Counter
 from ObsClockwiseNoWall import ClockwiseNoWall
+from ObsCounterNoWall import CounterNoWall
 
 def main():
     timer = StopWatch()
     timer.reset()
     timer.resume()
     
-    sannisLivisa = FE(Port.A, Port.B, Port.C, Port.F, Port.D, Port.E, camEnabled=True)
+    sannisLivisa = FE(Port.A, Port.B, Port.E, Port.F, Port.D, Port.C, camEnabled=True)
     file = Obstacle(sannisLivisa)
+    HUB.imu.reset_heading(0)
     if not NOWALLING:
         if file == "clockwise":
             Clockwise(sannisLivisa)
@@ -86,7 +90,7 @@ def main():
         if file == "clockwise":
             ClockwiseNoWall(sannisLivisa)
         else:
-            Counter(sannisLivisa)
+            CounterNoWall(sannisLivisa)
 
     timer.pause()
     print(format_ms(timer.time()))

@@ -23,6 +23,7 @@ STEERING = -1
 SENSE = 1
 
 PUSH = 1
+REPLACE = 0
 INSERT = -1
 
 FRONT = "front"
@@ -276,33 +277,152 @@ def scanOnce(self: FE, startAngle: int, endAngle: int, delayTime: int=10, minThr
     else:
         return "None"
 
+#Version 1, next adjecent
+# def sharedParking(self: FE):
+#     self.driveUntilStalled(50, 500, 600)
+#     self.eBrake(200)
+#     HUB.imu.reset_heading(0)
+#     self.turn(600,55, True)
+
+#     self.drive(400, 400, 600, heading=90)
+#     self.eBrake(200)
+#     # self.drive(-540, 400, 500, heading=90, decelerate=True)
+#     # self.driveUntilProximity(-400, 1190, heading=90, lookHeading=90, reverseCondition=True, maxDistance=800)
+#     # self.eBrake(200)
+
+#     # First Try walling front then reverse
+#     self.drive(600, 500, 800, heading=90, decelerate=True)
+#     self.driveUntilStalled(200, 500, 600, heading=90)
+#     self.drive(-900, 900, 600, heading=90)
+#     self.drive(-650, 500, 400, heading=90)
+#     self.eBrake(50)
+
+#     self.turn(300, 158, True)
+#     self.driveUntilStalled(-300, 400, 150, heading=157)
+#     # self.driveUntilProximity(-300, 130, heading=145, selection=BACK)
+#     beep()
+#     self.drive(80, 300, 400, stopBool=True)
+#     self.turn(200, 130, True)
+#     self.reverseUntilAngleOrWall(200, 90, 60)
+
+#     i = 0
+#     while abs(90 - HUB.imu.heading()) > 4 and i < 2:
+#         # print(i)
+#         self.driveUntilProximity(200, 50, heading=90, lookHeading=90)
+#         self.driveUntilProximity(-200, 55, heading=90, lookHeading=90, selection=BACK)
+
+# Version 2, previous adjacent
+# def sharedParking(self: FE):
+#     self.driveUntilStalled(50, 500, 600)
+#     self.eBrake(200)
+#     HUB.imu.reset_heading(0)
+#     self.turn(600, -55, True)
+#     self.turn(600, -90)
+
+#     self.drive(800, 400, 700, heading=-90)
+#     self.driveUntilProximity(400, 680, heading=-90, lookHeading=-90)
+    
+#     self.turn(300, -150, True)
+#     self.driveUntilStalled(-300, 400, 150, heading=-150)
+#     beep()
+#     self.drive(80, 300, 400, stopBool=True)
+#     self.turn(200, -130, True)
+#     self.reverseUntilAngleOrWall(200, -90, 60)
+
+#     i = 0
+#     while abs(HUB.imu.heading() - 90) > 4 and i < 2:
+#         # print(i)
+#         self.driveUntilProximity(200, 50, heading=-90, lookHeading=-90)
+#         self.driveUntilProximity(-200, 55, heading=-90, lookHeading=-90, selection=BACK)
+
+# Version 3, no going outside
 def sharedParking(self: FE):
-    self.driveUntilStalled(50, self.speed(), 300)
+    self.driveUntilStalled(50, 500, 600)
     self.eBrake(200)
     HUB.imu.reset_heading(0)
     self.turn(600,55, True)
+    
+    MAXCORRECTION_DRIVE = 18
+    MINCORRECTION_DRIVE = -18
 
-    self.drive(400, 400, 600, heading=90)
+    self.turn(600, 82)
+    self.drive(270, 300, 600, heading=90)
     self.eBrake(200)
     # self.drive(-540, 400, 500, heading=90, decelerate=True)
-    self.driveUntilProximity(-400, 1110, heading=90, lookHeading=90, reverseCondition=True)
-    self.eBrake(200)
-    
-    self.turn(300, 158, True)
-    # self.driveUntilProximity(-250, 150, heading=145, selection=BACK)
-    # self.drive(-50, 250, 300, heading=154)
-    self.driveUntilStalled(-300, 400, 150, heading=157)
+    # self.driveUntilProximity(-400, 1190, heading=90, lookHeading=90, reverseCondition=True, maxDistance=800)
+    # self.eBrake(200)
+
+    # First 
+    self.drive(-500, 500, 800, heading=90, decelerate=True)
+    self.eBrake(350)
+
+    self.turn(300, 150, True)
+    self.driveUntilStalled(-250, 400, 150, heading=150)
     # self.driveUntilProximity(-300, 130, heading=145, selection=BACK)
     beep()
-    self.drive(80, 300, 400, stopBool=True)
-    self.turn(200, 130, True)
-    self.reverseUntilAngleOrWall(200, 90, 60)
+    self.drive(150, 300, 400, stopBool=True)
+    self.turn(330, 135, True)
+    self.reverseUntilAngleOrWall(270, 90, 60)
 
     i = 0
     while abs(90 - HUB.imu.heading()) > 4 and i < 2:
         # print(i)
         self.driveUntilProximity(200, 50, heading=90, lookHeading=90)
         self.driveUntilProximity(-200, 55, heading=90, lookHeading=90, selection=BACK)
+## OLD ##
+# def sharedParking(self: FE):
+#     self.driveUntilStalled(50, self.speed(), 300)
+#     self.eBrake(200)
+#     HUB.imu.reset_heading(0)
+#     self.turn(600,55, True)
+
+#     self.drive(400, 400, 600, heading=90)
+#     self.eBrake(200)
+#     # self.drive(-540, 400, 500, heading=90, decelerate=True)
+#     self.driveUntilProximity(-400, 1190, heading=90, lookHeading=90, reverseCondition=True, maxDistance=800)
+#     self.eBrake(200)
+    
+#     self.turn(300, 158, True)
+#     # self.driveUntilProximity(-250, 150, heading=145, selection=BACK)
+#     # self.drive(-50, 250, 300, heading=154)
+#     self.driveUntilStalled(-300, 400, 150, heading=157)
+#     # self.driveUntilProximity(-300, 130, heading=145, selection=BACK)
+#     beep()
+#     self.drive(80, 300, 400, stopBool=True)
+#     self.turn(200, 130, True)
+#     self.reverseUntilAngleOrWall(200, 90, 60)
+
+#     i = 0
+#     while abs(90 - HUB.imu.heading()) > 4 and i < 2:
+#         # print(i)
+#         self.driveUntilProximity(200, 50, heading=90, lookHeading=90)
+#         self.driveUntilProximity(-200, 55, heading=90, lookHeading=90, selection=BACK)
+#     self.driveUntilStalled(50, self.speed(), 300)
+#     self.eBrake(200)
+#     HUB.imu.reset_heading(0)
+#     self.turn(600,55, True)
+
+#     self.drive(400, 400, 600, heading=90)
+#     self.eBrake(200)
+#     # self.drive(-540, 400, 500, heading=90, decelerate=True)
+#     self.driveUntilProximity(-400, 1190, heading=90, lookHeading=90, reverseCondition=True, maxDistance=800)
+#     self.eBrake(200)
+    
+#     self.turn(300, 158, True)
+#     # self.driveUntilProximity(-250, 150, heading=145, selection=BACK)
+#     # self.drive(-50, 250, 300, heading=154)
+#     self.driveUntilStalled(-300, 400, 150, heading=157)
+#     # self.driveUntilProximity(-300, 130, heading=145, selection=BACK)
+#     beep()
+#     self.drive(80, 300, 400, stopBool=True)
+#     self.turn(200, 130, True)
+#     self.reverseUntilAngleOrWall(200, 90, 60)
+
+#     i = 0
+#     while abs(90 - HUB.imu.heading()) > 4 and i < 2:
+#         # print(i)
+#         self.driveUntilProximity(200, 50, heading=90, lookHeading=90)
+#         self.driveUntilProximity(-200, 55, heading=90, lookHeading=90, selection=BACK)
 
 def checkIfFlushWithWall(self, errorTolerance, forwardAmount, backwardSpeed, targetHeading, turnDuration, steerAngle):
     # log("Error in walling:", abs(HUB.imu.heading() - targetHeading))
@@ -357,13 +477,13 @@ class FE():
 
         # -- PID Constants - Forward Direction -- #
         self.KPdriveFCT = 5.8
-        self.KIdriveFCT = 0.0000086
+        self.KIdriveFCT = 0.0000066
 
         self.KPdriveBCT = 7.5
         self.KIdriveBCT = 0.00001
 
-        self.KPdriveFC  = 5.5
-        self.KIdriveFC  = 0.0000094
+        self.KPdriveFC  = 5.9
+        self.KIdriveFC  = 0.0000067
 
         self.KPdriveBC  = 7.5
         self.KIdriveBC  = 0.00001
@@ -380,7 +500,7 @@ class FE():
         self.KDturn     = 0.48
         self.KITurn     = 0
 
-        self.forwardMinTorque = 400
+        self.forwardMinTorque = 380
         self.backwardMinTorque = 325
         self.stalledTime = 900
         self.maxStalledTime = 1000
@@ -402,7 +522,9 @@ class FE():
         HUB.imu.reset_heading(0)
         self.memory = {}
         self.resetParams()
-        # beep()
+        beep()
+        # self.distSensorBack = PUPRemoteHub(distSensorB)
+        # self.distSensorBack.add_command('line', 'hhh') 
         try:
             self.distSensorBack = PUPRemoteHub(distSensorB)
             self.distSensorBack.add_command('line', 'hhh') 
@@ -411,6 +533,10 @@ class FE():
             self.distSensorBack.add_command('line', 'hhh') 
             log("Error Connecting ESP32", level="ERROR")
             beep(700)
+        # self.camSensor = PUPRemoteHub(camSensor)
+        # self.camSensor.add_command("blob", "hhhhhhhhh")
+        # beep()
+        # wait(500)                      # Wait for camera to setUp
         if camEnabled:
             try:
                 self.camSensor = PUPRemoteHub(camSensor)
@@ -421,7 +547,6 @@ class FE():
                 self.camSensor.add_command("blob", "hhhhhh")
                 log("Error Connecting Cam", level="ERROR")
                 beep(900)
-        # print(sannisLivisa)
         
         
     def _selectPIDConstants(self, heading, forward=True):
@@ -488,6 +613,9 @@ class FE():
                     self.memory[key].append(value)
                 else:
                     self.memory[key] = value
+
+            elif method == REPLACE:
+                self.memory[key] = value
 
             else:
                 self.memory[key].insert(0, value)
@@ -718,10 +846,11 @@ class FE():
             mappingFunc = tLinearMap
         # print(start, target, heading, HUB.imu.heading(), baseKP, KI)
         self.moving = True
+        # stopIfStalled=False
         if stopIfStalled:
             if (dist > 0):
                 while self.driveMotor.angle() < target:
-                    if self.isStalled(initialSpeed//1.5, direction=FORWARD):
+                    if self.isStalled(initialSpeed//1.2, direction=FORWARD):
                         break
                     # print(self.isStalled(finalSpeed))
                     error = heading - HUB.imu.heading()
@@ -1094,7 +1223,7 @@ class FE():
 
         return self.determineDir(measureTime=100)
 
-    def scanAndDrive(self, dist, initialSpeed, finalSpeed, lookHeading, heading="", stopBool=False, stopDuration=100, decelerate=False):
+    def scanAndDrive(self, dist, initialSpeed, finalSpeed, lookHeading, heading="", stopBool=False, stopDuration=100, decelerate=False, stopIfStalled=False):
 
         heading = HUB.imu.heading() if heading == "" else heading
         start = self.driveMotor.angle()
@@ -1114,6 +1243,9 @@ class FE():
 
         if (dist > 0):
             while self.driveMotor.angle() < target:
+                if stopIfStalled:
+                    if self.isStalled(initialSpeed//1.5, direction=FORWARD):
+                        break
                 error = heading - HUB.imu.heading()
                 speed = mappingFunc(self.driveMotor.angle(), start, target, initialSpeed, finalSpeed)
                 KP = linearMap(self.driveMotor.speed(), 0, 1000, 0, baseKP)
@@ -1137,6 +1269,11 @@ class FE():
             # print(i)
         else:
             while self.driveMotor.angle() > target:
+                if stopIfStalled:
+                    print(self.isStalled(initialSpeed//1.5, direction=BACKWARD))
+                    if self.isStalled(initialSpeed//1.5, direction=BACKWARD):
+                        break
+
                 error = HUB.imu.heading() - heading
 
                 speed = mappingFunc(self.driveMotor.angle(), start, target, -initialSpeed, -finalSpeed)
@@ -1242,7 +1379,8 @@ class FE():
         target = start + accelDist
         self.resetParams()
 
-        greenDetections, redDetections = self.scanAndDrive(accelDist, initialSpeed, finalSpeed, lookHeading, heading=heading)
+        # greenDetections, redDetections = self.scanAndDrive(accelDist, initialSpeed, finalSpeed, lookHeading, heading=heading)
+        greenDetections, redDetections = 0, 0
 
         # Select PID constants once based on initial heading
         baseKP, KI = self._selectPIDConstants(heading, forward=(accelDist > 0))
@@ -1261,6 +1399,8 @@ class FE():
         if (accelDist > 0):
             self.driveMotor.control.limits(torque=self.forwardMinTorque)
             self.forwardStallSpeed = finalSpeed // 2
+            
+    
 
             while (self.driveMotor.speed() > self.forwardStallSpeed and stallClock.time() < self.stalledTime):
                 error = heading - HUB.imu.heading()
@@ -1313,7 +1453,7 @@ class FE():
 
             self.driveMotor.stop()
             self.driveMotor.control.limits(torque=self.defaultDriveValues[2])
-            self.drive(-80, initialSpeed, finalSpeed)
+            # self.drive(-80, initialSpeed, finalSpeed)
         stallClock.pause()
         stallClock.reset()
 
@@ -1383,7 +1523,7 @@ class FE():
                     correction = 45 if correction > 45 else correction
                     self.move(-speed, correction)
 
-    def reverseUntilAngleOrWall(self, speed, targetAngle, stopDistance, headingTolerance=3):
+    def reverseUntilAngleOrWall(self, speed, targetAngle, stopDistance, headingTolerance=3, maxDist=-99999):
         """
         Reverse and turn until reaching targetAngle or until rear distance is too close.
         Stops immediately if wall detected within stopDistance.
@@ -1392,6 +1532,7 @@ class FE():
         current = HUB.imu.heading()
         targetError = targetAngle - current
         direction = 1 if targetError > 0 else -1
+        endDist = self.driveMotor.angle() + maxDist
         # Set PID constants
         if direction > 0:
             KP = self.KPturnRightLess if abs(targetError) < ANGLE_KP_THRESHOLD else self.KPturnRightMore
@@ -1407,7 +1548,7 @@ class FE():
             if DEBUG:
                 log(f"Turn to {targetAngle}deg ending", targetAngle - self.backwardTurnRightTolerance)
 
-            while HUB.imu.heading() < targetAngle - self.backwardTurnRightTolerance:
+            while HUB.imu.heading() < targetAngle - self.backwardTurnRightTolerance and self.driveMotor.angle() > target:
                 if self.getDistance(BACK) < stopDistance:
                     
                     self.eBrake(400)
@@ -1419,7 +1560,7 @@ class FE():
         else:
             if DEBUG:
                 log(f"Turn to {targetAngle}deg ending", targetAngle + self.backwardTurnLeftTolerance)
-            while HUB.imu.heading() > targetAngle + self.backwardTurnLeftTolerance:
+            while HUB.imu.heading() > targetAngle + self.backwardTurnLeftTolerance and self.driveMotor.angle() > target:
                 if self.getDistance(BACK) < stopDistance:
                     self.eBrake(400)
                     break
@@ -1479,13 +1620,13 @@ class FE():
                 deltaHeading = self.prevError - error
 
         # If the final heading is too far off from target, reverse slightly to retry
-        if abs(HUB.imu.heading() - targetAngle) >25:
-            log("Heading offset too large after turn, reversing to correct")
-            log(f"CurrentHeading:", HUB.imu.heading())
-            # self.turn(300, -4, True)
-            # self.drive(-80, 300, 400, heading=0, stopBool=True, stopDuration=150)
-            self.turn(300, 0, True)
-            self.drive(driveDist+90, 300, 400, heading=0, stopBool=True, stopDuration=150)
+        # if abs(HUB.imu.heading() - targetAngle) >25:
+        #     log("Heading offset too large after turn, reversing to correct")
+        #     log(f"CurrentHeading:", HUB.imu.heading())
+        #     # self.turn(300, -4, True)
+        #     # self.drive(-80, 300, 400, heading=0, stopBool=True, stopDuration=150)
+        #     self.turn(300, 0, True)
+        #     self.drive(driveDist+90, 300, 400, heading=0, stopBool=True, stopDuration=150)
         
 
         heading = targetAngle
