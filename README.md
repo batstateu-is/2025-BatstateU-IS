@@ -5,7 +5,7 @@
 [![FE RuleBook](https://img.shields.io/badge/FE-RULEBOOK-%230059B3.svg?style=for-the-badge&logo=read-the-docs&logoColor=white)](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf)
 [![YouTube](https://img.shields.io/badge/Open-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/z2x9yxSop0M?si=Ib4HMVztKw-bswO7)
 [![YouTube](https://img.shields.io/badge/Obstacle-Challenge-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/pkR1IfX47qg?si=eyRGkLHpUCD-fo3f)
-[![YouTube](https://img.shields.io/badge/BSU_Integrated_School-Future_Engineers-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/03gVkXfrZpo)
+[![YouTube](https://img.shields.io/badge/BatStateU--IS%20Future%20Engineers-Documentation%20Video-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/jTfXBWQjAvg?si=7lu5undLM9C84mBW)
 
 </center>
 
@@ -13,6 +13,26 @@
 
 > [!NOTE]
 > The team highly recommends the readers of this repository to use light default mode when viewing this engineering documentation.
+
+---
+## Recent Updates in the Documentation
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team made this section to provide the viewers the latest updates after multiple iterations and test runs implemented during the practices performed at the official venue of the World Robot Olympiad 2025.
+
+### November 26, 2025 (Wednesday)
+- Updated the [Source Code](https://github.com/batstateu-is/2025-BatstateU-IS/tree/main/src) to include the latest program following the practice test runs conducted on the official competition field. During these tests, the team observed that the field was noticeably larger and more extended compared to the one typically used in their own training facility. Because of this difference in scale, several adjustments were made to improve the distance calibration, especially for the parallel parking, and the overall movement consistency to ensure that its performance remains accurate and reliable in the actual competition environment.
+- With the available equipments in the WRO 2025 venue, the team measured the dimensions, as well as the weight of the self-driving robot, and have noticed a slight difference from the specifications listed in the Robot Specifications section. The measured weight was 1.175 kg from a measured weight of 1.2 kg. Additionally, the measured length was 295 mm from 300 mm.
+
+| ![Updated Length](./docu-photos/updatedlength.png) | ![Updated Weight](./docu-photos/updatedweight.png) |
+|:---------------------:|:---------------------:|
+| Updated Length | Updated Weight |
+
+### November 27, 2025 (Thursday)
+- Updated the [Source Code](https://github.com/batstateu-is/2025-BatstateU-IS/tree/main/src) with several major changes, including a modification to the parallel parking route due to limitations in the distance sensor’s coverage and detection range.
+- In addition, a threshold value was adjusted to improve the robot’s color-detection accuracy, specifically its detection of red transitioning to green. This update addressed two issues encountered during tests: inconsistent color scanning at the start of the run and unreliable detection of the middle obstacle.
+- Lastly, electrical tape was applied to the camera pins after the team encountered occasional disconnections. The front camera case was also replaced, as the previous design caused the robot’s camera to tilt downward, resulting in an incorrect field of view.
+
+
 
 ## 🧭 Abstract
 
@@ -23,12 +43,11 @@ This repository documents the complete engineering development of a **self-drivi
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beyond structural enhancements, the robot features a **rotating sensor mechanism** powered by a Technic™ Large Angular Motor, allowing both the OpenMV camera and Technic™ Distance Sensor to sweep in both directions for expanded field coverage, wall detection, and situational awareness. A **one-button power mechanism** was implemented to meet Future Engineers competition requirements, allowing the SPIKE™ Prime Hub, LMS-ESP32, and UPS-18650 power module to activate simultaneously with a single input through a regulated serial connection.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You may view the full performance of the team's robot through the link provided below. Watching the complete run will offer a clear understanding of how the mechanical design, sensor integration, and code execution come together in real-time to accomplish each task.   
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The video showcases the inspiring journey of the Future Engineers team as they prepare for the upcoming 2025 World Robot Olympiad. It highlights the team members, the self-driving robot they built, and provides an in-depth look into its design, functionality, and programming. Featured segments include the Open Challenge and Obstacle Challenge, where the team's strategies and technical innovations are put to the test.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This documentation showcases the inspiring journey of the Future Engineers team as they prepare for the upcoming 2025 World Robot Olympiad. It highlights the team members, the self-driving robot they built, and provides an in-depth look into its design, functionality, and programming. Featured segments include the Open Challenge and Obstacle Challenge, where the team's strategies and technical innovations are put to the test.   
 
 > [!IMPORTANT]
-> ***[BatStateU-IS World Robot Olympiad 2025 - Future Engineers](https://youtu.be/03gVkXfrZpo)***
+> This link contains all the videos produced by the team, compiled for everyone’s convenience. Watching the videos provided by the team will offer a clear understanding of how the mechanical design, sensor integration, and code execution come together in real-time to accomplish each task. <br>
+<br> ***[BatStateU-IS World Robot Olympiad 2025 – Future Engineers – Documentation and Performance Videos](https://github.com/batstateu-is/2025-BatstateU-IS/tree/main/video)***
 
 ***
 
@@ -93,7 +112,8 @@ This repository documents the complete engineering development of a **self-drivi
 &nbsp;&nbsp;&nbsp;&nbsp;7.7 [Rotating Camera and Distance Sensor](#77-rotating-camera-and-distance-sensor)  
 
 🔧 **[8. Mechanical Improvements](#8--mechanical-improvements)**  
- &nbsp;&nbsp;&nbsp;&nbsp;8.1 [Weight Reduction through 3D Printing](#81-weight-reduction-through-3d-printing)  
+ &nbsp;&nbsp;&nbsp;&nbsp;8.1 [Weight Reduction through 3D Printing](#81-weight-reduction-through-3d-printing) <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;8.2 [Transition from Glue Attachments to Screw-Mounted Components](#82-transition-from-glue-attachments-to-screw-mounted-components) 
 
 🛠️ **[9. Construction Guide](#9-️-construction-guide)**  
 &nbsp;&nbsp;&nbsp;&nbsp;9.1 [Guide for Constructing the Robot](#91-guide-for-constructing-the-robot)  
@@ -156,7 +176,7 @@ This repository documents the complete engineering development of a **self-drivi
 
 </center>
 
-> The following pictures feature the members of J.E.E.P. (BatStateU-IS) participating in the Future Engineers category along with their robot.
+> The following pictures feature the members of J.E.E.P. (BatStateU-IS) participating in the Future Engineers category along with their robot. In the picture, the team is carrying the self-driving robot that they have developed for the Philippine Robtics Olympiad 2025 (national stage).
 
 | ![Formal Picture](./t-photos/formalpic.png) | ![Funny Picture](./t-photos/funnypic.png) |
 |:---------------------:|:---------------------:|
@@ -1727,6 +1747,14 @@ def runRecord(sannisLivisa: FE, currentLap):
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By 3D printing these parts using PLA filament, the team gained precise control over wall thickness, infill density, and internal support structures, allowing the creation of components that were both lightweight and mechanically stable. This optimization significantly reduced unnecessary mass without compromising structural integrity.  
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team also took advantage of 3D printing’s flexibility to create compact and multi-functional parts, combining what used to be several LEGO assemblies into single integrated pieces. This further cut down on weight and simplified the overall structure. Through these modifications, the robot became faster, more responsive, and more energy-efficient, showing how mechanical optimization through 3D printing directly contributed to its improved performance in navigation. 
+
+### 8.2. Transition from Glue Attachments to Screw-Mounted Components
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In earlier iterations of the robot, components were primarily attached using a glue gun and glue sticks, which, while fast and convenient, had several limitations. Glue joints can weaken over time, especially when exposed to repeated impacts or heat generated by electronics. As a result, certain parts occasionally shifted out of position or detached completely, affecting the robot’s consistency and requiring frequent re-gluing or adjustments. This made the robot less reliable and more difficult to maintain.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To address these issues, we implemented a significant mechanical improvement by transitioning from glued connections to screw-mounted attachments. Using screws provides a much more secure and rigid connection between components, allowing the robot’s structure to better withstand sudden impacts and prolonged operation. Screws also offer more precise alignment, which is especially important for sensors, camera mounts, motor holders, and structural elements that depend on fixed positioning for accurate performance. In addition, screw-based mounting greatly improves serviceability; components can now be removed, replaced, or repositioned without damaging the surrounding parts, making maintenance and upgrades far easier and cleaner compared to dealing with hardened glue.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overall, this shift from glue gun assembly to screw-fastened construction significantly enhanced the robot’s durability, mechanical stability, and long-term reliability. It reduced mechanical failuresand allowed for a more professional and competition-ready build that supports both performance and ease of modification.
 
 ---
 

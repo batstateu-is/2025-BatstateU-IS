@@ -1,11 +1,11 @@
 🎥 Videos
 ====
 
-## 👥 Overall Video
-You may view and access the overall performance of our self-driving robot by clicking the image preview provided below. Watching the full performance will give you a clear understanding of how our mechanical design, sensor integration, and programming all work together in real-time to complete each task. 
+## 👥 Documentation Video
+You may view and access the overall performance of our self-driving robot by clicking the image preview provided below. The video serves as the main documentation of Team JEEP — showcasing our journey, progress, and experiences as we competed in the World Robot Olympiad 2025. Additionally, it highlights each component of our robot and how they work together to smoothly complete both the Open and Obstacle Challenge rounds. It also features the Robot Specifications and follows the required format, from Mobility Management to Sense Management.
 
 <div align="center">
-  <a href="https://youtu.be/03gVkXfrZpo">
+  <a href="https://youtu.be/jTfXBWQjAvg?si=lUimNFn7UhtN57w1">
     <img src="https://github.com/user-attachments/assets/9a884416-2882-4998-bca5-e703e74f590b" 
          alt="open-preview" 
          width="600" 
@@ -15,7 +15,9 @@ You may view and access the overall performance of our self-driving robot by cli
 
 ---
 
-## 🚀 Open Challenge
+## 🤖 Performance Videos
+
+### 🚀 Open Challenge
 You may access and view the test run of our robot in the Open Challenge round by clicking the image preview provided below. This will help you gain a better understanding of how our robot performs.
 
 <div align="center">
@@ -31,7 +33,7 @@ You may access and view the test run of our robot in the Open Challenge round by
 
 Below are the videos showcasing the team’s practice sessions, including trials conducted on different inner wall configurations.
 
-- ### Narrow Wide Narrow Wide
+- #### Narrow Wide Narrow Wide
 
 In these videos, the self-driving robot is tested in a field following the **Narrow Wide Narrow Wide** sequence. The videos capture its movement in both clockwise and counterclockwise directions, showing how it navigates the pattern and responds to the layout.
 
@@ -62,7 +64,7 @@ In these videos, the self-driving robot is tested in a field following the **Nar
   </table>
 </div>
 
-- ### Full Wide
+- #### Full Wide
 
 In these videos, the self-driving robot is tested in a field following the **Full Wide** sequence. The videos capture its movement in both clockwise and counterclockwise directions, showing how it navigates the pattern and responds to the layout.
 
@@ -94,7 +96,7 @@ In these videos, the self-driving robot is tested in a field following the **Ful
 </div>
 
 ---
-## 🚧 Obstacle Challenge
+### 🚧 Obstacle Challenge
 You may access and view the test run of our robot in the Obstacle Challenge round by clicking the image preview provided below. This will help you gain a better understanding of how our robot performs.
 
 <div align="center">
